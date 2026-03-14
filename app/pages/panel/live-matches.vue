@@ -1,46 +1,35 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4">
     <div class="flex items-center justify-between">
-      <h1 class="text-2xl font-bold">{{ t('dashboard.live_match') }}</h1>
-      <UButton
-        icon="i-lucide-refresh-cw"
-        color="primary"
-        variant="outline"
-        @click="handleRefresh"
-      >
+      <h1 class="text-xl font-bold">{{ t('dashboard.live_match') }}</h1>
+      <UButton icon="i-lucide-refresh-cw" variant="outline" size="sm" @click="handleRefresh">
         {{ t('common.refresh') }}
       </UButton>
     </div>
 
-    <UCard>
-      <UTable
-        :data="liveMatches"
-        :columns="columns"
-      >
-        <template #score-cell="{ row }">
-          <span v-if="row.original.score" class="font-bold">
-            {{ row.original.score.home }} - {{ row.original.score.away }}
-          </span>
-          <span v-else class="text-muted">-</span>
-        </template>
-
-        <template #minute-cell="{ row }">
-          <span v-if="row.original.minute" class="text-orange-500 font-semibold">
-            {{ row.original.minute }}'
-          </span>
-          <span v-else class="text-muted">-</span>
-        </template>
-
-        <template #status-cell="{ row }">
-          <UBadge
-            :color="row.original.status === 'live' ? 'success' : 'neutral'"
-            variant="subtle"
-          >
-            {{ row.original.status }}
-          </UBadge>
-        </template>
-      </UTable>
-    </UCard>
+    <UTabs :items="tabs" class="w-full">
+      <template #content="{ item }">
+        <div class="mt-4">
+          <AdminUserTable
+            :data="item.value === 'live' ? liveRows : upcomingRows"
+            :columns="filteredColumns"
+            :loading="status === 'pending'"
+            :selected-ids="selectedIds"
+            :all-selected="allSelected"
+            :some-selected="someSelected"
+            :selected-count="selectedRows.length"
+            :total="total"
+            :current-page="currentPage"
+            :total-pages="totalPages"
+            :page-size="pageSize"
+            @toggle-row="toggleRow"
+            @toggle-all="toggleAll"
+            @update:current-page="currentPage = $event"
+            @update:page-size="pageSize = $event"
+          />
+        </div>
+      </template>
+    </UTabs>
   </div>
 </template>
 
@@ -49,27 +38,28 @@ definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
 
-const { data: liveData, refresh } = await useAsyncData('live-matches', () =>
-  $fetch<{ data: any[], total: number }>('/api/matches', { query: { status: 'LIVE', limit: 100 } })
-)
-
-const liveMatches = computed(() => (liveData.value?.data ?? []).map(m => ({
-  ...m,
-  status: m.status ? m.status.toLowerCase() : '',
-  score: m.scoreHome != null ? { home: m.scoreHome, away: m.scoreAway } : null
-})))
-
-const columns = [
-  { accessorKey: 'id', header: 'ID' },
-  { accessorKey: 'homeTeam', header: t('common.home_team') },
-  { accessorKey: 'awayTeam', header: t('common.away_team') },
-  { accessorKey: 'leagueName', header: t('common.league') },
-  { accessorKey: 'score', header: t('common.score') },
-  { accessorKey: 'minute', header: t('common.minute') },
-  { accessorKey: 'status', header: t('common.status') }
+const tabs = [
+  { label: t('matches.live_matches'), value: 'live' },
+  { label: t('matches.upcoming'), value: 'upcoming' }
 ]
 
-function handleRefresh() {
-  refresh()
-}
+const columns = [
+  { accessorKey: 'select', header: '' },
+  { accessorKey: 'id', header: t('common.id') },
+  { accessorKey: 'homeTeam', header: t('matches.home') },
+  { accessorKey: 'awayTeam', header: t('matches.away') },
+  { accessorKey: 'leagueName', header: t('common.league') },
+  { accessorKey: 'score', header: t('matches.score') },
+  { accessorKey: 'status', header: t('common.status') },
+  { accessorKey: 'startTime', header: t('matches.start_time') }
+]
+
+const {
+  rows, total, totalPages, status, currentPage, pageSize,
+  selectedIds, selectedRows, allSelected, someSelected,
+  toggleAll, toggleRow, handleRefresh, filteredColumns
+} = useEntityList<any>('/api/matches', 'live-matches', columns)
+
+const liveRows = computed(() => rows.value.filter((r: any) => r.status === 'LIVE'))
+const upcomingRows = computed(() => rows.value.filter((r: any) => r.status === 'SCHEDULED' || r.status === 'PREMATCH'))
 </script>
