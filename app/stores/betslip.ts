@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
 
-interface BetSelection {
+export interface BetSelection {
   id: string
   matchId: number
+  eventId: number
   marketId: number
   selectionId: number
   selectionName: string
@@ -15,22 +16,38 @@ interface BetSelection {
 
 export type BetCategory = 'single' | 'combination' | 'system'
 
-interface BetslipState {
-  selections: Map<string, BetSelection>
-  stakes: Record<string, number>
-  category: BetCategory
-  couponName: string
-  isLocked: boolean
+interface BetslipRules {
+  allowSameEventSelections: boolean
+  liveEnabled: boolean
+  lineEnabled: boolean
+  mixLiveAndLineEnabled: boolean
+  maxTotalOdds: number
+  maxSelectionsCount: number
+  systemBetsEnabled: boolean
 }
+
+const DEFAULT_RULES: BetslipRules = {
+  allowSameEventSelections: false,
+  liveEnabled: true,
+  lineEnabled: true,
+  mixLiveAndLineEnabled: true,
+  maxTotalOdds: 1000,
+  maxSelectionsCount: 20,
+  systemBetsEnabled: false
+}
+
+const INACTIVITY_TIMEOUT = 15 * 60 * 1000 // 15 minutes
 
 export const useBetslipStore = defineStore('betslip', () => {
   // ── State ──
   const selections = ref<Map<string, BetSelection>>(new Map())
+  const originalOddsMap = ref<Record<string, number>>({})
   const stakes = ref<Record<string, number>>({})
   const category = ref<BetCategory>('single')
   const couponName = ref('')
   const isLocked = ref(false)
   const lastActivity = ref(Date.now())
+  const rules = ref<BetslipRules>({ ...DEFAULT_RULES })
 
   // ── Getters ──
   const selectionList = computed(() => Array.from(selections.value.values()))
@@ -60,19 +77,71 @@ export const useBetslipStore = defineStore('betslip', () => {
   })
 
   const hasLiveSelections = computed(() => selectionList.value.some(s => s.isLive))
+  const hasLineSelections = computed(() => selectionList.value.some(s => !s.isLive))
+
+  // Odds change detection
+  const hasOddChange = computed(() =>
+    selectionList.value.some(s => s.odds !== originalOddsMap.value[s.id])
+  )
 
   // ── Actions ──
+
   function addSelection(selection: BetSelection) {
     if (isLocked.value) return
+    if (selections.value.size >= rules.value.maxSelectionsCount) return
+
+    // Same event check: if not allowed, remove existing selections from same event
+    if (!rules.value.allowSameEventSelections) {
+      for (const [id, existing] of selections.value) {
+        if (existing.eventId === selection.eventId && id !== selection.id) {
+          selections.value.delete(id)
+          delete stakes.value[id]
+          delete originalOddsMap.value[id]
+        }
+      }
+    }
+
+    // Duplicate check: toggle off if already selected
+    if (selections.value.has(selection.id)) {
+      removeSelection(selection.id)
+      return
+    }
+
     selections.value.set(selection.id, selection)
+    originalOddsMap.value[selection.id] = selection.odds
     lastActivity.value = Date.now()
+
+    // Category auto-switch
+    autoSwitchCategory()
   }
 
   function removeSelection(id: string) {
     if (isLocked.value) return
     selections.value.delete(id)
     delete stakes.value[id]
+    delete originalOddsMap.value[id]
     lastActivity.value = Date.now()
+
+    // Category auto-switch
+    autoSwitchCategory()
+  }
+
+  function updateSelectionOdds(id: string, newOdds: number) {
+    const sel = selections.value.get(id)
+    if (sel) {
+      sel.odds = newOdds
+    }
+  }
+
+  function autoSwitchCategory() {
+    const count = selections.value.size
+    if (count <= 1 && category.value !== 'single') {
+      category.value = 'single'
+    } else if (count === 2 && category.value === 'single') {
+      category.value = 'combination'
+    } else if (count < 3 && category.value === 'system') {
+      category.value = count >= 2 ? 'combination' : 'single'
+    }
   }
 
   function setStake(id: string, amount: number) {
@@ -89,12 +158,20 @@ export const useBetslipStore = defineStore('betslip', () => {
 
   function setCategory(cat: BetCategory) {
     if (isLocked.value) return
+    if (cat === 'system' && !rules.value.systemBetsEnabled) return
+    if (cat === 'system' && selections.value.size < 3) return
+    if (cat === 'combination' && selections.value.size < 2) return
     category.value = cat
     lastActivity.value = Date.now()
   }
 
+  function setRules(newRules: Partial<BetslipRules>) {
+    rules.value = { ...rules.value, ...newRules }
+  }
+
   function clear() {
     selections.value.clear()
+    originalOddsMap.value = {}
     stakes.value = {}
     category.value = 'single'
     couponName.value = ''
@@ -104,45 +181,25 @@ export const useBetslipStore = defineStore('betslip', () => {
   function lock() { isLocked.value = true }
   function unlock() { isLocked.value = false }
 
-  // ── Inactivity auto-clear (15 minutes) ──
+  // ── Inactivity auto-clear ──
   let inactivityTimer: ReturnType<typeof setTimeout> | null = null
 
   function resetInactivityTimer() {
     if (inactivityTimer) clearTimeout(inactivityTimer)
     inactivityTimer = setTimeout(() => {
-      if (Date.now() - lastActivity.value >= 15 * 60 * 1000) {
+      if (Date.now() - lastActivity.value >= INACTIVITY_TIMEOUT) {
         clear()
       }
-    }, 15 * 60 * 1000)
+    }, INACTIVITY_TIMEOUT)
   }
 
   watch(lastActivity, resetInactivityTimer, { immediate: true })
 
   return {
-    // State
-    selections,
-    stakes,
-    category,
-    couponName,
-    isLocked,
-
-    // Getters
-    selectionList,
-    selectionCount,
-    isEmpty,
-    totalStake,
-    totalOdds,
-    potentialPayout,
-    hasLiveSelections,
-
-    // Actions
-    addSelection,
-    removeSelection,
-    setStake,
-    setComboStake,
-    setCategory,
-    clear,
-    lock,
-    unlock
+    selections, originalOddsMap, stakes, category, couponName, isLocked, rules,
+    selectionList, selectionCount, isEmpty, totalStake, totalOdds,
+    potentialPayout, hasLiveSelections, hasLineSelections, hasOddChange,
+    addSelection, removeSelection, updateSelectionOdds,
+    setStake, setComboStake, setCategory, setRules, clear, lock, unlock
   }
 })
