@@ -8,36 +8,34 @@ const querySchema = z.object({
   excludeId: z.coerce.number().int().positive().optional()
 })
 
+async function checkField(
+  db: ReturnType<typeof useDb>,
+  field: typeof users.username | typeof users.email,
+  value: string,
+  excludeId?: number
+): Promise<boolean> {
+  const conditions = [eq(field, value), isNull(users.deletedAt)]
+  if (excludeId) conditions.push(ne(users.id, excludeId))
+  const [existing] = await db.select({ id: users.id })
+    .from(users)
+    .where(and(...conditions))
+    .limit(1)
+  return !existing
+}
+
 export default defineEventHandler(async (event) => {
   requireAuth(event)
   const query = await getValidatedQuery(event, querySchema.parse)
   const db = useDb()
 
+  const [usernameAvailable, emailAvailable] = await Promise.all([
+    query.username ? checkField(db, users.username, query.username, query.excludeId) : undefined,
+    query.email ? checkField(db, users.email, query.email, query.excludeId) : undefined
+  ])
+
   const result: Record<string, boolean> = {}
-
-  if (query.username) {
-    const conditions = [eq(users.username, query.username), isNull(users.deletedAt)]
-    if (query.excludeId) conditions.push(ne(users.id, query.excludeId))
-
-    const [existing] = await db.select({ id: users.id })
-      .from(users)
-      .where(and(...conditions))
-      .limit(1)
-
-    result.usernameAvailable = !existing
-  }
-
-  if (query.email) {
-    const conditions = [eq(users.email, query.email), isNull(users.deletedAt)]
-    if (query.excludeId) conditions.push(ne(users.id, query.excludeId))
-
-    const [existing] = await db.select({ id: users.id })
-      .from(users)
-      .where(and(...conditions))
-      .limit(1)
-
-    result.emailAvailable = !existing
-  }
+  if (usernameAvailable !== undefined) result.usernameAvailable = usernameAvailable
+  if (emailAvailable !== undefined) result.emailAvailable = emailAvailable
 
   return result
 })

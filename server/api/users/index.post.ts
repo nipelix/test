@@ -9,60 +9,57 @@ export default defineEventHandler(async (event) => {
   const body = await readValidatedBody(event, createUserSchema.parse)
   const db = useDb()
 
-  const actorRole = session.role as Role
-  const targetRole = body.role as Role
-
-  // Verify permission to create this role
-  if (!isRole(actorRole) || !canCreateRole(actorRole, targetRole)) {
+  // Verify permission
+  if (!isRole(session.role) || !canCreateRole(session.role, body.role as Role)) {
     throw createError({ statusCode: 403, statusMessage: 'Cannot create this role' })
-  }
-
-  // Check username uniqueness
-  const [existing] = await db.select({ id: users.id })
-    .from(users)
-    .where(and(eq(users.username, body.username), isNull(users.deletedAt)))
-    .limit(1)
-
-  if (existing) {
-    throw createError({ statusCode: 409, statusMessage: 'Username already taken' })
   }
 
   // Resolve parentId
   let parentId: number | null = null
   if (body.parentId) {
-    // Verify caller has access to the specified parent
     await requireTreeAccess(event, body.parentId)
     parentId = body.parentId
   } else {
-    // Default parent is the creator
     parentId = session.userId
   }
 
   // Determine wallet type
+  const targetRole = body.role as Role
   const walletType = body.walletType || ROLE_WALLET_TYPE[targetRole]
 
   // Hash password
   const passwordHash = await hashPasswordArgon(body.password)
 
-  // Create user
-  const [newUser] = await db.insert(users).values({
-    username: body.username,
-    email: body.email,
-    passwordHash,
-    role: targetRole,
-    parentId,
-    status: 'ACTIVE',
-    walletType
-  }).returning()
+  // Atomic: create user + tree + wallet in single transaction
+  const newUser = await db.transaction(async (tx) => {
+    // Check username uniqueness inside transaction
+    const [existing] = await tx.select({ id: users.id })
+      .from(users)
+      .where(and(eq(users.username, body.username), isNull(users.deletedAt)))
+      .limit(1)
 
-  if (!newUser) {
-    throw createError({ statusCode: 500, statusMessage: 'Failed to create user' })
-  }
+    if (existing) {
+      throw createError({ statusCode: 409, statusMessage: 'Username already taken' })
+    }
 
-  // Add to user tree
+    // Insert user
+    const [created] = await tx.insert(users).values({
+      username: body.username,
+      email: body.email,
+      passwordHash,
+      role: targetRole,
+      parentId,
+      status: 'ACTIVE',
+      walletType
+    }).returning()
+
+    if (!created) throw createError({ statusCode: 500, statusMessage: 'Failed to create user' })
+
+    return created
+  })
+
+  // Tree and wallet (these use their own transactions internally)
   await addUserToTree(newUser.id, parentId)
-
-  // Create wallet
   await createWallet(newUser.id)
 
   return {

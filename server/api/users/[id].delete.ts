@@ -8,34 +8,24 @@ export default defineEventHandler(async (event) => {
   const id = Number(getRouterParam(event, 'id'))
   if (!id || isNaN(id)) throw createError({ statusCode: 400, statusMessage: 'Invalid ID' })
 
-  // Cannot delete yourself
   if (id === session.userId) {
     throw createError({ statusCode: 400, statusMessage: 'Cannot delete yourself' })
   }
 
   const db = useDb()
-
-  // Verify access
   await requireTreeAccess(event, id)
 
-  // Fetch target user
   const [target] = await db.select({ role: users.role })
     .from(users)
     .where(and(eq(users.id, id), isNull(users.deletedAt)))
     .limit(1)
 
-  if (!target) {
-    throw createError({ statusCode: 404, statusMessage: 'User not found' })
-  }
+  if (!target) throw createError({ statusCode: 404, statusMessage: 'User not found' })
 
-  // Must be above target role
-  const actorRole = session.role as Role
-  const targetRole = target.role as Role
-  if (!isRole(actorRole) || !isRole(targetRole) || !isRoleAbove(actorRole, targetRole)) {
+  if (!isRole(session.role) || !isRole(target.role) || !isRoleAbove(session.role, target.role)) {
     throw createError({ statusCode: 403, statusMessage: 'Cannot delete a user of equal or higher role' })
   }
 
-  // Soft delete
   await db.update(users)
     .set({ deletedAt: new Date(), updatedAt: new Date() })
     .where(eq(users.id, id))

@@ -6,7 +6,7 @@ import { users } from '~~/server/database/schema'
 
 const balanceSchema = z.object({
   operation: z.enum(['add', 'remove']),
-  amount: z.number().positive(),
+  amount: z.number().positive().max(10_000_000),
   description: z.string().max(500).optional()
 })
 
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
   // Verify tree access
   await requireTreeAccess(event, id)
 
-  // Fetch target to check role
+  // Fetch target role
   const [target] = await db.select({ role: users.role })
     .from(users)
     .where(and(eq(users.id, id), isNull(users.deletedAt)))
@@ -29,35 +29,37 @@ export default defineEventHandler(async (event) => {
 
   if (!target) throw createError({ statusCode: 404, statusMessage: 'User not found' })
 
-  const actorRole = session.role as Role
-  const targetRole = target.role as Role
-
-  if (!isRole(actorRole) || !isRole(targetRole) || !canManageBalance(actorRole, targetRole)) {
+  if (!isRole(session.role) || !isRole(target.role) || !canManageBalance(session.role as Role, target.role as Role)) {
     throw createError({ statusCode: 403, statusMessage: 'Cannot manage balance for this role' })
   }
 
-  // Get wallets
-  const targetWallet = await getWalletByUserId(id)
+  // Fetch both wallets upfront
+  const [targetWallet, senderWallet] = await Promise.all([
+    getWalletByUserId(id),
+    getWalletByUserId(session.userId)
+  ])
+
   if (!targetWallet) throw createError({ statusCode: 404, statusMessage: 'Target wallet not found' })
+  if (!senderWallet) throw createError({ statusCode: 400, statusMessage: 'Sender wallet not found' })
 
   const direction = body.operation === 'add' ? 'CREDIT' as const : 'DEBIT' as const
+  const inverseDirection = body.operation === 'add' ? 'DEBIT' as const : 'CREDIT' as const
   const txType = body.operation === 'add' ? 'DEPOSIT' as const : 'WITHDRAWAL' as const
 
-  // Execute transaction on target
-  const result = await executeTransaction({
-    type: txType,
-    walletId: targetWallet.id,
-    direction,
-    amount: body.amount,
-    referenceType: 'MANUAL',
-    description: body.description || `${body.operation} by ${session.role}`,
-    createdBy: session.userId
-  })
+  // Both operations in a single DB transaction
+  const result = await db.transaction(async () => {
+    // Target wallet operation
+    const targetResult = await executeTransaction({
+      type: txType,
+      walletId: targetWallet.id,
+      direction,
+      amount: body.amount,
+      referenceType: 'MANUAL',
+      description: body.description || `${body.operation} by ${session.role}`,
+      createdBy: session.userId
+    })
 
-  // Inverse operation on sender's wallet (credit flows top-down)
-  const senderWallet = await getWalletByUserId(session.userId)
-  if (senderWallet) {
-    const inverseDirection = body.operation === 'add' ? 'DEBIT' as const : 'CREDIT' as const
+    // Inverse operation on sender's wallet
     await executeTransaction({
       type: txType,
       walletId: senderWallet.id,
@@ -67,7 +69,9 @@ export default defineEventHandler(async (event) => {
       description: `Inverse: ${body.operation} to user ${id}`,
       createdBy: session.userId
     })
-  }
+
+    return targetResult
+  })
 
   return result
 })
