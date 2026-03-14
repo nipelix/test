@@ -12,17 +12,17 @@
                 <AdminBettingRulesLimitsForm
                   v-if="subItem.value === 'limits'"
                   :state="limits"
-                  @update="updateField('limits', $event)"
+                  @update="(field: string, value: any) => updateField('limits', field, value)"
                 />
                 <AdminBettingRulesOddsForm
                   v-if="subItem.value === 'odds'"
                   :state="odds"
-                  @update="updateField('odds', $event)"
+                  @update="(field: string, value: any) => updateField('odds', field, value)"
                 />
                 <AdminBettingRulesFeaturesForm
                   v-if="subItem.value === 'features'"
                   :state="features"
-                  @update="updateField('features', $event)"
+                  @update="(field: string, value: any) => updateField('features', field, value)"
                 />
               </div>
             </template>
