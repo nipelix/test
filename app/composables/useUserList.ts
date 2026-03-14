@@ -21,9 +21,24 @@ interface UserListResponse {
 
 export function useUserList(role: Role, pageKey: string, columns: Array<{ accessorKey: string; header: string }>, defaultSort = 'createdAt') {
   const searchQuery = ref('')
+  const debouncedSearch = ref('')
   const currentPage = ref(1)
   const pageSize = ref(20)
-  const selectedIds = ref(new Set<number>())
+  const selectedIds = reactive(new Set<number>())
+
+  // Debounce search to avoid excessive API calls
+  let searchTimer: ReturnType<typeof setTimeout> | null = null
+  watch(searchQuery, (val) => {
+    if (searchTimer) clearTimeout(searchTimer)
+    searchTimer = setTimeout(() => {
+      debouncedSearch.value = val
+      currentPage.value = 1
+    }, 300)
+  })
+
+  onBeforeUnmount(() => {
+    if (searchTimer) clearTimeout(searchTimer)
+  })
 
   const tableStore = useTableStore(pageKey, columns, defaultSort)
 
@@ -33,7 +48,7 @@ export function useUserList(role: Role, pageKey: string, columns: Array<{ access
     limit: pageSize.value,
     sortBy: tableStore.sortBy.value,
     sortDirection: tableStore.sortDirection.value,
-    ...(searchQuery.value.trim() ? { search: searchQuery.value.trim() } : {})
+    ...(debouncedSearch.value.trim() ? { search: debouncedSearch.value.trim() } : {})
   }))
 
   const { data: response, refresh, status } = useAsyncData(
@@ -46,29 +61,29 @@ export function useUserList(role: Role, pageKey: string, columns: Array<{ access
   const total = computed(() => response.value?.total ?? 0)
   const totalPages = computed(() => Math.max(1, Math.ceil(total.value / pageSize.value)))
 
-  // Selection
-  const selectedRows = computed(() => rows.value.filter(r => selectedIds.value.has(r.id)))
-  const allSelected = computed(() => rows.value.length > 0 && rows.value.every(r => selectedIds.value.has(r.id)))
-  const someSelected = computed(() => !allSelected.value && rows.value.some(r => selectedIds.value.has(r.id)))
+  // Selection (reactive Set — Vue 3 tracks add/delete/has natively)
+  const selectedRows = computed(() => rows.value.filter(r => selectedIds.has(r.id)))
+  const allSelected = computed(() => rows.value.length > 0 && rows.value.every(r => selectedIds.has(r.id)))
+  const someSelected = computed(() => !allSelected.value && rows.value.some(r => selectedIds.has(r.id)))
 
   function toggleAll() {
     if (allSelected.value) {
-      rows.value.forEach(r => selectedIds.value.delete(r.id))
+      rows.value.forEach(r => selectedIds.delete(r.id))
     } else {
-      rows.value.forEach(r => selectedIds.value.add(r.id))
+      rows.value.forEach(r => selectedIds.add(r.id))
     }
   }
 
   function toggleRow(id: number) {
-    if (selectedIds.value.has(id)) {
-      selectedIds.value.delete(id)
+    if (selectedIds.has(id)) {
+      selectedIds.delete(id)
     } else {
-      selectedIds.value.add(id)
+      selectedIds.add(id)
     }
   }
 
   function clearSelection() {
-    selectedIds.value.clear()
+    selectedIds.clear()
   }
 
   function handleRefresh() {
@@ -81,24 +96,19 @@ export function useUserList(role: Role, pageKey: string, columns: Array<{ access
     refresh()
   }
 
-  // Reset page on search/pageSize change
-  watch(searchQuery, () => { currentPage.value = 1 })
   watch(pageSize, () => { currentPage.value = 1 })
 
   return {
-    // Data
     rows,
     total,
     totalPages,
     status,
     refresh,
 
-    // Search & pagination
     searchQuery,
     currentPage,
     pageSize,
 
-    // Selection
     selectedIds,
     selectedRows,
     allSelected,
@@ -107,11 +117,9 @@ export function useUserList(role: Role, pageKey: string, columns: Array<{ access
     toggleRow,
     clearSelection,
 
-    // Actions
     handleRefresh,
     handleModalSuccess,
 
-    // Table store (passthrough)
     ...tableStore
   }
 }
