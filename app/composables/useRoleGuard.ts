@@ -1,25 +1,19 @@
-import { isRoleAbove, canManageBalance, canCreateRole } from '~~/shared/types/roles'
+import { isRoleAbove, canManageBalance, canCreateRole, isRole } from '~~/shared/types/roles'
 import type { Role } from '~~/shared/types/roles'
 
 export function useRoleGuard() {
   const auth = useAuthStore()
-  const role = computed<Role>(() => (auth.user?.role as Role) || 'PLAYER')
 
-  function hasRole(...roles: Role[]): boolean {
-    return roles.includes(role.value)
-  }
+  const role = computed<Role>(() => {
+    const r = auth.user?.role
+    return (r && isRole(r)) ? r : 'PLAYER'
+  })
 
-  function isAbove(target: Role): boolean {
-    return isRoleAbove(role.value, target)
-  }
-
-  function canCreate(target: Role): boolean {
-    return canCreateRole(role.value, target)
-  }
-
-  function canManage(target: Role): boolean {
-    return canManageBalance(role.value, target)
-  }
+  // Reactive computeds for template use (v-if="isAdmin")
+  const hasRole = (...roles: Role[]) => computed(() => roles.includes(role.value))
+  const isAbove = (target: Role) => computed(() => isRoleAbove(role.value, target))
+  const canCreate = (target: Role) => computed(() => canCreateRole(role.value, target))
+  const canManage = (target: Role) => computed(() => canManageBalance(role.value, target))
 
   return {
     role,

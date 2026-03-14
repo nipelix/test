@@ -1,15 +1,15 @@
-import { canAccessDashboard } from '~~/shared/types/roles'
-import type { Role } from '~~/shared/types/roles'
+import { canAccessDashboard, isRole } from '~~/shared/types/roles'
 
 export default defineNuxtRouteMiddleware((to) => {
   const auth = useAuthStore()
   const localePath = useLocalePath()
 
-  if (!auth.user) {
+  // auth.global.ts already redirects unauthenticated users,
+  // but guard defensively for direct middleware usage
+  const role = auth.user?.role
+  if (!role || !isRole(role)) {
     return navigateTo(localePath('/sign-in'))
   }
-
-  const role = auth.user.role as Role
 
   // Only dashboard roles can access /panel
   if (!canAccessDashboard(role)) {
@@ -17,7 +17,7 @@ export default defineNuxtRouteMiddleware((to) => {
   }
 
   // Check page-level role restriction via route meta
-  const allowedRoles = to.meta.allowedRoles as Role[] | undefined
+  const allowedRoles = to.meta.allowedRoles
   if (allowedRoles && !allowedRoles.includes(role)) {
     return navigateTo(localePath('/panel'))
   }
