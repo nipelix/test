@@ -1,0 +1,2360 @@
+[
+  {
+    "id": 1,
+    "groupId": 1,
+    "marketGroupId": 1,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [1],
+    "upgaming": [1],
+    "globalbahis": [1]
+  },
+  {
+    "id": 2,
+    "groupId": 1,
+    "marketGroupId": 1,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score == team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X" },
+      { "lang": "tr", "field": "name", "value": "X" }
+    ],
+    "melbet": [2],
+    "upgaming": [2],
+    "globalbahis": [2]
+  },
+  {
+    "id": 3,
+    "groupId": 1,
+    "marketGroupId": 1,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team2Score > team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [3],
+    "upgaming": [3],
+    "globalbahis": [3]
+  },
+  {
+    "id": 4,
+    "groupId": 2,
+    "marketGroupId": 2,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals > 2.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 2.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 2.5" }
+    ],
+    "melbet": [4],
+    "upgaming": [4],
+    "globalbahis": [4]
+  },
+  {
+    "id": 5,
+    "groupId": 2,
+    "marketGroupId": 2,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals < 2.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 2.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 2.5" }
+    ],
+    "melbet": [5],
+    "upgaming": [5],
+    "globalbahis": [5]
+  },
+  {
+    "id": 6,
+    "groupId": 3,
+    "marketGroupId": 3,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team1Score > 0 && team2Score > 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Yes" },
+      { "lang": "tr", "field": "name", "value": "Evet" }
+    ],
+    "melbet": [6],
+    "upgaming": [6],
+    "globalbahis": [6]
+  },
+  {
+    "id": 7,
+    "groupId": 3,
+    "marketGroupId": 3,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team1Score == 0 || team2Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No" },
+      { "lang": "tr", "field": "name", "value": "Hayır" }
+    ],
+    "melbet": [7],
+    "upgaming": [7],
+    "globalbahis": [7]
+  },
+  {
+    "id": 8,
+    "groupId": 4,
+    "marketGroupId": 4,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score >= team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1X" },
+      { "lang": "tr", "field": "name", "value": "1X" }
+    ],
+    "melbet": [8],
+    "upgaming": [8],
+    "globalbahis": [8]
+  },
+  {
+    "id": 9,
+    "groupId": 4,
+    "marketGroupId": 4,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score != team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "12" },
+      { "lang": "tr", "field": "name", "value": "12" }
+    ],
+    "melbet": [9],
+    "upgaming": [9],
+    "globalbahis": [9]
+  },
+  {
+    "id": 10,
+    "groupId": 4,
+    "marketGroupId": 4,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team2Score >= team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X2" },
+      { "lang": "tr", "field": "name", "value": "X2" }
+    ],
+    "melbet": [10],
+    "upgaming": [10],
+    "globalbahis": [10]
+  },
+  {
+    "id": 11,
+    "groupId": 5,
+    "marketGroupId": 5,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > team2Score",
+    "drawNoBet": true,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [11],
+    "upgaming": [11],
+    "globalbahis": [11]
+  },
+  {
+    "id": 12,
+    "groupId": 5,
+    "marketGroupId": 5,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2Score > team1Score",
+    "drawNoBet": true,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [12],
+    "upgaming": [12],
+    "globalbahis": [12]
+  },
+  {
+    "id": 13,
+    "groupId": 6,
+    "marketGroupId": 6,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score + handicap > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [13],
+    "upgaming": [13],
+    "globalbahis": [13]
+  },
+  {
+    "id": 14,
+    "groupId": 6,
+    "marketGroupId": 6,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2Score > team1Score + handicap",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [14],
+    "upgaming": [14],
+    "globalbahis": [14]
+  },
+  {
+    "id": 15,
+    "groupId": 7,
+    "marketGroupId": 7,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1ScoreHT > team2ScoreHT",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [15],
+    "upgaming": [15],
+    "globalbahis": [15]
+  },
+  {
+    "id": 16,
+    "groupId": 7,
+    "marketGroupId": 7,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1ScoreHT == team2ScoreHT",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X" },
+      { "lang": "tr", "field": "name", "value": "X" }
+    ],
+    "melbet": [16],
+    "upgaming": [16],
+    "globalbahis": [16]
+  },
+  {
+    "id": 17,
+    "groupId": 7,
+    "marketGroupId": 7,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team2ScoreHT > team1ScoreHT",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [17],
+    "upgaming": [17],
+    "globalbahis": [17]
+  },
+  {
+    "id": 18,
+    "groupId": 8,
+    "marketGroupId": 8,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals > 1.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 1.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 1.5" }
+    ],
+    "melbet": [18],
+    "upgaming": [18],
+    "globalbahis": [18]
+  },
+  {
+    "id": 19,
+    "groupId": 8,
+    "marketGroupId": 8,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals < 1.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 1.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 1.5" }
+    ],
+    "melbet": [19],
+    "upgaming": [19],
+    "globalbahis": [19]
+  },
+  {
+    "id": 20,
+    "groupId": 9,
+    "marketGroupId": 9,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals > 3.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 3.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 3.5" }
+    ],
+    "melbet": [20],
+    "upgaming": [20],
+    "globalbahis": [20]
+  },
+  {
+    "id": 21,
+    "groupId": 9,
+    "marketGroupId": 9,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals < 3.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 3.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 3.5" }
+    ],
+    "melbet": [21],
+    "upgaming": [21],
+    "globalbahis": [21]
+  },
+  {
+    "id": 22,
+    "groupId": 10,
+    "marketGroupId": 10,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals > 0.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 0.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 0.5" }
+    ],
+    "melbet": [22],
+    "upgaming": [22],
+    "globalbahis": [22]
+  },
+  {
+    "id": 23,
+    "groupId": 10,
+    "marketGroupId": 10,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals < 0.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 0.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 0.5" }
+    ],
+    "melbet": [23],
+    "upgaming": [23],
+    "globalbahis": [23]
+  },
+  {
+    "id": 24,
+    "groupId": 11,
+    "marketGroupId": 11,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "firstGoal == 'team1'",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [24],
+    "upgaming": [24],
+    "globalbahis": [24]
+  },
+  {
+    "id": 25,
+    "groupId": 11,
+    "marketGroupId": 11,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "firstGoal == 'none'",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No Goal" },
+      { "lang": "tr", "field": "name", "value": "Gol Yok" }
+    ],
+    "melbet": [25],
+    "upgaming": [25],
+    "globalbahis": [25]
+  },
+  {
+    "id": 26,
+    "groupId": 11,
+    "marketGroupId": 11,
+    "sortOrder": 3,
+    "statusType": "goal",
+    "validator": "firstGoal == 'team2'",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [26],
+    "upgaming": [26],
+    "globalbahis": [26]
+  },
+  {
+    "id": 27,
+    "groupId": 12,
+    "marketGroupId": 12,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals % 2 != 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Odd" },
+      { "lang": "tr", "field": "name", "value": "Tek" }
+    ],
+    "melbet": [27],
+    "upgaming": [27],
+    "globalbahis": [27]
+  },
+  {
+    "id": 28,
+    "groupId": 12,
+    "marketGroupId": 12,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals % 2 == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Even" },
+      { "lang": "tr", "field": "name", "value": "Çift" }
+    ],
+    "melbet": [28],
+    "upgaming": [28],
+    "globalbahis": [28]
+  },
+  {
+    "id": 29,
+    "groupId": 13,
+    "marketGroupId": 13,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals > 4.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 4.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 4.5" }
+    ],
+    "melbet": [29],
+    "upgaming": [29],
+    "globalbahis": [29]
+  },
+  {
+    "id": 30,
+    "groupId": 13,
+    "marketGroupId": 13,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals < 4.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 4.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 4.5" }
+    ],
+    "melbet": [30],
+    "upgaming": [30],
+    "globalbahis": [30]
+  },
+  {
+    "id": 31,
+    "groupId": 14,
+    "marketGroupId": 14,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals > 5.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 5.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 5.5" }
+    ],
+    "melbet": [31],
+    "upgaming": [31],
+    "globalbahis": [31]
+  },
+  {
+    "id": 32,
+    "groupId": 14,
+    "marketGroupId": 14,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals < 5.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 5.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 5.5" }
+    ],
+    "melbet": [32],
+    "upgaming": [32],
+    "globalbahis": [32]
+  },
+  {
+    "id": 33,
+    "groupId": 15,
+    "marketGroupId": 15,
+    "sortOrder": 1,
+    "statusType": "corner",
+    "validator": "totalCorners > 8.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 8.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 8.5" }
+    ],
+    "melbet": [33],
+    "upgaming": [33],
+    "globalbahis": [33]
+  },
+  {
+    "id": 34,
+    "groupId": 15,
+    "marketGroupId": 15,
+    "sortOrder": 2,
+    "statusType": "corner",
+    "validator": "totalCorners < 8.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 8.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 8.5" }
+    ],
+    "melbet": [34],
+    "upgaming": [34],
+    "globalbahis": [34]
+  },
+  {
+    "id": 35,
+    "groupId": 16,
+    "marketGroupId": 16,
+    "sortOrder": 1,
+    "statusType": "corner",
+    "validator": "totalCorners > 9.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 9.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 9.5" }
+    ],
+    "melbet": [35],
+    "upgaming": [35],
+    "globalbahis": [35]
+  },
+  {
+    "id": 36,
+    "groupId": 16,
+    "marketGroupId": 16,
+    "sortOrder": 2,
+    "statusType": "corner",
+    "validator": "totalCorners < 9.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 9.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 9.5" }
+    ],
+    "melbet": [36],
+    "upgaming": [36],
+    "globalbahis": [36]
+  },
+  {
+    "id": 37,
+    "groupId": 17,
+    "marketGroupId": 17,
+    "sortOrder": 1,
+    "statusType": "card",
+    "validator": "totalCards > 3.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 3.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 3.5" }
+    ],
+    "melbet": [37],
+    "upgaming": [37],
+    "globalbahis": [37]
+  },
+  {
+    "id": 38,
+    "groupId": 17,
+    "marketGroupId": 17,
+    "sortOrder": 2,
+    "statusType": "card",
+    "validator": "totalCards < 3.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 3.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 3.5" }
+    ],
+    "melbet": [38],
+    "upgaming": [38],
+    "globalbahis": [38]
+  },
+  {
+    "id": 39,
+    "groupId": 18,
+    "marketGroupId": 18,
+    "sortOrder": 1,
+    "statusType": "card",
+    "validator": "totalCards > 4.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 4.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 4.5" }
+    ],
+    "melbet": [39],
+    "upgaming": [39],
+    "globalbahis": [39]
+  },
+  {
+    "id": 40,
+    "groupId": 18,
+    "marketGroupId": 18,
+    "sortOrder": 2,
+    "statusType": "card",
+    "validator": "totalCards < 4.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 4.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 4.5" }
+    ],
+    "melbet": [40],
+    "upgaming": [40],
+    "globalbahis": [40]
+  },
+  {
+    "id": 41,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > team2Score && team1ScoreHT > team2ScoreHT",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1/1" },
+      { "lang": "tr", "field": "name", "value": "1/1" }
+    ],
+    "melbet": [41],
+    "upgaming": [41],
+    "globalbahis": [41]
+  },
+  {
+    "id": 42,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1ScoreHT > team2ScoreHT && team1Score == team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1/X" },
+      { "lang": "tr", "field": "name", "value": "1/X" }
+    ],
+    "melbet": [42],
+    "upgaming": [42],
+    "globalbahis": [42]
+  },
+  {
+    "id": 43,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team1ScoreHT > team2ScoreHT && team2Score > team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1/2" },
+      { "lang": "tr", "field": "name", "value": "1/2" }
+    ],
+    "melbet": [43],
+    "upgaming": [43],
+    "globalbahis": [43]
+  },
+  {
+    "id": 44,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 4,
+    "statusType": null,
+    "validator": "team1ScoreHT == team2ScoreHT && team1Score > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X/1" },
+      { "lang": "tr", "field": "name", "value": "X/1" }
+    ],
+    "melbet": [44],
+    "upgaming": [44],
+    "globalbahis": [44]
+  },
+  {
+    "id": 45,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 5,
+    "statusType": null,
+    "validator": "team1ScoreHT == team2ScoreHT && team1Score == team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X/X" },
+      { "lang": "tr", "field": "name", "value": "X/X" }
+    ],
+    "melbet": [45],
+    "upgaming": [45],
+    "globalbahis": [45]
+  },
+  {
+    "id": 46,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 6,
+    "statusType": null,
+    "validator": "team1ScoreHT == team2ScoreHT && team2Score > team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X/2" },
+      { "lang": "tr", "field": "name", "value": "X/2" }
+    ],
+    "melbet": [46],
+    "upgaming": [46],
+    "globalbahis": [46]
+  },
+  {
+    "id": 47,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 7,
+    "statusType": null,
+    "validator": "team2ScoreHT > team1ScoreHT && team1Score > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2/1" },
+      { "lang": "tr", "field": "name", "value": "2/1" }
+    ],
+    "melbet": [47],
+    "upgaming": [47],
+    "globalbahis": [47]
+  },
+  {
+    "id": 48,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 8,
+    "statusType": null,
+    "validator": "team2ScoreHT > team1ScoreHT && team1Score == team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2/X" },
+      { "lang": "tr", "field": "name", "value": "2/X" }
+    ],
+    "melbet": [48],
+    "upgaming": [48],
+    "globalbahis": [48]
+  },
+  {
+    "id": 49,
+    "groupId": 19,
+    "marketGroupId": 19,
+    "sortOrder": 9,
+    "statusType": null,
+    "validator": "team2ScoreHT > team1ScoreHT && team2Score > team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2/2" },
+      { "lang": "tr", "field": "name", "value": "2/2" }
+    ],
+    "melbet": [49],
+    "upgaming": [49],
+    "globalbahis": [49]
+  },
+  {
+    "id": 50,
+    "groupId": 20,
+    "marketGroupId": 20,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team1Goals > 0.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 0.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 0.5" }
+    ],
+    "melbet": [50],
+    "upgaming": [50],
+    "globalbahis": [50]
+  },
+  {
+    "id": 51,
+    "groupId": 20,
+    "marketGroupId": 20,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team1Goals < 0.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 0.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 0.5" }
+    ],
+    "melbet": [51],
+    "upgaming": [51],
+    "globalbahis": [51]
+  },
+  {
+    "id": 52,
+    "groupId": 21,
+    "marketGroupId": 21,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team1Goals > 1.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 1.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 1.5" }
+    ],
+    "melbet": [52],
+    "upgaming": [52],
+    "globalbahis": [52]
+  },
+  {
+    "id": 53,
+    "groupId": 21,
+    "marketGroupId": 21,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team1Goals < 1.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 1.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 1.5" }
+    ],
+    "melbet": [53],
+    "upgaming": [53],
+    "globalbahis": [53]
+  },
+  {
+    "id": 54,
+    "groupId": 22,
+    "marketGroupId": 22,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team2Goals > 0.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 0.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 0.5" }
+    ],
+    "melbet": [54],
+    "upgaming": [54],
+    "globalbahis": [54]
+  },
+  {
+    "id": 55,
+    "groupId": 22,
+    "marketGroupId": 22,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team2Goals < 0.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 0.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 0.5" }
+    ],
+    "melbet": [55],
+    "upgaming": [55],
+    "globalbahis": [55]
+  },
+  {
+    "id": 56,
+    "groupId": 23,
+    "marketGroupId": 23,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team2Goals > 1.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 1.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 1.5" }
+    ],
+    "melbet": [56],
+    "upgaming": [56],
+    "globalbahis": [56]
+  },
+  {
+    "id": 57,
+    "groupId": 23,
+    "marketGroupId": 23,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team2Goals < 1.5",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 1.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 1.5" }
+    ],
+    "melbet": [57],
+    "upgaming": [57],
+    "globalbahis": [57]
+  },
+  {
+    "id": 58,
+    "groupId": 24,
+    "marketGroupId": 24,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoalsHT > 0.5",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 0.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 0.5" }
+    ],
+    "melbet": [58],
+    "upgaming": [58],
+    "globalbahis": [58]
+  },
+  {
+    "id": 59,
+    "groupId": 24,
+    "marketGroupId": 24,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoalsHT < 0.5",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 0.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 0.5" }
+    ],
+    "melbet": [59],
+    "upgaming": [59],
+    "globalbahis": [59]
+  },
+  {
+    "id": 60,
+    "groupId": 25,
+    "marketGroupId": 25,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoalsHT > 1.5",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 1.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 1.5" }
+    ],
+    "melbet": [60],
+    "upgaming": [60],
+    "globalbahis": [60]
+  },
+  {
+    "id": 61,
+    "groupId": 25,
+    "marketGroupId": 25,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoalsHT < 1.5",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 1.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 1.5" }
+    ],
+    "melbet": [61],
+    "upgaming": [61],
+    "globalbahis": [61]
+  },
+  {
+    "id": 62,
+    "groupId": 26,
+    "marketGroupId": 26,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals2H > 0.5",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 0.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 0.5" }
+    ],
+    "melbet": [62],
+    "upgaming": [62],
+    "globalbahis": [62]
+  },
+  {
+    "id": 63,
+    "groupId": 26,
+    "marketGroupId": 26,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals2H < 0.5",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 0.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 0.5" }
+    ],
+    "melbet": [63],
+    "upgaming": [63],
+    "globalbahis": [63]
+  },
+  {
+    "id": 64,
+    "groupId": 27,
+    "marketGroupId": 27,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoals2H > 1.5",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over 1.5" },
+      { "lang": "tr", "field": "name", "value": "Üst 1.5" }
+    ],
+    "melbet": [64],
+    "upgaming": [64],
+    "globalbahis": [64]
+  },
+  {
+    "id": 65,
+    "groupId": 27,
+    "marketGroupId": 27,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoals2H < 1.5",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under 1.5" },
+      { "lang": "tr", "field": "name", "value": "Alt 1.5" }
+    ],
+    "melbet": [65],
+    "upgaming": [65],
+    "globalbahis": [65]
+  },
+  {
+    "id": 66,
+    "groupId": 28,
+    "marketGroupId": 28,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score2H > team2Score2H",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [66],
+    "upgaming": [66],
+    "globalbahis": [66]
+  },
+  {
+    "id": 67,
+    "groupId": 28,
+    "marketGroupId": 28,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score2H == team2Score2H",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X" },
+      { "lang": "tr", "field": "name", "value": "X" }
+    ],
+    "melbet": [67],
+    "upgaming": [67],
+    "globalbahis": [67]
+  },
+  {
+    "id": 68,
+    "groupId": 28,
+    "marketGroupId": 28,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team2Score2H > team1Score2H",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [68],
+    "upgaming": [68],
+    "globalbahis": [68]
+  },
+  {
+    "id": 69,
+    "groupId": 29,
+    "marketGroupId": 29,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team1ScoreHT > 0 && team2ScoreHT > 0",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Yes" },
+      { "lang": "tr", "field": "name", "value": "Evet" }
+    ],
+    "melbet": [69],
+    "upgaming": [69],
+    "globalbahis": [69]
+  },
+  {
+    "id": 70,
+    "groupId": 29,
+    "marketGroupId": 29,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team1ScoreHT == 0 || team2ScoreHT == 0",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No" },
+      { "lang": "tr", "field": "name", "value": "Hayır" }
+    ],
+    "melbet": [70],
+    "upgaming": [70],
+    "globalbahis": [70]
+  },
+  {
+    "id": 71,
+    "groupId": 30,
+    "marketGroupId": 30,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "team1Score2H > 0 && team2Score2H > 0",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Yes" },
+      { "lang": "tr", "field": "name", "value": "Evet" }
+    ],
+    "melbet": [71],
+    "upgaming": [71],
+    "globalbahis": [71]
+  },
+  {
+    "id": 72,
+    "groupId": 30,
+    "marketGroupId": 30,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "team1Score2H == 0 || team2Score2H == 0",
+    "drawNoBet": false,
+    "period": 2,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No" },
+      { "lang": "tr", "field": "name", "value": "Hayır" }
+    ],
+    "melbet": [72],
+    "upgaming": [72],
+    "globalbahis": [72]
+  },
+  {
+    "id": 73,
+    "groupId": 31,
+    "marketGroupId": 31,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1ScoreHT >= team2ScoreHT",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1X" },
+      { "lang": "tr", "field": "name", "value": "1X" }
+    ],
+    "melbet": [73],
+    "upgaming": [73],
+    "globalbahis": [73]
+  },
+  {
+    "id": 74,
+    "groupId": 31,
+    "marketGroupId": 31,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1ScoreHT != team2ScoreHT",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "12" },
+      { "lang": "tr", "field": "name", "value": "12" }
+    ],
+    "melbet": [74],
+    "upgaming": [74],
+    "globalbahis": [74]
+  },
+  {
+    "id": 75,
+    "groupId": 31,
+    "marketGroupId": 31,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team2ScoreHT >= team1ScoreHT",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X2" },
+      { "lang": "tr", "field": "name", "value": "X2" }
+    ],
+    "melbet": [75],
+    "upgaming": [75],
+    "globalbahis": [75]
+  },
+  {
+    "id": 76,
+    "groupId": 32,
+    "marketGroupId": 32,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1ScoreHT > team2ScoreHT",
+    "drawNoBet": true,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [76],
+    "upgaming": [76],
+    "globalbahis": [76]
+  },
+  {
+    "id": 77,
+    "groupId": 32,
+    "marketGroupId": 32,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2ScoreHT > team1ScoreHT",
+    "drawNoBet": true,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [77],
+    "upgaming": [77],
+    "globalbahis": [77]
+  },
+  {
+    "id": 78,
+    "groupId": 33,
+    "marketGroupId": 33,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "totalGoalsHT % 2 != 0",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Odd" },
+      { "lang": "tr", "field": "name", "value": "Tek" }
+    ],
+    "melbet": [78],
+    "upgaming": [78],
+    "globalbahis": [78]
+  },
+  {
+    "id": 79,
+    "groupId": 33,
+    "marketGroupId": 33,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "totalGoalsHT % 2 == 0",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Even" },
+      { "lang": "tr", "field": "name", "value": "Çift" }
+    ],
+    "melbet": [79],
+    "upgaming": [79],
+    "globalbahis": [79]
+  },
+  {
+    "id": 80,
+    "groupId": 34,
+    "marketGroupId": 34,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > team2Score && team1Score - team2Score >= 2",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Home Win by 2+" },
+      { "lang": "tr", "field": "name", "value": "Ev Sahibi 2+ Farkla" }
+    ],
+    "melbet": [80],
+    "upgaming": [80],
+    "globalbahis": [80]
+  },
+  {
+    "id": 81,
+    "groupId": 34,
+    "marketGroupId": 34,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score > team2Score && team1Score - team2Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Home Win by 1" },
+      { "lang": "tr", "field": "name", "value": "Ev Sahibi 1 Farkla" }
+    ],
+    "melbet": [81],
+    "upgaming": [81],
+    "globalbahis": [81]
+  },
+  {
+    "id": 82,
+    "groupId": 34,
+    "marketGroupId": 34,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team1Score == team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Draw" },
+      { "lang": "tr", "field": "name", "value": "Beraberlik" }
+    ],
+    "melbet": [82],
+    "upgaming": [82],
+    "globalbahis": [82]
+  },
+  {
+    "id": 83,
+    "groupId": 34,
+    "marketGroupId": 34,
+    "sortOrder": 4,
+    "statusType": null,
+    "validator": "team2Score > team1Score && team2Score - team1Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Away Win by 1" },
+      { "lang": "tr", "field": "name", "value": "Deplasman 1 Farkla" }
+    ],
+    "melbet": [83],
+    "upgaming": [83],
+    "globalbahis": [83]
+  },
+  {
+    "id": 84,
+    "groupId": 34,
+    "marketGroupId": 34,
+    "sortOrder": 5,
+    "statusType": null,
+    "validator": "team2Score > team1Score && team2Score - team1Score >= 2",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Away Win by 2+" },
+      { "lang": "tr", "field": "name", "value": "Deplasman 2+ Farkla" }
+    ],
+    "melbet": [84],
+    "upgaming": [84],
+    "globalbahis": [84]
+  },
+  {
+    "id": 85,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score == 1 && team2Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1-0" },
+      { "lang": "tr", "field": "name", "value": "1-0" }
+    ],
+    "melbet": [85],
+    "upgaming": [85],
+    "globalbahis": [85]
+  },
+  {
+    "id": 86,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score == 2 && team2Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2-0" },
+      { "lang": "tr", "field": "name", "value": "2-0" }
+    ],
+    "melbet": [86],
+    "upgaming": [86],
+    "globalbahis": [86]
+  },
+  {
+    "id": 87,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team1Score == 2 && team2Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2-1" },
+      { "lang": "tr", "field": "name", "value": "2-1" }
+    ],
+    "melbet": [87],
+    "upgaming": [87],
+    "globalbahis": [87]
+  },
+  {
+    "id": 88,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 4,
+    "statusType": null,
+    "validator": "team1Score == 3 && team2Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "3-0" },
+      { "lang": "tr", "field": "name", "value": "3-0" }
+    ],
+    "melbet": [88],
+    "upgaming": [88],
+    "globalbahis": [88]
+  },
+  {
+    "id": 89,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 5,
+    "statusType": null,
+    "validator": "team1Score == 3 && team2Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "3-1" },
+      { "lang": "tr", "field": "name", "value": "3-1" }
+    ],
+    "melbet": [89],
+    "upgaming": [89],
+    "globalbahis": [89]
+  },
+  {
+    "id": 90,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 6,
+    "statusType": null,
+    "validator": "team1Score == 3 && team2Score == 2",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "3-2" },
+      { "lang": "tr", "field": "name", "value": "3-2" }
+    ],
+    "melbet": [90],
+    "upgaming": [90],
+    "globalbahis": [90]
+  },
+  {
+    "id": 91,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 7,
+    "statusType": null,
+    "validator": "team1Score == 0 && team2Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "0-0" },
+      { "lang": "tr", "field": "name", "value": "0-0" }
+    ],
+    "melbet": [91],
+    "upgaming": [91],
+    "globalbahis": [91]
+  },
+  {
+    "id": 92,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 8,
+    "statusType": null,
+    "validator": "team1Score == 1 && team2Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1-1" },
+      { "lang": "tr", "field": "name", "value": "1-1" }
+    ],
+    "melbet": [92],
+    "upgaming": [92],
+    "globalbahis": [92]
+  },
+  {
+    "id": 93,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 9,
+    "statusType": null,
+    "validator": "team1Score == 2 && team2Score == 2",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2-2" },
+      { "lang": "tr", "field": "name", "value": "2-2" }
+    ],
+    "melbet": [93],
+    "upgaming": [93],
+    "globalbahis": [93]
+  },
+  {
+    "id": 94,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 10,
+    "statusType": null,
+    "validator": "team1Score == 3 && team2Score == 3",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "3-3" },
+      { "lang": "tr", "field": "name", "value": "3-3" }
+    ],
+    "melbet": [94],
+    "upgaming": [94],
+    "globalbahis": [94]
+  },
+  {
+    "id": 95,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 11,
+    "statusType": null,
+    "validator": "team2Score == 1 && team1Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "0-1" },
+      { "lang": "tr", "field": "name", "value": "0-1" }
+    ],
+    "melbet": [95],
+    "upgaming": [95],
+    "globalbahis": [95]
+  },
+  {
+    "id": 96,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 12,
+    "statusType": null,
+    "validator": "team2Score == 2 && team1Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "0-2" },
+      { "lang": "tr", "field": "name", "value": "0-2" }
+    ],
+    "melbet": [96],
+    "upgaming": [96],
+    "globalbahis": [96]
+  },
+  {
+    "id": 97,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 13,
+    "statusType": null,
+    "validator": "team2Score == 2 && team1Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1-2" },
+      { "lang": "tr", "field": "name", "value": "1-2" }
+    ],
+    "melbet": [97],
+    "upgaming": [97],
+    "globalbahis": [97]
+  },
+  {
+    "id": 98,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 14,
+    "statusType": null,
+    "validator": "team2Score == 3 && team1Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "0-3" },
+      { "lang": "tr", "field": "name", "value": "0-3" }
+    ],
+    "melbet": [98],
+    "upgaming": [98],
+    "globalbahis": [98]
+  },
+  {
+    "id": 99,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 15,
+    "statusType": null,
+    "validator": "team2Score == 3 && team1Score == 1",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1-3" },
+      { "lang": "tr", "field": "name", "value": "1-3" }
+    ],
+    "melbet": [99],
+    "upgaming": [99],
+    "globalbahis": [99]
+  },
+  {
+    "id": 100,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 16,
+    "statusType": null,
+    "validator": "team2Score == 3 && team1Score == 2",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2-3" },
+      { "lang": "tr", "field": "name", "value": "2-3" }
+    ],
+    "melbet": [100],
+    "upgaming": [100],
+    "globalbahis": [100]
+  },
+  {
+    "id": 101,
+    "groupId": 35,
+    "marketGroupId": 35,
+    "sortOrder": 17,
+    "statusType": null,
+    "validator": null,
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Other" },
+      { "lang": "tr", "field": "name", "value": "Diğer" }
+    ],
+    "melbet": [101],
+    "upgaming": [101],
+    "globalbahis": [101]
+  },
+  {
+    "id": 102,
+    "groupId": 36,
+    "marketGroupId": 36,
+    "sortOrder": 1,
+    "statusType": "goal",
+    "validator": "lastGoal == 'team1'",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [102],
+    "upgaming": [102],
+    "globalbahis": [102]
+  },
+  {
+    "id": 103,
+    "groupId": 36,
+    "marketGroupId": 36,
+    "sortOrder": 2,
+    "statusType": "goal",
+    "validator": "lastGoal == 'none'",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No Goal" },
+      { "lang": "tr", "field": "name", "value": "Gol Yok" }
+    ],
+    "melbet": [103],
+    "upgaming": [103],
+    "globalbahis": [103]
+  },
+  {
+    "id": 104,
+    "groupId": 36,
+    "marketGroupId": 36,
+    "sortOrder": 3,
+    "statusType": "goal",
+    "validator": "lastGoal == 'team2'",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [104],
+    "upgaming": [104],
+    "globalbahis": [104]
+  },
+  {
+    "id": 105,
+    "groupId": 37,
+    "marketGroupId": 37,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Yes" },
+      { "lang": "tr", "field": "name", "value": "Evet" }
+    ],
+    "melbet": [105],
+    "upgaming": [105],
+    "globalbahis": [105]
+  },
+  {
+    "id": 106,
+    "groupId": 37,
+    "marketGroupId": 37,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No" },
+      { "lang": "tr", "field": "name", "value": "Hayır" }
+    ],
+    "melbet": [106],
+    "upgaming": [106],
+    "globalbahis": [106]
+  },
+  {
+    "id": 107,
+    "groupId": 38,
+    "marketGroupId": 38,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team2Score > 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Yes" },
+      { "lang": "tr", "field": "name", "value": "Evet" }
+    ],
+    "melbet": [107],
+    "upgaming": [107],
+    "globalbahis": [107]
+  },
+  {
+    "id": 108,
+    "groupId": 38,
+    "marketGroupId": 38,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2Score == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "No" },
+      { "lang": "tr", "field": "name", "value": "Hayır" }
+    ],
+    "melbet": [108],
+    "upgaming": [108],
+    "globalbahis": [108]
+  },
+  {
+    "id": 109,
+    "groupId": 39,
+    "marketGroupId": 39,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "live",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [109],
+    "upgaming": [109],
+    "globalbahis": [109]
+  },
+  {
+    "id": 110,
+    "groupId": 39,
+    "marketGroupId": 39,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team1Score == team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "live",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "X" },
+      { "lang": "tr", "field": "name", "value": "X" }
+    ],
+    "melbet": [110],
+    "upgaming": [110],
+    "globalbahis": [110]
+  },
+  {
+    "id": 111,
+    "groupId": 39,
+    "marketGroupId": 39,
+    "sortOrder": 3,
+    "statusType": null,
+    "validator": "team2Score > team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "live",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [111],
+    "upgaming": [111],
+    "globalbahis": [111]
+  },
+  {
+    "id": 112,
+    "groupId": 40,
+    "marketGroupId": 40,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [112],
+    "upgaming": [112],
+    "globalbahis": [112]
+  },
+  {
+    "id": 113,
+    "groupId": 40,
+    "marketGroupId": 40,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2Score > team1Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [113],
+    "upgaming": [113],
+    "globalbahis": [113]
+  },
+  {
+    "id": 114,
+    "groupId": 41,
+    "marketGroupId": 41,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "totalPoints > line",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over" },
+      { "lang": "tr", "field": "name", "value": "Üst" }
+    ],
+    "melbet": [114],
+    "upgaming": [114],
+    "globalbahis": [114]
+  },
+  {
+    "id": 115,
+    "groupId": 41,
+    "marketGroupId": 41,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "totalPoints < line",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under" },
+      { "lang": "tr", "field": "name", "value": "Alt" }
+    ],
+    "melbet": [115],
+    "upgaming": [115],
+    "globalbahis": [115]
+  },
+  {
+    "id": 116,
+    "groupId": 42,
+    "marketGroupId": 42,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Score + handicap > team2Score",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [116],
+    "upgaming": [116],
+    "globalbahis": [116]
+  },
+  {
+    "id": 117,
+    "groupId": 42,
+    "marketGroupId": 42,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2Score > team1Score + handicap",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [117],
+    "upgaming": [117],
+    "globalbahis": [117]
+  },
+  {
+    "id": 118,
+    "groupId": 43,
+    "marketGroupId": 43,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "totalPoints % 2 != 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Odd" },
+      { "lang": "tr", "field": "name", "value": "Tek" }
+    ],
+    "melbet": [118],
+    "upgaming": [118],
+    "globalbahis": [118]
+  },
+  {
+    "id": 119,
+    "groupId": 43,
+    "marketGroupId": 43,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "totalPoints % 2 == 0",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Even" },
+      { "lang": "tr", "field": "name", "value": "Çift" }
+    ],
+    "melbet": [119],
+    "upgaming": [119],
+    "globalbahis": [119]
+  },
+  {
+    "id": 120,
+    "groupId": 44,
+    "marketGroupId": 44,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1Q1Score > team2Q1Score",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [120],
+    "upgaming": [120],
+    "globalbahis": [120]
+  },
+  {
+    "id": 121,
+    "groupId": 44,
+    "marketGroupId": 44,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2Q1Score > team1Q1Score",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [121],
+    "upgaming": [121],
+    "globalbahis": [121]
+  },
+  {
+    "id": 122,
+    "groupId": 45,
+    "marketGroupId": 45,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "team1HalfScore > team2HalfScore",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [122],
+    "upgaming": [122],
+    "globalbahis": [122]
+  },
+  {
+    "id": 123,
+    "groupId": 45,
+    "marketGroupId": 45,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "team2HalfScore > team1HalfScore",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [123],
+    "upgaming": [123],
+    "globalbahis": [123]
+  },
+  {
+    "id": 124,
+    "groupId": 46,
+    "marketGroupId": 50,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "player1Sets > player2Sets",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [124],
+    "upgaming": [124],
+    "globalbahis": [124]
+  },
+  {
+    "id": 125,
+    "groupId": 46,
+    "marketGroupId": 50,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "player2Sets > player1Sets",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [125],
+    "upgaming": [125],
+    "globalbahis": [125]
+  },
+  {
+    "id": 126,
+    "groupId": 47,
+    "marketGroupId": 51,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "totalGames > line",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Over" },
+      { "lang": "tr", "field": "name", "value": "Üst" }
+    ],
+    "melbet": [126],
+    "upgaming": [126],
+    "globalbahis": [126]
+  },
+  {
+    "id": 127,
+    "groupId": 47,
+    "marketGroupId": 51,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "totalGames < line",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Under" },
+      { "lang": "tr", "field": "name", "value": "Alt" }
+    ],
+    "melbet": [127],
+    "upgaming": [127],
+    "globalbahis": [127]
+  },
+  {
+    "id": 128,
+    "groupId": 48,
+    "marketGroupId": 52,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "player1Games + handicap > player2Games",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [128],
+    "upgaming": [128],
+    "globalbahis": [128]
+  },
+  {
+    "id": 129,
+    "groupId": 48,
+    "marketGroupId": 52,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "player2Games > player1Games + handicap",
+    "drawNoBet": false,
+    "period": 0,
+    "providerFeedType": "line",
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [129],
+    "upgaming": [129],
+    "globalbahis": [129]
+  },
+  {
+    "id": 130,
+    "groupId": 49,
+    "marketGroupId": 53,
+    "sortOrder": 1,
+    "statusType": null,
+    "validator": "player1Set1Games > player2Set1Games",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "1" },
+      { "lang": "tr", "field": "name", "value": "1" }
+    ],
+    "melbet": [130],
+    "upgaming": [130],
+    "globalbahis": [130]
+  },
+  {
+    "id": 131,
+    "groupId": 49,
+    "marketGroupId": 53,
+    "sortOrder": 2,
+    "statusType": null,
+    "validator": "player2Set1Games > player1Set1Games",
+    "drawNoBet": false,
+    "period": 1,
+    "providerFeedType": null,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "2" },
+      { "lang": "tr", "field": "name", "value": "2" }
+    ],
+    "melbet": [131],
+    "upgaming": [131],
+    "globalbahis": [131]
+  }
+]

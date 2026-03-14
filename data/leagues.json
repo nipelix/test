@@ -1,0 +1,5922 @@
+[
+  {
+    "id": 1,
+    "name": "Super Lig",
+    "sportId": 1,
+    "countryId": 1,
+    "category": "Super Lig",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Super Lig"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Süper Lig"
+      }
+    ],
+    "melbet": [
+      1
+    ],
+    "upgaming": [
+      1
+    ],
+    "globalbahis": [
+      1
+    ]
+  },
+  {
+    "id": 2,
+    "name": "1. Lig",
+    "sportId": 1,
+    "countryId": 1,
+    "category": "1. Lig",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "1. Lig"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "1. Lig"
+      }
+    ],
+    "melbet": [
+      2
+    ],
+    "upgaming": [
+      2
+    ],
+    "globalbahis": [
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "name": "2. Lig",
+    "sportId": 1,
+    "countryId": 1,
+    "category": "2. Lig",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "2. Lig"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "2. Lig"
+      }
+    ],
+    "melbet": [
+      3
+    ],
+    "upgaming": [
+      3
+    ],
+    "globalbahis": [
+      3
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Turkey Cup",
+    "sportId": 1,
+    "countryId": 1,
+    "category": "Turkey Cup",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Turkey Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Türkiye Kupası"
+      }
+    ],
+    "melbet": [
+      4
+    ],
+    "upgaming": [
+      4
+    ],
+    "globalbahis": [
+      4
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Turkey Super Cup",
+    "sportId": 1,
+    "countryId": 1,
+    "category": "Turkey Super Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Turkey Super Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Türkiye Süper Kupası"
+      }
+    ],
+    "melbet": [
+      5
+    ],
+    "upgaming": [
+      5
+    ],
+    "globalbahis": [
+      5
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Premier League",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "Premier League",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 4,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Premier Lig"
+      }
+    ],
+    "melbet": [
+      6
+    ],
+    "upgaming": [
+      6
+    ],
+    "globalbahis": [
+      6
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Championship",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "Championship",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Championship"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Şampiyonluk"
+      }
+    ],
+    "melbet": [
+      7
+    ],
+    "upgaming": [
+      7
+    ],
+    "globalbahis": [
+      7
+    ]
+  },
+  {
+    "id": 8,
+    "name": "League One",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "League One",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "League One"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "League One"
+      }
+    ],
+    "melbet": [
+      8
+    ],
+    "upgaming": [
+      8
+    ],
+    "globalbahis": [
+      8
+    ]
+  },
+  {
+    "id": 9,
+    "name": "League Two",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "League Two",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "League Two"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "League Two"
+      }
+    ],
+    "melbet": [
+      9
+    ],
+    "upgaming": [
+      9
+    ],
+    "globalbahis": [
+      9
+    ]
+  },
+  {
+    "id": 10,
+    "name": "FA Cup",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "FA Cup",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FA Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "FA Kupası"
+      }
+    ],
+    "melbet": [
+      10
+    ],
+    "upgaming": [
+      10
+    ],
+    "globalbahis": [
+      10
+    ]
+  },
+  {
+    "id": 11,
+    "name": "EFL Cup",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "EFL Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "EFL Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "EFL Kupası"
+      }
+    ],
+    "melbet": [
+      11
+    ],
+    "upgaming": [
+      11
+    ],
+    "globalbahis": [
+      11
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Community Shield",
+    "sportId": 1,
+    "countryId": 2,
+    "category": "Community Shield",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Community Shield"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Community Shield"
+      }
+    ],
+    "melbet": [
+      12
+    ],
+    "upgaming": [
+      12
+    ],
+    "globalbahis": [
+      12
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Bundesliga",
+    "sportId": 1,
+    "countryId": 3,
+    "category": "Bundesliga",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bundesliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bundesliga"
+      }
+    ],
+    "melbet": [
+      13
+    ],
+    "upgaming": [
+      13
+    ],
+    "globalbahis": [
+      13
+    ]
+  },
+  {
+    "id": 14,
+    "name": "2. Bundesliga",
+    "sportId": 1,
+    "countryId": 3,
+    "category": "2. Bundesliga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "2. Bundesliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "2. Bundesliga"
+      }
+    ],
+    "melbet": [
+      14
+    ],
+    "upgaming": [
+      14
+    ],
+    "globalbahis": [
+      14
+    ]
+  },
+  {
+    "id": 15,
+    "name": "DFB Pokal",
+    "sportId": 1,
+    "countryId": 3,
+    "category": "DFB Pokal",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "DFB Pokal"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Almanya Kupası"
+      }
+    ],
+    "melbet": [
+      15
+    ],
+    "upgaming": [
+      15
+    ],
+    "globalbahis": [
+      15
+    ]
+  },
+  {
+    "id": 16,
+    "name": "3. Liga",
+    "sportId": 1,
+    "countryId": 3,
+    "category": "3. Liga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "3. Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "3. Liga"
+      }
+    ],
+    "melbet": [
+      16
+    ],
+    "upgaming": [
+      16
+    ],
+    "globalbahis": [
+      16
+    ]
+  },
+  {
+    "id": 17,
+    "name": "La Liga",
+    "sportId": 1,
+    "countryId": 4,
+    "category": "La Liga",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "La Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "La Liga"
+      }
+    ],
+    "melbet": [
+      17
+    ],
+    "upgaming": [
+      17
+    ],
+    "globalbahis": [
+      17
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Segunda Division",
+    "sportId": 1,
+    "countryId": 4,
+    "category": "Segunda Division",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Segunda Division"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Segunda Division"
+      }
+    ],
+    "melbet": [
+      18
+    ],
+    "upgaming": [
+      18
+    ],
+    "globalbahis": [
+      18
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Copa del Rey",
+    "sportId": 1,
+    "countryId": 4,
+    "category": "Copa del Rey",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Copa del Rey"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kral Kupası"
+      }
+    ],
+    "melbet": [
+      19
+    ],
+    "upgaming": [
+      19
+    ],
+    "globalbahis": [
+      19
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Supercopa",
+    "sportId": 1,
+    "countryId": 4,
+    "category": "Supercopa",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Supercopa"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İspanya Süper Kupası"
+      }
+    ],
+    "melbet": [
+      20
+    ],
+    "upgaming": [
+      20
+    ],
+    "globalbahis": [
+      20
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Serie A",
+    "sportId": 1,
+    "countryId": 5,
+    "category": "Serie A",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Serie A"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Serie A"
+      }
+    ],
+    "melbet": [
+      21
+    ],
+    "upgaming": [
+      21
+    ],
+    "globalbahis": [
+      21
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Serie B",
+    "sportId": 1,
+    "countryId": 5,
+    "category": "Serie B",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Serie B"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Serie B"
+      }
+    ],
+    "melbet": [
+      22
+    ],
+    "upgaming": [
+      22
+    ],
+    "globalbahis": [
+      22
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Coppa Italia",
+    "sportId": 1,
+    "countryId": 5,
+    "category": "Coppa Italia",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Coppa Italia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İtalya Kupası"
+      }
+    ],
+    "melbet": [
+      23
+    ],
+    "upgaming": [
+      23
+    ],
+    "globalbahis": [
+      23
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Supercoppa",
+    "sportId": 1,
+    "countryId": 5,
+    "category": "Supercoppa",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Supercoppa"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İtalya Süper Kupası"
+      }
+    ],
+    "melbet": [
+      24
+    ],
+    "upgaming": [
+      24
+    ],
+    "globalbahis": [
+      24
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Ligue 1",
+    "sportId": 1,
+    "countryId": 6,
+    "category": "Ligue 1",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ligue 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ligue 1"
+      }
+    ],
+    "melbet": [
+      25
+    ],
+    "upgaming": [
+      25
+    ],
+    "globalbahis": [
+      25
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Ligue 2",
+    "sportId": 1,
+    "countryId": 6,
+    "category": "Ligue 2",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ligue 2"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ligue 2"
+      }
+    ],
+    "melbet": [
+      26
+    ],
+    "upgaming": [
+      26
+    ],
+    "globalbahis": [
+      26
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Coupe de France",
+    "sportId": 1,
+    "countryId": 6,
+    "category": "Coupe de France",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Coupe de France"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fransa Kupası"
+      }
+    ],
+    "melbet": [
+      27
+    ],
+    "upgaming": [
+      27
+    ],
+    "globalbahis": [
+      27
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Coupe de la Ligue",
+    "sportId": 1,
+    "countryId": 6,
+    "category": "Coupe de la Ligue",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Coupe de la Ligue"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fransa Lig Kupası"
+      }
+    ],
+    "melbet": [
+      28
+    ],
+    "upgaming": [
+      28
+    ],
+    "globalbahis": [
+      28
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Eredivisie",
+    "sportId": 1,
+    "countryId": 7,
+    "category": "Eredivisie",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Eredivisie"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Eredivisie"
+      }
+    ],
+    "melbet": [
+      29
+    ],
+    "upgaming": [
+      29
+    ],
+    "globalbahis": [
+      29
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Eerste Divisie",
+    "sportId": 1,
+    "countryId": 7,
+    "category": "Eerste Divisie",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Eerste Divisie"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Eerste Divisie"
+      }
+    ],
+    "melbet": [
+      30
+    ],
+    "upgaming": [
+      30
+    ],
+    "globalbahis": [
+      30
+    ]
+  },
+  {
+    "id": 31,
+    "name": "KNVB Beker",
+    "sportId": 1,
+    "countryId": 7,
+    "category": "KNVB Beker",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "KNVB Beker"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hollanda Kupası"
+      }
+    ],
+    "melbet": [
+      31
+    ],
+    "upgaming": [
+      31
+    ],
+    "globalbahis": [
+      31
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Primeira Liga",
+    "sportId": 1,
+    "countryId": 8,
+    "category": "Primeira Liga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Primeira Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Primeira Liga"
+      }
+    ],
+    "melbet": [
+      32
+    ],
+    "upgaming": [
+      32
+    ],
+    "globalbahis": [
+      32
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Segunda Liga",
+    "sportId": 1,
+    "countryId": 8,
+    "category": "Segunda Liga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Segunda Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Segunda Liga"
+      }
+    ],
+    "melbet": [
+      33
+    ],
+    "upgaming": [
+      33
+    ],
+    "globalbahis": [
+      33
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Taca de Portugal",
+    "sportId": 1,
+    "countryId": 8,
+    "category": "Taca de Portugal",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Taca de Portugal"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Portekiz Kupası"
+      }
+    ],
+    "melbet": [
+      34
+    ],
+    "upgaming": [
+      34
+    ],
+    "globalbahis": [
+      34
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Brasileirao Serie A",
+    "sportId": 1,
+    "countryId": 9,
+    "category": "Brasileirao Serie A",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Brasileirao Serie A"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Brezilya Serie A"
+      }
+    ],
+    "melbet": [
+      35
+    ],
+    "upgaming": [
+      35
+    ],
+    "globalbahis": [
+      35
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Brasileirao Serie B",
+    "sportId": 1,
+    "countryId": 9,
+    "category": "Brasileirao Serie B",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Brasileirao Serie B"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Brezilya Serie B"
+      }
+    ],
+    "melbet": [
+      36
+    ],
+    "upgaming": [
+      36
+    ],
+    "globalbahis": [
+      36
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Copa do Brasil",
+    "sportId": 1,
+    "countryId": 9,
+    "category": "Copa do Brasil",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Copa do Brasil"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Brezilya Kupası"
+      }
+    ],
+    "melbet": [
+      37
+    ],
+    "upgaming": [
+      37
+    ],
+    "globalbahis": [
+      37
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Primera Division",
+    "sportId": 1,
+    "countryId": 10,
+    "category": "Primera Division",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Primera Division"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Arjantin Primera"
+      }
+    ],
+    "melbet": [
+      38
+    ],
+    "upgaming": [
+      38
+    ],
+    "globalbahis": [
+      38
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Copa Argentina",
+    "sportId": 1,
+    "countryId": 10,
+    "category": "Copa Argentina",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Copa Argentina"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Arjantin Kupası"
+      }
+    ],
+    "melbet": [
+      39
+    ],
+    "upgaming": [
+      39
+    ],
+    "globalbahis": [
+      39
+    ]
+  },
+  {
+    "id": 40,
+    "name": "MLS",
+    "sportId": 1,
+    "countryId": 11,
+    "category": "MLS",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "MLS"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "MLS"
+      }
+    ],
+    "melbet": [
+      40
+    ],
+    "upgaming": [
+      40
+    ],
+    "globalbahis": [
+      40
+    ]
+  },
+  {
+    "id": 41,
+    "name": "USL Championship",
+    "sportId": 1,
+    "countryId": 11,
+    "category": "USL Championship",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "USL Championship"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "USL Championship"
+      }
+    ],
+    "melbet": [
+      41
+    ],
+    "upgaming": [
+      41
+    ],
+    "globalbahis": [
+      41
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Russian Premier League",
+    "sportId": 1,
+    "countryId": 12,
+    "category": "Russian Premier League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Russian Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Rusya Premier Lig"
+      }
+    ],
+    "melbet": [
+      42
+    ],
+    "upgaming": [
+      42
+    ],
+    "globalbahis": [
+      42
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Russian Cup",
+    "sportId": 1,
+    "countryId": 12,
+    "category": "Russian Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Russian Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Rusya Kupası"
+      }
+    ],
+    "melbet": [
+      43
+    ],
+    "upgaming": [
+      43
+    ],
+    "globalbahis": [
+      43
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Belgian Pro League",
+    "sportId": 1,
+    "countryId": 13,
+    "category": "Belgian Pro League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Belgian Pro League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Belçika Pro Lig"
+      }
+    ],
+    "melbet": [
+      44
+    ],
+    "upgaming": [
+      44
+    ],
+    "globalbahis": [
+      44
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Belgian Cup",
+    "sportId": 1,
+    "countryId": 13,
+    "category": "Belgian Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Belgian Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Belçika Kupası"
+      }
+    ],
+    "melbet": [
+      45
+    ],
+    "upgaming": [
+      45
+    ],
+    "globalbahis": [
+      45
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Scottish Premiership",
+    "sportId": 1,
+    "countryId": 14,
+    "category": "Scottish Premiership",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Scottish Premiership"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İskoçya Premier Lig"
+      }
+    ],
+    "melbet": [
+      46
+    ],
+    "upgaming": [
+      46
+    ],
+    "globalbahis": [
+      46
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Scottish Championship",
+    "sportId": 1,
+    "countryId": 14,
+    "category": "Scottish Championship",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Scottish Championship"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İskoçya Şampiyonluk"
+      }
+    ],
+    "melbet": [
+      47
+    ],
+    "upgaming": [
+      47
+    ],
+    "globalbahis": [
+      47
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Scottish Cup",
+    "sportId": 1,
+    "countryId": 14,
+    "category": "Scottish Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Scottish Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İskoçya Kupası"
+      }
+    ],
+    "melbet": [
+      48
+    ],
+    "upgaming": [
+      48
+    ],
+    "globalbahis": [
+      48
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Austrian Bundesliga",
+    "sportId": 1,
+    "countryId": 15,
+    "category": "Austrian Bundesliga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Austrian Bundesliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avusturya Bundesliga"
+      }
+    ],
+    "melbet": [
+      49
+    ],
+    "upgaming": [
+      49
+    ],
+    "globalbahis": [
+      49
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Austrian Cup",
+    "sportId": 1,
+    "countryId": 15,
+    "category": "Austrian Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Austrian Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avusturya Kupası"
+      }
+    ],
+    "melbet": [
+      50
+    ],
+    "upgaming": [
+      50
+    ],
+    "globalbahis": [
+      50
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Swiss Super League",
+    "sportId": 1,
+    "countryId": 16,
+    "category": "Swiss Super League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Swiss Super League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsviçre Süper Ligi"
+      }
+    ],
+    "melbet": [
+      51
+    ],
+    "upgaming": [
+      51
+    ],
+    "globalbahis": [
+      51
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Swiss Cup",
+    "sportId": 1,
+    "countryId": 16,
+    "category": "Swiss Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Swiss Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsviçre Kupası"
+      }
+    ],
+    "melbet": [
+      52
+    ],
+    "upgaming": [
+      52
+    ],
+    "globalbahis": [
+      52
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Allsvenskan",
+    "sportId": 1,
+    "countryId": 17,
+    "category": "Allsvenskan",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Allsvenskan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Allsvenskan"
+      }
+    ],
+    "melbet": [
+      53
+    ],
+    "upgaming": [
+      53
+    ],
+    "globalbahis": [
+      53
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Superettan",
+    "sportId": 1,
+    "countryId": 17,
+    "category": "Superettan",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Superettan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Superettan"
+      }
+    ],
+    "melbet": [
+      54
+    ],
+    "upgaming": [
+      54
+    ],
+    "globalbahis": [
+      54
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Eliteserien",
+    "sportId": 1,
+    "countryId": 18,
+    "category": "Eliteserien",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Eliteserien"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Eliteserien"
+      }
+    ],
+    "melbet": [
+      55
+    ],
+    "upgaming": [
+      55
+    ],
+    "globalbahis": [
+      55
+    ]
+  },
+  {
+    "id": 56,
+    "name": "OBOS-ligaen",
+    "sportId": 1,
+    "countryId": 18,
+    "category": "OBOS-ligaen",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "OBOS-ligaen"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "OBOS-ligaen"
+      }
+    ],
+    "melbet": [
+      56
+    ],
+    "upgaming": [
+      56
+    ],
+    "globalbahis": [
+      56
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Superliga",
+    "sportId": 1,
+    "countryId": 19,
+    "category": "Superliga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Superliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Danimarka Süper Ligi"
+      }
+    ],
+    "melbet": [
+      57
+    ],
+    "upgaming": [
+      57
+    ],
+    "globalbahis": [
+      57
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Danish Cup",
+    "sportId": 1,
+    "countryId": 19,
+    "category": "Danish Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Danish Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Danimarka Kupası"
+      }
+    ],
+    "melbet": [
+      58
+    ],
+    "upgaming": [
+      58
+    ],
+    "globalbahis": [
+      58
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Veikkausliiga",
+    "sportId": 1,
+    "countryId": 20,
+    "category": "Veikkausliiga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Veikkausliiga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Veikkausliiga"
+      }
+    ],
+    "melbet": [
+      59
+    ],
+    "upgaming": [
+      59
+    ],
+    "globalbahis": [
+      59
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Ekstraklasa",
+    "sportId": 1,
+    "countryId": 21,
+    "category": "Ekstraklasa",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ekstraklasa"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ekstraklasa"
+      }
+    ],
+    "melbet": [
+      60
+    ],
+    "upgaming": [
+      60
+    ],
+    "globalbahis": [
+      60
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Polish Cup",
+    "sportId": 1,
+    "countryId": 21,
+    "category": "Polish Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Polish Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Polonya Kupası"
+      }
+    ],
+    "melbet": [
+      61
+    ],
+    "upgaming": [
+      61
+    ],
+    "globalbahis": [
+      61
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Czech First League",
+    "sportId": 1,
+    "countryId": 22,
+    "category": "Czech First League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Czech First League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çek Birinci Ligi"
+      }
+    ],
+    "melbet": [
+      62
+    ],
+    "upgaming": [
+      62
+    ],
+    "globalbahis": [
+      62
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Czech Cup",
+    "sportId": 1,
+    "countryId": 22,
+    "category": "Czech Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Czech Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çek Kupası"
+      }
+    ],
+    "melbet": [
+      63
+    ],
+    "upgaming": [
+      63
+    ],
+    "globalbahis": [
+      63
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Croatian HNL",
+    "sportId": 1,
+    "countryId": 23,
+    "category": "Croatian HNL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Croatian HNL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hırvatistan HNL"
+      }
+    ],
+    "melbet": [
+      64
+    ],
+    "upgaming": [
+      64
+    ],
+    "globalbahis": [
+      64
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Serbian Super Liga",
+    "sportId": 1,
+    "countryId": 24,
+    "category": "Serbian Super Liga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Serbian Super Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Sırbistan Süper Ligi"
+      }
+    ],
+    "melbet": [
+      65
+    ],
+    "upgaming": [
+      65
+    ],
+    "globalbahis": [
+      65
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Greek Super League",
+    "sportId": 1,
+    "countryId": 25,
+    "category": "Greek Super League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Greek Super League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Yunanistan Süper Ligi"
+      }
+    ],
+    "melbet": [
+      66
+    ],
+    "upgaming": [
+      66
+    ],
+    "globalbahis": [
+      66
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Greek Cup",
+    "sportId": 1,
+    "countryId": 25,
+    "category": "Greek Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "cup",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Greek Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Yunanistan Kupası"
+      }
+    ],
+    "melbet": [
+      67
+    ],
+    "upgaming": [
+      67
+    ],
+    "globalbahis": [
+      67
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Ukrainian Premier League",
+    "sportId": 1,
+    "countryId": 26,
+    "category": "Ukrainian Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ukrainian Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ukrayna Premier Lig"
+      }
+    ],
+    "melbet": [
+      68
+    ],
+    "upgaming": [
+      68
+    ],
+    "globalbahis": [
+      68
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Romanian Liga 1",
+    "sportId": 1,
+    "countryId": 27,
+    "category": "Romanian Liga 1",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Romanian Liga 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Romanya Liga 1"
+      }
+    ],
+    "melbet": [
+      69
+    ],
+    "upgaming": [
+      69
+    ],
+    "globalbahis": [
+      69
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Hungarian NB I",
+    "sportId": 1,
+    "countryId": 28,
+    "category": "Hungarian NB I",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Hungarian NB I"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Macaristan NB I"
+      }
+    ],
+    "melbet": [
+      70
+    ],
+    "upgaming": [
+      70
+    ],
+    "globalbahis": [
+      70
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Bulgarian First League",
+    "sportId": 1,
+    "countryId": 29,
+    "category": "Bulgarian First League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bulgarian First League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bulgaristan Birinci Ligi"
+      }
+    ],
+    "melbet": [
+      71
+    ],
+    "upgaming": [
+      71
+    ],
+    "globalbahis": [
+      71
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Slovak Super Liga",
+    "sportId": 1,
+    "countryId": 30,
+    "category": "Slovak Super Liga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Slovak Super Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Slovakya Süper Ligi"
+      }
+    ],
+    "melbet": [
+      72
+    ],
+    "upgaming": [
+      72
+    ],
+    "globalbahis": [
+      72
+    ]
+  },
+  {
+    "id": 73,
+    "name": "UEFA Champions League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "UEFA Champions League",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 4,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UEFA Champions League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Şampiyonlar Ligi"
+      }
+    ],
+    "melbet": [
+      73
+    ],
+    "upgaming": [
+      73
+    ],
+    "globalbahis": [
+      73
+    ]
+  },
+  {
+    "id": 74,
+    "name": "UEFA Europa League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "UEFA Europa League",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UEFA Europa League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avrupa Ligi"
+      }
+    ],
+    "melbet": [
+      74
+    ],
+    "upgaming": [
+      74
+    ],
+    "globalbahis": [
+      74
+    ]
+  },
+  {
+    "id": 75,
+    "name": "UEFA Conference League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "UEFA Conference League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UEFA Conference League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Konferans Ligi"
+      }
+    ],
+    "melbet": [
+      75
+    ],
+    "upgaming": [
+      75
+    ],
+    "globalbahis": [
+      75
+    ]
+  },
+  {
+    "id": 76,
+    "name": "FIFA World Cup",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "FIFA World Cup",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 4,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FIFA World Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Dünya Kupası"
+      }
+    ],
+    "melbet": [
+      76
+    ],
+    "upgaming": [
+      76
+    ],
+    "globalbahis": [
+      76
+    ]
+  },
+  {
+    "id": 77,
+    "name": "UEFA Euro",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "UEFA Euro",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 4,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UEFA Euro"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avrupa Şampiyonası"
+      }
+    ],
+    "melbet": [
+      77
+    ],
+    "upgaming": [
+      77
+    ],
+    "globalbahis": [
+      77
+    ]
+  },
+  {
+    "id": 78,
+    "name": "UEFA Nations League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "UEFA Nations League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 3,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UEFA Nations League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Uluslar Ligi"
+      }
+    ],
+    "melbet": [
+      78
+    ],
+    "upgaming": [
+      78
+    ],
+    "globalbahis": [
+      78
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Copa America",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Copa America",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 3,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Copa America"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Copa America"
+      }
+    ],
+    "melbet": [
+      79
+    ],
+    "upgaming": [
+      79
+    ],
+    "globalbahis": [
+      79
+    ]
+  },
+  {
+    "id": 80,
+    "name": "World Cup Qualifiers Europe",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "World Cup Qualifiers Europe",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "World Cup Qualifiers Europe"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Dünya Kupası Elemeleri Avrupa"
+      }
+    ],
+    "melbet": [
+      80
+    ],
+    "upgaming": [
+      80
+    ],
+    "globalbahis": [
+      80
+    ]
+  },
+  {
+    "id": 81,
+    "name": "World Cup Qualifiers South America",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "World Cup Qualifiers South America",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "World Cup Qualifiers South America"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Dünya Kupası Elemeleri Güney Amerika"
+      }
+    ],
+    "melbet": [
+      81
+    ],
+    "upgaming": [
+      81
+    ],
+    "globalbahis": [
+      81
+    ]
+  },
+  {
+    "id": 82,
+    "name": "International Friendlies",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "International Friendlies",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "International Friendlies"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Uluslararası Dostluk Maçları"
+      }
+    ],
+    "melbet": [
+      82
+    ],
+    "upgaming": [
+      82
+    ],
+    "globalbahis": [
+      82
+    ]
+  },
+  {
+    "id": 83,
+    "name": "UEFA Super Cup",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "UEFA Super Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UEFA Super Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "UEFA Süper Kupa"
+      }
+    ],
+    "melbet": [
+      83
+    ],
+    "upgaming": [
+      83
+    ],
+    "globalbahis": [
+      83
+    ]
+  },
+  {
+    "id": 84,
+    "name": "FIFA Club World Cup",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "FIFA Club World Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FIFA Club World Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "FIFA Kulüpler Dünya Kupası"
+      }
+    ],
+    "melbet": [
+      84
+    ],
+    "upgaming": [
+      84
+    ],
+    "globalbahis": [
+      84
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Africa Cup of Nations",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Africa Cup of Nations",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Africa Cup of Nations"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Afrika Uluslar Kupası"
+      }
+    ],
+    "melbet": [
+      85
+    ],
+    "upgaming": [
+      85
+    ],
+    "globalbahis": [
+      85
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Asian Cup",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Asian Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Kupası"
+      }
+    ],
+    "melbet": [
+      86
+    ],
+    "upgaming": [
+      86
+    ],
+    "globalbahis": [
+      86
+    ]
+  },
+  {
+    "id": 87,
+    "name": "CONCACAF Gold Cup",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "CONCACAF Gold Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "CONCACAF Gold Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "CONCACAF Altın Kupa"
+      }
+    ],
+    "melbet": [
+      87
+    ],
+    "upgaming": [
+      87
+    ],
+    "globalbahis": [
+      87
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Copa Libertadores",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Copa Libertadores",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Copa Libertadores"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Copa Libertadores"
+      }
+    ],
+    "melbet": [
+      88
+    ],
+    "upgaming": [
+      88
+    ],
+    "globalbahis": [
+      88
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Copa Sudamericana",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Copa Sudamericana",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Copa Sudamericana"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Copa Sudamericana"
+      }
+    ],
+    "melbet": [
+      89
+    ],
+    "upgaming": [
+      89
+    ],
+    "globalbahis": [
+      89
+    ]
+  },
+  {
+    "id": 90,
+    "name": "AFC Champions League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "AFC Champions League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "AFC Champions League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "AFC Şampiyonlar Ligi"
+      }
+    ],
+    "melbet": [
+      90
+    ],
+    "upgaming": [
+      90
+    ],
+    "globalbahis": [
+      90
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Chinese Super League",
+    "sportId": 1,
+    "countryId": 48,
+    "category": "Chinese Super League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Chinese Super League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çin Süper Ligi"
+      }
+    ],
+    "melbet": [
+      91
+    ],
+    "upgaming": [
+      91
+    ],
+    "globalbahis": [
+      91
+    ]
+  },
+  {
+    "id": 92,
+    "name": "J-League",
+    "sportId": 1,
+    "countryId": 46,
+    "category": "J-League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "J-League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "J-League"
+      }
+    ],
+    "melbet": [
+      92
+    ],
+    "upgaming": [
+      92
+    ],
+    "globalbahis": [
+      92
+    ]
+  },
+  {
+    "id": 93,
+    "name": "K League 1",
+    "sportId": 1,
+    "countryId": 47,
+    "category": "K League 1",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "K League 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "K League 1"
+      }
+    ],
+    "melbet": [
+      93
+    ],
+    "upgaming": [
+      93
+    ],
+    "globalbahis": [
+      93
+    ]
+  },
+  {
+    "id": 94,
+    "name": "A-League",
+    "sportId": 1,
+    "countryId": 49,
+    "category": "A-League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "A-League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "A-League"
+      }
+    ],
+    "melbet": [
+      94
+    ],
+    "upgaming": [
+      94
+    ],
+    "globalbahis": [
+      94
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Indian Super League",
+    "sportId": 1,
+    "countryId": 102,
+    "category": "Indian Super League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Indian Super League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hindistan Süper Ligi"
+      }
+    ],
+    "melbet": [
+      95
+    ],
+    "upgaming": [
+      95
+    ],
+    "globalbahis": [
+      95
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Saudi Pro League",
+    "sportId": 1,
+    "countryId": 90,
+    "category": "Saudi Pro League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Saudi Pro League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Suudi Pro Ligi"
+      }
+    ],
+    "melbet": [
+      96
+    ],
+    "upgaming": [
+      96
+    ],
+    "globalbahis": [
+      96
+    ]
+  },
+  {
+    "id": 97,
+    "name": "UAE Pro League",
+    "sportId": 1,
+    "countryId": 91,
+    "category": "UAE Pro League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "UAE Pro League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "BAE Pro Ligi"
+      }
+    ],
+    "melbet": [
+      97
+    ],
+    "upgaming": [
+      97
+    ],
+    "globalbahis": [
+      97
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Qatar Stars League",
+    "sportId": 1,
+    "countryId": 92,
+    "category": "Qatar Stars League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Qatar Stars League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Katar Yıldızlar Ligi"
+      }
+    ],
+    "melbet": [
+      98
+    ],
+    "upgaming": [
+      98
+    ],
+    "globalbahis": [
+      98
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Egyptian Premier League",
+    "sportId": 1,
+    "countryId": 70,
+    "category": "Egyptian Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Egyptian Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mısır Premier Lig"
+      }
+    ],
+    "melbet": [
+      99
+    ],
+    "upgaming": [
+      99
+    ],
+    "globalbahis": [
+      99
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Moroccan Botola",
+    "sportId": 1,
+    "countryId": 71,
+    "category": "Moroccan Botola",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Moroccan Botola"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fas Botola"
+      }
+    ],
+    "melbet": [
+      100
+    ],
+    "upgaming": [
+      100
+    ],
+    "globalbahis": [
+      100
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Tunisian Ligue 1",
+    "sportId": 1,
+    "countryId": 72,
+    "category": "Tunisian Ligue 1",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Tunisian Ligue 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tunus Ligue 1"
+      }
+    ],
+    "melbet": [
+      101
+    ],
+    "upgaming": [
+      101
+    ],
+    "globalbahis": [
+      101
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Nigerian NPFL",
+    "sportId": 1,
+    "countryId": 74,
+    "category": "Nigerian NPFL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Nigerian NPFL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Nijerya NPFL"
+      }
+    ],
+    "melbet": [
+      102
+    ],
+    "upgaming": [
+      102
+    ],
+    "globalbahis": [
+      102
+    ]
+  },
+  {
+    "id": 103,
+    "name": "South African PSL",
+    "sportId": 1,
+    "countryId": 83,
+    "category": "South African PSL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "South African PSL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Güney Afrika PSL"
+      }
+    ],
+    "melbet": [
+      103
+    ],
+    "upgaming": [
+      103
+    ],
+    "globalbahis": [
+      103
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Mexican Liga MX",
+    "sportId": 1,
+    "countryId": 52,
+    "category": "Mexican Liga MX",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Mexican Liga MX"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Meksika Liga MX"
+      }
+    ],
+    "melbet": [
+      104
+    ],
+    "upgaming": [
+      104
+    ],
+    "globalbahis": [
+      104
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Colombian Liga BetPlay",
+    "sportId": 1,
+    "countryId": 53,
+    "category": "Colombian Liga BetPlay",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Colombian Liga BetPlay"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kolombiya Liga BetPlay"
+      }
+    ],
+    "melbet": [
+      105
+    ],
+    "upgaming": [
+      105
+    ],
+    "globalbahis": [
+      105
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Chilean Primera",
+    "sportId": 1,
+    "countryId": 54,
+    "category": "Chilean Primera",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Chilean Primera"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Şili Primera"
+      }
+    ],
+    "melbet": [
+      106
+    ],
+    "upgaming": [
+      106
+    ],
+    "globalbahis": [
+      106
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Peruvian Liga 1",
+    "sportId": 1,
+    "countryId": 55,
+    "category": "Peruvian Liga 1",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Peruvian Liga 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Peru Liga 1"
+      }
+    ],
+    "melbet": [
+      107
+    ],
+    "upgaming": [
+      107
+    ],
+    "globalbahis": [
+      107
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Uruguayan Primera",
+    "sportId": 1,
+    "countryId": 56,
+    "category": "Uruguayan Primera",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Uruguayan Primera"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Uruguay Primera"
+      }
+    ],
+    "melbet": [
+      108
+    ],
+    "upgaming": [
+      108
+    ],
+    "globalbahis": [
+      108
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Paraguayan Primera",
+    "sportId": 1,
+    "countryId": 57,
+    "category": "Paraguayan Primera",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Paraguayan Primera"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Paraguay Primera"
+      }
+    ],
+    "melbet": [
+      109
+    ],
+    "upgaming": [
+      109
+    ],
+    "globalbahis": [
+      109
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Ecuadorian Serie A",
+    "sportId": 1,
+    "countryId": 58,
+    "category": "Ecuadorian Serie A",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ecuadorian Serie A"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ekvador Serie A"
+      }
+    ],
+    "melbet": [
+      110
+    ],
+    "upgaming": [
+      110
+    ],
+    "globalbahis": [
+      110
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Venezuelan Primera",
+    "sportId": 1,
+    "countryId": 59,
+    "category": "Venezuelan Primera",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Venezuelan Primera"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Venezuela Primera"
+      }
+    ],
+    "melbet": [
+      111
+    ],
+    "upgaming": [
+      111
+    ],
+    "globalbahis": [
+      111
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Costa Rican Primera",
+    "sportId": 1,
+    "countryId": 61,
+    "category": "Costa Rican Primera",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Costa Rican Primera"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kosta Rika Primera"
+      }
+    ],
+    "melbet": [
+      112
+    ],
+    "upgaming": [
+      112
+    ],
+    "globalbahis": [
+      112
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Cypriot First Division",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Cypriot First Division",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Cypriot First Division"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kıbrıs Birinci Ligi"
+      }
+    ],
+    "melbet": [
+      113
+    ],
+    "upgaming": [
+      113
+    ],
+    "globalbahis": [
+      113
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Israeli Premier League",
+    "sportId": 1,
+    "countryId": 100,
+    "category": "Israeli Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Israeli Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsrail Premier Lig"
+      }
+    ],
+    "melbet": [
+      114
+    ],
+    "upgaming": [
+      114
+    ],
+    "globalbahis": [
+      114
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Georgian Erovnuli Liga",
+    "sportId": 1,
+    "countryId": 41,
+    "category": "Georgian Erovnuli Liga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Georgian Erovnuli Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gürcistan Erovnuli Liga"
+      }
+    ],
+    "melbet": [
+      115
+    ],
+    "upgaming": [
+      115
+    ],
+    "globalbahis": [
+      115
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Kazakh Premier League",
+    "sportId": 1,
+    "countryId": 44,
+    "category": "Kazakh Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Kazakh Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kazakistan Premier Lig"
+      }
+    ],
+    "melbet": [
+      116
+    ],
+    "upgaming": [
+      116
+    ],
+    "globalbahis": [
+      116
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Azerbaijani Premier League",
+    "sportId": 1,
+    "countryId": 43,
+    "category": "Azerbaijani Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Azerbaijani Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Azerbaycan Premier Lig"
+      }
+    ],
+    "melbet": [
+      117
+    ],
+    "upgaming": [
+      117
+    ],
+    "globalbahis": [
+      117
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Armenian Premier League",
+    "sportId": 1,
+    "countryId": 42,
+    "category": "Armenian Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Armenian Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ermenistan Premier Lig"
+      }
+    ],
+    "melbet": [
+      118
+    ],
+    "upgaming": [
+      118
+    ],
+    "globalbahis": [
+      118
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Slovenian PrvaLiga",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Slovenian PrvaLiga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Slovenian PrvaLiga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Slovenya PrvaLiga"
+      }
+    ],
+    "melbet": [
+      119
+    ],
+    "upgaming": [
+      119
+    ],
+    "globalbahis": [
+      119
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Bosnian Premier Liga",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Bosnian Premier Liga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bosnian Premier Liga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bosna Premier Liga"
+      }
+    ],
+    "melbet": [
+      120
+    ],
+    "upgaming": [
+      120
+    ],
+    "globalbahis": [
+      120
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Montenegrin First League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Montenegrin First League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Montenegrin First League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Karadağ Birinci Ligi"
+      }
+    ],
+    "melbet": [
+      121
+    ],
+    "upgaming": [
+      121
+    ],
+    "globalbahis": [
+      121
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Albanian Superliga",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Albanian Superliga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Albanian Superliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Arnavutluk Süper Ligi"
+      }
+    ],
+    "melbet": [
+      122
+    ],
+    "upgaming": [
+      122
+    ],
+    "globalbahis": [
+      122
+    ]
+  },
+  {
+    "id": 123,
+    "name": "North Macedonian First League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "North Macedonian First League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "North Macedonian First League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kuzey Makedonya Birinci Ligi"
+      }
+    ],
+    "melbet": [
+      123
+    ],
+    "upgaming": [
+      123
+    ],
+    "globalbahis": [
+      123
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Icelandic Urvalsdeild",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Icelandic Urvalsdeild",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Icelandic Urvalsdeild"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İzlanda Urvalsdeild"
+      }
+    ],
+    "melbet": [
+      124
+    ],
+    "upgaming": [
+      124
+    ],
+    "globalbahis": [
+      124
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Irish Premier Division",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Irish Premier Division",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Irish Premier Division"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İrlanda Premier Division"
+      }
+    ],
+    "melbet": [
+      125
+    ],
+    "upgaming": [
+      125
+    ],
+    "globalbahis": [
+      125
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Welsh Premier League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Welsh Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Welsh Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Galler Premier Ligi"
+      }
+    ],
+    "melbet": [
+      126
+    ],
+    "upgaming": [
+      126
+    ],
+    "globalbahis": [
+      126
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Northern Irish Premiership",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Northern Irish Premiership",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Northern Irish Premiership"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kuzey İrlanda Premiership"
+      }
+    ],
+    "melbet": [
+      127
+    ],
+    "upgaming": [
+      127
+    ],
+    "globalbahis": [
+      127
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Luxembourgish BGL Ligue",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Luxembourgish BGL Ligue",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Luxembourgish BGL Ligue"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Lüksemburg BGL Ligue"
+      }
+    ],
+    "melbet": [
+      128
+    ],
+    "upgaming": [
+      128
+    ],
+    "globalbahis": [
+      128
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Maltese Premier League",
+    "sportId": 1,
+    "countryId": 126,
+    "category": "Maltese Premier League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Maltese Premier League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Malta Premier Ligi"
+      }
+    ],
+    "melbet": [
+      129
+    ],
+    "upgaming": [
+      129
+    ],
+    "globalbahis": [
+      129
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Thai League 1",
+    "sportId": 1,
+    "countryId": 106,
+    "category": "Thai League 1",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Thai League 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tayland League 1"
+      }
+    ],
+    "melbet": [
+      130
+    ],
+    "upgaming": [
+      130
+    ],
+    "globalbahis": [
+      130
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Vietnamese V.League",
+    "sportId": 1,
+    "countryId": 107,
+    "category": "Vietnamese V.League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Vietnamese V.League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Vietnam V.League"
+      }
+    ],
+    "melbet": [
+      131
+    ],
+    "upgaming": [
+      131
+    ],
+    "globalbahis": [
+      131
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Indonesian Liga 1",
+    "sportId": 1,
+    "countryId": 108,
+    "category": "Indonesian Liga 1",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Indonesian Liga 1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Endonezya Liga 1"
+      }
+    ],
+    "melbet": [
+      132
+    ],
+    "upgaming": [
+      132
+    ],
+    "globalbahis": [
+      132
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Malaysian Super League",
+    "sportId": 1,
+    "countryId": 109,
+    "category": "Malaysian Super League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Malaysian Super League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Malezya Süper Ligi"
+      }
+    ],
+    "melbet": [
+      133
+    ],
+    "upgaming": [
+      133
+    ],
+    "globalbahis": [
+      133
+    ]
+  },
+  {
+    "id": 134,
+    "name": "BSL",
+    "sportId": 2,
+    "countryId": 1,
+    "category": "BSL",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "BSL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Basketbol Süper Ligi"
+      }
+    ],
+    "melbet": [
+      134
+    ],
+    "upgaming": [
+      134
+    ],
+    "globalbahis": [
+      134
+    ]
+  },
+  {
+    "id": 135,
+    "name": "TB2L",
+    "sportId": 2,
+    "countryId": 1,
+    "category": "TB2L",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "TB2L"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Türkiye Basketbol 2. Ligi"
+      }
+    ],
+    "melbet": [
+      135
+    ],
+    "upgaming": [
+      135
+    ],
+    "globalbahis": [
+      135
+    ]
+  },
+  {
+    "id": 136,
+    "name": "NBA",
+    "sportId": 2,
+    "countryId": 11,
+    "category": "NBA",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "NBA"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "NBA"
+      }
+    ],
+    "melbet": [
+      136
+    ],
+    "upgaming": [
+      136
+    ],
+    "globalbahis": [
+      136
+    ]
+  },
+  {
+    "id": 137,
+    "name": "WNBA",
+    "sportId": 2,
+    "countryId": 11,
+    "category": "WNBA",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "WNBA"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "WNBA"
+      }
+    ],
+    "melbet": [
+      137
+    ],
+    "upgaming": [
+      137
+    ],
+    "globalbahis": [
+      137
+    ]
+  },
+  {
+    "id": 138,
+    "name": "NCAA Basketball",
+    "sportId": 2,
+    "countryId": 11,
+    "category": "NCAA Basketball",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "NCAA Basketball"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "NCAA Basketbol"
+      }
+    ],
+    "melbet": [
+      138
+    ],
+    "upgaming": [
+      138
+    ],
+    "globalbahis": [
+      138
+    ]
+  },
+  {
+    "id": 139,
+    "name": "ACB",
+    "sportId": 2,
+    "countryId": 4,
+    "category": "ACB",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "ACB"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İspanya ACB"
+      }
+    ],
+    "melbet": [
+      139
+    ],
+    "upgaming": [
+      139
+    ],
+    "globalbahis": [
+      139
+    ]
+  },
+  {
+    "id": 140,
+    "name": "EuroLeague",
+    "sportId": 2,
+    "countryId": 126,
+    "category": "EuroLeague",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "EuroLeague"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "EuroLeague"
+      }
+    ],
+    "melbet": [
+      140
+    ],
+    "upgaming": [
+      140
+    ],
+    "globalbahis": [
+      140
+    ]
+  },
+  {
+    "id": 141,
+    "name": "EuroCup",
+    "sportId": 2,
+    "countryId": 126,
+    "category": "EuroCup",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "EuroCup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "EuroCup"
+      }
+    ],
+    "melbet": [
+      141
+    ],
+    "upgaming": [
+      141
+    ],
+    "globalbahis": [
+      141
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Basketball Champions League",
+    "sportId": 2,
+    "countryId": 126,
+    "category": "Basketball Champions League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Basketball Champions League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Basketbol Şampiyonlar Ligi"
+      }
+    ],
+    "melbet": [
+      142
+    ],
+    "upgaming": [
+      142
+    ],
+    "globalbahis": [
+      142
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Greek A1 League",
+    "sportId": 2,
+    "countryId": 25,
+    "category": "Greek A1 League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Greek A1 League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Yunanistan A1 Ligi"
+      }
+    ],
+    "melbet": [
+      143
+    ],
+    "upgaming": [
+      143
+    ],
+    "globalbahis": [
+      143
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Italian Lega Basket",
+    "sportId": 2,
+    "countryId": 5,
+    "category": "Italian Lega Basket",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Italian Lega Basket"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İtalya Lega Basket"
+      }
+    ],
+    "melbet": [
+      144
+    ],
+    "upgaming": [
+      144
+    ],
+    "globalbahis": [
+      144
+    ]
+  },
+  {
+    "id": 145,
+    "name": "German BBL",
+    "sportId": 2,
+    "countryId": 3,
+    "category": "German BBL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "German BBL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Almanya BBL"
+      }
+    ],
+    "melbet": [
+      145
+    ],
+    "upgaming": [
+      145
+    ],
+    "globalbahis": [
+      145
+    ]
+  },
+  {
+    "id": 146,
+    "name": "French Pro A",
+    "sportId": 2,
+    "countryId": 6,
+    "category": "French Pro A",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "French Pro A"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fransa Pro A"
+      }
+    ],
+    "melbet": [
+      146
+    ],
+    "upgaming": [
+      146
+    ],
+    "globalbahis": [
+      146
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Russian VTB",
+    "sportId": 2,
+    "countryId": 12,
+    "category": "Russian VTB",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Russian VTB"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Rusya VTB"
+      }
+    ],
+    "melbet": [
+      147
+    ],
+    "upgaming": [
+      147
+    ],
+    "globalbahis": [
+      147
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Chinese CBA",
+    "sportId": 2,
+    "countryId": 48,
+    "category": "Chinese CBA",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Chinese CBA"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çin CBA"
+      }
+    ],
+    "melbet": [
+      148
+    ],
+    "upgaming": [
+      148
+    ],
+    "globalbahis": [
+      148
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Australian NBL",
+    "sportId": 2,
+    "countryId": 49,
+    "category": "Australian NBL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Australian NBL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avustralya NBL"
+      }
+    ],
+    "melbet": [
+      149
+    ],
+    "upgaming": [
+      149
+    ],
+    "globalbahis": [
+      149
+    ]
+  },
+  {
+    "id": 150,
+    "name": "FIBA World Cup",
+    "sportId": 2,
+    "countryId": 126,
+    "category": "FIBA World Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FIBA World Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "FIBA Dünya Kupası"
+      }
+    ],
+    "melbet": [
+      150
+    ],
+    "upgaming": [
+      150
+    ],
+    "globalbahis": [
+      150
+    ]
+  },
+  {
+    "id": 151,
+    "name": "FIBA EuroBasket",
+    "sportId": 2,
+    "countryId": 126,
+    "category": "FIBA EuroBasket",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FIBA EuroBasket"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "FIBA EuroBasket"
+      }
+    ],
+    "melbet": [
+      151
+    ],
+    "upgaming": [
+      151
+    ],
+    "globalbahis": [
+      151
+    ]
+  },
+  {
+    "id": 152,
+    "name": "ATP Tour",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "ATP Tour",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "ATP Tour"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "ATP Turu"
+      }
+    ],
+    "melbet": [
+      152
+    ],
+    "upgaming": [
+      152
+    ],
+    "globalbahis": [
+      152
+    ]
+  },
+  {
+    "id": 153,
+    "name": "WTA Tour",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "WTA Tour",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "WTA Tour"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "WTA Turu"
+      }
+    ],
+    "melbet": [
+      153
+    ],
+    "upgaming": [
+      153
+    ],
+    "globalbahis": [
+      153
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Grand Slam",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "Grand Slam",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Grand Slam"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Grand Slam"
+      }
+    ],
+    "melbet": [
+      154
+    ],
+    "upgaming": [
+      154
+    ],
+    "globalbahis": [
+      154
+    ]
+  },
+  {
+    "id": 155,
+    "name": "Davis Cup",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "Davis Cup",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Davis Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Davis Kupası"
+      }
+    ],
+    "melbet": [
+      155
+    ],
+    "upgaming": [
+      155
+    ],
+    "globalbahis": [
+      155
+    ]
+  },
+  {
+    "id": 156,
+    "name": "ATP Challenger",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "ATP Challenger",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "ATP Challenger"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "ATP Challenger"
+      }
+    ],
+    "melbet": [
+      156
+    ],
+    "upgaming": [
+      156
+    ],
+    "globalbahis": [
+      156
+    ]
+  },
+  {
+    "id": 157,
+    "name": "ITF Mens",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "ITF Mens",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "ITF Mens"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "ITF Erkekler"
+      }
+    ],
+    "melbet": [
+      157
+    ],
+    "upgaming": [
+      157
+    ],
+    "globalbahis": [
+      157
+    ]
+  },
+  {
+    "id": 158,
+    "name": "ITF Womens",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "ITF Womens",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "ITF Womens"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "ITF Kadınlar"
+      }
+    ],
+    "melbet": [
+      158
+    ],
+    "upgaming": [
+      158
+    ],
+    "globalbahis": [
+      158
+    ]
+  },
+  {
+    "id": 159,
+    "name": "Billie Jean King Cup",
+    "sportId": 3,
+    "countryId": 126,
+    "category": "Billie Jean King Cup",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Billie Jean King Cup"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Billie Jean King Kupası"
+      }
+    ],
+    "melbet": [
+      159
+    ],
+    "upgaming": [
+      159
+    ],
+    "globalbahis": [
+      159
+    ]
+  },
+  {
+    "id": 160,
+    "name": "CEV Champions League",
+    "sportId": 4,
+    "countryId": 126,
+    "category": "CEV Champions League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "CEV Champions League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "CEV Şampiyonlar Ligi"
+      }
+    ],
+    "melbet": [
+      160
+    ],
+    "upgaming": [
+      160
+    ],
+    "globalbahis": [
+      160
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Turkey Efeler Ligi",
+    "sportId": 4,
+    "countryId": 1,
+    "category": "Turkey Efeler Ligi",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Turkey Efeler Ligi"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Efeler Ligi"
+      }
+    ],
+    "melbet": [
+      161
+    ],
+    "upgaming": [
+      161
+    ],
+    "globalbahis": [
+      161
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Turkey Sultanlar Ligi",
+    "sportId": 4,
+    "countryId": 1,
+    "category": "Turkey Sultanlar Ligi",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Turkey Sultanlar Ligi"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Sultanlar Ligi"
+      }
+    ],
+    "melbet": [
+      162
+    ],
+    "upgaming": [
+      162
+    ],
+    "globalbahis": [
+      162
+    ]
+  },
+  {
+    "id": 163,
+    "name": "Italy SuperLega",
+    "sportId": 4,
+    "countryId": 5,
+    "category": "Italy SuperLega",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Italy SuperLega"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İtalya SuperLega"
+      }
+    ],
+    "melbet": [
+      163
+    ],
+    "upgaming": [
+      163
+    ],
+    "globalbahis": [
+      163
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Poland PlusLiga",
+    "sportId": 4,
+    "countryId": 21,
+    "category": "Poland PlusLiga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Poland PlusLiga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Polonya PlusLiga"
+      }
+    ],
+    "melbet": [
+      164
+    ],
+    "upgaming": [
+      164
+    ],
+    "globalbahis": [
+      164
+    ]
+  },
+  {
+    "id": 165,
+    "name": "Brazil Superliga",
+    "sportId": 4,
+    "countryId": 9,
+    "category": "Brazil Superliga",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Brazil Superliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Brezilya Superliga"
+      }
+    ],
+    "melbet": [
+      165
+    ],
+    "upgaming": [
+      165
+    ],
+    "globalbahis": [
+      165
+    ]
+  },
+  {
+    "id": 166,
+    "name": "FIVB World Championship",
+    "sportId": 4,
+    "countryId": 126,
+    "category": "FIVB World Championship",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FIVB World Championship"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "FIVB Dünya Şampiyonası"
+      }
+    ],
+    "melbet": [
+      166
+    ],
+    "upgaming": [
+      166
+    ],
+    "globalbahis": [
+      166
+    ]
+  },
+  {
+    "id": 167,
+    "name": "FIVB Nations League",
+    "sportId": 4,
+    "countryId": 126,
+    "category": "FIVB Nations League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "FIVB Nations League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "FIVB Milletler Ligi"
+      }
+    ],
+    "melbet": [
+      167
+    ],
+    "upgaming": [
+      167
+    ],
+    "globalbahis": [
+      167
+    ]
+  },
+  {
+    "id": 168,
+    "name": "NHL",
+    "sportId": 5,
+    "countryId": 11,
+    "category": "NHL",
+    "popular": true,
+    "mostPopular": true,
+    "mbs": 3,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "NHL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "NHL"
+      }
+    ],
+    "melbet": [
+      168
+    ],
+    "upgaming": [
+      168
+    ],
+    "globalbahis": [
+      168
+    ]
+  },
+  {
+    "id": 169,
+    "name": "KHL",
+    "sportId": 5,
+    "countryId": 12,
+    "category": "KHL",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "KHL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "KHL"
+      }
+    ],
+    "melbet": [
+      169
+    ],
+    "upgaming": [
+      169
+    ],
+    "globalbahis": [
+      169
+    ]
+  },
+  {
+    "id": 170,
+    "name": "SHL",
+    "sportId": 5,
+    "countryId": 17,
+    "category": "SHL",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "SHL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "SHL"
+      }
+    ],
+    "melbet": [
+      170
+    ],
+    "upgaming": [
+      170
+    ],
+    "globalbahis": [
+      170
+    ]
+  },
+  {
+    "id": 171,
+    "name": "Liiga",
+    "sportId": 5,
+    "countryId": 20,
+    "category": "Liiga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Liiga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Liiga"
+      }
+    ],
+    "melbet": [
+      171
+    ],
+    "upgaming": [
+      171
+    ],
+    "globalbahis": [
+      171
+    ]
+  },
+  {
+    "id": 172,
+    "name": "Czech Extraliga",
+    "sportId": 5,
+    "countryId": 22,
+    "category": "Czech Extraliga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Czech Extraliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çek Extraliga"
+      }
+    ],
+    "melbet": [
+      172
+    ],
+    "upgaming": [
+      172
+    ],
+    "globalbahis": [
+      172
+    ]
+  },
+  {
+    "id": 173,
+    "name": "DEL",
+    "sportId": 5,
+    "countryId": 3,
+    "category": "DEL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "DEL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Almanya DEL"
+      }
+    ],
+    "melbet": [
+      173
+    ],
+    "upgaming": [
+      173
+    ],
+    "globalbahis": [
+      173
+    ]
+  },
+  {
+    "id": 174,
+    "name": "Swiss National League",
+    "sportId": 5,
+    "countryId": 16,
+    "category": "Swiss National League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Swiss National League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsviçre National League"
+      }
+    ],
+    "melbet": [
+      174
+    ],
+    "upgaming": [
+      174
+    ],
+    "globalbahis": [
+      174
+    ]
+  },
+  {
+    "id": 175,
+    "name": "AHL",
+    "sportId": 5,
+    "countryId": 11,
+    "category": "AHL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "AHL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "AHL"
+      }
+    ],
+    "melbet": [
+      175
+    ],
+    "upgaming": [
+      175
+    ],
+    "globalbahis": [
+      175
+    ]
+  },
+  {
+    "id": 176,
+    "name": "IIHF World Championship",
+    "sportId": 5,
+    "countryId": 126,
+    "category": "IIHF World Championship",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "IIHF World Championship"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "IIHF Dünya Şampiyonası"
+      }
+    ],
+    "melbet": [
+      176
+    ],
+    "upgaming": [
+      176
+    ],
+    "globalbahis": [
+      176
+    ]
+  },
+  {
+    "id": 177,
+    "name": "EHF Champions League",
+    "sportId": 6,
+    "countryId": 126,
+    "category": "EHF Champions League",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 2,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "EHF Champions League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "EHF Şampiyonlar Ligi"
+      }
+    ],
+    "melbet": [
+      177
+    ],
+    "upgaming": [
+      177
+    ],
+    "globalbahis": [
+      177
+    ]
+  },
+  {
+    "id": 178,
+    "name": "EHF European League",
+    "sportId": 6,
+    "countryId": 126,
+    "category": "EHF European League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "EHF European League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "EHF Avrupa Ligi"
+      }
+    ],
+    "melbet": [
+      178
+    ],
+    "upgaming": [
+      178
+    ],
+    "globalbahis": [
+      178
+    ]
+  },
+  {
+    "id": 179,
+    "name": "German Handball Bundesliga",
+    "sportId": 6,
+    "countryId": 3,
+    "category": "German Handball Bundesliga",
+    "popular": true,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "German Handball Bundesliga"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Almanya Hentbol Bundesliga"
+      }
+    ],
+    "melbet": [
+      179
+    ],
+    "upgaming": [
+      179
+    ],
+    "globalbahis": [
+      179
+    ]
+  },
+  {
+    "id": 180,
+    "name": "Turkey Handball Super Lig",
+    "sportId": 6,
+    "countryId": 1,
+    "category": "Turkey Handball Super Lig",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Turkey Handball Super Lig"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Türkiye Hentbol Süper Ligi"
+      }
+    ],
+    "melbet": [
+      180
+    ],
+    "upgaming": [
+      180
+    ],
+    "globalbahis": [
+      180
+    ]
+  },
+  {
+    "id": 181,
+    "name": "Spanish ASOBAL",
+    "sportId": 6,
+    "countryId": 4,
+    "category": "Spanish ASOBAL",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Spanish ASOBAL"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İspanya ASOBAL"
+      }
+    ],
+    "melbet": [
+      181
+    ],
+    "upgaming": [
+      181
+    ],
+    "globalbahis": [
+      181
+    ]
+  },
+  {
+    "id": 182,
+    "name": "French Starligue",
+    "sportId": 6,
+    "countryId": 6,
+    "category": "French Starligue",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "French Starligue"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fransa Starligue"
+      }
+    ],
+    "melbet": [
+      182
+    ],
+    "upgaming": [
+      182
+    ],
+    "globalbahis": [
+      182
+    ]
+  },
+  {
+    "id": 183,
+    "name": "Danish Handball League",
+    "sportId": 6,
+    "countryId": 19,
+    "category": "Danish Handball League",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "league",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Danish Handball League"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Danimarka Hentbol Ligi"
+      }
+    ],
+    "melbet": [
+      183
+    ],
+    "upgaming": [
+      183
+    ],
+    "globalbahis": [
+      183
+    ]
+  },
+  {
+    "id": 184,
+    "name": "IHF World Championship",
+    "sportId": 6,
+    "countryId": 126,
+    "category": "IHF World Championship",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "IHF World Championship"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "IHF Dünya Şampiyonası"
+      }
+    ],
+    "melbet": [
+      184
+    ],
+    "upgaming": [
+      184
+    ],
+    "globalbahis": [
+      184
+    ]
+  },
+  {
+    "id": 185,
+    "name": "EHF Euro",
+    "sportId": 6,
+    "countryId": 126,
+    "category": "EHF Euro",
+    "popular": false,
+    "mostPopular": false,
+    "mbs": 1,
+    "type": "international",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "EHF Euro"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "EHF Avrupa Şampiyonası"
+      }
+    ],
+    "melbet": [
+      185
+    ],
+    "upgaming": [
+      185
+    ],
+    "globalbahis": [
+      185
+    ]
+  }
+]

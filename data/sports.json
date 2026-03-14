@@ -1,0 +1,1036 @@
+[
+  {
+    "id": 1,
+    "name": "Football",
+    "slug": "football",
+    "icon": "i-heroicons-trophy",
+    "category": "football",
+    "banner": "sport/football-mobile.jpg",
+    "sortOrder": 1,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Football" },
+      { "lang": "tr", "field": "name", "value": "Futbol" }
+    ],
+    "melbet": [1],
+    "upgaming": [1],
+    "globalbahis": [1]
+  },
+  {
+    "id": 2,
+    "name": "Basketball",
+    "slug": "basketball",
+    "icon": "i-heroicons-fire",
+    "category": "basketball",
+    "banner": "sport/basketball-mobile.jpg",
+    "sortOrder": 2,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Basketball" },
+      { "lang": "tr", "field": "name", "value": "Basketbol" }
+    ],
+    "melbet": [2],
+    "upgaming": [2],
+    "globalbahis": [2]
+  },
+  {
+    "id": 3,
+    "name": "Tennis",
+    "slug": "tennis",
+    "icon": "i-heroicons-bolt",
+    "category": "tennis",
+    "banner": "sport/tennis-mobile.jpg",
+    "sortOrder": 3,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Tennis" },
+      { "lang": "tr", "field": "name", "value": "Tenis" }
+    ],
+    "melbet": [3],
+    "upgaming": [3],
+    "globalbahis": [3]
+  },
+  {
+    "id": 4,
+    "name": "Volleyball",
+    "slug": "volleyball",
+    "icon": "i-heroicons-star",
+    "category": "volleyball",
+    "banner": "sport/volleyball-mobile.jpg",
+    "sortOrder": 4,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Volleyball" },
+      { "lang": "tr", "field": "name", "value": "Voleybol" }
+    ],
+    "melbet": [4],
+    "upgaming": [4],
+    "globalbahis": [4]
+  },
+  {
+    "id": 5,
+    "name": "Ice Hockey",
+    "slug": "ice-hockey",
+    "icon": "i-heroicons-shield-check",
+    "category": "ice-hockey",
+    "banner": "sport/ice-hockey-mobile.jpg",
+    "sortOrder": 5,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Ice Hockey" },
+      { "lang": "tr", "field": "name", "value": "Buz Hokeyi" }
+    ],
+    "melbet": [5],
+    "upgaming": [5],
+    "globalbahis": [5]
+  },
+  {
+    "id": 6,
+    "name": "Handball",
+    "slug": "handball",
+    "icon": "i-heroicons-hand-raised",
+    "category": "handball",
+    "banner": "sport/handball-mobile.jpg",
+    "sortOrder": 6,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Handball" },
+      { "lang": "tr", "field": "name", "value": "Hentbol" }
+    ],
+    "melbet": [6],
+    "upgaming": [6],
+    "globalbahis": [6]
+  },
+  {
+    "id": 7,
+    "name": "Baseball",
+    "slug": "baseball",
+    "icon": "i-heroicons-circle-stack",
+    "category": "baseball",
+    "banner": "sport/baseball-mobile.jpg",
+    "sortOrder": 7,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Baseball" },
+      { "lang": "tr", "field": "name", "value": "Beyzbol" }
+    ],
+    "melbet": [7],
+    "upgaming": [7],
+    "globalbahis": [7]
+  },
+  {
+    "id": 8,
+    "name": "American Football",
+    "slug": "american-football",
+    "icon": "i-heroicons-flag",
+    "category": "american-football",
+    "banner": "sport/american-football-mobile.jpg",
+    "sortOrder": 8,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "American Football" },
+      { "lang": "tr", "field": "name", "value": "Amerikan Futbolu" }
+    ],
+    "melbet": [8],
+    "upgaming": [8],
+    "globalbahis": [8]
+  },
+  {
+    "id": 9,
+    "name": "Table Tennis",
+    "slug": "table-tennis",
+    "icon": "i-heroicons-sparkles",
+    "category": "table-tennis",
+    "banner": "sport/table-tennis-mobile.jpg",
+    "sortOrder": 9,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Table Tennis" },
+      { "lang": "tr", "field": "name", "value": "Masa Tenisi" }
+    ],
+    "melbet": [9],
+    "upgaming": [9],
+    "globalbahis": [9]
+  },
+  {
+    "id": 10,
+    "name": "Boxing",
+    "slug": "boxing",
+    "icon": "i-heroicons-hand-thumb-up",
+    "category": "boxing",
+    "banner": "sport/boxing-mobile.jpg",
+    "sortOrder": 10,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Boxing" },
+      { "lang": "tr", "field": "name", "value": "Boks" }
+    ],
+    "melbet": [10],
+    "upgaming": [10],
+    "globalbahis": [10]
+  },
+  {
+    "id": 11,
+    "name": "MMA",
+    "slug": "mma",
+    "icon": "i-heroicons-fire",
+    "category": "mma",
+    "banner": "sport/mma-mobile.jpg",
+    "sortOrder": 11,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "MMA" },
+      { "lang": "tr", "field": "name", "value": "MMA" }
+    ],
+    "melbet": [11],
+    "upgaming": [11],
+    "globalbahis": [11]
+  },
+  {
+    "id": 12,
+    "name": "Rugby",
+    "slug": "rugby",
+    "icon": "i-heroicons-shield-exclamation",
+    "category": "rugby",
+    "banner": "sport/rugby-mobile.jpg",
+    "sortOrder": 12,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Rugby" },
+      { "lang": "tr", "field": "name", "value": "Ragbi" }
+    ],
+    "melbet": [12],
+    "upgaming": [12],
+    "globalbahis": [12]
+  },
+  {
+    "id": 13,
+    "name": "Cricket",
+    "slug": "cricket",
+    "icon": "i-heroicons-signal",
+    "category": "cricket",
+    "banner": "sport/cricket-mobile.jpg",
+    "sortOrder": 13,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Cricket" },
+      { "lang": "tr", "field": "name", "value": "Kriket" }
+    ],
+    "melbet": [13],
+    "upgaming": [13],
+    "globalbahis": [13]
+  },
+  {
+    "id": 14,
+    "name": "Darts",
+    "slug": "darts",
+    "icon": "i-heroicons-cursor-arrow-rays",
+    "category": "darts",
+    "banner": "sport/darts-mobile.jpg",
+    "sortOrder": 14,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Darts" },
+      { "lang": "tr", "field": "name", "value": "Dart" }
+    ],
+    "melbet": [14],
+    "upgaming": [14],
+    "globalbahis": [14]
+  },
+  {
+    "id": 15,
+    "name": "Snooker",
+    "slug": "snooker",
+    "icon": "i-heroicons-circle-stack",
+    "category": "snooker",
+    "banner": "sport/snooker-mobile.jpg",
+    "sortOrder": 15,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Snooker" },
+      { "lang": "tr", "field": "name", "value": "Snooker" }
+    ],
+    "melbet": [15],
+    "upgaming": [15],
+    "globalbahis": [15]
+  },
+  {
+    "id": 16,
+    "name": "Futsal",
+    "slug": "futsal",
+    "icon": "i-heroicons-trophy",
+    "category": "futsal",
+    "banner": "sport/futsal-mobile.jpg",
+    "sortOrder": 16,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Futsal" },
+      { "lang": "tr", "field": "name", "value": "Futsal" }
+    ],
+    "melbet": [16],
+    "upgaming": [16],
+    "globalbahis": [16]
+  },
+  {
+    "id": 17,
+    "name": "Badminton",
+    "slug": "badminton",
+    "icon": "i-heroicons-sparkles",
+    "category": "badminton",
+    "banner": "sport/badminton-mobile.jpg",
+    "sortOrder": 17,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Badminton" },
+      { "lang": "tr", "field": "name", "value": "Badminton" }
+    ],
+    "melbet": [17],
+    "upgaming": [17],
+    "globalbahis": [17]
+  },
+  {
+    "id": 18,
+    "name": "Water Polo",
+    "slug": "water-polo",
+    "icon": "i-heroicons-beaker",
+    "category": "water-polo",
+    "banner": "sport/water-polo-mobile.jpg",
+    "sortOrder": 18,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Water Polo" },
+      { "lang": "tr", "field": "name", "value": "Sutopu" }
+    ],
+    "melbet": [18],
+    "upgaming": [18],
+    "globalbahis": [18]
+  },
+  {
+    "id": 19,
+    "name": "E-Sports",
+    "slug": "e-sports",
+    "icon": "i-heroicons-computer-desktop",
+    "category": "e-sports",
+    "banner": "sport/e-sports-mobile.jpg",
+    "sortOrder": 19,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "E-Sports" },
+      { "lang": "tr", "field": "name", "value": "E-Spor" }
+    ],
+    "melbet": [19],
+    "upgaming": [19],
+    "globalbahis": [19]
+  },
+  {
+    "id": 20,
+    "name": "Cycling",
+    "slug": "cycling",
+    "icon": "i-heroicons-arrow-path",
+    "category": "cycling",
+    "banner": "sport/cycling-mobile.jpg",
+    "sortOrder": 20,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Cycling" },
+      { "lang": "tr", "field": "name", "value": "Bisiklet" }
+    ],
+    "melbet": [20],
+    "upgaming": [20],
+    "globalbahis": [20]
+  },
+  {
+    "id": 21,
+    "name": "Golf",
+    "slug": "golf",
+    "icon": "i-heroicons-flag",
+    "category": "golf",
+    "banner": "sport/golf-mobile.jpg",
+    "sortOrder": 21,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Golf" },
+      { "lang": "tr", "field": "name", "value": "Golf" }
+    ],
+    "melbet": [21],
+    "upgaming": [21],
+    "globalbahis": [21]
+  },
+  {
+    "id": 22,
+    "name": "Formula 1",
+    "slug": "formula-1",
+    "icon": "i-heroicons-rocket-launch",
+    "category": "formula-1",
+    "banner": "sport/formula-1-mobile.jpg",
+    "sortOrder": 22,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Formula 1" },
+      { "lang": "tr", "field": "name", "value": "Formula 1" }
+    ],
+    "melbet": [22],
+    "upgaming": [22],
+    "globalbahis": [22]
+  },
+  {
+    "id": 23,
+    "name": "Horse Racing",
+    "slug": "horse-racing",
+    "icon": "i-heroicons-bolt",
+    "category": "horse-racing",
+    "banner": "sport/horse-racing-mobile.jpg",
+    "sortOrder": 23,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Horse Racing" },
+      { "lang": "tr", "field": "name", "value": "At Yarisi" }
+    ],
+    "melbet": [23],
+    "upgaming": [23],
+    "globalbahis": [23]
+  },
+  {
+    "id": 24,
+    "name": "Skiing",
+    "slug": "skiing",
+    "icon": "i-heroicons-arrow-down",
+    "category": "skiing",
+    "banner": "sport/skiing-mobile.jpg",
+    "sortOrder": 24,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Skiing" },
+      { "lang": "tr", "field": "name", "value": "Kayak" }
+    ],
+    "melbet": [24],
+    "upgaming": [24],
+    "globalbahis": [24]
+  },
+  {
+    "id": 25,
+    "name": "Beach Volleyball",
+    "slug": "beach-volleyball",
+    "icon": "i-heroicons-sun",
+    "category": "beach-volleyball",
+    "banner": "sport/beach-volleyball-mobile.jpg",
+    "sortOrder": 25,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Beach Volleyball" },
+      { "lang": "tr", "field": "name", "value": "Plaj Voleybolu" }
+    ],
+    "melbet": [25],
+    "upgaming": [25],
+    "globalbahis": [25]
+  },
+  {
+    "id": 26,
+    "name": "Squash",
+    "slug": "squash",
+    "icon": "i-heroicons-square-3-stack-3d",
+    "category": "squash",
+    "banner": "sport/squash-mobile.jpg",
+    "sortOrder": 26,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Squash" },
+      { "lang": "tr", "field": "name", "value": "Squash" }
+    ],
+    "melbet": [26],
+    "upgaming": [26],
+    "globalbahis": [26]
+  },
+  {
+    "id": 27,
+    "name": "Padel",
+    "slug": "padel",
+    "icon": "i-heroicons-sparkles",
+    "category": "padel",
+    "banner": "sport/padel-mobile.jpg",
+    "sortOrder": 27,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Padel" },
+      { "lang": "tr", "field": "name", "value": "Padel" }
+    ],
+    "melbet": [27],
+    "upgaming": [27],
+    "globalbahis": [27]
+  },
+  {
+    "id": 28,
+    "name": "Surfing",
+    "slug": "surfing",
+    "icon": "i-heroicons-wave",
+    "category": "surfing",
+    "banner": "sport/surfing-mobile.jpg",
+    "sortOrder": 28,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Surfing" },
+      { "lang": "tr", "field": "name", "value": "Sorf" }
+    ],
+    "melbet": [28],
+    "upgaming": [28],
+    "globalbahis": [28]
+  },
+  {
+    "id": 29,
+    "name": "Motorsport",
+    "slug": "motorsport",
+    "icon": "i-heroicons-truck",
+    "category": "motorsport",
+    "banner": "sport/motorsport-mobile.jpg",
+    "sortOrder": 29,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Motorsport" },
+      { "lang": "tr", "field": "name", "value": "Motor Sporlari" }
+    ],
+    "melbet": [29],
+    "upgaming": [29],
+    "globalbahis": [29]
+  },
+  {
+    "id": 30,
+    "name": "Aussie Rules",
+    "slug": "aussie-rules",
+    "icon": "i-heroicons-globe-alt",
+    "category": "aussie-rules",
+    "sortOrder": 30,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Aussie Rules" },
+      { "lang": "tr", "field": "name", "value": "Avustralya Futbolu" }
+    ],
+    "melbet": [30],
+    "upgaming": [30],
+    "globalbahis": [30]
+  },
+  {
+    "id": 31,
+    "name": "Gaelic Football",
+    "slug": "gaelic-football",
+    "icon": "i-heroicons-flag",
+    "category": "gaelic-football",
+    "sortOrder": 31,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Gaelic Football" },
+      { "lang": "tr", "field": "name", "value": "Gal Futbolu" }
+    ],
+    "melbet": [31],
+    "upgaming": [31],
+    "globalbahis": [31]
+  },
+  {
+    "id": 32,
+    "name": "Hurling",
+    "slug": "hurling",
+    "icon": "i-heroicons-bolt",
+    "category": "hurling",
+    "sortOrder": 32,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Hurling" },
+      { "lang": "tr", "field": "name", "value": "Hurling" }
+    ],
+    "melbet": [32],
+    "upgaming": [32],
+    "globalbahis": [32]
+  },
+  {
+    "id": 33,
+    "name": "Floorball",
+    "slug": "floorball",
+    "icon": "i-heroicons-sparkles",
+    "category": "floorball",
+    "sortOrder": 33,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Floorball" },
+      { "lang": "tr", "field": "name", "value": "Floorball" }
+    ],
+    "melbet": [33],
+    "upgaming": [33],
+    "globalbahis": [33]
+  },
+  {
+    "id": 34,
+    "name": "Bandy",
+    "slug": "bandy",
+    "icon": "i-heroicons-shield-check",
+    "category": "bandy",
+    "sortOrder": 34,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Bandy" },
+      { "lang": "tr", "field": "name", "value": "Bandy" }
+    ],
+    "melbet": [34],
+    "upgaming": [34],
+    "globalbahis": [34]
+  },
+  {
+    "id": 35,
+    "name": "Lacrosse",
+    "slug": "lacrosse",
+    "icon": "i-heroicons-trophy",
+    "category": "lacrosse",
+    "sortOrder": 35,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Lacrosse" },
+      { "lang": "tr", "field": "name", "value": "Lakros" }
+    ],
+    "melbet": [35],
+    "upgaming": [35],
+    "globalbahis": [35]
+  },
+  {
+    "id": 36,
+    "name": "Field Hockey",
+    "slug": "field-hockey",
+    "icon": "i-heroicons-shield-check",
+    "category": "field-hockey",
+    "sortOrder": 36,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Field Hockey" },
+      { "lang": "tr", "field": "name", "value": "Çim Hokeyi" }
+    ],
+    "melbet": [36],
+    "upgaming": [36],
+    "globalbahis": [36]
+  },
+  {
+    "id": 37,
+    "name": "Kabaddi",
+    "slug": "kabaddi",
+    "icon": "i-heroicons-hand-raised",
+    "category": "kabaddi",
+    "sortOrder": 37,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Kabaddi" },
+      { "lang": "tr", "field": "name", "value": "Kabaddi" }
+    ],
+    "melbet": [37],
+    "upgaming": [37],
+    "globalbahis": [37]
+  },
+  {
+    "id": 38,
+    "name": "Pesapallo",
+    "slug": "pesapallo",
+    "icon": "i-heroicons-circle-stack",
+    "category": "pesapallo",
+    "sortOrder": 38,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Pesapallo" },
+      { "lang": "tr", "field": "name", "value": "Pesapallo" }
+    ],
+    "melbet": [38],
+    "upgaming": [38],
+    "globalbahis": [38]
+  },
+  {
+    "id": 39,
+    "name": "Netball",
+    "slug": "netball",
+    "icon": "i-heroicons-star",
+    "category": "netball",
+    "sortOrder": 39,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Netball" },
+      { "lang": "tr", "field": "name", "value": "Netball" }
+    ],
+    "melbet": [39],
+    "upgaming": [39],
+    "globalbahis": [39]
+  },
+  {
+    "id": 40,
+    "name": "Bowls",
+    "slug": "bowls",
+    "icon": "i-heroicons-circle-stack",
+    "category": "bowls",
+    "sortOrder": 40,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Bowls" },
+      { "lang": "tr", "field": "name", "value": "Bowling" }
+    ],
+    "melbet": [40],
+    "upgaming": [40],
+    "globalbahis": [40]
+  },
+  {
+    "id": 41,
+    "name": "Curling",
+    "slug": "curling",
+    "icon": "i-heroicons-circle-stack",
+    "category": "curling",
+    "sortOrder": 41,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Curling" },
+      { "lang": "tr", "field": "name", "value": "Curling" }
+    ],
+    "melbet": [41],
+    "upgaming": [41],
+    "globalbahis": [41]
+  },
+  {
+    "id": 42,
+    "name": "Biathlon",
+    "slug": "biathlon",
+    "icon": "i-heroicons-arrow-path",
+    "category": "biathlon",
+    "sortOrder": 42,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Biathlon" },
+      { "lang": "tr", "field": "name", "value": "Biatlon" }
+    ],
+    "melbet": [42],
+    "upgaming": [42],
+    "globalbahis": [42]
+  },
+  {
+    "id": 43,
+    "name": "Cross-Country Skiing",
+    "slug": "cross-country-skiing",
+    "icon": "i-heroicons-arrow-long-right",
+    "category": "cross-country-skiing",
+    "sortOrder": 43,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Cross-Country Skiing" },
+      { "lang": "tr", "field": "name", "value": "Kros Kayak" }
+    ],
+    "melbet": [43],
+    "upgaming": [43],
+    "globalbahis": [43]
+  },
+  {
+    "id": 44,
+    "name": "Ski Jumping",
+    "slug": "ski-jumping",
+    "icon": "i-heroicons-arrow-up",
+    "category": "ski-jumping",
+    "sortOrder": 44,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Ski Jumping" },
+      { "lang": "tr", "field": "name", "value": "Kayakla Atlama" }
+    ],
+    "melbet": [44],
+    "upgaming": [44],
+    "globalbahis": [44]
+  },
+  {
+    "id": 45,
+    "name": "Speed Skating",
+    "slug": "speed-skating",
+    "icon": "i-heroicons-bolt",
+    "category": "speed-skating",
+    "sortOrder": 45,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Speed Skating" },
+      { "lang": "tr", "field": "name", "value": "Sürat Pateni" }
+    ],
+    "melbet": [45],
+    "upgaming": [45],
+    "globalbahis": [45]
+  },
+  {
+    "id": 46,
+    "name": "Figure Skating",
+    "slug": "figure-skating",
+    "icon": "i-heroicons-sparkles",
+    "category": "figure-skating",
+    "sortOrder": 46,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Figure Skating" },
+      { "lang": "tr", "field": "name", "value": "Artistik Paten" }
+    ],
+    "melbet": [46],
+    "upgaming": [46],
+    "globalbahis": [46]
+  },
+  {
+    "id": 47,
+    "name": "Bobsleigh",
+    "slug": "bobsleigh",
+    "icon": "i-heroicons-truck",
+    "category": "bobsleigh",
+    "sortOrder": 47,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Bobsleigh" },
+      { "lang": "tr", "field": "name", "value": "Kızak" }
+    ],
+    "melbet": [47],
+    "upgaming": [47],
+    "globalbahis": [47]
+  },
+  {
+    "id": 48,
+    "name": "Luge",
+    "slug": "luge",
+    "icon": "i-heroicons-arrow-down",
+    "category": "luge",
+    "sortOrder": 48,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Luge" },
+      { "lang": "tr", "field": "name", "value": "Luge" }
+    ],
+    "melbet": [48],
+    "upgaming": [48],
+    "globalbahis": [48]
+  },
+  {
+    "id": 49,
+    "name": "Skeleton",
+    "slug": "skeleton",
+    "icon": "i-heroicons-arrow-down",
+    "category": "skeleton",
+    "sortOrder": 49,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Skeleton" },
+      { "lang": "tr", "field": "name", "value": "Skeleton" }
+    ],
+    "melbet": [49],
+    "upgaming": [49],
+    "globalbahis": [49]
+  },
+  {
+    "id": 50,
+    "name": "Fencing",
+    "slug": "fencing",
+    "icon": "i-heroicons-bolt",
+    "category": "fencing",
+    "sortOrder": 50,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Fencing" },
+      { "lang": "tr", "field": "name", "value": "Eskrim" }
+    ],
+    "melbet": [50],
+    "upgaming": [50],
+    "globalbahis": [50]
+  },
+  {
+    "id": 51,
+    "name": "Archery",
+    "slug": "archery",
+    "icon": "i-heroicons-cursor-arrow-rays",
+    "category": "archery",
+    "sortOrder": 51,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Archery" },
+      { "lang": "tr", "field": "name", "value": "Okçuluk" }
+    ],
+    "melbet": [51],
+    "upgaming": [51],
+    "globalbahis": [51]
+  },
+  {
+    "id": 52,
+    "name": "Shooting",
+    "slug": "shooting",
+    "icon": "i-heroicons-cursor-arrow-rays",
+    "category": "shooting",
+    "sortOrder": 52,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Shooting" },
+      { "lang": "tr", "field": "name", "value": "Aticilik" }
+    ],
+    "melbet": [52],
+    "upgaming": [52],
+    "globalbahis": [52]
+  },
+  {
+    "id": 53,
+    "name": "Weightlifting",
+    "slug": "weightlifting",
+    "icon": "i-heroicons-arrow-up",
+    "category": "weightlifting",
+    "sortOrder": 53,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Weightlifting" },
+      { "lang": "tr", "field": "name", "value": "Halter" }
+    ],
+    "melbet": [53],
+    "upgaming": [53],
+    "globalbahis": [53]
+  },
+  {
+    "id": 54,
+    "name": "Wrestling",
+    "slug": "wrestling",
+    "icon": "i-heroicons-hand-raised",
+    "category": "wrestling",
+    "sortOrder": 54,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Wrestling" },
+      { "lang": "tr", "field": "name", "value": "Güres" }
+    ],
+    "melbet": [54],
+    "upgaming": [54],
+    "globalbahis": [54]
+  },
+  {
+    "id": 55,
+    "name": "Judo",
+    "slug": "judo",
+    "icon": "i-heroicons-hand-raised",
+    "category": "judo",
+    "sortOrder": 55,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Judo" },
+      { "lang": "tr", "field": "name", "value": "Judo" }
+    ],
+    "melbet": [55],
+    "upgaming": [55],
+    "globalbahis": [55]
+  },
+  {
+    "id": 56,
+    "name": "Taekwondo",
+    "slug": "taekwondo",
+    "icon": "i-heroicons-hand-raised",
+    "category": "taekwondo",
+    "sortOrder": 56,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Taekwondo" },
+      { "lang": "tr", "field": "name", "value": "Tekvando" }
+    ],
+    "melbet": [56],
+    "upgaming": [56],
+    "globalbahis": [56]
+  },
+  {
+    "id": 57,
+    "name": "Karate",
+    "slug": "karate",
+    "icon": "i-heroicons-hand-raised",
+    "category": "karate",
+    "sortOrder": 57,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Karate" },
+      { "lang": "tr", "field": "name", "value": "Karate" }
+    ],
+    "melbet": [57],
+    "upgaming": [57],
+    "globalbahis": [57]
+  },
+  {
+    "id": 58,
+    "name": "Swimming",
+    "slug": "swimming",
+    "icon": "i-heroicons-beaker",
+    "category": "swimming",
+    "sortOrder": 58,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Swimming" },
+      { "lang": "tr", "field": "name", "value": "Yüzme" }
+    ],
+    "melbet": [58],
+    "upgaming": [58],
+    "globalbahis": [58]
+  },
+  {
+    "id": 59,
+    "name": "Athletics",
+    "slug": "athletics",
+    "icon": "i-heroicons-arrow-path",
+    "category": "athletics",
+    "sortOrder": 59,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Athletics" },
+      { "lang": "tr", "field": "name", "value": "Atletizm" }
+    ],
+    "melbet": [59],
+    "upgaming": [59],
+    "globalbahis": [59]
+  },
+  {
+    "id": 60,
+    "name": "Gymnastics",
+    "slug": "gymnastics",
+    "icon": "i-heroicons-sparkles",
+    "category": "gymnastics",
+    "sortOrder": 60,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Gymnastics" },
+      { "lang": "tr", "field": "name", "value": "Jimnastik" }
+    ],
+    "melbet": [60],
+    "upgaming": [60],
+    "globalbahis": [60]
+  },
+  {
+    "id": 61,
+    "name": "Rowing",
+    "slug": "rowing",
+    "icon": "i-heroicons-arrow-long-right",
+    "category": "rowing",
+    "sortOrder": 61,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Rowing" },
+      { "lang": "tr", "field": "name", "value": "Kürek" }
+    ],
+    "melbet": [61],
+    "upgaming": [61],
+    "globalbahis": [61]
+  },
+  {
+    "id": 62,
+    "name": "Canoeing",
+    "slug": "canoeing",
+    "icon": "i-heroicons-arrow-long-right",
+    "category": "canoeing",
+    "sortOrder": 62,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Canoeing" },
+      { "lang": "tr", "field": "name", "value": "Kano" }
+    ],
+    "melbet": [62],
+    "upgaming": [62],
+    "globalbahis": [62]
+  },
+  {
+    "id": 63,
+    "name": "Sailing",
+    "slug": "sailing",
+    "icon": "i-heroicons-flag",
+    "category": "sailing",
+    "sortOrder": 63,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Sailing" },
+      { "lang": "tr", "field": "name", "value": "Yelken" }
+    ],
+    "melbet": [63],
+    "upgaming": [63],
+    "globalbahis": [63]
+  },
+  {
+    "id": 64,
+    "name": "Triathlon",
+    "slug": "triathlon",
+    "icon": "i-heroicons-arrow-path",
+    "category": "triathlon",
+    "sortOrder": 64,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Triathlon" },
+      { "lang": "tr", "field": "name", "value": "Triatlon" }
+    ],
+    "melbet": [64],
+    "upgaming": [64],
+    "globalbahis": [64]
+  },
+  {
+    "id": 65,
+    "name": "Equestrian",
+    "slug": "equestrian",
+    "icon": "i-heroicons-trophy",
+    "category": "equestrian",
+    "sortOrder": 65,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Equestrian" },
+      { "lang": "tr", "field": "name", "value": "Binicilik" }
+    ],
+    "melbet": [65],
+    "upgaming": [65],
+    "globalbahis": [65]
+  },
+  {
+    "id": 66,
+    "name": "Modern Pentathlon",
+    "slug": "modern-pentathlon",
+    "icon": "i-heroicons-star",
+    "category": "modern-pentathlon",
+    "sortOrder": 66,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Modern Pentathlon" },
+      { "lang": "tr", "field": "name", "value": "Modern Pentatlon" }
+    ],
+    "melbet": [66],
+    "upgaming": [66],
+    "globalbahis": [66]
+  },
+  {
+    "id": 67,
+    "name": "Climbing",
+    "slug": "climbing",
+    "icon": "i-heroicons-arrow-up",
+    "category": "climbing",
+    "sortOrder": 67,
+    "translations": [
+      { "lang": "en", "field": "name", "value": "Climbing" },
+      { "lang": "tr", "field": "name", "value": "Tirmanis" }
+    ],
+    "melbet": [67],
+    "upgaming": [67],
+    "globalbahis": [67]
+  }
+]

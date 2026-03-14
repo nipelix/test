@@ -1,0 +1,8 @@
+[
+  { "minAmount": "0", "maxAmount": "2000", "creditDeduction": "2" },
+  { "minAmount": "2001", "maxAmount": "5000", "creditDeduction": "3" },
+  { "minAmount": "5001", "maxAmount": "20000", "creditDeduction": "6" },
+  { "minAmount": "20001", "maxAmount": "50000", "creditDeduction": "8" },
+  { "minAmount": "50001", "maxAmount": "200000", "creditDeduction": "12" },
+  { "minAmount": "200001", "maxAmount": "999999999", "creditDeduction": "16" }
+]

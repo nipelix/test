@@ -1,0 +1,32 @@
+[
+  {
+    "scope": "GLOBAL",
+    "scopeRef": "GLOBAL",
+    "key": "betting_limits",
+    "value": { "minStake": 1, "maxBetAmount": 50000, "maxPotentialPayout": 200000, "minSelections": 1, "maxSelections": 20, "maxTotalOdds": 5000 }
+  },
+  {
+    "scope": "GLOBAL",
+    "scopeRef": "GLOBAL",
+    "key": "odds_limits",
+    "value": { "normalMinOdds": 1.01, "normalMaxOdds": 1000, "liveMinOdds": 1.01, "liveMaxOdds": 500 }
+  },
+  {
+    "scope": "GLOBAL",
+    "scopeRef": "GLOBAL",
+    "key": "display_filter",
+    "value": { "normalMinDisplayOdds": 1.01, "liveMinDisplayOdds": 1.01, "hideMode": false, "fullCloseMode": false }
+  },
+  {
+    "scope": "GLOBAL",
+    "scopeRef": "GLOBAL",
+    "key": "features",
+    "value": { "liveBettingAllowed": true, "lineBettingAllowed": true, "systemBetsAllowed": false, "combineLiveAndLine": false, "allowSameEvent": false, "oddChangeAutoAccept": false, "combinationBoost": false, "combinationInsurance": false }
+  },
+  {
+    "scope": "GLOBAL",
+    "scopeRef": "GLOBAL",
+    "key": "time_settings",
+    "value": { "couponCancelTimeMin": 15, "liveBettingDelaySec": 5 }
+  }
+]

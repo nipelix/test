@@ -1,0 +1,2722 @@
+[
+  {
+    "id": 1,
+    "name": "Match Result (1X2)",
+    "slug": "match-result-1x2",
+    "sportId": 1,
+    "category": "Match Result",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Match Result (1X2)"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mac Sonucu (1X2)"
+      }
+    ],
+    "melbet": [
+      1
+    ],
+    "upgaming": [
+      1
+    ],
+    "globalbahis": [
+      1
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Over/Under 0.5 Goals",
+    "slug": "over-under-0-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 0.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 0.5 Gol"
+      }
+    ],
+    "melbet": [
+      18
+    ],
+    "upgaming": [
+      60
+    ],
+    "globalbahis": [
+      18
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Over/Under 1.5 Goals",
+    "slug": "over-under-1-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 1.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 1.5 Gol"
+      }
+    ],
+    "melbet": [
+      19
+    ],
+    "upgaming": [
+      61
+    ],
+    "globalbahis": [
+      19
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Over/Under 2.5 Goals",
+    "slug": "over-under-2-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 2.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 2.5 Gol"
+      }
+    ],
+    "melbet": [
+      20
+    ],
+    "upgaming": [
+      62
+    ],
+    "globalbahis": [
+      20
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Over/Under 3.5 Goals",
+    "slug": "over-under-3-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 3.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 3.5 Gol"
+      }
+    ],
+    "melbet": [
+      21
+    ],
+    "upgaming": [
+      63
+    ],
+    "globalbahis": [
+      21
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Over/Under 4.5 Goals",
+    "slug": "over-under-4-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 4.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 4.5 Gol"
+      }
+    ],
+    "melbet": [
+      22
+    ],
+    "upgaming": [
+      64
+    ],
+    "globalbahis": [
+      22
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Over/Under 5.5 Goals",
+    "slug": "over-under-5-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 5.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 5.5 Gol"
+      }
+    ],
+    "melbet": [
+      23
+    ],
+    "upgaming": [
+      65
+    ],
+    "globalbahis": [
+      23
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Over/Under 6.5 Goals",
+    "slug": "over-under-6-5-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 6.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 6.5 Gol"
+      }
+    ],
+    "melbet": [
+      24
+    ],
+    "upgaming": [
+      66
+    ],
+    "globalbahis": [
+      24
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Both Teams to Score",
+    "slug": "both-teams-to-score",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Both Teams to Score"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Karsilikli Gol"
+      }
+    ],
+    "melbet": [
+      15
+    ],
+    "upgaming": [
+      30
+    ],
+    "globalbahis": [
+      15
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Double Chance",
+    "slug": "double-chance",
+    "sportId": 1,
+    "category": "Match Result",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Double Chance"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Cifte Sans"
+      }
+    ],
+    "melbet": [
+      8
+    ],
+    "upgaming": [
+      10
+    ],
+    "globalbahis": [
+      8
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Draw No Bet",
+    "slug": "draw-no-bet",
+    "sportId": 1,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Draw No Bet"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Beraberlikte Iade"
+      }
+    ],
+    "melbet": [
+      6
+    ],
+    "upgaming": [
+      11
+    ],
+    "globalbahis": [
+      6
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Handicap -1.5",
+    "slug": "handicap-minus-1-5",
+    "sportId": 1,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap -1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap -1.5"
+      }
+    ],
+    "melbet": [
+      30
+    ],
+    "upgaming": [
+      40
+    ],
+    "globalbahis": [
+      30
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Handicap -0.5",
+    "slug": "handicap-minus-0-5",
+    "sportId": 1,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap -0.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap -0.5"
+      }
+    ],
+    "melbet": [
+      31
+    ],
+    "upgaming": [
+      41
+    ],
+    "globalbahis": [
+      31
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Handicap +0.5",
+    "slug": "handicap-plus-0-5",
+    "sportId": 1,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap +0.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap +0.5"
+      }
+    ],
+    "melbet": [
+      32
+    ],
+    "upgaming": [
+      42
+    ],
+    "globalbahis": [
+      32
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Handicap +1.5",
+    "slug": "handicap-plus-1-5",
+    "sportId": 1,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap +1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap +1.5"
+      }
+    ],
+    "melbet": [
+      33
+    ],
+    "upgaming": [
+      43
+    ],
+    "globalbahis": [
+      33
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Half Time Result",
+    "slug": "half-time-result",
+    "sportId": 1,
+    "category": "Half Time",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Half Time Result"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Sonucu"
+      }
+    ],
+    "melbet": [
+      3
+    ],
+    "upgaming": [
+      12
+    ],
+    "globalbahis": [
+      3
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Half Time/Full Time",
+    "slug": "half-time-full-time",
+    "sportId": 1,
+    "category": "Half Time",
+    "selectionsCount": 3,
+    "extendsControl": true,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Half Time/Full Time"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari/Mac Sonucu"
+      }
+    ],
+    "melbet": [
+      4
+    ],
+    "upgaming": [
+      13
+    ],
+    "globalbahis": [
+      4
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Correct Score",
+    "slug": "correct-score",
+    "sportId": 1,
+    "category": "Correct Score",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Correct Score"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Dogru Skor"
+      }
+    ],
+    "melbet": [
+      9
+    ],
+    "upgaming": [
+      14
+    ],
+    "globalbahis": [
+      9
+    ]
+  },
+  {
+    "id": 19,
+    "name": "First Goal",
+    "slug": "first-goal",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "First Goal"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Gol"
+      }
+    ],
+    "melbet": [
+      10
+    ],
+    "upgaming": [
+      15
+    ],
+    "globalbahis": [
+      10
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Last Goal",
+    "slug": "last-goal",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Last Goal"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Son Gol"
+      }
+    ],
+    "melbet": [
+      11
+    ],
+    "upgaming": [
+      16
+    ],
+    "globalbahis": [
+      11
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Odd/Even Goals",
+    "slug": "odd-even-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Odd/Even Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tek/Cift Gol"
+      }
+    ],
+    "melbet": [
+      12
+    ],
+    "upgaming": [
+      17
+    ],
+    "globalbahis": [
+      12
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Total Goals Range 0-1",
+    "slug": "total-goals-range-0-1",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Total Goals Range 0-1"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Toplam Gol Araligi 0-1"
+      }
+    ],
+    "melbet": [
+      50
+    ],
+    "upgaming": [
+      70
+    ],
+    "globalbahis": [
+      50
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Total Goals Range 2-3",
+    "slug": "total-goals-range-2-3",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Total Goals Range 2-3"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Toplam Gol Araligi 2-3"
+      }
+    ],
+    "melbet": [
+      51
+    ],
+    "upgaming": [
+      71
+    ],
+    "globalbahis": [
+      51
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Total Goals Range 4-6",
+    "slug": "total-goals-range-4-6",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Total Goals Range 4-6"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Toplam Gol Araligi 4-6"
+      }
+    ],
+    "melbet": [
+      52
+    ],
+    "upgaming": [
+      72
+    ],
+    "globalbahis": [
+      52
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Corner Over/Under 8.5",
+    "slug": "corner-over-under-8-5",
+    "sportId": 1,
+    "category": "Corners",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Corner Over/Under 8.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Korner Alt/Ust 8.5"
+      }
+    ],
+    "melbet": [
+      40
+    ],
+    "upgaming": [
+      80
+    ],
+    "globalbahis": [
+      40
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Corner Over/Under 9.5",
+    "slug": "corner-over-under-9-5",
+    "sportId": 1,
+    "category": "Corners",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Corner Over/Under 9.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Korner Alt/Ust 9.5"
+      }
+    ],
+    "melbet": [
+      41
+    ],
+    "upgaming": [
+      81
+    ],
+    "globalbahis": [
+      41
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Corner Over/Under 10.5",
+    "slug": "corner-over-under-10-5",
+    "sportId": 1,
+    "category": "Corners",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Corner Over/Under 10.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Korner Alt/Ust 10.5"
+      }
+    ],
+    "melbet": [
+      42
+    ],
+    "upgaming": [
+      82
+    ],
+    "globalbahis": [
+      42
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Card Over/Under 3.5",
+    "slug": "card-over-under-3-5",
+    "sportId": 1,
+    "category": "Cards",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Card Over/Under 3.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kart Alt/Ust 3.5"
+      }
+    ],
+    "melbet": [
+      43
+    ],
+    "upgaming": [
+      83
+    ],
+    "globalbahis": [
+      43
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Card Over/Under 4.5",
+    "slug": "card-over-under-4-5",
+    "sportId": 1,
+    "category": "Cards",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Card Over/Under 4.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kart Alt/Ust 4.5"
+      }
+    ],
+    "melbet": [
+      44
+    ],
+    "upgaming": [
+      84
+    ],
+    "globalbahis": [
+      44
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Card Over/Under 5.5",
+    "slug": "card-over-under-5-5",
+    "sportId": 1,
+    "category": "Cards",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Card Over/Under 5.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kart Alt/Ust 5.5"
+      }
+    ],
+    "melbet": [
+      45
+    ],
+    "upgaming": [
+      85
+    ],
+    "globalbahis": [
+      45
+    ]
+  },
+  {
+    "id": 31,
+    "name": "First Half Over/Under 0.5 Goals",
+    "slug": "first-half-over-under-0-5-goals",
+    "sportId": 1,
+    "category": "First Half Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "First Half Over/Under 0.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Alt/Ust 0.5 Gol"
+      }
+    ],
+    "melbet": [
+      55
+    ],
+    "upgaming": [
+      90
+    ],
+    "globalbahis": [
+      55
+    ]
+  },
+  {
+    "id": 32,
+    "name": "First Half Over/Under 1.5 Goals",
+    "slug": "first-half-over-under-1-5-goals",
+    "sportId": 1,
+    "category": "First Half Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "First Half Over/Under 1.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Alt/Ust 1.5 Gol"
+      }
+    ],
+    "melbet": [
+      56
+    ],
+    "upgaming": [
+      91
+    ],
+    "globalbahis": [
+      56
+    ]
+  },
+  {
+    "id": 33,
+    "name": "First Half Over/Under 2.5 Goals",
+    "slug": "first-half-over-under-2-5-goals",
+    "sportId": 1,
+    "category": "First Half Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "First Half Over/Under 2.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Alt/Ust 2.5 Gol"
+      }
+    ],
+    "melbet": [
+      57
+    ],
+    "upgaming": [
+      92
+    ],
+    "globalbahis": [
+      57
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Second Half Over/Under 0.5 Goals",
+    "slug": "second-half-over-under-0-5-goals",
+    "sportId": 1,
+    "category": "Second Half Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Second Half Over/Under 0.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ikinci Yari Alt/Ust 0.5 Gol"
+      }
+    ],
+    "melbet": [
+      58
+    ],
+    "upgaming": [
+      93
+    ],
+    "globalbahis": [
+      58
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Second Half Over/Under 1.5 Goals",
+    "slug": "second-half-over-under-1-5-goals",
+    "sportId": 1,
+    "category": "Second Half Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Second Half Over/Under 1.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ikinci Yari Alt/Ust 1.5 Gol"
+      }
+    ],
+    "melbet": [
+      59
+    ],
+    "upgaming": [
+      94
+    ],
+    "globalbahis": [
+      59
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Second Half Over/Under 2.5 Goals",
+    "slug": "second-half-over-under-2-5-goals",
+    "sportId": 1,
+    "category": "Second Half Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Second Half Over/Under 2.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ikinci Yari Alt/Ust 2.5 Gol"
+      }
+    ],
+    "melbet": [
+      60
+    ],
+    "upgaming": [
+      95
+    ],
+    "globalbahis": [
+      60
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Asian Handicap -0.5",
+    "slug": "asian-handicap-minus-0-5",
+    "sportId": 1,
+    "category": "Asian Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Handicap -0.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Handikap -0.5"
+      }
+    ],
+    "melbet": [
+      70
+    ],
+    "upgaming": [
+      100
+    ],
+    "globalbahis": [
+      70
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Asian Handicap -1.0",
+    "slug": "asian-handicap-minus-1-0",
+    "sportId": 1,
+    "category": "Asian Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Handicap -1.0"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Handikap -1.0"
+      }
+    ],
+    "melbet": [
+      71
+    ],
+    "upgaming": [
+      101
+    ],
+    "globalbahis": [
+      71
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Asian Handicap -1.5",
+    "slug": "asian-handicap-minus-1-5",
+    "sportId": 1,
+    "category": "Asian Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Handicap -1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Handikap -1.5"
+      }
+    ],
+    "melbet": [
+      72
+    ],
+    "upgaming": [
+      102
+    ],
+    "globalbahis": [
+      72
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Asian Handicap +0.5",
+    "slug": "asian-handicap-plus-0-5",
+    "sportId": 1,
+    "category": "Asian Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Handicap +0.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Handikap +0.5"
+      }
+    ],
+    "melbet": [
+      73
+    ],
+    "upgaming": [
+      103
+    ],
+    "globalbahis": [
+      73
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Asian Handicap +1.0",
+    "slug": "asian-handicap-plus-1-0",
+    "sportId": 1,
+    "category": "Asian Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Handicap +1.0"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Handikap +1.0"
+      }
+    ],
+    "melbet": [
+      74
+    ],
+    "upgaming": [
+      104
+    ],
+    "globalbahis": [
+      74
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Asian Handicap +1.5",
+    "slug": "asian-handicap-plus-1-5",
+    "sportId": 1,
+    "category": "Asian Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Asian Handicap +1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Asya Handikap +1.5"
+      }
+    ],
+    "melbet": [
+      75
+    ],
+    "upgaming": [
+      105
+    ],
+    "globalbahis": [
+      75
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Home Team Total Goals Over/Under 0.5",
+    "slug": "home-team-total-goals-over-under-0-5",
+    "sportId": 1,
+    "category": "Team Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Home Team Total Goals Over/Under 0.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ev Sahibi Toplam Gol Alt/Ust 0.5"
+      }
+    ],
+    "melbet": [
+      80
+    ],
+    "upgaming": [
+      110
+    ],
+    "globalbahis": [
+      80
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Home Team Total Goals Over/Under 1.5",
+    "slug": "home-team-total-goals-over-under-1-5",
+    "sportId": 1,
+    "category": "Team Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Home Team Total Goals Over/Under 1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ev Sahibi Toplam Gol Alt/Ust 1.5"
+      }
+    ],
+    "melbet": [
+      81
+    ],
+    "upgaming": [
+      111
+    ],
+    "globalbahis": [
+      81
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Away Team Total Goals Over/Under 0.5",
+    "slug": "away-team-total-goals-over-under-0-5",
+    "sportId": 1,
+    "category": "Team Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Away Team Total Goals Over/Under 0.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Deplasman Toplam Gol Alt/Ust 0.5"
+      }
+    ],
+    "melbet": [
+      82
+    ],
+    "upgaming": [
+      112
+    ],
+    "globalbahis": [
+      82
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Away Team Total Goals Over/Under 1.5",
+    "slug": "away-team-total-goals-over-under-1-5",
+    "sportId": 1,
+    "category": "Team Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Away Team Total Goals Over/Under 1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Deplasman Toplam Gol Alt/Ust 1.5"
+      }
+    ],
+    "melbet": [
+      83
+    ],
+    "upgaming": [
+      113
+    ],
+    "globalbahis": [
+      83
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Clean Sheet Home",
+    "slug": "clean-sheet-home",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Clean Sheet Home"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gol Yemez Ev Sahibi"
+      }
+    ],
+    "melbet": [
+      84
+    ],
+    "upgaming": [
+      114
+    ],
+    "globalbahis": [
+      84
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Clean Sheet Away",
+    "slug": "clean-sheet-away",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Clean Sheet Away"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gol Yemez Deplasman"
+      }
+    ],
+    "melbet": [
+      85
+    ],
+    "upgaming": [
+      115
+    ],
+    "globalbahis": [
+      85
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Win to Nil Home",
+    "slug": "win-to-nil-home",
+    "sportId": 1,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Win to Nil Home"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gol Yemeden Kazanir Ev Sahibi"
+      }
+    ],
+    "melbet": [
+      86
+    ],
+    "upgaming": [
+      116
+    ],
+    "globalbahis": [
+      86
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Win to Nil Away",
+    "slug": "win-to-nil-away",
+    "sportId": 1,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Win to Nil Away"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gol Yemeden Kazanir Deplasman"
+      }
+    ],
+    "melbet": [
+      87
+    ],
+    "upgaming": [
+      117
+    ],
+    "globalbahis": [
+      87
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Half Time Both Teams to Score",
+    "slug": "half-time-both-teams-to-score",
+    "sportId": 1,
+    "category": "Half Time",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Half Time Both Teams to Score"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Karsilikli Gol"
+      }
+    ],
+    "melbet": [
+      88
+    ],
+    "upgaming": [
+      118
+    ],
+    "globalbahis": [
+      88
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Half Time Double Chance",
+    "slug": "half-time-double-chance",
+    "sportId": 1,
+    "category": "Half Time",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Half Time Double Chance"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Cifte Sans"
+      }
+    ],
+    "melbet": [
+      89
+    ],
+    "upgaming": [
+      119
+    ],
+    "globalbahis": [
+      89
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Half Time Correct Score",
+    "slug": "half-time-correct-score",
+    "sportId": 1,
+    "category": "Half Time",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Half Time Correct Score"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Dogru Skor"
+      }
+    ],
+    "melbet": [
+      90
+    ],
+    "upgaming": [
+      120
+    ],
+    "globalbahis": [
+      90
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Result and Both Teams to Score",
+    "slug": "result-and-both-teams-to-score",
+    "sportId": 1,
+    "category": "Combo",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Result and Both Teams to Score"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Sonuc ve Karsilikli Gol"
+      }
+    ],
+    "melbet": [
+      91
+    ],
+    "upgaming": [
+      121
+    ],
+    "globalbahis": [
+      91
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Result and Over/Under 2.5",
+    "slug": "result-and-over-under-2-5",
+    "sportId": 1,
+    "category": "Combo",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Result and Over/Under 2.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Sonuc ve Alt/Ust 2.5"
+      }
+    ],
+    "melbet": [
+      92
+    ],
+    "upgaming": [
+      122
+    ],
+    "globalbahis": [
+      92
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Winning Margin",
+    "slug": "winning-margin",
+    "sportId": 1,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Winning Margin"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kazanma Farki"
+      }
+    ],
+    "melbet": [
+      93
+    ],
+    "upgaming": [
+      123
+    ],
+    "globalbahis": [
+      93
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Exact Total Goals",
+    "slug": "exact-total-goals",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Exact Total Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tam Toplam Gol"
+      }
+    ],
+    "melbet": [
+      94
+    ],
+    "upgaming": [
+      124
+    ],
+    "globalbahis": [
+      94
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Highest Scoring Half",
+    "slug": "highest-scoring-half",
+    "sportId": 1,
+    "category": "Goals",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Highest Scoring Half"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "En Fazla Gol Atilan Yari"
+      }
+    ],
+    "melbet": [
+      95
+    ],
+    "upgaming": [
+      125
+    ],
+    "globalbahis": [
+      95
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Penalty Awarded",
+    "slug": "penalty-awarded",
+    "sportId": 1,
+    "category": "Specials",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Penalty Awarded"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Penalti Verilir"
+      }
+    ],
+    "melbet": [
+      96
+    ],
+    "upgaming": [
+      126
+    ],
+    "globalbahis": [
+      96
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Red Card in Match",
+    "slug": "red-card-in-match",
+    "sportId": 1,
+    "category": "Cards",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Red Card in Match"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Macta Kirmizi Kart"
+      }
+    ],
+    "melbet": [
+      97
+    ],
+    "upgaming": [
+      127
+    ],
+    "globalbahis": [
+      97
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Basketball Match Result",
+    "slug": "basketball-match-result",
+    "sportId": 2,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Match Result"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mac Sonucu"
+      }
+    ],
+    "melbet": [
+      200
+    ],
+    "upgaming": [
+      200
+    ],
+    "globalbahis": [
+      200
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Basketball Over/Under 150.5",
+    "slug": "basketball-over-under-150-5",
+    "sportId": 2,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 150.5 Points"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 150.5 Sayi"
+      }
+    ],
+    "melbet": [
+      201
+    ],
+    "upgaming": [
+      201
+    ],
+    "globalbahis": [
+      201
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Basketball Over/Under 170.5",
+    "slug": "basketball-over-under-170-5",
+    "sportId": 2,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 170.5 Points"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 170.5 Sayi"
+      }
+    ],
+    "melbet": [
+      202
+    ],
+    "upgaming": [
+      202
+    ],
+    "globalbahis": [
+      202
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Basketball Over/Under 190.5",
+    "slug": "basketball-over-under-190-5",
+    "sportId": 2,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 190.5 Points"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 190.5 Sayi"
+      }
+    ],
+    "melbet": [
+      203
+    ],
+    "upgaming": [
+      203
+    ],
+    "globalbahis": [
+      203
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Basketball Over/Under 210.5",
+    "slug": "basketball-over-under-210-5",
+    "sportId": 2,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 210.5 Points"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 210.5 Sayi"
+      }
+    ],
+    "melbet": [
+      204
+    ],
+    "upgaming": [
+      204
+    ],
+    "globalbahis": [
+      204
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Basketball Handicap -5.5",
+    "slug": "basketball-handicap-minus-5-5",
+    "sportId": 2,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap -5.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap -5.5"
+      }
+    ],
+    "melbet": [
+      205
+    ],
+    "upgaming": [
+      205
+    ],
+    "globalbahis": [
+      205
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Basketball Handicap +5.5",
+    "slug": "basketball-handicap-plus-5-5",
+    "sportId": 2,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap +5.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap +5.5"
+      }
+    ],
+    "melbet": [
+      206
+    ],
+    "upgaming": [
+      206
+    ],
+    "globalbahis": [
+      206
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Basketball 1st Quarter Winner",
+    "slug": "basketball-1st-quarter-winner",
+    "sportId": 2,
+    "category": "Quarter",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "1st Quarter Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "1. Ceyrek Kazanani"
+      }
+    ],
+    "melbet": [
+      207
+    ],
+    "upgaming": [
+      207
+    ],
+    "globalbahis": [
+      207
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Basketball 2nd Quarter Winner",
+    "slug": "basketball-2nd-quarter-winner",
+    "sportId": 2,
+    "category": "Quarter",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "2nd Quarter Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "2. Ceyrek Kazanani"
+      }
+    ],
+    "melbet": [
+      208
+    ],
+    "upgaming": [
+      208
+    ],
+    "globalbahis": [
+      208
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Basketball 3rd Quarter Winner",
+    "slug": "basketball-3rd-quarter-winner",
+    "sportId": 2,
+    "category": "Quarter",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "3rd Quarter Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "3. Ceyrek Kazanani"
+      }
+    ],
+    "melbet": [
+      209
+    ],
+    "upgaming": [
+      209
+    ],
+    "globalbahis": [
+      209
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Basketball 4th Quarter Winner",
+    "slug": "basketball-4th-quarter-winner",
+    "sportId": 2,
+    "category": "Quarter",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "4th Quarter Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "4. Ceyrek Kazanani"
+      }
+    ],
+    "melbet": [
+      210
+    ],
+    "upgaming": [
+      210
+    ],
+    "globalbahis": [
+      210
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Basketball Half Time Result",
+    "slug": "basketball-half-time-result",
+    "sportId": 2,
+    "category": "Half Time",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Half Time Result"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ilk Yari Sonucu"
+      }
+    ],
+    "melbet": [
+      211
+    ],
+    "upgaming": [
+      211
+    ],
+    "globalbahis": [
+      211
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Basketball Odd/Even Total",
+    "slug": "basketball-odd-even-total",
+    "sportId": 2,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": null,
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Odd/Even Total Points"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tek/Cift Toplam Sayi"
+      }
+    ],
+    "melbet": [
+      212
+    ],
+    "upgaming": [
+      212
+    ],
+    "globalbahis": [
+      212
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Tennis Match Winner",
+    "slug": "tennis-match-winner",
+    "sportId": 3,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Match Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mac Kazanani"
+      }
+    ],
+    "melbet": [
+      300
+    ],
+    "upgaming": [
+      300
+    ],
+    "globalbahis": [
+      300
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Tennis Set Betting",
+    "slug": "tennis-set-betting",
+    "sportId": 3,
+    "category": "Set Betting",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Set Betting"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Set Bahisi"
+      }
+    ],
+    "melbet": [
+      301
+    ],
+    "upgaming": [
+      301
+    ],
+    "globalbahis": [
+      301
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Tennis Total Games Over/Under 20.5",
+    "slug": "tennis-total-games-over-under-20-5",
+    "sportId": 3,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Total Games Over/Under 20.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Toplam Oyun Alt/Ust 20.5"
+      }
+    ],
+    "melbet": [
+      302
+    ],
+    "upgaming": [
+      302
+    ],
+    "globalbahis": [
+      302
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Tennis Total Games Over/Under 22.5",
+    "slug": "tennis-total-games-over-under-22-5",
+    "sportId": 3,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "line",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Total Games Over/Under 22.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Toplam Oyun Alt/Ust 22.5"
+      }
+    ],
+    "melbet": [
+      303
+    ],
+    "upgaming": [
+      303
+    ],
+    "globalbahis": [
+      303
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Tennis Set 1 Winner",
+    "slug": "tennis-set-1-winner",
+    "sportId": 3,
+    "category": "Set Betting",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Set 1 Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "1. Set Kazanani"
+      }
+    ],
+    "melbet": [
+      304
+    ],
+    "upgaming": [
+      304
+    ],
+    "globalbahis": [
+      304
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Tennis Handicap Games -3.5",
+    "slug": "tennis-handicap-games-minus-3-5",
+    "sportId": 3,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap Games -3.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap Oyun -3.5"
+      }
+    ],
+    "melbet": [
+      305
+    ],
+    "upgaming": [
+      305
+    ],
+    "globalbahis": [
+      305
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Volleyball Match Winner",
+    "slug": "volleyball-match-winner",
+    "sportId": 4,
+    "category": "Match Result",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Match Winner"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mac Kazanani"
+      }
+    ],
+    "melbet": [
+      400
+    ],
+    "upgaming": [
+      400
+    ],
+    "globalbahis": [
+      400
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Volleyball Set Betting",
+    "slug": "volleyball-set-betting",
+    "sportId": 4,
+    "category": "Set Betting",
+    "selectionsCount": 2,
+    "extendsControl": true,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Set Betting"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Set Bahisi"
+      }
+    ],
+    "melbet": [
+      401
+    ],
+    "upgaming": [
+      401
+    ],
+    "globalbahis": [
+      401
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Volleyball Total Points Over/Under 150.5",
+    "slug": "volleyball-total-points-over-under-150-5",
+    "sportId": 4,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Total Points Over/Under 150.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Toplam Sayi Alt/Ust 150.5"
+      }
+    ],
+    "melbet": [
+      402
+    ],
+    "upgaming": [
+      402
+    ],
+    "globalbahis": [
+      402
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Ice Hockey Match Result 1X2",
+    "slug": "ice-hockey-match-result-1x2",
+    "sportId": 5,
+    "category": "Match Result",
+    "selectionsCount": 3,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Match Result 1X2"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mac Sonucu 1X2"
+      }
+    ],
+    "melbet": [
+      500
+    ],
+    "upgaming": [
+      500
+    ],
+    "globalbahis": [
+      500
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Ice Hockey Over/Under 4.5",
+    "slug": "ice-hockey-over-under-4-5",
+    "sportId": 5,
+    "category": "Totals",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Over/Under 4.5 Goals"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Alt/Ust 4.5 Gol"
+      }
+    ],
+    "melbet": [
+      501
+    ],
+    "upgaming": [
+      501
+    ],
+    "globalbahis": [
+      501
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Ice Hockey Handicap -1.5",
+    "slug": "ice-hockey-handicap-minus-1-5",
+    "sportId": 5,
+    "category": "Handicap",
+    "selectionsCount": 2,
+    "extendsControl": false,
+    "providerFeedType": "live",
+    "bettingGroupId": null,
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Handicap -1.5"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Handikap -1.5"
+      }
+    ],
+    "melbet": [
+      502
+    ],
+    "upgaming": [
+      502
+    ],
+    "globalbahis": [
+      502
+    ]
+  }
+]

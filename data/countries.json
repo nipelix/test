@@ -1,0 +1,3530 @@
+[
+  {
+    "id": 1,
+    "name": "Turkey",
+    "code": "TR",
+    "slug": "turkey",
+    "flag": "flags/tr.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Turkey"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Türkiye"
+      }
+    ],
+    "melbet": [
+      1
+    ],
+    "upgaming": [
+      1
+    ],
+    "globalbahis": [
+      1
+    ]
+  },
+  {
+    "id": 2,
+    "name": "England",
+    "code": "GB",
+    "slug": "england",
+    "flag": "flags/gb.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "England"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İngiltere"
+      }
+    ],
+    "melbet": [
+      2
+    ],
+    "upgaming": [
+      2
+    ],
+    "globalbahis": [
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Germany",
+    "code": "DE",
+    "slug": "germany",
+    "flag": "flags/de.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Germany"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Almanya"
+      }
+    ],
+    "melbet": [
+      3
+    ],
+    "upgaming": [
+      3
+    ],
+    "globalbahis": [
+      3
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Spain",
+    "code": "ES",
+    "slug": "spain",
+    "flag": "flags/es.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Spain"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İspanya"
+      }
+    ],
+    "melbet": [
+      4
+    ],
+    "upgaming": [
+      4
+    ],
+    "globalbahis": [
+      4
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Italy",
+    "code": "IT",
+    "slug": "italy",
+    "flag": "flags/it.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Italy"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İtalya"
+      }
+    ],
+    "melbet": [
+      5
+    ],
+    "upgaming": [
+      5
+    ],
+    "globalbahis": [
+      5
+    ]
+  },
+  {
+    "id": 6,
+    "name": "France",
+    "code": "FR",
+    "slug": "france",
+    "flag": "flags/fr.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "France"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fransa"
+      }
+    ],
+    "melbet": [
+      6
+    ],
+    "upgaming": [
+      6
+    ],
+    "globalbahis": [
+      6
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Netherlands",
+    "code": "NL",
+    "slug": "netherlands",
+    "flag": "flags/nl.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Netherlands"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hollanda"
+      }
+    ],
+    "melbet": [
+      7
+    ],
+    "upgaming": [
+      7
+    ],
+    "globalbahis": [
+      7
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Portugal",
+    "code": "PT",
+    "slug": "portugal",
+    "flag": "flags/pt.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Portugal"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Portekiz"
+      }
+    ],
+    "melbet": [
+      8
+    ],
+    "upgaming": [
+      8
+    ],
+    "globalbahis": [
+      8
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Brazil",
+    "code": "BR",
+    "slug": "brazil",
+    "flag": "flags/br.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Brazil"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Brezilya"
+      }
+    ],
+    "melbet": [
+      9
+    ],
+    "upgaming": [
+      9
+    ],
+    "globalbahis": [
+      9
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Argentina",
+    "code": "AR",
+    "slug": "argentina",
+    "flag": "flags/ar.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Argentina"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Arjantin"
+      }
+    ],
+    "melbet": [
+      10
+    ],
+    "upgaming": [
+      10
+    ],
+    "globalbahis": [
+      10
+    ]
+  },
+  {
+    "id": 11,
+    "name": "United States",
+    "code": "US",
+    "slug": "united-states",
+    "flag": "flags/us.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "United States"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Amerika Birleşik Devletleri"
+      }
+    ],
+    "melbet": [
+      11
+    ],
+    "upgaming": [
+      11
+    ],
+    "globalbahis": [
+      11
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Russia",
+    "code": "RU",
+    "slug": "russia",
+    "flag": "flags/ru.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Russia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Rusya"
+      }
+    ],
+    "melbet": [
+      12
+    ],
+    "upgaming": [
+      12
+    ],
+    "globalbahis": [
+      12
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Belgium",
+    "code": "BE",
+    "slug": "belgium",
+    "flag": "flags/be.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Belgium"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Belçika"
+      }
+    ],
+    "melbet": [
+      13
+    ],
+    "upgaming": [
+      13
+    ],
+    "globalbahis": [
+      13
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Scotland",
+    "code": "GB-SCT",
+    "slug": "scotland",
+    "flag": "flags/gb-sct.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Scotland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İskoçya"
+      }
+    ],
+    "melbet": [
+      14
+    ],
+    "upgaming": [
+      14
+    ],
+    "globalbahis": [
+      14
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Austria",
+    "code": "AT",
+    "slug": "austria",
+    "flag": "flags/at.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Austria"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avusturya"
+      }
+    ],
+    "melbet": [
+      15
+    ],
+    "upgaming": [
+      15
+    ],
+    "globalbahis": [
+      15
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Switzerland",
+    "code": "CH",
+    "slug": "switzerland",
+    "flag": "flags/ch.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Switzerland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsviçre"
+      }
+    ],
+    "melbet": [
+      16
+    ],
+    "upgaming": [
+      16
+    ],
+    "globalbahis": [
+      16
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Sweden",
+    "code": "SE",
+    "slug": "sweden",
+    "flag": "flags/se.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Sweden"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsveç"
+      }
+    ],
+    "melbet": [
+      17
+    ],
+    "upgaming": [
+      17
+    ],
+    "globalbahis": [
+      17
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Norway",
+    "code": "NO",
+    "slug": "norway",
+    "flag": "flags/no.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Norway"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Norveç"
+      }
+    ],
+    "melbet": [
+      18
+    ],
+    "upgaming": [
+      18
+    ],
+    "globalbahis": [
+      18
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Denmark",
+    "code": "DK",
+    "slug": "denmark",
+    "flag": "flags/dk.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Denmark"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Danimarka"
+      }
+    ],
+    "melbet": [
+      19
+    ],
+    "upgaming": [
+      19
+    ],
+    "globalbahis": [
+      19
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Finland",
+    "code": "FI",
+    "slug": "finland",
+    "flag": "flags/fi.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Finland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Finlandiya"
+      }
+    ],
+    "melbet": [
+      20
+    ],
+    "upgaming": [
+      20
+    ],
+    "globalbahis": [
+      20
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Poland",
+    "code": "PL",
+    "slug": "poland",
+    "flag": "flags/pl.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Poland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Polonya"
+      }
+    ],
+    "melbet": [
+      21
+    ],
+    "upgaming": [
+      21
+    ],
+    "globalbahis": [
+      21
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Czech Republic",
+    "code": "CZ",
+    "slug": "czech-republic",
+    "flag": "flags/cz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Czech Republic"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çek Cumhuriyeti"
+      }
+    ],
+    "melbet": [
+      22
+    ],
+    "upgaming": [
+      22
+    ],
+    "globalbahis": [
+      22
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Croatia",
+    "code": "HR",
+    "slug": "croatia",
+    "flag": "flags/hr.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Croatia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hırvatistan"
+      }
+    ],
+    "melbet": [
+      23
+    ],
+    "upgaming": [
+      23
+    ],
+    "globalbahis": [
+      23
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Serbia",
+    "code": "RS",
+    "slug": "serbia",
+    "flag": "flags/rs.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Serbia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Sırbistan"
+      }
+    ],
+    "melbet": [
+      24
+    ],
+    "upgaming": [
+      24
+    ],
+    "globalbahis": [
+      24
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Greece",
+    "code": "GR",
+    "slug": "greece",
+    "flag": "flags/gr.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Greece"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Yunanistan"
+      }
+    ],
+    "melbet": [
+      25
+    ],
+    "upgaming": [
+      25
+    ],
+    "globalbahis": [
+      25
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Ukraine",
+    "code": "UA",
+    "slug": "ukraine",
+    "flag": "flags/ua.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ukraine"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ukrayna"
+      }
+    ],
+    "melbet": [
+      26
+    ],
+    "upgaming": [
+      26
+    ],
+    "globalbahis": [
+      26
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Romania",
+    "code": "RO",
+    "slug": "romania",
+    "flag": "flags/ro.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Romania"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Romanya"
+      }
+    ],
+    "melbet": [
+      27
+    ],
+    "upgaming": [
+      27
+    ],
+    "globalbahis": [
+      27
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Hungary",
+    "code": "HU",
+    "slug": "hungary",
+    "flag": "flags/hu.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Hungary"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Macaristan"
+      }
+    ],
+    "melbet": [
+      28
+    ],
+    "upgaming": [
+      28
+    ],
+    "globalbahis": [
+      28
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Bulgaria",
+    "code": "BG",
+    "slug": "bulgaria",
+    "flag": "flags/bg.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bulgaria"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bulgaristan"
+      }
+    ],
+    "melbet": [
+      29
+    ],
+    "upgaming": [
+      29
+    ],
+    "globalbahis": [
+      29
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Slovakia",
+    "code": "SK",
+    "slug": "slovakia",
+    "flag": "flags/sk.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Slovakia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Slovakya"
+      }
+    ],
+    "melbet": [
+      30
+    ],
+    "upgaming": [
+      30
+    ],
+    "globalbahis": [
+      30
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Slovenia",
+    "code": "SI",
+    "slug": "slovenia",
+    "flag": "flags/si.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Slovenia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Slovenya"
+      }
+    ],
+    "melbet": [
+      31
+    ],
+    "upgaming": [
+      31
+    ],
+    "globalbahis": [
+      31
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Bosnia and Herzegovina",
+    "code": "BA",
+    "slug": "bosnia-and-herzegovina",
+    "flag": "flags/ba.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bosnia and Herzegovina"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bosna Hersek"
+      }
+    ],
+    "melbet": [
+      32
+    ],
+    "upgaming": [
+      32
+    ],
+    "globalbahis": [
+      32
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Montenegro",
+    "code": "ME",
+    "slug": "montenegro",
+    "flag": "flags/me.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Montenegro"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Karadağ"
+      }
+    ],
+    "melbet": [
+      33
+    ],
+    "upgaming": [
+      33
+    ],
+    "globalbahis": [
+      33
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Albania",
+    "code": "AL",
+    "slug": "albania",
+    "flag": "flags/al.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Albania"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Arnavutluk"
+      }
+    ],
+    "melbet": [
+      34
+    ],
+    "upgaming": [
+      34
+    ],
+    "globalbahis": [
+      34
+    ]
+  },
+  {
+    "id": 35,
+    "name": "North Macedonia",
+    "code": "MK",
+    "slug": "north-macedonia",
+    "flag": "flags/mk.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "North Macedonia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kuzey Makedonya"
+      }
+    ],
+    "melbet": [
+      35
+    ],
+    "upgaming": [
+      35
+    ],
+    "globalbahis": [
+      35
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Kosovo",
+    "code": "XK",
+    "slug": "kosovo",
+    "flag": "flags/xk.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Kosovo"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kosova"
+      }
+    ],
+    "melbet": [
+      36
+    ],
+    "upgaming": [
+      36
+    ],
+    "globalbahis": [
+      36
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Ireland",
+    "code": "IE",
+    "slug": "ireland",
+    "flag": "flags/ie.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ireland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İrlanda"
+      }
+    ],
+    "melbet": [
+      37
+    ],
+    "upgaming": [
+      37
+    ],
+    "globalbahis": [
+      37
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Wales",
+    "code": "GB-WLS",
+    "slug": "wales",
+    "flag": "flags/gb-wls.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Wales"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Galler"
+      }
+    ],
+    "melbet": [
+      38
+    ],
+    "upgaming": [
+      38
+    ],
+    "globalbahis": [
+      38
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Northern Ireland",
+    "code": "GB-NIR",
+    "slug": "northern-ireland",
+    "flag": "flags/gb-nir.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Northern Ireland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kuzey İrlanda"
+      }
+    ],
+    "melbet": [
+      39
+    ],
+    "upgaming": [
+      39
+    ],
+    "globalbahis": [
+      39
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Iceland",
+    "code": "IS",
+    "slug": "iceland",
+    "flag": "flags/is.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Iceland"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İzlanda"
+      }
+    ],
+    "melbet": [
+      40
+    ],
+    "upgaming": [
+      40
+    ],
+    "globalbahis": [
+      40
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Georgia",
+    "code": "GE",
+    "slug": "georgia",
+    "flag": "flags/ge.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Georgia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gürcistan"
+      }
+    ],
+    "melbet": [
+      41
+    ],
+    "upgaming": [
+      41
+    ],
+    "globalbahis": [
+      41
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Armenia",
+    "code": "AM",
+    "slug": "armenia",
+    "flag": "flags/am.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Armenia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ermenistan"
+      }
+    ],
+    "melbet": [
+      42
+    ],
+    "upgaming": [
+      42
+    ],
+    "globalbahis": [
+      42
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Azerbaijan",
+    "code": "AZ",
+    "slug": "azerbaijan",
+    "flag": "flags/az.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Azerbaijan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Azerbaycan"
+      }
+    ],
+    "melbet": [
+      43
+    ],
+    "upgaming": [
+      43
+    ],
+    "globalbahis": [
+      43
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Kazakhstan",
+    "code": "KZ",
+    "slug": "kazakhstan",
+    "flag": "flags/kz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Kazakhstan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kazakistan"
+      }
+    ],
+    "melbet": [
+      44
+    ],
+    "upgaming": [
+      44
+    ],
+    "globalbahis": [
+      44
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Uzbekistan",
+    "code": "UZ",
+    "slug": "uzbekistan",
+    "flag": "flags/uz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Uzbekistan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Özbekistan"
+      }
+    ],
+    "melbet": [
+      45
+    ],
+    "upgaming": [
+      45
+    ],
+    "globalbahis": [
+      45
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Japan",
+    "code": "JP",
+    "slug": "japan",
+    "flag": "flags/jp.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Japan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Japonya"
+      }
+    ],
+    "melbet": [
+      46
+    ],
+    "upgaming": [
+      46
+    ],
+    "globalbahis": [
+      46
+    ]
+  },
+  {
+    "id": 47,
+    "name": "South Korea",
+    "code": "KR",
+    "slug": "south-korea",
+    "flag": "flags/kr.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "South Korea"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Güney Kore"
+      }
+    ],
+    "melbet": [
+      47
+    ],
+    "upgaming": [
+      47
+    ],
+    "globalbahis": [
+      47
+    ]
+  },
+  {
+    "id": 48,
+    "name": "China",
+    "code": "CN",
+    "slug": "china",
+    "flag": "flags/cn.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "China"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Çin"
+      }
+    ],
+    "melbet": [
+      48
+    ],
+    "upgaming": [
+      48
+    ],
+    "globalbahis": [
+      48
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Australia",
+    "code": "AU",
+    "slug": "australia",
+    "flag": "flags/au.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Australia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Avustralya"
+      }
+    ],
+    "melbet": [
+      49
+    ],
+    "upgaming": [
+      49
+    ],
+    "globalbahis": [
+      49
+    ]
+  },
+  {
+    "id": 50,
+    "name": "New Zealand",
+    "code": "NZ",
+    "slug": "new-zealand",
+    "flag": "flags/nz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "New Zealand"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Yeni Zelanda"
+      }
+    ],
+    "melbet": [
+      50
+    ],
+    "upgaming": [
+      50
+    ],
+    "globalbahis": [
+      50
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Canada",
+    "code": "CA",
+    "slug": "canada",
+    "flag": "flags/ca.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Canada"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kanada"
+      }
+    ],
+    "melbet": [
+      51
+    ],
+    "upgaming": [
+      51
+    ],
+    "globalbahis": [
+      51
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Mexico",
+    "code": "MX",
+    "slug": "mexico",
+    "flag": "flags/mx.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Mexico"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Meksika"
+      }
+    ],
+    "melbet": [
+      52
+    ],
+    "upgaming": [
+      52
+    ],
+    "globalbahis": [
+      52
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Colombia",
+    "code": "CO",
+    "slug": "colombia",
+    "flag": "flags/co.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Colombia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kolombiya"
+      }
+    ],
+    "melbet": [
+      53
+    ],
+    "upgaming": [
+      53
+    ],
+    "globalbahis": [
+      53
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Chile",
+    "code": "CL",
+    "slug": "chile",
+    "flag": "flags/cl.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Chile"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Şili"
+      }
+    ],
+    "melbet": [
+      54
+    ],
+    "upgaming": [
+      54
+    ],
+    "globalbahis": [
+      54
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Peru",
+    "code": "PE",
+    "slug": "peru",
+    "flag": "flags/pe.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Peru"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Peru"
+      }
+    ],
+    "melbet": [
+      55
+    ],
+    "upgaming": [
+      55
+    ],
+    "globalbahis": [
+      55
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Uruguay",
+    "code": "UY",
+    "slug": "uruguay",
+    "flag": "flags/uy.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Uruguay"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Uruguay"
+      }
+    ],
+    "melbet": [
+      56
+    ],
+    "upgaming": [
+      56
+    ],
+    "globalbahis": [
+      56
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Paraguay",
+    "code": "PY",
+    "slug": "paraguay",
+    "flag": "flags/py.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Paraguay"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Paraguay"
+      }
+    ],
+    "melbet": [
+      57
+    ],
+    "upgaming": [
+      57
+    ],
+    "globalbahis": [
+      57
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Ecuador",
+    "code": "EC",
+    "slug": "ecuador",
+    "flag": "flags/ec.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ecuador"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ekvador"
+      }
+    ],
+    "melbet": [
+      58
+    ],
+    "upgaming": [
+      58
+    ],
+    "globalbahis": [
+      58
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Venezuela",
+    "code": "VE",
+    "slug": "venezuela",
+    "flag": "flags/ve.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Venezuela"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Venezuela"
+      }
+    ],
+    "melbet": [
+      59
+    ],
+    "upgaming": [
+      59
+    ],
+    "globalbahis": [
+      59
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Bolivia",
+    "code": "BO",
+    "slug": "bolivia",
+    "flag": "flags/bo.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bolivia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bolivya"
+      }
+    ],
+    "melbet": [
+      60
+    ],
+    "upgaming": [
+      60
+    ],
+    "globalbahis": [
+      60
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Costa Rica",
+    "code": "CR",
+    "slug": "costa-rica",
+    "flag": "flags/cr.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Costa Rica"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kosta Rika"
+      }
+    ],
+    "melbet": [
+      61
+    ],
+    "upgaming": [
+      61
+    ],
+    "globalbahis": [
+      61
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Panama",
+    "code": "PA",
+    "slug": "panama",
+    "flag": "flags/pa.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Panama"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Panama"
+      }
+    ],
+    "melbet": [
+      62
+    ],
+    "upgaming": [
+      62
+    ],
+    "globalbahis": [
+      62
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Honduras",
+    "code": "HN",
+    "slug": "honduras",
+    "flag": "flags/hn.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Honduras"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Honduras"
+      }
+    ],
+    "melbet": [
+      63
+    ],
+    "upgaming": [
+      63
+    ],
+    "globalbahis": [
+      63
+    ]
+  },
+  {
+    "id": 64,
+    "name": "El Salvador",
+    "code": "SV",
+    "slug": "el-salvador",
+    "flag": "flags/sv.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "El Salvador"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "El Salvador"
+      }
+    ],
+    "melbet": [
+      64
+    ],
+    "upgaming": [
+      64
+    ],
+    "globalbahis": [
+      64
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Guatemala",
+    "code": "GT",
+    "slug": "guatemala",
+    "flag": "flags/gt.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Guatemala"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Guatemala"
+      }
+    ],
+    "melbet": [
+      65
+    ],
+    "upgaming": [
+      65
+    ],
+    "globalbahis": [
+      65
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Jamaica",
+    "code": "JM",
+    "slug": "jamaica",
+    "flag": "flags/jm.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Jamaica"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Jamaika"
+      }
+    ],
+    "melbet": [
+      66
+    ],
+    "upgaming": [
+      66
+    ],
+    "globalbahis": [
+      66
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Trinidad and Tobago",
+    "code": "TT",
+    "slug": "trinidad-and-tobago",
+    "flag": "flags/tt.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Trinidad and Tobago"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Trinidad ve Tobago"
+      }
+    ],
+    "melbet": [
+      67
+    ],
+    "upgaming": [
+      67
+    ],
+    "globalbahis": [
+      67
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Cuba",
+    "code": "CU",
+    "slug": "cuba",
+    "flag": "flags/cu.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Cuba"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Küba"
+      }
+    ],
+    "melbet": [
+      68
+    ],
+    "upgaming": [
+      68
+    ],
+    "globalbahis": [
+      68
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Dominican Republic",
+    "code": "DO",
+    "slug": "dominican-republic",
+    "flag": "flags/do.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Dominican Republic"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Dominik Cumhuriyeti"
+      }
+    ],
+    "melbet": [
+      69
+    ],
+    "upgaming": [
+      69
+    ],
+    "globalbahis": [
+      69
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Egypt",
+    "code": "EG",
+    "slug": "egypt",
+    "flag": "flags/eg.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Egypt"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mısır"
+      }
+    ],
+    "melbet": [
+      70
+    ],
+    "upgaming": [
+      70
+    ],
+    "globalbahis": [
+      70
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Morocco",
+    "code": "MA",
+    "slug": "morocco",
+    "flag": "flags/ma.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Morocco"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fas"
+      }
+    ],
+    "melbet": [
+      71
+    ],
+    "upgaming": [
+      71
+    ],
+    "globalbahis": [
+      71
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Tunisia",
+    "code": "TN",
+    "slug": "tunisia",
+    "flag": "flags/tn.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Tunisia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tunus"
+      }
+    ],
+    "melbet": [
+      72
+    ],
+    "upgaming": [
+      72
+    ],
+    "globalbahis": [
+      72
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Algeria",
+    "code": "DZ",
+    "slug": "algeria",
+    "flag": "flags/dz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Algeria"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Cezayir"
+      }
+    ],
+    "melbet": [
+      73
+    ],
+    "upgaming": [
+      73
+    ],
+    "globalbahis": [
+      73
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Nigeria",
+    "code": "NG",
+    "slug": "nigeria",
+    "flag": "flags/ng.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Nigeria"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Nijerya"
+      }
+    ],
+    "melbet": [
+      74
+    ],
+    "upgaming": [
+      74
+    ],
+    "globalbahis": [
+      74
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Cameroon",
+    "code": "CM",
+    "slug": "cameroon",
+    "flag": "flags/cm.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Cameroon"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kamerun"
+      }
+    ],
+    "melbet": [
+      75
+    ],
+    "upgaming": [
+      75
+    ],
+    "globalbahis": [
+      75
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Ghana",
+    "code": "GH",
+    "slug": "ghana",
+    "flag": "flags/gh.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ghana"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Gana"
+      }
+    ],
+    "melbet": [
+      76
+    ],
+    "upgaming": [
+      76
+    ],
+    "globalbahis": [
+      76
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Senegal",
+    "code": "SN",
+    "slug": "senegal",
+    "flag": "flags/sn.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Senegal"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Senegal"
+      }
+    ],
+    "melbet": [
+      77
+    ],
+    "upgaming": [
+      77
+    ],
+    "globalbahis": [
+      77
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Ivory Coast",
+    "code": "CI",
+    "slug": "ivory-coast",
+    "flag": "flags/ci.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ivory Coast"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Fildişi Sahili"
+      }
+    ],
+    "melbet": [
+      78
+    ],
+    "upgaming": [
+      78
+    ],
+    "globalbahis": [
+      78
+    ]
+  },
+  {
+    "id": 79,
+    "name": "South Africa",
+    "code": "ZA",
+    "slug": "south-africa",
+    "flag": "flags/za.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "South Africa"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Güney Afrika"
+      }
+    ],
+    "melbet": [
+      79
+    ],
+    "upgaming": [
+      79
+    ],
+    "globalbahis": [
+      79
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Kenya",
+    "code": "KE",
+    "slug": "kenya",
+    "flag": "flags/ke.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Kenya"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kenya"
+      }
+    ],
+    "melbet": [
+      80
+    ],
+    "upgaming": [
+      80
+    ],
+    "globalbahis": [
+      80
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Ethiopia",
+    "code": "ET",
+    "slug": "ethiopia",
+    "flag": "flags/et.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Ethiopia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Etiyopya"
+      }
+    ],
+    "melbet": [
+      81
+    ],
+    "upgaming": [
+      81
+    ],
+    "globalbahis": [
+      81
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Tanzania",
+    "code": "TZ",
+    "slug": "tanzania",
+    "flag": "flags/tz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Tanzania"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tanzanya"
+      }
+    ],
+    "melbet": [
+      82
+    ],
+    "upgaming": [
+      82
+    ],
+    "globalbahis": [
+      82
+    ]
+  },
+  {
+    "id": 83,
+    "name": "DR Congo",
+    "code": "CD",
+    "slug": "dr-congo",
+    "flag": "flags/cd.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "DR Congo"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Demokratik Kongo Cumhuriyeti"
+      }
+    ],
+    "melbet": [
+      83
+    ],
+    "upgaming": [
+      83
+    ],
+    "globalbahis": [
+      83
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Mali",
+    "code": "ML",
+    "slug": "mali",
+    "flag": "flags/ml.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Mali"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mali"
+      }
+    ],
+    "melbet": [
+      84
+    ],
+    "upgaming": [
+      84
+    ],
+    "globalbahis": [
+      84
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Zambia",
+    "code": "ZM",
+    "slug": "zambia",
+    "flag": "flags/zm.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Zambia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Zambiya"
+      }
+    ],
+    "melbet": [
+      85
+    ],
+    "upgaming": [
+      85
+    ],
+    "globalbahis": [
+      85
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Zimbabwe",
+    "code": "ZW",
+    "slug": "zimbabwe",
+    "flag": "flags/zw.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Zimbabwe"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Zimbabve"
+      }
+    ],
+    "melbet": [
+      86
+    ],
+    "upgaming": [
+      86
+    ],
+    "globalbahis": [
+      86
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Uganda",
+    "code": "UG",
+    "slug": "uganda",
+    "flag": "flags/ug.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Uganda"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Uganda"
+      }
+    ],
+    "melbet": [
+      87
+    ],
+    "upgaming": [
+      87
+    ],
+    "globalbahis": [
+      87
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Mozambique",
+    "code": "MZ",
+    "slug": "mozambique",
+    "flag": "flags/mz.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Mozambique"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Mozambik"
+      }
+    ],
+    "melbet": [
+      88
+    ],
+    "upgaming": [
+      88
+    ],
+    "globalbahis": [
+      88
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Angola",
+    "code": "AO",
+    "slug": "angola",
+    "flag": "flags/ao.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Angola"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Angola"
+      }
+    ],
+    "melbet": [
+      89
+    ],
+    "upgaming": [
+      89
+    ],
+    "globalbahis": [
+      89
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Saudi Arabia",
+    "code": "SA",
+    "slug": "saudi-arabia",
+    "flag": "flags/sa.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Saudi Arabia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Suudi Arabistan"
+      }
+    ],
+    "melbet": [
+      90
+    ],
+    "upgaming": [
+      90
+    ],
+    "globalbahis": [
+      90
+    ]
+  },
+  {
+    "id": 91,
+    "name": "United Arab Emirates",
+    "code": "AE",
+    "slug": "united-arab-emirates",
+    "flag": "flags/ae.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "United Arab Emirates"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Birleşik Arap Emirlikleri"
+      }
+    ],
+    "melbet": [
+      91
+    ],
+    "upgaming": [
+      91
+    ],
+    "globalbahis": [
+      91
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Qatar",
+    "code": "QA",
+    "slug": "qatar",
+    "flag": "flags/qa.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Qatar"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Katar"
+      }
+    ],
+    "melbet": [
+      92
+    ],
+    "upgaming": [
+      92
+    ],
+    "globalbahis": [
+      92
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Kuwait",
+    "code": "KW",
+    "slug": "kuwait",
+    "flag": "flags/kw.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Kuwait"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kuveyt"
+      }
+    ],
+    "melbet": [
+      93
+    ],
+    "upgaming": [
+      93
+    ],
+    "globalbahis": [
+      93
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Bahrain",
+    "code": "BH",
+    "slug": "bahrain",
+    "flag": "flags/bh.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bahrain"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bahreyn"
+      }
+    ],
+    "melbet": [
+      94
+    ],
+    "upgaming": [
+      94
+    ],
+    "globalbahis": [
+      94
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Oman",
+    "code": "OM",
+    "slug": "oman",
+    "flag": "flags/om.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Oman"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Umman"
+      }
+    ],
+    "melbet": [
+      95
+    ],
+    "upgaming": [
+      95
+    ],
+    "globalbahis": [
+      95
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Jordan",
+    "code": "JO",
+    "slug": "jordan",
+    "flag": "flags/jo.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Jordan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Ürdün"
+      }
+    ],
+    "melbet": [
+      96
+    ],
+    "upgaming": [
+      96
+    ],
+    "globalbahis": [
+      96
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Iraq",
+    "code": "IQ",
+    "slug": "iraq",
+    "flag": "flags/iq.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Iraq"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Irak"
+      }
+    ],
+    "melbet": [
+      97
+    ],
+    "upgaming": [
+      97
+    ],
+    "globalbahis": [
+      97
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Iran",
+    "code": "IR",
+    "slug": "iran",
+    "flag": "flags/ir.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Iran"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İran"
+      }
+    ],
+    "melbet": [
+      98
+    ],
+    "upgaming": [
+      98
+    ],
+    "globalbahis": [
+      98
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Israel",
+    "code": "IL",
+    "slug": "israel",
+    "flag": "flags/il.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Israel"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "İsrail"
+      }
+    ],
+    "melbet": [
+      99
+    ],
+    "upgaming": [
+      99
+    ],
+    "globalbahis": [
+      99
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Lebanon",
+    "code": "LB",
+    "slug": "lebanon",
+    "flag": "flags/lb.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Lebanon"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Lübnan"
+      }
+    ],
+    "melbet": [
+      100
+    ],
+    "upgaming": [
+      100
+    ],
+    "globalbahis": [
+      100
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Syria",
+    "code": "SY",
+    "slug": "syria",
+    "flag": "flags/sy.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Syria"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Suriye"
+      }
+    ],
+    "melbet": [
+      101
+    ],
+    "upgaming": [
+      101
+    ],
+    "globalbahis": [
+      101
+    ]
+  },
+  {
+    "id": 102,
+    "name": "India",
+    "code": "IN",
+    "slug": "india",
+    "flag": "flags/in.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "India"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hindistan"
+      }
+    ],
+    "melbet": [
+      102
+    ],
+    "upgaming": [
+      102
+    ],
+    "globalbahis": [
+      102
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Pakistan",
+    "code": "PK",
+    "slug": "pakistan",
+    "flag": "flags/pk.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Pakistan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Pakistan"
+      }
+    ],
+    "melbet": [
+      103
+    ],
+    "upgaming": [
+      103
+    ],
+    "globalbahis": [
+      103
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Bangladesh",
+    "code": "BD",
+    "slug": "bangladesh",
+    "flag": "flags/bd.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Bangladesh"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Bangladeş"
+      }
+    ],
+    "melbet": [
+      104
+    ],
+    "upgaming": [
+      104
+    ],
+    "globalbahis": [
+      104
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Thailand",
+    "code": "TH",
+    "slug": "thailand",
+    "flag": "flags/th.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Thailand"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tayland"
+      }
+    ],
+    "melbet": [
+      105
+    ],
+    "upgaming": [
+      105
+    ],
+    "globalbahis": [
+      105
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Vietnam",
+    "code": "VN",
+    "slug": "vietnam",
+    "flag": "flags/vn.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Vietnam"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Vietnam"
+      }
+    ],
+    "melbet": [
+      106
+    ],
+    "upgaming": [
+      106
+    ],
+    "globalbahis": [
+      106
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Indonesia",
+    "code": "ID",
+    "slug": "indonesia",
+    "flag": "flags/id.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Indonesia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Endonezya"
+      }
+    ],
+    "melbet": [
+      107
+    ],
+    "upgaming": [
+      107
+    ],
+    "globalbahis": [
+      107
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Malaysia",
+    "code": "MY",
+    "slug": "malaysia",
+    "flag": "flags/my.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Malaysia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Malezya"
+      }
+    ],
+    "melbet": [
+      108
+    ],
+    "upgaming": [
+      108
+    ],
+    "globalbahis": [
+      108
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Philippines",
+    "code": "PH",
+    "slug": "philippines",
+    "flag": "flags/ph.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Philippines"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Filipinler"
+      }
+    ],
+    "melbet": [
+      109
+    ],
+    "upgaming": [
+      109
+    ],
+    "globalbahis": [
+      109
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Singapore",
+    "code": "SG",
+    "slug": "singapore",
+    "flag": "flags/sg.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Singapore"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Singapur"
+      }
+    ],
+    "melbet": [
+      110
+    ],
+    "upgaming": [
+      110
+    ],
+    "globalbahis": [
+      110
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Taiwan",
+    "code": "TW",
+    "slug": "taiwan",
+    "flag": "flags/tw.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Taiwan"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Tayvan"
+      }
+    ],
+    "melbet": [
+      111
+    ],
+    "upgaming": [
+      111
+    ],
+    "globalbahis": [
+      111
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Hong Kong",
+    "code": "HK",
+    "slug": "hong-kong",
+    "flag": "flags/hk.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Hong Kong"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Hong Kong"
+      }
+    ],
+    "melbet": [
+      112
+    ],
+    "upgaming": [
+      112
+    ],
+    "globalbahis": [
+      112
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Lithuania",
+    "code": "LT",
+    "slug": "lithuania",
+    "flag": "flags/lt.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Lithuania"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Litvanya"
+      }
+    ],
+    "melbet": [
+      113
+    ],
+    "upgaming": [
+      113
+    ],
+    "globalbahis": [
+      113
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Latvia",
+    "code": "LV",
+    "slug": "latvia",
+    "flag": "flags/lv.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Latvia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Letonya"
+      }
+    ],
+    "melbet": [
+      114
+    ],
+    "upgaming": [
+      114
+    ],
+    "globalbahis": [
+      114
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Estonia",
+    "code": "EE",
+    "slug": "estonia",
+    "flag": "flags/ee.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Estonia"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Estonya"
+      }
+    ],
+    "melbet": [
+      115
+    ],
+    "upgaming": [
+      115
+    ],
+    "globalbahis": [
+      115
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Belarus",
+    "code": "BY",
+    "slug": "belarus",
+    "flag": "flags/by.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Belarus"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Belarus"
+      }
+    ],
+    "melbet": [
+      116
+    ],
+    "upgaming": [
+      116
+    ],
+    "globalbahis": [
+      116
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Moldova",
+    "code": "MD",
+    "slug": "moldova",
+    "flag": "flags/md.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Moldova"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Moldova"
+      }
+    ],
+    "melbet": [
+      117
+    ],
+    "upgaming": [
+      117
+    ],
+    "globalbahis": [
+      117
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Cyprus",
+    "code": "CY",
+    "slug": "cyprus",
+    "flag": "flags/cy.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Cyprus"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Kıbrıs"
+      }
+    ],
+    "melbet": [
+      118
+    ],
+    "upgaming": [
+      118
+    ],
+    "globalbahis": [
+      118
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Malta",
+    "code": "MT",
+    "slug": "malta",
+    "flag": "flags/mt.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Malta"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Malta"
+      }
+    ],
+    "melbet": [
+      119
+    ],
+    "upgaming": [
+      119
+    ],
+    "globalbahis": [
+      119
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Luxembourg",
+    "code": "LU",
+    "slug": "luxembourg",
+    "flag": "flags/lu.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Luxembourg"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Lüksemburg"
+      }
+    ],
+    "melbet": [
+      120
+    ],
+    "upgaming": [
+      120
+    ],
+    "globalbahis": [
+      120
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Faroe Islands",
+    "code": "FO",
+    "slug": "faroe-islands",
+    "flag": "flags/fo.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Faroe Islands"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Faroe Adaları"
+      }
+    ],
+    "melbet": [
+      121
+    ],
+    "upgaming": [
+      121
+    ],
+    "globalbahis": [
+      121
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Gibraltar",
+    "code": "GI",
+    "slug": "gibraltar",
+    "flag": "flags/gi.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Gibraltar"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Cebelitarık"
+      }
+    ],
+    "melbet": [
+      122
+    ],
+    "upgaming": [
+      122
+    ],
+    "globalbahis": [
+      122
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Liechtenstein",
+    "code": "LI",
+    "slug": "liechtenstein",
+    "flag": "flags/li.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Liechtenstein"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Lihtenştayn"
+      }
+    ],
+    "melbet": [
+      123
+    ],
+    "upgaming": [
+      123
+    ],
+    "globalbahis": [
+      123
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Andorra",
+    "code": "AD",
+    "slug": "andorra",
+    "flag": "flags/ad.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "Andorra"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Andorra"
+      }
+    ],
+    "melbet": [
+      124
+    ],
+    "upgaming": [
+      124
+    ],
+    "globalbahis": [
+      124
+    ]
+  },
+  {
+    "id": 125,
+    "name": "San Marino",
+    "code": "SM",
+    "slug": "san-marino",
+    "flag": "flags/sm.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "San Marino"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "San Marino"
+      }
+    ],
+    "melbet": [
+      125
+    ],
+    "upgaming": [
+      125
+    ],
+    "globalbahis": [
+      125
+    ]
+  },
+  {
+    "id": 126,
+    "name": "International",
+    "code": "INT",
+    "slug": "international",
+    "flag": "flags/int.png",
+    "translations": [
+      {
+        "lang": "en",
+        "field": "name",
+        "value": "International"
+      },
+      {
+        "lang": "tr",
+        "field": "name",
+        "value": "Uluslararası"
+      }
+    ],
+    "melbet": [
+      126
+    ],
+    "upgaming": [
+      126
+    ],
+    "globalbahis": [
+      126
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "name": "sportbooks-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx server/database/seed.ts"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.90",
+    "@iconify-json/simple-icons": "^1.2.70",
+    "@nuxt/icon": "^1.12.0",
+    "@nuxt/ui": "^4.4.0",
+    "@nuxtjs/i18n": "^9.5.3",
+    "@pinia/nuxt": "^0.11.3",
+    "@simplewebauthn/browser": "^11.0.0",
+    "@simplewebauthn/server": "^11.0.0",
+    "@socket.io/redis-adapter": "^8.3.0",
+    "argon2": "^0.43.1",
+    "drizzle-orm": "^0.45.1",
+    "ioredis": "^5.10.0",
+    "nuxt": "^4.3.1",
+    "nuxt-auth-utils": "^0.5.29",
+    "pinia": "^3.0.4",
+    "postgres": "^3.4.8",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "tailwindcss": "^4.1.18",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.15.1",
+    "drizzle-kit": "^0.31.9",
+    "eslint": "^10.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.4"
+  }
+}
