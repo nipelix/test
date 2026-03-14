@@ -64,8 +64,10 @@ export function usePanelNav() {
       items: [
         { to: p('/betting-rules'), icon: 'i-lucide-scale', label: 'dashboard.betting_rules' },
         { to: p('/dealer-betting-rules'), icon: 'i-lucide-sliders-horizontal', label: 'dashboard.dealer_betting_rules', roles: ['SUPER_ADMIN', 'ADMIN', 'DEALER'] },
+        { to: p('/betting-markets-suspensions'), icon: 'i-lucide-shield-off', label: 'dashboard.betting_markets_suspensions', roles: ['SUPER_ADMIN', 'ADMIN', 'DEALER'] },
         { to: p('/credit-reports'), icon: 'i-lucide-bar-chart-3', label: 'dashboard.credit_report', roles: ['SUPER_ADMIN', 'ADMIN'] },
-        { to: p('/credit-consumption'), icon: 'i-lucide-coins', label: 'dashboard.credit_consumption', roles: ['SUPER_ADMIN', 'ADMIN'] }
+        { to: p('/credit-consumption'), icon: 'i-lucide-coins', label: 'dashboard.credit_consumption', roles: ['SUPER_ADMIN', 'ADMIN'] },
+        { to: p('/admin-logs'), icon: 'i-lucide-scroll-text', label: 'dashboard.admin_activity_logs', roles: ['SUPER_ADMIN', 'ADMIN'] }
       ]
     },
 
@@ -107,7 +109,29 @@ export function usePanelNav() {
       ]
     },
 
-    // 7. SubDealer-only: Player Operations
+    // 7. Line Match Management (Dealer only)
+    {
+      label: 'dashboard.line_match_management',
+      roles: ['DEALER'],
+      items: [
+        { to: p('/matches-feed/line'), icon: 'i-lucide-calendar', label: 'dashboard.prematch_match' },
+        { to: p('/markets/line'), icon: 'i-lucide-boxes', label: 'dashboard.line_match_groups' },
+        { to: p('/leagues/line'), icon: 'i-lucide-flag', label: 'dashboard.add_remove_leagues' }
+      ]
+    },
+
+    // 8. Live Match Management (Dealer only)
+    {
+      label: 'dashboard.live_match_management',
+      roles: ['DEALER'],
+      items: [
+        { to: p('/matches-feed/live'), icon: 'i-lucide-radio', label: 'dashboard.live_match' },
+        { to: p('/markets/live'), icon: 'i-lucide-boxes', label: 'dashboard.live_match_groups' },
+        { to: p('/leagues/live'), icon: 'i-lucide-flag', label: 'dashboard.add_remove_leagues' }
+      ]
+    },
+
+    // 9. SubDealer-only: Player Operations
     {
       label: 'dashboard.player_operations',
       roles: ['SUB_DEALER'],
