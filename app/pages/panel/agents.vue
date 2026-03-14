@@ -29,6 +29,7 @@
           @update-sort-direction="updateSortDirection"
           @clear-sorts="clearSorts"
           @toggle-column="toggleColumn"
+          @export="exportToCsv(rows, columns, 'agents')"
         />
 
         <!-- Table -->
@@ -64,6 +65,7 @@
 definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN', 'ADMIN'] })
 
 const { t } = useI18n()
+const { exportToCsv } = useTableExport()
 
 const columns = [
   { accessorKey: 'select', header: '' },

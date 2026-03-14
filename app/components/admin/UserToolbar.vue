@@ -11,6 +11,9 @@
       <UButton icon="i-lucide-refresh-cw" variant="outline" color="neutral" size="sm" @click="emit('refresh')">
         {{ t('common.refresh') }}
       </UButton>
+      <UButton icon="i-lucide-download" variant="outline" color="neutral" size="sm" @click="emit('export')">
+        CSV
+      </UButton>
       <slot name="extra-actions" />
       <UButton v-if="showBalance" icon="i-lucide-plus-circle" variant="outline" color="neutral" size="sm" @click="emit('balance', 'deposit')">
         {{ t('common.add_balance') }}
@@ -76,6 +79,7 @@ const emit = defineEmits<{
   create: []
   edit: []
   refresh: []
+  export: []
   credit: []
   balance: [mode: 'deposit' | 'withdraw']
   status: [action: 'activate' | 'deactivate' | 'delete']
