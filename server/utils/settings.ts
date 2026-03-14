@@ -39,6 +39,10 @@ const DEFAULT_SETTINGS: SettingsMap = {
   time_settings: {
     couponCancelTimeMin: 15,
     liveBettingDelaySec: 5
+  },
+  credit: {
+    dealerMinBalance: 0,
+    cancelPenalty: 0
   }
 }
 
