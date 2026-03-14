@@ -71,7 +71,7 @@ const columns = [
 const {
   rows, total, totalPages, status, searchQuery, currentPage, pageSize,
   selectedIds, selectedRows, allSelected, someSelected, toggleAll, toggleRow,
-  handleRefresh, filteredColumns
+  handleRefresh, filteredColumns, bulkPatch, bulkDelete
 } = useEntityList<any>('/api/leagues', 'manage-leagues', columns)
 
 const modalOpen = ref(false)
@@ -89,22 +89,12 @@ function openEdit() {
 }
 
 async function handleBulkStatus(active: boolean) {
-  if (selectedRows.value.length === 0) return
-  const results = await Promise.allSettled(
-    selectedRows.value.map(r => $fetch(`/api/leagues/${r.id}`, { method: 'PATCH', body: { active } }))
-  )
-  const failed = results.filter(r => r.status === 'rejected').length
-  toast.add({ title: failed === 0 ? t('modals.success_updated') : `${results.length - failed}/${results.length}`, color: failed === 0 ? 'success' : 'warning' })
-  handleRefresh()
+  const { succeeded, failed } = await bulkPatch({ active })
+  toast.add({ title: failed === 0 ? t('modals.success_updated') : `${succeeded}/${succeeded + failed}`, color: failed === 0 ? 'success' : 'warning' })
 }
 
 async function handleBulkDelete() {
-  if (selectedRows.value.length === 0) return
-  const results = await Promise.allSettled(
-    selectedRows.value.map(r => $fetch(`/api/leagues/${r.id}`, { method: 'DELETE' }))
-  )
-  const failed = results.filter(r => r.status === 'rejected').length
-  toast.add({ title: failed === 0 ? t('modals.success_deleted') : `${results.length - failed}/${results.length}`, color: failed === 0 ? 'success' : 'warning' })
-  handleRefresh()
+  const { succeeded, failed } = await bulkDelete()
+  toast.add({ title: failed === 0 ? t('modals.success_deleted') : `${succeeded}/${succeeded + failed}`, color: failed === 0 ? 'success' : 'warning' })
 }
 </script>

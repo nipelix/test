@@ -59,6 +59,27 @@ export function useEntityList<T extends { id: number }>(
   function clearSelection() { selectedIds.clear() }
   function handleRefresh() { clearSelection(); refresh() }
 
+  // Bulk operations — returns { succeeded, failed } counts
+  async function bulkPatch(body: Record<string, any>): Promise<{ succeeded: number; failed: number }> {
+    if (selectedRows.value.length === 0) return { succeeded: 0, failed: 0 }
+    const results = await Promise.allSettled(
+      selectedRows.value.map(r => $fetch(`${endpoint}/${r.id}`, { method: 'PATCH', body }))
+    )
+    const failed = results.filter(r => r.status === 'rejected').length
+    handleRefresh()
+    return { succeeded: results.length - failed, failed }
+  }
+
+  async function bulkDelete(): Promise<{ succeeded: number; failed: number }> {
+    if (selectedRows.value.length === 0) return { succeeded: 0, failed: 0 }
+    const results = await Promise.allSettled(
+      selectedRows.value.map(r => $fetch(`${endpoint}/${r.id}`, { method: 'DELETE' }))
+    )
+    const failed = results.filter(r => r.status === 'rejected').length
+    handleRefresh()
+    return { succeeded: results.length - failed, failed }
+  }
+
   watch(pageSize, () => { currentPage.value = 1 })
 
   return {
@@ -66,6 +87,7 @@ export function useEntityList<T extends { id: number }>(
     searchQuery, currentPage, pageSize,
     selectedIds, selectedRows, allSelected, someSelected,
     toggleAll, toggleRow, clearSelection, handleRefresh,
+    bulkPatch, bulkDelete,
     ...tableStore
   }
 }

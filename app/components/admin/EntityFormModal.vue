@@ -62,9 +62,10 @@ const toast = useToast()
 const loading = ref(false)
 const form = reactive<Record<string, any>>({})
 
-// Populate form on open
+// Populate form on open (clear stale keys first)
 watch(isOpen, (val) => {
   if (val) {
+    Object.keys(form).forEach(k => delete form[k])
     for (const field of props.fields) {
       form[field.key] = props.item?.[field.key] ?? (field.type === 'boolean' ? false : field.type === 'number' ? 0 : '')
     }
