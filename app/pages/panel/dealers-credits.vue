@@ -2,71 +2,32 @@
   <div class="space-y-6">
     <h1 class="text-2xl font-bold">{{ t('dealers.dealers_credits') }}</h1>
 
-    <UCard>
-      <div class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-          <UFormField :label="t('dealers.select_dealer')" name="dealer">
-            <USelectMenu
-              v-model="selectedDealer"
-              :items="dealerOptions"
-              value-key="value"
-              class="w-full"
-            />
-          </UFormField>
+    <UTabs :items="tabs" class="w-full">
+      <template #content="{ item }">
+        <div v-if="item.value === 'manage'" class="mt-4">
+          <UCard>
+            <div class="space-y-4">
+              <p class="text-sm text-muted">{{ t('dealers.credit_manage_description') }}</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <UFormField :label="t('common.amount')">
+                  <UInput v-model="creditAmount" type="number" class="w-full" />
+                </UFormField>
+                <UFormField :label="t('common.operation')">
+                  <USelectMenu v-model="creditOperation" :items="operationOptions" value-key="value" class="w-full" />
+                </UFormField>
+              </div>
+              <UButton color="primary" :loading="processing" @click="handleCredit">{{ t('common.submit') }}</UButton>
+            </div>
+          </UCard>
+        </div>
 
-          <UFormField :label="t('common.amount')" name="amount">
-            <UInput
-              v-model="amount"
-              type="number"
-              :placeholder="t('common.amount')"
-              class="w-full"
-            />
-          </UFormField>
-
-          <div class="flex items-center gap-2">
-            <UButton color="success" icon="i-lucide-plus" @click="handleAddCredit">
-              {{ t('dealers.add_credit') }}
-            </UButton>
-            <UButton color="error" icon="i-lucide-minus" @click="handleRemoveCredit">
-              {{ t('dealers.remove_credit') }}
-            </UButton>
+        <div v-if="item.value === 'stats'" class="mt-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <AdminStatCard icon="i-lucide-coins" :label="t('credit.total_credit')" :value="auth.user?.walletType === 'CREDIT' ? currentBalance : '-'" icon-bg-class="bg-blue-100 dark:bg-blue-900/30" icon-class="text-blue-600" />
           </div>
         </div>
-      </div>
-    </UCard>
-
-    <UCard>
-      <template #header>
-        <h3 class="text-sm font-semibold uppercase">{{ t('dealers.recent_credit_transactions') }}</h3>
       </template>
-      <UTable
-        :data="creditTransactions"
-        :columns="columns"
-      >
-        <template #type-cell="{ row }">
-          <UBadge
-            :color="row.original.type === 'credit_add' ? 'success' : 'error'"
-            variant="subtle"
-          >
-            {{ row.original.type }}
-          </UBadge>
-        </template>
-
-        <template #amount-cell="{ row }">
-          <span :class="row.original.amount >= 0 ? 'text-green-600' : 'text-red-600'">
-            {{ row.original.amount >= 0 ? '+' : '' }}{{ row.original.amount.toLocaleString('tr-TR') }} TL
-          </span>
-        </template>
-
-        <template #balance-cell="{ row }">
-          {{ row.original.balance.toLocaleString('tr-TR') }} TL
-        </template>
-
-        <template #createdAt-cell="{ row }">
-          {{ formatDate(row.original.createdAt) }}
-        </template>
-      </UTable>
-    </UCard>
+    </UTabs>
   </div>
 </template>
 
@@ -74,47 +35,39 @@
 definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
-const { dealers, transactions } = useMockData()
+const toast = useToast()
+const auth = useAuthStore()
 
-const selectedDealer = ref('')
-const amount = ref(0)
-
-const dealerOptions = computed(() => {
-  return dealers.map(d => ({
-    label: d.username,
-    value: d.username
-  }))
-})
-
-const creditTransactions = computed(() => {
-  return transactions.filter(tx => tx.type === 'credit_add' || tx.type === 'credit_remove')
-})
-
-const columns = [
-  { accessorKey: 'id', header: 'ID' },
-  { accessorKey: 'type', header: t('common.type') },
-  { accessorKey: 'amount', header: t('common.amount') },
-  { accessorKey: 'balance', header: t('common.balance') },
-  { accessorKey: 'description', header: t('common.description') },
-  { accessorKey: 'user', header: t('common.user') },
-  { accessorKey: 'createdAt', header: t('common.date') }
+const tabs = [
+  { label: t('dealers.manage_balance'), value: 'manage' },
+  { label: t('common.statistics'), value: 'stats' }
 ]
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('tr-TR', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit'
-  })
-}
+const creditAmount = ref(0)
+const creditOperation = ref('add')
+const processing = ref(false)
+const currentBalance = ref('0')
 
-function handleAddCredit() {
-  // Add credit logic
-}
+const operationOptions = [
+  { label: t('common.add'), value: 'add' },
+  { label: t('common.remove'), value: 'remove' }
+]
 
-function handleRemoveCredit() {
-  // Remove credit logic
+const { data: wallet } = await useAsyncData('my-wallet', () => $fetch<any>('/api/wallets/me'))
+watch(wallet, (val) => { if (val) currentBalance.value = val.balance ?? '0' }, { immediate: true })
+
+async function handleCredit() {
+  if (!creditAmount.value || creditAmount.value <= 0) return
+  processing.value = true
+  try {
+    const userId = auth.user?.id
+    if (!userId) return
+    const endpoint = creditOperation.value === 'add' ? 'credit' : 'credit-withdraw'
+    await $fetch(`/api/wallets/${userId}/${endpoint}`, { method: 'POST', body: { amount: creditAmount.value } })
+    toast.add({ title: t('modals.success_balance'), color: 'success' })
+    creditAmount.value = 0
+  } catch (err: any) {
+    toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
+  } finally { processing.value = false }
 }
 </script>
