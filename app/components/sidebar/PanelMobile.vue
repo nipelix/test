@@ -38,6 +38,12 @@ watch(() => props.open, (val) => {
     document.body.style.overflow = val ? 'hidden' : ''
   }
 })
+
+onBeforeUnmount(() => {
+  if (import.meta.client) {
+    document.body.style.overflow = ''
+  }
+})
 </script>
 
 <style scoped>

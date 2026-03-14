@@ -4,7 +4,7 @@
     <div class="shrink-0 p-4 border-b border-gray-200 dark:border-gray-800">
       <div class="flex items-center gap-3">
         <CommonUserAvatar
-          :username="user?.username || ''"
+          :username="auth.user?.username || ''"
           :avatar-id="auth.currentAvatarId"
           size="lg"
           :editable="true"
@@ -13,13 +13,13 @@
         <div class="min-w-0">
           <div class="flex items-center gap-1.5">
             <UIcon name="i-lucide-check-circle-2" class="w-4 h-4 text-green-500 shrink-0" />
-            <span class="font-semibold text-sm truncate">{{ user?.username }}</span>
+            <span class="font-semibold text-sm truncate">{{ auth.user?.username }}</span>
           </div>
           <button
             class="flex items-center gap-1 text-xs text-muted hover:text-foreground transition"
             @click="copyUserId"
           >
-            <span>ID: {{ user?.id }}</span>
+            <span>ID: {{ auth.user?.id }}</span>
             <UIcon name="i-lucide-copy" class="w-3 h-3" />
           </button>
         </div>
@@ -85,16 +85,22 @@ const { navGroups, currentDate } = usePanelNav()
 const localePath = useLocalePath()
 const toast = useToast()
 
-const user = computed(() => auth.user)
-
-function copyUserId() {
-  if (!user.value?.id) return
-  navigator.clipboard.writeText(String(user.value.id))
-  toast.add({ title: 'ID copied', color: 'success' })
+async function copyUserId() {
+  if (!auth.user?.id) return
+  try {
+    await navigator.clipboard.writeText(String(auth.user.id))
+    toast.add({ title: 'ID copied', color: 'success' })
+  } catch {
+    toast.add({ title: 'Copy failed', color: 'error' })
+  }
 }
 
 async function handleLogout() {
-  await auth.logout()
+  try {
+    await auth.logout()
+  } catch {
+    // logout() already clears local state in finally block
+  }
   navigateTo(localePath('/sign-in'))
 }
 </script>
