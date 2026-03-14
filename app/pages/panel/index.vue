@@ -110,28 +110,39 @@
 
 <script setup lang="ts">
 import { formatBalance } from '~~/shared/utils/formatters'
+import { isRole } from '~~/shared/types/roles'
 
 definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
+const auth = useAuthStore()
 
 // Fetch stats
 const { data: statsData } = await useAsyncData('dashboard-stats', () =>
   $fetch<any>('/api/coupons/stats').catch(() => null)
 )
 
+// Role-based profit calculation:
+// Dealer/Admin/Agent: profit = totalStake - wonPayout (players losing = dealer winning)
+// Player/SubDealer: profit = wonPayout - totalStake (winning = profit)
+const isDealerSide = computed(() => {
+  const role = auth.user?.role
+  return role && isRole(role) && ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER'].includes(role)
+})
+
 const stats = computed(() => {
   const s = statsData.value
   if (!s) return { won: 0, lost: 0, ongoing: 0, total: 0, totalPayout: 0, profitLoss: 0 }
   const stake = parseFloat(s.totalStake ?? '0')
   const payout = parseFloat(s.totalPayout ?? '0')
+  const profitLoss = isDealerSide.value ? (stake - payout) : (payout - stake)
   return {
     won: s.won ?? 0,
     lost: s.lost ?? 0,
     ongoing: s.ongoing ?? 0,
     total: s.total ?? 0,
     totalPayout: payout,
-    profitLoss: stake - payout
+    profitLoss
   }
 })
 
