@@ -3,47 +3,39 @@
     <h1 class="text-2xl font-bold">{{ t('settings.settings') }}</h1>
 
     <UCard class="max-w-2xl">
-      <UForm :state="formState" @submit="handleSave">
-        <div class="space-y-6">
-          <!-- Theme Mode -->
-          <UFormField :label="t('settings.theme_mode')" name="themeMode">
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-muted">{{ t('settings.dark_mode') }}</span>
-              <USwitch v-model="formState.darkMode" />
-            </div>
-          </UFormField>
-
-          <USeparator />
-
-          <!-- Accent Color -->
-          <UFormField :label="t('settings.accent_color')" name="accentColor">
-            <USelectMenu
-              v-model="formState.accentColor"
-              :items="colorOptions"
-              value-key="value"
-              class="w-full"
-            />
-          </UFormField>
-
-          <USeparator />
-
-          <!-- Language -->
-          <UFormField :label="t('settings.language')" name="language">
-            <USelectMenu
-              v-model="formState.language"
-              :items="languageOptions"
-              value-key="value"
-              class="w-full"
-            />
-          </UFormField>
-
-          <div class="flex justify-end pt-4">
-            <UButton type="submit" color="primary">
-              {{ t('common.save') }}
-            </UButton>
+      <div class="space-y-6">
+        <!-- Theme Mode -->
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-medium">{{ t('settings.dark_mode') }}</p>
+            <p class="text-xs text-muted">{{ t('settings.dark_mode_description') }}</p>
           </div>
+          <USwitch :model-value="colorMode.preference === 'dark'" @update:model-value="toggleTheme" />
         </div>
-      </UForm>
+
+        <USeparator />
+
+        <!-- Accent Color -->
+        <UFormField :label="t('settings.accent_color')">
+          <div class="flex gap-3">
+            <button
+              v-for="color in colorOptions"
+              :key="color.value"
+              class="w-8 h-8 rounded-full border-2 transition"
+              :class="auth.accentColor === color.value ? 'border-foreground scale-110' : 'border-transparent'"
+              :style="{ backgroundColor: color.hex }"
+              @click="auth.setAccentColor(color.value)"
+            />
+          </div>
+        </UFormField>
+
+        <USeparator />
+
+        <!-- Language -->
+        <UFormField :label="t('settings.language')">
+          <USelectMenu :model-value="locale" :items="languageOptions" value-key="value" class="w-full" @update:model-value="switchLocale" />
+        </UFormField>
+      </div>
     </UCard>
   </div>
 </template>
@@ -51,29 +43,30 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'panel', middleware: 'panel' })
 
-const { t } = useI18n()
-
-const formState = reactive({
-  darkMode: false,
-  accentColor: 'green',
-  language: 'tr'
-})
+const { t, locale, setLocale } = useI18n()
+const colorMode = useColorMode()
+const auth = useAuthStore()
+const localePath = useLocalePath()
 
 const colorOptions = [
-  { label: 'Green', value: 'green' },
-  { label: 'Blue', value: 'blue' },
-  { label: 'Red', value: 'red' },
-  { label: 'Orange', value: 'orange' },
-  { label: 'Purple', value: 'purple' },
-  { label: 'Indigo', value: 'indigo' }
+  { label: 'Green', value: 'green' as const, hex: '#22c55e' },
+  { label: 'Purple', value: 'purple' as const, hex: '#a855f7' },
+  { label: 'Orange', value: 'orange' as const, hex: '#f97316' },
+  { label: 'Red', value: 'red' as const, hex: '#ef4444' }
 ]
 
 const languageOptions = [
-  { label: 'Turkce', value: 'tr' },
+  { label: 'Türkçe', value: 'tr' },
   { label: 'English', value: 'en' }
 ]
 
-function handleSave() {
-  // Save logic
+function toggleTheme(dark: boolean) {
+  colorMode.preference = dark ? 'dark' : 'light'
+  auth.savePreferences({ theme: dark ? 'dark' : 'light' })
+}
+
+function switchLocale(newLocale: string) {
+  setLocale(newLocale)
+  navigateTo(localePath('/panel/settings'))
 }
 </script>
