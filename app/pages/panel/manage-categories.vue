@@ -1,409 +1,163 @@
 <template>
   <div class="space-y-4">
-    <UCard>
-      <template #header>
-        <h1 class="text-xl font-bold">{{ t('dashboard.manage_categories') }}</h1>
-      </template>
+    <h1 class="text-xl font-bold">{{ t('dashboard.manage_categories') }}</h1>
 
-      <div class="space-y-4">
-        <!-- Toolbar -->
-        <div class="flex flex-wrap items-center gap-1.5">
-          <UButton icon="i-lucide-plus-circle" variant="outline" color="neutral" size="sm" @click="openAddCategory">
-            {{ t('common.add') }}
-          </UButton>
-          <UButton icon="i-lucide-user-pen" variant="outline" color="neutral" size="sm" :disabled="selectedRows.length !== 1" @click="openEditCategory(selectedRows[0])">
-            {{ t('common.edit') }}
-          </UButton>
-          <UButton icon="i-lucide-refresh-cw" variant="outline" color="neutral" size="sm" @click="handleRefresh">
-            {{ t('common.refresh') }}
-          </UButton>
-          <UButton icon="i-lucide-check-circle-2" variant="outline" color="neutral" size="sm" :disabled="selectedRows.length === 0" @click="bulkToggleActive(true)">
-            {{ t('common.activate') }}
-          </UButton>
-          <UButton icon="i-lucide-x-circle" variant="outline" color="neutral" size="sm" :disabled="selectedRows.length === 0" @click="bulkToggleActive(false)">
-            {{ t('common.deactivate') }}
-          </UButton>
-          <UButton icon="i-lucide-trash-2" variant="outline" color="neutral" size="sm" :disabled="selectedRows.length === 0" @click="bulkDelete">
-            {{ t('common.delete') }}
-          </UButton>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Left: Market Types -->
+      <UCard>
+        <template #header>
+          <div class="flex items-center justify-between">
+            <h2 class="font-semibold">{{ t('categories.market_types') }}</h2>
+            <div class="flex gap-1.5">
+              <UButton icon="i-lucide-plus" size="xs" variant="outline" @click="marketEditItem = null; marketModalOpen = true" />
+              <UButton icon="i-lucide-refresh-cw" size="xs" variant="outline" @click="marketList.handleRefresh()" />
+            </div>
+          </div>
+        </template>
+
+        <div class="space-y-1 max-h-[60vh] overflow-y-auto">
+          <div
+            v-for="market in marketList.rows.value"
+            :key="market.id"
+            class="flex items-center justify-between p-2 rounded-lg cursor-pointer transition"
+            :class="selectedMarketId === market.id ? 'bg-primary/10 border border-primary/30' : 'hover:bg-gray-100 dark:hover:bg-gray-800'"
+            @click="selectedMarketId = market.id"
+          >
+            <div>
+              <p class="text-sm font-medium">{{ market.name }}</p>
+              <p class="text-xs text-muted">ID: {{ market.id }}</p>
+            </div>
+            <div class="flex gap-1">
+              <UButton icon="i-lucide-pencil" size="xs" variant="ghost" @click.stop="marketEditItem = market; marketModalOpen = true" />
+              <UButton icon="i-lucide-trash-2" size="xs" variant="ghost" color="error" @click.stop="deleteMarket(market.id)" />
+            </div>
+          </div>
+          <p v-if="marketList.rows.value.length === 0" class="text-sm text-muted text-center py-4">
+            {{ t('common.no_data') }}
+          </p>
         </div>
+      </UCard>
 
-        <!-- Search + Sort/View -->
-        <div class="flex items-center justify-between gap-4">
-          <UInput v-model="searchQuery" icon="i-lucide-search" :placeholder="t('common.search') + '...'" class="max-w-xs" />
-          <div class="flex items-center gap-2">
-            <AdminTableSortPopover :sorts="sorts" :sortable-columns="sortableColumns" :available-sort-columns="availableSortColumns"
-              @add-sort="addSort" @remove-sort="removeSort" @update-sort-column="updateSortColumn" @update-sort-direction="updateSortDirection" @clear-sorts="clearSorts" />
-            <AdminTableViewPopover :toggleable-columns="toggleableColumns" :visible-columns="visibleColumnKeys" @toggle-column="toggleColumn" />
+      <!-- Right: Selection Templates (for selected market) -->
+      <UCard>
+        <template #header>
+          <div class="flex items-center justify-between">
+            <h2 class="font-semibold">{{ t('categories.selection_templates') }}</h2>
+            <div class="flex gap-1.5">
+              <UButton icon="i-lucide-plus" size="xs" variant="outline" :disabled="!selectedMarketId" @click="selectionEditItem = null; selectionModalOpen = true" />
+              <UButton icon="i-lucide-refresh-cw" size="xs" variant="outline" @click="refreshSelections" />
+            </div>
           </div>
+        </template>
+
+        <div v-if="selectedMarketId" class="space-y-1 max-h-[60vh] overflow-y-auto">
+          <div
+            v-for="sel in selections"
+            :key="sel.id"
+            class="flex items-center justify-between p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <div>
+              <p class="text-sm font-medium">{{ sel.name }}</p>
+              <p class="text-xs text-muted">Sort: {{ sel.sortOrder }} | Group: {{ sel.groupId }}</p>
+            </div>
+            <div class="flex gap-1">
+              <UButton icon="i-lucide-pencil" size="xs" variant="ghost" @click="selectionEditItem = sel; selectionModalOpen = true" />
+              <UButton icon="i-lucide-trash-2" size="xs" variant="ghost" color="error" @click="deleteSelection(sel.id)" />
+            </div>
+          </div>
+          <p v-if="selections.length === 0" class="text-sm text-muted text-center py-4">
+            {{ t('common.no_data') }}
+          </p>
         </div>
-
-        <!-- Table -->
-        <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
-          <UTable :data="tableData" :columns="filteredColumns" :loading="status === 'pending'">
-            <template #select-cell="{ row }">
-              <UCheckbox :model-value="selectedIds.has(row.original.id)" @update:model-value="toggleRow(row.original.id)" />
-            </template>
-            <template #select-header>
-              <UCheckbox :model-value="allSelected" :indeterminate="someSelected" @update:model-value="toggleAll" />
-            </template>
-            <template #name-cell="{ row }">
-              <button class="flex items-center gap-2 text-left" @click="toggleExpand(row.original.id)">
-                <UIcon
-                  :name="expandedId === row.original.id ? 'i-lucide-chevron-down' : 'i-lucide-chevron-right'"
-                  class="w-4 h-4 text-gray-400"
-                />
-                <div>
-                  <p class="font-medium">{{ row.original.name }}</p>
-                  <p class="text-xs text-gray-500">{{ row.original.slug }}</p>
-                </div>
-              </button>
-            </template>
-            <template #active-cell="{ row }">
-              <UBadge :color="row.original.active ? 'success' : 'neutral'" variant="subtle" size="sm">
-                {{ row.original.active ? t('common.active') : t('common.passive') }}
-              </UBadge>
-            </template>
-          </UTable>
-
-          <!-- Expanded Selection Templates -->
-          <div v-if="expandedId && expandedRowVisible" class="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 px-4 py-3">
-            <div class="flex items-center justify-between mb-3">
-              <h4 class="text-xs font-bold uppercase text-gray-500">Selection Templates - {{ expandedCategoryName }}</h4>
-              <UButton size="xs" icon="i-lucide-plus" color="primary" @click="openAddTemplate">
-                {{ t('common.add') }}
-              </UButton>
-            </div>
-
-            <div v-if="loadingTemplates" class="flex justify-center py-4">
-              <UIcon name="i-lucide-loader-2" class="w-5 h-5 animate-spin text-gray-400" />
-            </div>
-
-            <div v-else-if="templates.length === 0" class="text-sm text-gray-500 text-center py-4">
-              {{ t('common.no_result') }}
-            </div>
-
-            <div v-else class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
-              <UTable :data="templates" :columns="templateColumns">
-                <template #active-cell="{ row }">
-                  <UBadge :color="row.original.active ? 'success' : 'neutral'" variant="subtle" size="xs">
-                    {{ row.original.active ? t('common.active') : t('common.passive') }}
-                  </UBadge>
-                </template>
-                <template #drawNoBet-cell="{ row }">
-                  <UBadge v-if="row.original.drawNoBet" color="orange" variant="subtle" size="xs">DNB</UBadge>
-                  <span v-else class="text-gray-400">-</span>
-                </template>
-                <template #actions-cell="{ row }">
-                  <UButton variant="ghost" color="neutral" icon="i-lucide-pencil" size="xs" @click="openEditTemplate(row.original)" />
-                </template>
-              </UTable>
-            </div>
-          </div>
-
-          <!-- Pagination Footer -->
-          <div class="flex items-center justify-between px-3 py-2.5 border-t border-gray-200 dark:border-gray-800 bg-gray-50/30 dark:bg-gray-900/30">
-            <div class="flex items-center gap-3 text-sm text-gray-500">
-              <select v-model="pageSize" class="border border-gray-200 dark:border-gray-700 rounded px-2 py-1 text-sm bg-transparent">
-                <option :value="10">10</option><option :value="20">20</option><option :value="50">50</option>
-              </select>
-              <span>{{ t('common.rows_selected', { count: selectedRows.length, total }) }}</span>
-            </div>
-            <div class="flex items-center gap-1 text-sm">
-              <span class="mr-2 text-gray-500">{{ t('common.page_of', { page: currentPage, pages: totalPages }) }}</span>
-              <UButton icon="i-lucide-chevrons-left" variant="outline" color="neutral" size="xs" :disabled="currentPage === 1" @click="currentPage = 1" />
-              <UButton icon="i-lucide-chevron-left" variant="outline" color="neutral" size="xs" :disabled="currentPage === 1" @click="currentPage--" />
-              <UButton icon="i-lucide-chevron-right" variant="outline" color="neutral" size="xs" :disabled="currentPage === totalPages" @click="currentPage++" />
-              <UButton icon="i-lucide-chevrons-right" variant="outline" color="neutral" size="xs" :disabled="currentPage === totalPages" @click="currentPage = totalPages" />
-            </div>
-          </div>
+        <div v-else class="text-center py-8 text-muted text-sm">
+          {{ t('categories.select_market_first') }}
         </div>
-      </div>
-    </UCard>
+      </UCard>
+    </div>
 
-    <!-- Edit Category Modal -->
-    <UModal v-model:open="showCategoryModal">
-      <template #content>
-        <UCard>
-          <template #header>
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">{{ editingCategory ? t('common.edit') : t('common.add') }} - {{ editingCategory?.name || t('dashboard.category') }}</h3>
-              <UButton icon="i-lucide-x" variant="ghost" color="neutral" size="sm" @click="showCategoryModal = false" />
-            </div>
-          </template>
+    <!-- Modals -->
+    <AdminEntityFormModal
+      v-model:open="marketModalOpen"
+      :item="marketEditItem"
+      :title="marketEditItem ? t('categories.edit_market') : t('categories.add_market')"
+      :fields="marketFields"
+      endpoint="/api/market-types"
+      @success="marketList.handleRefresh()"
+    />
 
-          <div class="space-y-4">
-            <UFormField :label="t('common.name')">
-              <UInput v-model="categoryForm.name" class="w-full" />
-            </UFormField>
-            <UFormField label="Slug">
-              <UInput v-model="categoryForm.slug" class="w-full" />
-            </UFormField>
-            <UFormField :label="t('dashboard.sort_order')">
-              <UInput v-model.number="categoryForm.sortOrder" type="number" class="w-full" />
-            </UFormField>
-            <div class="flex items-center gap-2">
-              <USwitch v-model="categoryForm.active" />
-              <span class="text-sm">{{ t('common.active') }}</span>
-            </div>
-          </div>
-
-          <template #footer>
-            <div class="flex justify-end gap-2">
-              <UButton variant="outline" color="neutral" @click="showCategoryModal = false">{{ t('common.cancel') }}</UButton>
-              <UButton color="primary" @click="saveCategory">{{ t('common.save') }}</UButton>
-            </div>
-          </template>
-        </UCard>
-      </template>
-    </UModal>
-
-    <!-- Edit Template Modal -->
-    <UModal v-model:open="showTemplateModal">
-      <template #content>
-        <UCard>
-          <template #header>
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">{{ editingTemplate ? t('common.edit') : t('common.add') }} Selection Template</h3>
-              <UButton icon="i-lucide-x" variant="ghost" color="neutral" size="sm" @click="showTemplateModal = false" />
-            </div>
-          </template>
-
-          <div class="space-y-4">
-            <UFormField label="Group ID">
-              <UInput v-model.number="templateForm.groupId" type="number" class="w-full" />
-            </UFormField>
-            <UFormField :label="t('dashboard.sort_order')">
-              <UInput v-model.number="templateForm.sortOrder" type="number" class="w-full" />
-            </UFormField>
-            <UFormField label="Validator">
-              <UInput v-model="templateForm.validator" class="w-full" />
-            </UFormField>
-            <div class="flex items-center gap-4">
-              <div class="flex items-center gap-2">
-                <USwitch v-model="templateForm.active" />
-                <span class="text-sm">{{ t('common.active') }}</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <USwitch v-model="templateForm.drawNoBet" />
-                <span class="text-sm">Draw No Bet</span>
-              </div>
-            </div>
-          </div>
-
-          <template #footer>
-            <div class="flex justify-end gap-2">
-              <UButton variant="outline" color="neutral" @click="showTemplateModal = false">{{ t('common.cancel') }}</UButton>
-              <UButton color="primary" @click="saveTemplate">{{ t('common.save') }}</UButton>
-            </div>
-          </template>
-        </UCard>
-      </template>
-    </UModal>
+    <AdminEntityFormModal
+      v-model:open="selectionModalOpen"
+      :item="selectionEditItem"
+      :title="selectionEditItem ? t('categories.edit_selection') : t('categories.add_selection')"
+      :fields="selectionFields"
+      endpoint="/api/selection-templates"
+      @success="refreshSelections"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN'] })
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 const toast = useToast()
 
-const searchQuery = ref('')
-const currentPage = ref(1)
-const pageSize = ref(10)
-const selectedIds = ref(new Set<number>())
-const expandedId = ref<number | null>(null)
-const templates = ref<any[]>([])
-const loadingTemplates = ref(false)
-
-const columns = [
-  { accessorKey: 'select', header: '' },
-  { accessorKey: 'name', header: t('common.name') },
-  { accessorKey: 'sportName', header: t('common.sport') },
-  { accessorKey: 'selectionsCount', header: 'Sel.' },
-  { accessorKey: 'active', header: t('common.active') },
-  { accessorKey: 'sortOrder', header: t('dashboard.sort_order') }
-]
-
-const templateColumns = [
+const marketList = useEntityList<any>('/api/market-types', 'manage-categories-markets', [
   { accessorKey: 'id', header: 'ID' },
-  { accessorKey: 'groupId', header: 'Group' },
-  { accessorKey: 'sortOrder', header: t('dashboard.sort_order') },
-  { accessorKey: 'drawNoBet', header: 'DNB' },
-  { accessorKey: 'active', header: t('common.active') },
-  { accessorKey: 'actions', header: t('common.actions') }
+  { accessorKey: 'name', header: t('common.name') }
+])
+
+const selectedMarketId = ref<number | null>(null)
+const selections = ref<any[]>([])
+
+const marketModalOpen = ref(false)
+const marketEditItem = ref<any>(null)
+const selectionModalOpen = ref(false)
+const selectionEditItem = ref<any>(null)
+
+const marketFields = [
+  { key: 'name', label: t('common.name'), type: 'text' as const, required: true },
+  { key: 'period', label: 'Period', type: 'text' as const },
+  { key: 'sortOrder', label: 'Sort Order', type: 'number' as const }
 ]
 
-const { sorts, sortBy, sortDirection, addSort, removeSort, updateSortColumn, updateSortDirection, clearSorts, availableSortColumns, visibleColumnKeys, toggleColumn, filteredColumns, sortableColumns, toggleableColumns } = useTableStore('manage-categories', columns, 'sortOrder')
+const selectionFields = computed(() => [
+  { key: 'name', label: t('common.name'), type: 'text' as const, required: true },
+  { key: 'marketTypeId', label: 'Market Type ID', type: 'number' as const, required: true },
+  { key: 'groupId', label: 'Group ID', type: 'number' as const },
+  { key: 'sortOrder', label: 'Sort Order', type: 'number' as const }
+])
 
-const queryParams = computed(() => ({
-  page: currentPage.value,
-  limit: pageSize.value,
-  lang: locale.value,
-  sortBy: sortBy.value,
-  sortDirection: sortDirection.value,
-  ...(searchQuery.value.trim() ? { search: searchQuery.value.trim() } : {})
-}))
-
-const { data: categoriesData, refresh, status } = await useAsyncData(
-  'manage-categories',
-  () => $fetch<{ data: any[], total: number }>('/api/market-types', { query: queryParams.value }),
-  { watch: [queryParams] }
-)
-
-const tableData = computed(() => categoriesData.value?.data ?? [])
-const total = computed(() => categoriesData.value?.total ?? 0)
-const totalPages = computed(() => Math.max(1, Math.ceil(total.value / pageSize.value)))
-
-const selectedRows = computed(() => tableData.value.filter(p => selectedIds.value.has(p.id)))
-const allSelected = computed(() => tableData.value.length > 0 && tableData.value.every(p => selectedIds.value.has(p.id)))
-const someSelected = computed(() => !allSelected.value && tableData.value.some(p => selectedIds.value.has(p.id)))
-
-function toggleAll() { if (allSelected.value) tableData.value.forEach(p => selectedIds.value.delete(p.id)); else tableData.value.forEach(p => selectedIds.value.add(p.id)) }
-function toggleRow(id: number) { selectedIds.value.has(id) ? selectedIds.value.delete(id) : selectedIds.value.add(id) }
-
-const expandedRowVisible = computed(() => tableData.value.some((c: any) => c.id === expandedId.value))
-const expandedCategoryName = computed(() => {
-  const cat = tableData.value.find((c: any) => c.id === expandedId.value)
-  return cat?.name || ''
-})
-
-async function toggleExpand(id: number) {
-  if (expandedId.value === id) {
-    expandedId.value = null
-    templates.value = []
-    return
-  }
-  expandedId.value = id
-  await loadTemplates(id)
-}
-
-async function loadTemplates(marketGroupId: number) {
-  loadingTemplates.value = true
+async function refreshSelections() {
+  if (!selectedMarketId.value) { selections.value = []; return }
   try {
     const res = await $fetch<{ data: any[] }>('/api/selection-templates', {
-      query: { marketGroupId, limit: 100 }
+      query: { marketGroupId: selectedMarketId.value, limit: 200 }
     })
-    templates.value = res.data
-  } catch {
-    templates.value = []
-  } finally {
-    loadingTemplates.value = false
-  }
+    selections.value = res.data
+  } catch { selections.value = [] }
 }
 
-async function bulkToggleActive(val: boolean) {
+watch(selectedMarketId, () => refreshSelections())
+
+async function deleteMarket(id: number) {
   try {
-    await Promise.allSettled(selectedRows.value.map(c =>
-      $fetch(`/api/market-types/${c.id}`, { method: 'PATCH', body: { active: val } })
-    ))
-    selectedIds.value.clear()
-    await refresh()
+    await $fetch(`/api/market-types/${id}`, { method: 'DELETE' })
+    toast.add({ title: t('modals.success_deleted'), color: 'success' })
+    if (selectedMarketId.value === id) selectedMarketId.value = null
+    marketList.handleRefresh()
   } catch (err: any) {
     toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
   }
 }
 
-async function bulkDelete() {
+async function deleteSelection(id: number) {
   try {
-    await Promise.allSettled(selectedRows.value.map(c =>
-      $fetch(`/api/market-types/${c.id}`, { method: 'DELETE' })
-    ))
-    selectedIds.value.clear()
-    await refresh()
+    await $fetch(`/api/selection-templates/${id}`, { method: 'DELETE' })
+    toast.add({ title: t('modals.success_deleted'), color: 'success' })
+    refreshSelections()
   } catch (err: any) {
     toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
   }
 }
-
-// Category CRUD
-const showCategoryModal = ref(false)
-const editingCategory = ref<any>(null)
-const categoryForm = reactive({ name: '', slug: '', sortOrder: 0, active: true })
-
-function openAddCategory() {
-  editingCategory.value = null
-  Object.assign(categoryForm, { name: '', slug: '', sortOrder: 0, active: true })
-  showCategoryModal.value = true
-}
-
-function openEditCategory(cat: any) {
-  editingCategory.value = cat
-  Object.assign(categoryForm, { name: cat.name, slug: cat.slug, sortOrder: cat.sortOrder, active: cat.active })
-  showCategoryModal.value = true
-}
-
-async function saveCategory() {
-  try {
-    if (editingCategory.value) {
-      await $fetch(`/api/market-types/${editingCategory.value.id}`, {
-        method: 'PATCH',
-        body: { name: categoryForm.name, slug: categoryForm.slug, sortOrder: categoryForm.sortOrder, active: categoryForm.active }
-      })
-    } else {
-      await $fetch('/api/market-types', {
-        method: 'POST',
-        body: { name: categoryForm.name, slug: categoryForm.slug, sortOrder: categoryForm.sortOrder, active: categoryForm.active }
-      })
-    }
-    showCategoryModal.value = false
-    selectedIds.value.clear()
-    await refresh()
-  } catch (err: any) {
-    toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
-  }
-}
-
-// Template CRUD
-const showTemplateModal = ref(false)
-const editingTemplate = ref<any>(null)
-const templateForm = reactive({ groupId: 1, sortOrder: 0, active: true, validator: '', drawNoBet: false })
-
-function openAddTemplate() {
-  editingTemplate.value = null
-  Object.assign(templateForm, { groupId: 1, sortOrder: 0, active: true, validator: '', drawNoBet: false })
-  showTemplateModal.value = true
-}
-
-function openEditTemplate(tpl: any) {
-  editingTemplate.value = tpl
-  Object.assign(templateForm, {
-    groupId: tpl.groupId, sortOrder: tpl.sortOrder, active: tpl.active,
-    validator: tpl.validator || '', drawNoBet: tpl.drawNoBet
-  })
-  showTemplateModal.value = true
-}
-
-async function saveTemplate() {
-  try {
-    if (editingTemplate.value) {
-      await $fetch(`/api/selection-templates/${editingTemplate.value.id}`, {
-        method: 'PATCH',
-        body: { groupId: templateForm.groupId, sortOrder: templateForm.sortOrder, active: templateForm.active, validator: templateForm.validator || null, drawNoBet: templateForm.drawNoBet }
-      })
-    } else {
-      await $fetch('/api/selection-templates', {
-        method: 'POST',
-        body: { groupId: templateForm.groupId, marketGroupId: expandedId.value, sortOrder: templateForm.sortOrder, active: templateForm.active, validator: templateForm.validator || null, drawNoBet: templateForm.drawNoBet }
-      })
-    }
-    showTemplateModal.value = false
-    if (expandedId.value) await loadTemplates(expandedId.value)
-  } catch (err: any) {
-    toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
-  }
-}
-
-function handleRefresh() {
-  searchQuery.value = ''
-  currentPage.value = 1
-  selectedIds.value.clear()
-  expandedId.value = null
-  templates.value = []
-  refresh()
-}
-
-watch(searchQuery, () => { currentPage.value = 1 })
-watch(pageSize, () => { currentPage.value = 1 })
 </script>
