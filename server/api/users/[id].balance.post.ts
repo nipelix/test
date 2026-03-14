@@ -10,6 +10,9 @@ const balanceSchema = z.object({
   description: z.string().max(500).optional()
 })
 
+// Roles that require inverse parent balance adjustment
+const INVERSE_ADJUSTMENT_ROLES: Role[] = ['DEALER', 'PLAYER']
+
 export default defineEventHandler(async (event) => {
   const session = requireAuth(event)
   const id = Number(getRouterParam(event, 'id'))
@@ -18,35 +21,33 @@ export default defineEventHandler(async (event) => {
   const body = await readValidatedBody(event, balanceSchema.parse)
   const db = useDb()
 
-  // Verify tree access
   await requireTreeAccess(event, id)
 
-  // Fetch target role
-  const [target] = await db.select({ role: users.role })
+  // Fetch target user with parentId
+  const [target] = await db.select({ role: users.role, parentId: users.parentId })
     .from(users)
     .where(and(eq(users.id, id), isNull(users.deletedAt)))
     .limit(1)
 
   if (!target) throw createError({ statusCode: 404, statusMessage: 'User not found' })
 
-  if (!isRole(session.role) || !isRole(target.role) || !canManageBalance(session.role as Role, target.role as Role)) {
+  if (!isRole(session.role) || !isRole(target.role) || !canManageBalance(session.role, target.role)) {
     throw createError({ statusCode: 403, statusMessage: 'Cannot manage balance for this role' })
   }
 
-  // Fetch both wallets upfront
-  const [targetWallet, senderWallet] = await Promise.all([
-    getWalletByUserId(id),
-    getWalletByUserId(session.userId)
-  ])
-
+  const targetWallet = await getWalletByUserId(id)
   if (!targetWallet) throw createError({ statusCode: 404, statusMessage: 'Target wallet not found' })
-  if (!senderWallet) throw createError({ statusCode: 400, statusMessage: 'Sender wallet not found' })
 
   const direction = body.operation === 'add' ? 'CREDIT' as const : 'DEBIT' as const
-  const inverseDirection = body.operation === 'add' ? 'DEBIT' as const : 'CREDIT' as const
   const txType = body.operation === 'add' ? 'DEPOSIT' as const : 'WITHDRAWAL' as const
 
-  // Both operations in a single DB transaction
+  // Determine if inverse parent adjustment is needed
+  // Agent: NO (admin has unlimited authority)
+  // Dealer: YES (if parent exists — agent/admin loses credit)
+  // SubDealer: NO (credit deducted only at coupon creation)
+  // Player: YES (always — parent subdealer balance adjusted)
+  const needsInverse = INVERSE_ADJUSTMENT_ROLES.includes(target.role as Role) && target.parentId != null
+
   const result = await db.transaction(async () => {
     // Target wallet operation
     const targetResult = await executeTransaction({
@@ -59,16 +60,24 @@ export default defineEventHandler(async (event) => {
       createdBy: session.userId
     })
 
-    // Inverse operation on sender's wallet
-    await executeTransaction({
-      type: txType,
-      walletId: senderWallet.id,
-      direction: inverseDirection,
-      amount: body.amount,
-      referenceType: 'MANUAL',
-      description: `Inverse: ${body.operation} to user ${id}`,
-      createdBy: session.userId
-    })
+    // Inverse operation on parent's wallet (only for Dealer and Player)
+    if (needsInverse) {
+      const parentWallet = await getWalletByUserId(target.parentId!)
+      if (!parentWallet) {
+        throw createError({ statusCode: 400, statusMessage: 'Parent wallet not found' })
+      }
+
+      const inverseDirection = body.operation === 'add' ? 'DEBIT' as const : 'CREDIT' as const
+      await executeTransaction({
+        type: txType,
+        walletId: parentWallet.id,
+        direction: inverseDirection,
+        amount: body.amount,
+        referenceType: 'MANUAL',
+        description: `Inverse: ${body.operation} to user ${id}`,
+        createdBy: session.userId
+      })
+    }
 
     return targetResult
   })
