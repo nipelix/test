@@ -87,10 +87,10 @@ export function useParentSelection(targetRole: Ref<Role> | ComputedRef<Role>) {
   }
 
   // ── Cascade watchers ──
-  let initializing = false
+  const initializing = ref(false)
 
   watch(() => parentState.adminId, (val) => {
-    if (initializing) return
+    if (initializing.value) return
     parentState.agentId = null
     parentState.dealerId = null
     parentState.subDealerId = null
@@ -104,7 +104,7 @@ export function useParentSelection(targetRole: Ref<Role> | ComputedRef<Role>) {
   })
 
   watch(() => parentState.dealerId, (val) => {
-    if (initializing) return
+    if (initializing.value) return
     parentState.subDealerId = null
     subDealerList.value = []
     if (val != null && role.value === 'PLAYER') fetchSubDealers(val)
@@ -144,7 +144,7 @@ export function useParentSelection(targetRole: Ref<Role> | ComputedRef<Role>) {
 
   // ── Pre-fill from existing parent chain (for edit mode) ──
   async function resolveParentChain(parentId: number) {
-    initializing = true
+    initializing.value = true
     try {
       const parent = await $fetch<{ id: number; username: string; role: string; parentId: number | null }>(`/api/users/${parentId}`)
       const pRole = parent.role.toUpperCase()
@@ -191,7 +191,7 @@ export function useParentSelection(targetRole: Ref<Role> | ComputedRef<Role>) {
     } catch {
       // Silent — dropdowns stay empty
     } finally {
-      initializing = false
+      initializing.value = false
     }
   }
 
@@ -201,11 +201,14 @@ export function useParentSelection(targetRole: Ref<Role> | ComputedRef<Role>) {
     if (isSuperAdmin.value && showAdminSelect.value) {
       await fetchAdmins()
     } else if (!isSuperAdmin.value) {
-      if (showAgentSelect.value) fetchAgents()
-      if (showDealerSelect.value) fetchDealers()
-      if (currentRole.value === 'DEALER' && role.value === 'PLAYER') {
-        fetchSubDealers(auth.user!.id)
+      const fetches: Promise<void>[] = []
+      if (showAgentSelect.value) fetches.push(fetchAgents())
+      if (showDealerSelect.value) fetches.push(fetchDealers())
+      const userId = auth.user?.id
+      if (currentRole.value === 'DEALER' && role.value === 'PLAYER' && userId) {
+        fetches.push(fetchSubDealers(userId))
       }
+      await Promise.all(fetches)
     }
   }
 

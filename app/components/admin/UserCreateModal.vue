@@ -60,6 +60,7 @@
 <script setup lang="ts">
 import { ROLE_WALLET_TYPE } from '~~/shared/types/roles'
 import type { Role } from '~~/shared/types/roles'
+import { EMAIL_REGEX } from '~~/shared/utils/validation'
 
 const props = defineProps<{
   role: Role
@@ -116,16 +117,18 @@ watch(() => form.username, (val) => {
   }
 })
 
-// ── Validation ──
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+onBeforeUnmount(() => {
+  if (usernameTimer) clearTimeout(usernameTimer)
+})
 
+// ── Validation ──
 const { visibleErrors, hasErrors, touch, reset: resetValidation, submit: validateForm } = useFormValidation(() => ({
   username: !form.username.trim() ? t('validation.required')
     : form.username.trim().length < 3 ? t('validation.min_length', { min: 3 })
     : usernameTaken.value ? t('validation.username_taken')
     : undefined,
   email: !form.email.trim() ? t('validation.required')
-    : !emailRegex.test(form.email) ? t('validation.invalid_email')
+    : !EMAIL_REGEX.test(form.email) ? t('validation.invalid_email')
     : undefined,
   password: !form.password ? t('validation.required')
     : form.password.length < 4 ? t('validation.min_length', { min: 4 })

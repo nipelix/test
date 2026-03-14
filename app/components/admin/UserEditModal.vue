@@ -52,6 +52,7 @@
 <script setup lang="ts">
 import { isRole } from '~~/shared/types/roles'
 import type { Role } from '~~/shared/types/roles'
+import { EMAIL_REGEX } from '~~/shared/utils/validation'
 
 const props = defineProps<{
   user: { id: number; username: string; email: string; status: string; role?: string; parentId?: number | null } | null
@@ -89,14 +90,12 @@ const statusOptions = computed(() => [
 ])
 
 // ── Validation ──
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
 const { visibleErrors, touch, reset: resetValidation, submit: validateForm } = useFormValidation(() => ({
   username: !form.username.trim() ? t('validation.required')
     : form.username.trim().length < 3 ? t('validation.min_length', { min: 3 })
     : undefined,
   email: !form.email.trim() ? t('validation.required')
-    : !emailRegex.test(form.email) ? t('validation.invalid_email')
+    : !EMAIL_REGEX.test(form.email) ? t('validation.invalid_email')
     : undefined,
   ...parentErrors.value
 }))
