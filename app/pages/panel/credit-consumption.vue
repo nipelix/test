@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'panel' })
+definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN', 'ADMIN'] })
 
 const { t } = useI18n()
 const { transactions } = useMockData()

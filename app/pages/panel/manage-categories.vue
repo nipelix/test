@@ -204,7 +204,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'panel' })
+definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN'] })
 
 const { t, locale } = useI18n()
 const toast = useToast()

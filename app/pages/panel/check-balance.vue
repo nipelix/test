@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'panel' })
+definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
 const { currentUser, transactions } = useMockData()
