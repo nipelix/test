@@ -23,6 +23,7 @@
       @filter="filterBy"
       @cancel="handleCancel"
       @delete="handleDelete"
+      @details="openDetail"
       @mark-won="handleMarkWon"
       @mark-lost="handleMarkLost"
       @update:search="searchQuery = $event"
@@ -53,6 +54,9 @@
       @update:current-page="currentPage = $event"
       @update:page-size="pageSize = $event"
     />
+
+    <!-- Coupon Detail Modal -->
+    <SharedCouponDetailDialog v-model:open="detailOpen" :coupon-id="detailCouponId" />
   </div>
 </template>
 
@@ -61,6 +65,8 @@ definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
 const toast = useToast()
+const detailOpen = ref(false)
+const detailCouponId = ref<number | null>(null)
 
 const columns = [
   { accessorKey: 'select', header: '' },
@@ -109,6 +115,13 @@ async function handleBulkAction(action: BulkAction) {
     toast.add({ title: `${results.length - failed}/${results.length} ${t('modals.success_updated')}`, color: 'warning' })
   }
   handleRefresh()
+}
+
+function openDetail() {
+  if (selectedRows.value.length === 1) {
+    detailCouponId.value = selectedRows.value[0].id
+    detailOpen.value = true
+  }
 }
 
 function handleCancel() { handleBulkAction({ type: 'cancel' }) }

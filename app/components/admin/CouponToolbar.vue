@@ -24,6 +24,11 @@
         {{ t('common.all') }}
       </UButton>
 
+      <!-- Details -->
+      <UButton variant="soft" color="primary" icon="i-lucide-eye" size="sm" :disabled="selectedCount !== 1" @click="emit('details')">
+        {{ t('common.details') }}
+      </UButton>
+
       <!-- Bulk Actions -->
       <template v-if="showBulkActions">
         <USeparator orientation="vertical" class="h-6 mx-1" />
@@ -81,6 +86,7 @@ defineProps<{
 
 const emit = defineEmits<{
   refresh: []
+  details: []
   filter: [status: string]
   cancel: []
   delete: []
