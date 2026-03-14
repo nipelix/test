@@ -16,3 +16,17 @@ export function formatBalance(val: string | number | null | undefined): string {
     maximumFractionDigits: 2
   })
 }
+
+export function getCouponStatusColor(status: string): string {
+  const colors: Record<string, string> = {
+    PENDING: 'info',
+    ONGOING: 'info',
+    WINNING: 'success',
+    LOSING: 'error',
+    WON: 'success',
+    LOST: 'error',
+    CANCELLED: 'neutral',
+    REFUNDED: 'warning'
+  }
+  return colors[status.toUpperCase()] || 'neutral'
+}

@@ -8,11 +8,11 @@
       <UButton variant="outline" color="info" icon="i-lucide-clock" size="sm" :class="{ 'ring-2 ring-blue-500': activeFilter === 'ONGOING' }" @click="emit('filter', 'ONGOING')">
         {{ t('dashboard.ongoing_bets') }}
       </UButton>
-      <UButton variant="outline" color="success" icon="i-lucide-trophy" size="sm" :class="{ 'ring-2 ring-green-500': activeFilter === 'WINNING' }" @click="emit('filter', 'WINNING')">
-        {{ t('dashboard.winning_bets') }}
+      <UButton variant="outline" color="success" icon="i-lucide-trophy" size="sm" :class="{ 'ring-2 ring-green-500': activeFilter === 'WON' }" @click="emit('filter', 'WON')">
+        {{ t('dashboard.won') }}
       </UButton>
-      <UButton variant="outline" color="error" icon="i-lucide-thumbs-down" size="sm" :class="{ 'ring-2 ring-red-500': activeFilter === 'LOSING' }" @click="emit('filter', 'LOSING')">
-        {{ t('dashboard.losing_bets') }}
+      <UButton variant="outline" color="error" icon="i-lucide-thumbs-down" size="sm" :class="{ 'ring-2 ring-red-500': activeFilter === 'LOST' }" @click="emit('filter', 'LOST')">
+        {{ t('dashboard.lost') }}
       </UButton>
       <UButton variant="outline" color="warning" icon="i-lucide-rotate-ccw" size="sm" :class="{ 'ring-2 ring-orange-500': activeFilter === 'REFUNDED' }" @click="emit('filter', 'REFUNDED')">
         {{ t('dashboard.refunded_bets') }}

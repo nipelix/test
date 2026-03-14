@@ -1,4 +1,4 @@
-import { formatBalance } from '~~/shared/utils/formatters'
+import { formatBalance, getCouponStatusColor } from '~~/shared/utils/formatters'
 
 export interface CouponRow {
   id: number
@@ -18,7 +18,6 @@ export interface CouponRow {
   createdAt: string
   cancelledAt: string | null
   cancelledBy: number | null
-  // Joined fields
   playerUsername?: string
   dealerUsername?: string
 }
@@ -41,7 +40,8 @@ interface CouponStatsResponse {
   totalPayout: string
 }
 
-type CouponFilter = 'all' | 'ONGOING' | 'WINNING' | 'LOSING' | 'WON' | 'LOST' | 'CANCELLED' | 'REFUNDED'
+// Only valid API status values
+type CouponFilter = 'all' | 'PENDING' | 'ONGOING' | 'WON' | 'LOST' | 'CANCELLED' | 'REFUNDED'
 
 export function useCouponList(
   pageKey: string,
@@ -80,16 +80,22 @@ export function useCouponList(
     ...(debouncedSearch.value.trim() ? { search: debouncedSearch.value.trim() } : {})
   }))
 
-  const { data: response, refresh, status } = useAsyncData(
+  const { data: response, refresh: refreshList, status } = useAsyncData(
     `${pageKey}-list`,
     () => $fetch<CouponListResponse>('/api/coupons', { query: queryParams.value }),
     { watch: [queryParams] }
   )
 
-  const { data: stats } = useAsyncData(
+  const { data: stats, refresh: refreshStats } = useAsyncData(
     `${pageKey}-stats`,
     () => $fetch<CouponStatsResponse>('/api/coupons/stats').catch(() => null)
   )
+
+  // Refresh both list and stats together
+  function refresh() {
+    refreshList()
+    refreshStats()
+  }
 
   const rows = computed(() => response.value?.data ?? [])
   const total = computed(() => response.value?.total ?? 0)
@@ -122,23 +128,24 @@ export function useCouponList(
     refresh()
   }
 
-  // Stats helpers
+  // Stats (expose raw numbers for flexible formatting)
   const couponStats = computed(() => {
     const s = stats.value
-    if (!s) return { total: 0, ongoing: 0, won: 0, lost: 0, cancelled: 0, refunded: 0, totalStake: '0', totalPayout: '0', profitLoss: '0' }
+    if (!s) return { total: 0, ongoing: 0, won: 0, lost: 0, cancelled: 0, refunded: 0, totalStake: 0, totalPayout: 0, profitLoss: 0 }
     const stake = parseFloat(s.totalStake)
     const payout = parseFloat(s.totalPayout)
-    return { ...s, profitLoss: formatBalance(stake - payout) }
-  })
-
-  // Status color helper
-  function statusColor(status: string): string {
-    const colors: Record<string, string> = {
-      PENDING: 'info', ONGOING: 'info', WINNING: 'success', LOSING: 'error',
-      WON: 'success', LOST: 'error', CANCELLED: 'neutral', REFUNDED: 'warning'
+    return {
+      total: s.total,
+      ongoing: s.ongoing,
+      won: s.won,
+      lost: s.lost,
+      cancelled: s.cancelled,
+      refunded: s.refunded,
+      totalStake: stake,
+      totalPayout: payout,
+      profitLoss: stake - payout
     }
-    return colors[status] || 'neutral'
-  }
+  })
 
   watch(pageSize, () => { currentPage.value = 1 })
 
@@ -147,7 +154,7 @@ export function useCouponList(
     searchQuery, currentPage, pageSize, activeFilter,
     selectedIds, selectedRows, allSelected, someSelected,
     toggleAll, toggleRow, clearSelection, filterBy, handleRefresh,
-    couponStats, statusColor,
+    couponStats, statusColor: getCouponStatusColor,
     ...tableStore
   }
 }

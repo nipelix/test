@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+import { formatBalance } from '~~/shared/utils/formatters'
+
 const props = defineProps<{
   stats: {
     total: number
@@ -20,9 +22,9 @@ const props = defineProps<{
     lost: number
     cancelled: number
     refunded: number
-    totalStake: string
-    totalPayout: string
-    profitLoss: string
+    totalStake: number
+    totalPayout: number
+    profitLoss: number
   }
 }>()
 
@@ -39,8 +41,8 @@ const items = computed(() => [
       { label: t('dashboard.lost'), value: props.stats.lost, colorClass: 'text-red-600' },
       { label: t('dashboard.cancelled'), value: props.stats.cancelled, colorClass: 'text-gray-500' },
       { label: t('dashboard.refunded'), value: props.stats.refunded, colorClass: 'text-orange-500' },
-      { label: t('dashboard.total_stake'), value: `${props.stats.totalStake} TL`, colorClass: '' },
-      { label: t('dashboard.profit_loss'), value: `${props.stats.profitLoss} TL`, colorClass: parseFloat(props.stats.profitLoss) >= 0 ? 'text-green-600' : 'text-red-600' }
+      { label: t('dashboard.total_stake'), value: `${formatBalance(props.stats.totalStake)} TL`, colorClass: '' },
+      { label: t('dashboard.profit_loss'), value: `${formatBalance(props.stats.profitLoss)} TL`, colorClass: props.stats.profitLoss >= 0 ? 'text-green-600' : 'text-red-600' }
     ]
   }
 ])

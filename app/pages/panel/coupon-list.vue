@@ -86,55 +86,33 @@ const {
   updateSortColumn, updateSortDirection, clearSorts, toggleColumn
 } = useCouponList('coupon-list', columns)
 
-async function handleCancel() {
+type BulkAction =
+  | { type: 'cancel' }
+  | { type: 'delete' }
+  | { type: 'status'; status: 'WON' | 'LOST' }
+
+async function handleBulkAction(action: BulkAction) {
   if (selectedRows.value.length === 0) return
-  try {
-    await Promise.allSettled(
-      selectedRows.value.map(c => $fetch(`/api/coupons/${c.id}/cancel`, { method: 'POST' }))
-    )
+  const results = await Promise.allSettled(
+    selectedRows.value.map(c => {
+      switch (action.type) {
+        case 'cancel': return $fetch(`/api/coupons/${c.id}/cancel`, { method: 'POST' })
+        case 'delete': return $fetch(`/api/coupons/${c.id}`, { method: 'DELETE' })
+        case 'status': return $fetch(`/api/coupons/${c.id}`, { method: 'PATCH', body: { status: action.status } })
+      }
+    })
+  )
+  const failed = results.filter(r => r.status === 'rejected').length
+  if (failed === 0) {
     toast.add({ title: t('modals.success_updated'), color: 'success' })
-    handleRefresh()
-  } catch {
-    toast.add({ title: t('common.error'), color: 'error' })
+  } else {
+    toast.add({ title: `${results.length - failed}/${results.length} ${t('modals.success_updated')}`, color: 'warning' })
   }
+  handleRefresh()
 }
 
-async function handleDelete() {
-  if (selectedRows.value.length === 0) return
-  try {
-    await Promise.allSettled(
-      selectedRows.value.map(c => $fetch(`/api/coupons/${c.id}`, { method: 'DELETE' }))
-    )
-    toast.add({ title: t('modals.success_deleted'), color: 'success' })
-    handleRefresh()
-  } catch {
-    toast.add({ title: t('common.error'), color: 'error' })
-  }
-}
-
-async function handleMarkWon() {
-  if (selectedRows.value.length === 0) return
-  try {
-    await Promise.allSettled(
-      selectedRows.value.map(c => $fetch(`/api/coupons/${c.id}`, { method: 'PATCH', body: { status: 'WON' } }))
-    )
-    toast.add({ title: t('modals.success_updated'), color: 'success' })
-    handleRefresh()
-  } catch {
-    toast.add({ title: t('common.error'), color: 'error' })
-  }
-}
-
-async function handleMarkLost() {
-  if (selectedRows.value.length === 0) return
-  try {
-    await Promise.allSettled(
-      selectedRows.value.map(c => $fetch(`/api/coupons/${c.id}`, { method: 'PATCH', body: { status: 'LOST' } }))
-    )
-    toast.add({ title: t('modals.success_updated'), color: 'success' })
-    handleRefresh()
-  } catch {
-    toast.add({ title: t('common.error'), color: 'error' })
-  }
-}
+function handleCancel() { handleBulkAction({ type: 'cancel' }) }
+function handleDelete() { handleBulkAction({ type: 'delete' }) }
+function handleMarkWon() { handleBulkAction({ type: 'status', status: 'WON' }) }
+function handleMarkLost() { handleBulkAction({ type: 'status', status: 'LOST' }) }
 </script>

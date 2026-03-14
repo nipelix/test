@@ -67,6 +67,7 @@ import { formatBalance } from '~~/shared/utils/formatters'
 
 definePageMeta({ layout: 'panel', middleware: 'panel' })
 
+
 const { t } = useI18n()
 
 const columns = [
@@ -88,6 +89,5 @@ const {
 } = useCouponList('account-statement', columns)
 
 const stats = computed(() => couponStats.value)
-const profitLossNum = computed(() => parseFloat(stats.value.profitLoss || '0'))
-const profitLoss = computed(() => formatBalance(profitLossNum.value))
+const profitLoss = computed(() => formatBalance(stats.value.profitLoss))
 </script>
