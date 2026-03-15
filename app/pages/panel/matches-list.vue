@@ -52,6 +52,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Match } from '~~/shared/types/entities'
 definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
@@ -71,10 +72,10 @@ const {
   rows, total, totalPages, status, searchQuery, currentPage, pageSize,
   selectedIds, selectedRows, allSelected, someSelected, toggleAll, toggleRow,
   handleRefresh, filteredColumns, bulkPatch
-} = useEntityList<any>('/api/matches', 'matches-list', columns)
+} = useEntityList<Match>('/api/matches', 'matches-list', columns)
 
 const modalOpen = ref(false)
-const editItem = ref<any>(null)
+const editItem = ref<Match | null>(null)
 
 const formFields = [
   { key: 'homeTeam', label: t('matches.home'), type: 'text' as const, required: true },

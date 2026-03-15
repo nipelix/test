@@ -54,6 +54,7 @@
 </template>
 
 <script setup lang="ts">
+import type { League } from '~~/shared/types/entities'
 definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN'] })
 
 const { t } = useI18n()
@@ -72,10 +73,10 @@ const {
   rows, total, totalPages, status, searchQuery, currentPage, pageSize,
   selectedIds, selectedRows, allSelected, someSelected, toggleAll, toggleRow,
   handleRefresh, filteredColumns, bulkPatch, bulkDelete
-} = useEntityList<any>('/api/leagues', 'manage-leagues', columns)
+} = useEntityList<League>('/api/leagues', 'manage-leagues', columns)
 
 const modalOpen = ref(false)
-const editItem = ref<any>(null)
+const editItem = ref<League | null>(null)
 
 const formFields = [
   { key: 'name', label: t('common.name'), type: 'text' as const, required: true }

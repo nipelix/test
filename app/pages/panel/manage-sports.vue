@@ -55,6 +55,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Sport } from '~~/shared/types/entities'
 definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN'] })
 
 const { t } = useI18n()
@@ -73,15 +74,15 @@ const {
   rows, total, totalPages, status, searchQuery, currentPage, pageSize,
   selectedIds, selectedRows, allSelected, someSelected, toggleAll, toggleRow,
   handleRefresh, filteredColumns, bulkPatch, bulkDelete
-} = useEntityList<any>('/api/sports', 'manage-sports', columns)
+} = useEntityList<Sport>('/api/sports', 'manage-sports', columns)
 
 const modalOpen = ref(false)
-const editItem = ref<any>(null)
+const editItem = ref<Sport | null>(null)
 
-const formFields = [
+const formFields = computed(() => [
   { key: 'name', label: t('common.name'), type: 'text', required: true },
   { key: 'slug', label: 'Slug', type: 'text', required: true }
-]
+])
 
 function openEdit() {
   if (selectedRows.value.length === 1) {
