@@ -1,7 +1,7 @@
 import { readonly as vueReadonly } from 'vue'
 
 /**
- * Composable for inline provider mapping CRUD.
+ * Composable for inline provider mapping CRUD (add, edit, delete).
  * Auto-fetches when entityId changes.
  */
 export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>) {
@@ -10,10 +10,16 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
 
   const mappings = ref<any[]>([])
   const loading = ref(false)
-  const adding = ref(false)
+  const saving = ref(false)
   const deletingId = ref<number | null>(null)
+  const editingId = ref<number | null>(null)
+
+  // New mapping form
   const newProviderId = ref<number | null>(null)
   const newExternalId = ref('')
+
+  // Edit form
+  const editExternalId = ref('')
 
   const { data: providers } = useAsyncData('providers-global', () =>
     $fetch<{ data: any[] }>('/api/providers', { query: { limit: 100 } }).catch(() => ({ data: [] }))
@@ -39,17 +45,42 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
 
   async function handleAdd() {
     if (!entityId.value || !newProviderId.value || !newExternalId.value) return
-    adding.value = true
+    saving.value = true
     try {
       await $fetch('/api/provider-mappings', {
         method: 'POST',
-        body: { entityType: entityType.value, entityId: entityId.value, providerId: newProviderId.value, externalId: newExternalId.value }
+        body: { entityType: entityType.value, entityId: entityId.value, providerId: newProviderId.value, externalId: Number(newExternalId.value) }
       })
       newExternalId.value = ''
       await fetchMappings()
     } catch (err: any) {
       toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
-    } finally { adding.value = false }
+    } finally { saving.value = false }
+  }
+
+  function startEdit(mapping: any) {
+    editingId.value = mapping.id
+    editExternalId.value = String(mapping.externalId)
+  }
+
+  function cancelEdit() {
+    editingId.value = null
+    editExternalId.value = ''
+  }
+
+  async function handleSaveEdit(id: number) {
+    if (!editExternalId.value) return
+    saving.value = true
+    try {
+      await $fetch(`/api/provider-mappings/${id}`, {
+        method: 'PATCH',
+        body: { externalId: Number(editExternalId.value) }
+      })
+      cancelEdit()
+      await fetchMappings()
+    } catch (err: any) {
+      toast.add({ title: t('common.error'), description: err.data?.statusMessage, color: 'error' })
+    } finally { saving.value = false }
   }
 
   async function handleDelete(id: number) {
@@ -64,9 +95,10 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
   return {
     mappings: vueReadonly(mappings),
     loading: vueReadonly(loading),
-    adding: vueReadonly(adding),
+    saving: vueReadonly(saving),
     deletingId: vueReadonly(deletingId),
+    editingId, editExternalId,
     newProviderId, newExternalId, providerOptions,
-    handleAdd, handleDelete, fetchMappings
+    handleAdd, startEdit, cancelEdit, handleSaveEdit, handleDelete, fetchMappings
   }
 }
