@@ -8,6 +8,7 @@
     :search-placeholder="t('leagues.search')"
     :add-label="t('leagues.add_league')"
     :edit-title="t('leagues.edit_league')"
+    mapping-entity-type="LEAGUE"
   />
 </template>
 

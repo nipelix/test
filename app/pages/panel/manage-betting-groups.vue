@@ -8,6 +8,7 @@
     :search-placeholder="t('betting_groups.search')"
     :add-label="t('betting_groups.add_group')"
     :edit-title="t('betting_groups.edit_group')"
+    mapping-entity-type="BETTING_GROUP"
   />
 </template>
 

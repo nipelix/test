@@ -76,7 +76,7 @@
     <!-- Modals -->
     <AdminEntityFormModal v-model:open="marketModalOpen" :item="marketEditItem" :title="marketEditItem ? t('markets.edit') : t('markets.add')" :fields="marketFields" endpoint="/api/market-types" @success="marketList.handleRefresh()" />
     <AdminEntityFormModal v-model:open="selModalOpen" :item="selEditItem" :title="selEditItem ? t('markets.edit_selection') : t('markets.add_selection')" :fields="selFields" endpoint="/api/selection-templates" @success="loadSelections" />
-    <AdminMappingDialog v-model:open="mappingOpen" :entity-type="mappingEntityType" :entity-id="mappingEntityId" :entity-name="mappingEntityName" />
+    <AdminMappingSlideover v-model:open="mappingOpen" :entity-type="mappingEntityType" :entity-id="mappingEntityId" :entity-name="mappingEntityName" />
   </div>
 </template>
 

@@ -614,6 +614,7 @@
   "mappings": {
     "provider_mappings": "Provider Eşlemeleri",
     "no_mappings": "Henüz eşleme yok",
+    "add_mapping": "Yeni Eşleme Ekle",
     "select_provider": "Provider Seçin",
     "external_id": "Harici ID"
   },

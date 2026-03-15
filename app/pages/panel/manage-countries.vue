@@ -8,6 +8,7 @@
     :search-placeholder="t('countries.search')"
     :add-label="t('countries.add_country')"
     :edit-title="t('countries.edit_country')"
+    mapping-entity-type="COUNTRY"
   />
 </template>
 

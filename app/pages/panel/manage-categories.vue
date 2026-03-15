@@ -28,6 +28,7 @@
               <p class="text-xs text-muted">ID: {{ market.id }}</p>
             </div>
             <div class="flex gap-1">
+              <UButton icon="i-lucide-link" size="xs" variant="ghost" @click.stop="openMarketMapping(market)" />
               <UButton icon="i-lucide-pencil" size="xs" variant="ghost" @click.stop="marketEditItem = market; marketModalOpen = true" />
               <UButton icon="i-lucide-trash-2" size="xs" variant="ghost" color="error" @click.stop="deleteMarket(market.id)" />
             </div>
@@ -93,6 +94,14 @@
       endpoint="/api/selection-templates"
       @success="refreshSelections"
     />
+
+    <!-- Mapping Slideover -->
+    <AdminMappingSlideover
+      v-model:open="mappingOpen"
+      :entity-type="mappingEntityType"
+      :entity-id="mappingEntityId"
+      :entity-name="mappingEntityName"
+    />
   </div>
 </template>
 
@@ -108,6 +117,19 @@ const marketList = useEntityList<any>('/api/market-types', 'manage-categories-ma
 ])
 
 const selectedMarketId = ref<number | null>(null)
+
+// Mapping slideover
+const mappingOpen = ref(false)
+const mappingEntityType = ref('MARKET_TYPE')
+const mappingEntityId = ref<number | null>(null)
+const mappingEntityName = ref('')
+
+function openMarketMapping(market: any) {
+  mappingEntityType.value = 'MARKET_TYPE'
+  mappingEntityId.value = market.id
+  mappingEntityName.value = market.name
+  mappingOpen.value = true
+}
 const selections = ref<any[]>([])
 
 const marketModalOpen = ref(false)

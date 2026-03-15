@@ -8,6 +8,7 @@
     :search-placeholder="t('sports.search')"
     :add-label="t('sports.add_sport')"
     :edit-title="t('sports.edit_sport')"
+    mapping-entity-type="SPORT"
   />
 </template>
 

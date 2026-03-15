@@ -20,7 +20,21 @@
           @deactivate="handleDeactivate"
           @delete="handleDelete"
           @update:search="searchQuery = $event"
-        />
+        >
+          <!-- Mapping button in toolbar -->
+          <template v-if="mappingEntityType" #extra-actions>
+            <UButton
+              icon="i-lucide-link"
+              variant="outline"
+              color="neutral"
+              size="sm"
+              :disabled="selectedRows.length !== 1"
+              @click="openMapping"
+            >
+              {{ t('mappings.provider_mappings') }}
+            </UButton>
+          </template>
+        </AdminEntityToolbar>
 
         <AdminUserTable
           :data="rows"
@@ -50,6 +64,15 @@
       :endpoint="endpoint"
       @success="handleRefresh"
     />
+
+    <!-- Mapping Slideover -->
+    <AdminMappingSlideover
+      v-if="mappingEntityType"
+      v-model:open="mappingOpen"
+      :entity-type="mappingEntityType"
+      :entity-id="mappingEntityId"
+      :entity-name="mappingEntityName"
+    />
   </div>
 </template>
 
@@ -63,6 +86,7 @@ const props = defineProps<{
   searchPlaceholder: string
   addLabel: string
   editTitle: string
+  mappingEntityType?: string
 }>()
 
 const toast = useToast()
@@ -77,10 +101,24 @@ const {
 const modalOpen = ref(false)
 const editItem = ref<any>(null)
 
+// Mapping slideover state
+const mappingOpen = ref(false)
+const mappingEntityId = ref<number | null>(null)
+const mappingEntityName = ref('')
+
 function openEdit() {
   if (selectedRows.value.length === 1) {
     editItem.value = selectedRows.value[0]
     modalOpen.value = true
+  }
+}
+
+function openMapping() {
+  if (selectedRows.value.length === 1) {
+    const row = selectedRows.value[0]
+    mappingEntityId.value = row.id
+    mappingEntityName.value = row.name || row.username || `#${row.id}`
+    mappingOpen.value = true
   }
 }
 
