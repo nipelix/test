@@ -1,15 +1,7 @@
 <template>
-  <UModal v-model:open="isOpen" :title="modalTitle" :description="modalTitle">
-    <template #content>
-      <UCard>
-        <template #header>
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold">{{ modalTitle }}</h3>
-            <UButton icon="i-lucide-x" variant="ghost" color="neutral" size="sm" @click="isOpen = false" />
-          </div>
-        </template>
-
-        <div class="space-y-4">
+  <USlideover v-model:open="isOpen" :title="modalTitle">
+    <template #body>
+      <form class="space-y-4" @submit.prevent="handleSubmit">
           <!-- Parent Selection -->
           <AdminParentSelectionFields
             :show-admin="showAdminSelect"
@@ -44,17 +36,16 @@
           <UFormField v-if="showBalance" :label="t('modals.initial_balance')" name="initialBalance">
             <UInput v-model="form.initialBalance" type="number" :placeholder="t('modals.initial_balance')" class="w-full" autocomplete="off" />
           </UFormField>
-        </div>
-
-        <template #footer>
-          <div class="flex justify-end gap-2">
-            <UButton variant="outline" color="neutral" @click="isOpen = false">{{ t('common.cancel') }}</UButton>
-            <UButton color="primary" :loading="loading" @click="handleSubmit">{{ t('common.submit') }}</UButton>
-          </div>
-        </template>
-      </UCard>
+      </form>
     </template>
-  </UModal>
+
+    <template #footer>
+      <div class="flex justify-end gap-2">
+        <UButton variant="outline" color="neutral" @click="isOpen = false">{{ t('common.cancel') }}</UButton>
+        <UButton type="submit" color="primary" :loading="loading" @click="handleSubmit">{{ t('common.submit') }}</UButton>
+      </div>
+    </template>
+  </USlideover>
 </template>
 
 <script setup lang="ts">

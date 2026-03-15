@@ -1,7 +1,7 @@
 <template>
-  <UModal v-model:open="isOpen" :title="t('modals.credit_title')" :description="t('modals.credit_description')">
-    <template #content>
-      <div class="p-6 space-y-5">
+  <USlideover v-model:open="isOpen" :title="t('modals.credit_title')">
+    <template #body>
+      <div class="space-y-5">
         <!-- Header -->
         <div class="flex items-start justify-between">
           <div>
@@ -62,7 +62,7 @@
         </UButton>
       </div>
     </template>
-  </UModal>
+  </USlideover>
 </template>
 
 <script setup lang="ts">

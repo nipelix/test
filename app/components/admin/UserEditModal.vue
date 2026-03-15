@@ -1,15 +1,7 @@
 <template>
-  <UModal v-model:open="isOpen" :title="t('modals.edit_title')" :description="t('modals.edit_title')">
-    <template #content>
-      <UCard>
-        <template #header>
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold">{{ t('modals.edit_title') }}</h3>
-            <UButton icon="i-lucide-x" variant="ghost" color="neutral" size="sm" @click="isOpen = false" />
-          </div>
-        </template>
-
-        <div class="space-y-4">
+  <USlideover v-model:open="isOpen" :title="t('modals.edit_title')">
+    <template #body>
+      <form class="space-y-4" @submit.prevent="handleSubmit">
           <!-- Parent Selection -->
           <AdminParentSelectionFields
             :show-admin="showAdminSelect"
@@ -36,17 +28,16 @@
           <UFormField :label="t('common.status')" name="status">
             <USelectMenu v-model="form.status" :items="statusOptions" value-key="value" class="w-full" />
           </UFormField>
-        </div>
-
-        <template #footer>
-          <div class="flex justify-end gap-2">
-            <UButton variant="outline" color="neutral" @click="isOpen = false">{{ t('common.cancel') }}</UButton>
-            <UButton color="primary" :loading="loading" @click="handleSubmit">{{ t('common.save') }}</UButton>
-          </div>
-        </template>
-      </UCard>
+      </form>
     </template>
-  </UModal>
+
+    <template #footer>
+      <div class="flex justify-end gap-2">
+        <UButton variant="outline" color="neutral" @click="isOpen = false">{{ t('common.cancel') }}</UButton>
+        <UButton type="submit" color="primary" :loading="loading" @click="handleSubmit">{{ t('common.save') }}</UButton>
+      </div>
+    </template>
+  </USlideover>
 </template>
 
 <script setup lang="ts">

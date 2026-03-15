@@ -1,7 +1,7 @@
 <template>
-  <UModal v-model:open="isOpen" :title="title">
+  <USlideover v-model:open="isOpen" :title="title">
     <template #body>
-      <div class="space-y-4">
+      <form class="space-y-4" @submit.prevent="handleSubmit">
         <UFormField
           v-for="field in fields"
           :key="field.key"
@@ -20,16 +20,16 @@
           />
           <USwitch v-else-if="field.type === 'boolean'" v-model="form[field.key]" :label="field.label" />
         </UFormField>
-      </div>
+      </form>
     </template>
 
     <template #footer>
       <div class="flex justify-end gap-2">
         <UButton variant="outline" color="neutral" @click="isOpen = false">{{ t('common.cancel') }}</UButton>
-        <UButton color="primary" :loading="loading" @click="handleSubmit">{{ t('common.save') }}</UButton>
+        <UButton type="submit" color="primary" :loading="loading" @click="handleSubmit">{{ t('common.save') }}</UButton>
       </div>
     </template>
-  </UModal>
+  </USlideover>
 </template>
 
 <script setup lang="ts">
