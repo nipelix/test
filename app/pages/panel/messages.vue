@@ -7,13 +7,20 @@
       </UButton>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 h-[calc(100vh-14rem)]">
-      <!-- Conversation List -->
-      <UCard class="lg:col-span-1 overflow-hidden flex flex-col">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" style="height: calc(100dvh - 12rem)">
+      <!-- Conversation List (hide on mobile when chat is active) -->
+      <UCard v-if="!activeConversationId || !isMobile" class="lg:col-span-1 overflow-hidden flex flex-col">
         <template #header>
           <UInput v-model="conversationSearch" icon="i-lucide-search" :placeholder="t('messages.search_conversations')" size="sm" />
         </template>
-        <div class="flex-1 overflow-y-auto divide-y divide-gray-200 dark:divide-gray-800">
+
+        <!-- Loading -->
+        <div v-if="!conversationsData" class="space-y-3 p-3">
+          <USkeleton v-for="i in 5" :key="i" class="h-14 rounded-lg" />
+        </div>
+
+        <!-- List -->
+        <div v-else class="flex-1 overflow-y-auto divide-y divide-default">
           <div
             v-for="conv in filteredConversations"
             :key="conv.id"
@@ -33,17 +40,22 @@
             </div>
             <span class="text-[10px] text-muted shrink-0">{{ formatTime(conv.lastMessageAt) }}</span>
           </div>
-          <p v-if="filteredConversations.length === 0" class="text-sm text-muted text-center py-8">
-            {{ t('messages.no_conversations') }}
-          </p>
+
+          <!-- Empty -->
+          <div v-if="filteredConversations.length === 0" class="flex flex-col items-center py-12 text-muted">
+            <UIcon name="i-lucide-message-square" class="w-10 h-10 mb-2 opacity-30" />
+            <p class="text-sm">{{ t('messages.no_conversations') }}</p>
+          </div>
         </div>
       </UCard>
 
       <!-- Chat Area -->
-      <UCard class="lg:col-span-2 overflow-hidden flex flex-col">
+      <UCard v-if="activeConversationId || !isMobile" class="lg:col-span-2 overflow-hidden flex flex-col">
         <template v-if="activeConversationId" #header>
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
+              <!-- Back button on mobile -->
+              <UButton v-if="isMobile" icon="i-lucide-arrow-left" variant="ghost" size="xs" @click="activeConversationId = null" />
               <CommonUserAvatar :username="activeConversation?.participantUsername ?? ''" size="sm" />
               <span class="font-medium">{{ activeConversation?.participantUsername }}</span>
             </div>
@@ -51,61 +63,63 @@
           </div>
         </template>
 
-        <div v-if="activeConversationId" class="flex-1 overflow-y-auto p-4 space-y-3">
-          <div
-            v-for="msg in messages"
-            :key="msg.id"
-            class="flex"
-            :class="msg.senderId === auth.user?.id ? 'justify-end' : 'justify-start'"
-          >
-            <div
-              class="max-w-[70%] rounded-lg px-3 py-2 text-sm"
-              :class="msg.senderId === auth.user?.id ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-800'"
-            >
-              <p>{{ msg.content }}</p>
-              <p class="text-[10px] mt-1 opacity-70">{{ formatTime(msg.createdAt) }}</p>
+        <!-- Messages -->
+        <div v-if="activeConversationId" ref="chatContainer" class="flex-1 overflow-y-auto p-4 space-y-1">
+          <template v-for="(msg, i) in messages" :key="msg.id">
+            <!-- Date separator -->
+            <div v-if="shouldShowDateSeparator(i)" class="text-center text-xs text-muted py-3">
+              <span class="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">{{ formatDateLabel(msg.createdAt) }}</span>
             </div>
-          </div>
+
+            <!-- Message bubble -->
+            <div class="flex" :class="msg.senderId === auth.user?.id ? 'justify-end' : 'justify-start'">
+              <div
+                class="max-w-[70%] rounded-2xl px-3.5 py-2 text-sm"
+                :class="msg.senderId === auth.user?.id
+                  ? 'bg-primary text-white rounded-br-md'
+                  : 'bg-gray-100 dark:bg-gray-800 rounded-bl-md'"
+              >
+                <p>{{ msg.content }}</p>
+                <p class="text-[10px] mt-1 opacity-60 text-right">{{ formatTime(msg.createdAt) }}</p>
+              </div>
+            </div>
+          </template>
         </div>
-        <div v-else class="flex-1 flex items-center justify-center text-muted">
-          {{ t('messages.select_conversation') }}
+
+        <!-- No conversation selected -->
+        <div v-else class="flex-1 flex flex-col items-center justify-center text-muted gap-2">
+          <UIcon name="i-lucide-message-circle" class="w-16 h-16 opacity-20" />
+          <p class="text-sm">{{ t('messages.select_conversation') }}</p>
         </div>
 
         <!-- Message Input -->
-        <div v-if="activeConversationId" class="border-t border-gray-200 dark:border-gray-800 p-3">
-          <div class="flex gap-2">
-            <UInput v-model="messageInput" :placeholder="t('messages.type_message')" class="flex-1" @keyup.enter="sendMessage" />
-            <UButton icon="i-lucide-send" :loading="sending" @click="sendMessage" />
-          </div>
+        <div v-if="activeConversationId" class="border-t border-default p-3">
+          <form class="flex gap-2" @submit.prevent="sendMessage">
+            <UInput v-model="messageInput" :placeholder="t('messages.type_message')" class="flex-1" />
+            <UButton type="submit" icon="i-lucide-send" :loading="sending" :disabled="!messageInput.trim()" />
+          </form>
         </div>
       </UCard>
     </div>
 
     <!-- New Chat Modal -->
-    <UModal v-model:open="newChatOpen">
-      <template #content>
-        <UCard>
-          <template #header>
-            <h3 class="text-lg font-semibold">{{ t('messages.new_chat') }}</h3>
-          </template>
-          <UFormField :label="t('messages.select_user')">
-            <UInput v-model="newChatUsername" :placeholder="t('common.username')" />
-          </UFormField>
-          <template #footer>
-            <div class="flex justify-end gap-2">
-              <UButton variant="outline" @click="newChatOpen = false">{{ t('common.cancel') }}</UButton>
-              <UButton color="primary" @click="startNewChat">{{ t('messages.start_chat') }}</UButton>
-            </div>
-          </template>
-        </UCard>
+    <UModal v-model:open="newChatOpen" :title="t('messages.new_chat')">
+      <template #body>
+        <UFormField :label="t('messages.select_user')">
+          <UInput v-model="newChatUsername" :placeholder="t('common.username')" />
+        </UFormField>
+      </template>
+      <template #footer>
+        <div class="flex justify-end gap-2">
+          <UButton variant="outline" @click="newChatOpen = false">{{ t('common.cancel') }}</UButton>
+          <UButton color="primary" :disabled="!newChatUsername.trim()" @click="startNewChat">{{ t('messages.start_chat') }}</UButton>
+        </div>
       </template>
     </UModal>
   </div>
 </template>
 
 <script setup lang="ts">
-import { formatDate } from '~~/shared/utils/formatters'
-
 definePageMeta({ layout: 'panel', middleware: 'panel' })
 
 const { t } = useI18n()
@@ -118,8 +132,16 @@ const messageInput = ref('')
 const sending = ref(false)
 const newChatOpen = ref(false)
 const newChatUsername = ref('')
+const chatContainer = ref<HTMLElement | null>(null)
+const isMobile = ref(false)
 
-// Conversations
+onMounted(() => {
+  const check = () => { isMobile.value = window.innerWidth < 1024 }
+  check()
+  window.addEventListener('resize', check)
+  onBeforeUnmount(() => window.removeEventListener('resize', check))
+})
+
 const { data: conversationsData, refresh: refreshConversations } = await useAsyncData('messages-conversations', () =>
   $fetch<any[]>('/api/messages/conversations').catch(() => [])
 )
@@ -135,7 +157,6 @@ const activeConversation = computed(() =>
   conversations.value.find((c: any) => c.id === activeConversationId.value)
 )
 
-// Messages for active conversation
 const messages = ref<any[]>([])
 
 watch(activeConversationId, async (id) => {
@@ -143,21 +164,50 @@ watch(activeConversationId, async (id) => {
   try {
     const data = await $fetch<any[]>(`/api/messages/conversations/${id}`)
     messages.value = data
+    scrollToBottom()
   } catch { messages.value = [] }
 })
+
+function scrollToBottom() {
+  nextTick(() => {
+    chatContainer.value?.scrollTo({ top: chatContainer.value.scrollHeight, behavior: 'smooth' })
+  })
+}
+
+function shouldShowDateSeparator(index: number): boolean {
+  if (index === 0) return true
+  const curr = new Date(messages.value[index].createdAt).toDateString()
+  const prev = new Date(messages.value[index - 1].createdAt).toDateString()
+  return curr !== prev
+}
+
+function formatDateLabel(dateStr: string): string {
+  const d = new Date(dateStr)
+  const now = new Date()
+  if (d.toDateString() === now.toDateString()) return t('common.today')
+  const yesterday = new Date(now)
+  yesterday.setDate(yesterday.getDate() - 1)
+  if (d.toDateString() === yesterday.toDateString()) return t('common.yesterday')
+  return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
+function formatTime(dateStr: string): string {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  const now = new Date()
+  if (d.toDateString() === now.toDateString()) return d.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })
+  return d.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit' })
+}
 
 async function sendMessage() {
   if (!messageInput.value.trim() || !activeConversationId.value) return
   sending.value = true
   try {
-    await $fetch('/api/messages/send', {
-      method: 'POST',
-      body: { conversationId: activeConversationId.value, content: messageInput.value.trim() }
-    })
+    await $fetch('/api/messages/send', { method: 'POST', body: { conversationId: activeConversationId.value, content: messageInput.value.trim() } })
     messageInput.value = ''
-    // Refresh messages
     const data = await $fetch<any[]>(`/api/messages/conversations/${activeConversationId.value}`)
     messages.value = data
+    scrollToBottom()
     refreshConversations()
   } catch {
     toast.add({ title: t('common.error'), color: 'error' })
@@ -171,27 +221,14 @@ async function deleteConversation() {
     activeConversationId.value = null
     messages.value = []
     refreshConversations()
-  } catch {
-    toast.add({ title: t('common.error'), color: 'error' })
-  }
+  } catch { toast.add({ title: t('common.error'), color: 'error' }) }
 }
 
 async function startNewChat() {
   if (!newChatUsername.value.trim()) return
-  // In a real implementation, resolve username to userId first
   newChatOpen.value = false
   newChatUsername.value = ''
   toast.add({ title: t('messages.chat_started'), color: 'success' })
   refreshConversations()
-}
-
-function formatTime(dateStr: string) {
-  if (!dateStr) return ''
-  const d = new Date(dateStr)
-  const now = new Date()
-  if (d.toDateString() === now.toDateString()) {
-    return d.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })
-  }
-  return d.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit' })
 }
 </script>
