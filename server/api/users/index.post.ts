@@ -58,9 +58,23 @@ export default defineEventHandler(async (event) => {
     return created
   })
 
-  // Tree and wallet (these use their own transactions internally)
+  // Tree and wallet
   await addUserToTree(newUser.id, parentId)
-  await createWallet(newUser.id)
+  const wallet = await createWallet(newUser.id)
+
+  // Set initial balance if provided (does NOT deduct from creator)
+  if (body.initialBalance && body.initialBalance > 0 && wallet) {
+    await executeTransaction({
+      type: 'DEPOSIT',
+      walletId: wallet.id,
+      direction: 'CREDIT',
+      amount: body.initialBalance,
+      idempotencyKey: `initial:${newUser.id}`,
+      referenceType: 'INITIAL',
+      description: `Initial balance for ${newUser.username}`,
+      createdBy: session.userId
+    })
+  }
 
   return {
     id: newUser.id,

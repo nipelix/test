@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
     walletId: wallet.id,
     direction: 'DEBIT',
     amount: body.amount,
+    idempotencyKey: `withdraw:${userId}:${session.userId}:${Date.now()}`,
     referenceType: 'MANUAL',
     description: body.description || `Withdrawal by ${session.role}`,
     createdBy: session.userId

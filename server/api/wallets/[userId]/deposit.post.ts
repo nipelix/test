@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
     walletId: wallet.id,
     direction: 'CREDIT',
     amount: body.amount,
+    idempotencyKey: `deposit:${userId}:${session.userId}:${Date.now()}`,
     referenceType: 'MANUAL',
     description: body.description || `Deposit by ${session.role}`,
     createdBy: session.userId

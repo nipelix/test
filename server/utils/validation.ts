@@ -12,7 +12,8 @@ export const createUserSchema = z.object({
   password: z.string().min(4).max(128),
   role: z.enum(ROLES),
   walletType: z.enum(WALLET_TYPES).optional().default('NONE'),
-  parentId: z.number().int().positive().optional()
+  parentId: z.number().int().positive().optional(),
+  initialBalance: z.number().min(0).optional()
 })
 
 export const updateUserSchema = z.object({
