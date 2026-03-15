@@ -1,15 +1,18 @@
 import { pgTable, serial, integer, varchar, timestamp, pgEnum, index, uniqueIndex, jsonb } from 'drizzle-orm/pg-core'
 import { sql } from 'drizzle-orm'
-import { ROLES, WALLET_TYPES } from '~~/shared/types/roles'
 
-export const roleEnum = pgEnum('role', [...ROLES])
+// Inline for drizzle-kit compatibility (cannot resolve ~~ alias)
+const ROLES_LIST = ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER', 'PLAYER'] as const
+const WALLET_TYPES_LIST = ['CREDIT', 'MONEY', 'NONE'] as const
+
+export const roleEnum = pgEnum('role', [...ROLES_LIST])
 
 export const userStatusEnum = pgEnum('user_status', [
   'ACTIVE',
   'PASSIVE'
 ])
 
-export const walletTypeEnum = pgEnum('wallet_type', [...WALLET_TYPES])
+export const walletTypeEnum = pgEnum('wallet_type', [...WALLET_TYPES_LIST])
 
 export const loginMethodEnum = pgEnum('login_method', [
   'PASSWORD',
