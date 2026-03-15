@@ -37,6 +37,11 @@
     "today": "Bugün",
     "yesterday": "Dün",
     "no_data": "Veri yok",
+    "icon": "İkon",
+    "category": "Kategori",
+    "sort_order": "Sıralama",
+    "sport": "Spor",
+    "translations": "Çeviriler",
     "toggle_menu": "Menüyü aç/kapat",
     "password": "Şifre",
     "description": "Açıklama",
@@ -560,6 +565,13 @@
     "action": "Aksiyon",
     "entity_type": "Varlık Tipi",
     "entity_id": "Varlık ID"
+  },
+  "leagues": {
+    "search": "Lig ara...",
+    "add_league": "Lig Ekle",
+    "edit_league": "Lig Düzenle",
+    "popular": "Popüler",
+    "most_popular": "En Popüler"
   },
   "suspensions": {
     "markets": "Marketler",

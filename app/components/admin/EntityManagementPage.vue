@@ -62,6 +62,8 @@
       :title="editItem ? editTitle : addLabel"
       :fields="formFields"
       :endpoint="endpoint"
+      :translation-entity-type="translationEntityType"
+      :translation-fields="translationFieldsList"
       @success="handleRefresh"
     />
 
@@ -82,12 +84,16 @@ const props = defineProps<{
   endpoint: string
   pageKey: string
   columns: Array<{ accessorKey: string; header: string }>
-  formFields: Array<{ key: string; label: string; type?: 'text' | 'number' | 'boolean'; required?: boolean }>
+  formFields: Array<{ key: string; label: string; type?: 'text' | 'number' | 'boolean' | 'select'; required?: boolean; options?: Array<{ label: string; value: any }> }>
   searchPlaceholder: string
   addLabel: string
   editTitle: string
   mappingEntityType?: string
+  translationEntityType?: string
+  translationFields?: string[]
 }>()
+
+const translationFieldsList = computed(() => props.translationFields ?? ['name'])
 
 const toast = useToast()
 const { t } = useI18n()

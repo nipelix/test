@@ -9,6 +9,8 @@
     :add-label="t('countries.add_country')"
     :edit-title="t('countries.edit_country')"
     mapping-entity-type="COUNTRY"
+    translation-entity-type="COUNTRY"
+    :translation-fields="['name']"
   />
 </template>
 
@@ -21,6 +23,7 @@ const columns = [
   { accessorKey: 'id', header: t('common.id') },
   { accessorKey: 'name', header: t('common.name') },
   { accessorKey: 'code', header: t('countries.code') },
+  { accessorKey: 'slug', header: 'Slug' },
   { accessorKey: 'flag', header: t('countries.flag') },
   { accessorKey: 'active', header: t('common.status') }
 ]
@@ -28,6 +31,8 @@ const columns = [
 const formFields = computed(() => [
   { key: 'name', label: t('common.name'), type: 'text' as const, required: true },
   { key: 'code', label: t('countries.code'), type: 'text' as const, required: true },
-  { key: 'flag', label: t('countries.flag'), type: 'text' as const }
+  { key: 'slug', label: 'Slug', type: 'text' as const },
+  { key: 'flag', label: t('countries.flag'), type: 'text' as const },
+  { key: 'active', label: t('common.active'), type: 'boolean' as const }
 ])
 </script>
