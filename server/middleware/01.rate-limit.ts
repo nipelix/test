@@ -1,4 +1,7 @@
 export default defineEventHandler(async (event) => {
+  // Skip rate limiting in development
+  if (import.meta.dev) return
+
   const url = getRequestURL(event)
   if (!url.pathname.startsWith('/api/')) return
 
