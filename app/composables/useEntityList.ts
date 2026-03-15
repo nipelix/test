@@ -1,6 +1,6 @@
 /**
  * Generic composable for CRUD entity lists (sports, countries, leagues, etc.)
- * Handles: fetch, search, pagination, selection, refresh
+ * Handles: fetch, search, pagination, selection, bulk operations
  */
 export function useEntityList<T extends { id: number }>(
   endpoint: string,
@@ -9,23 +9,13 @@ export function useEntityList<T extends { id: number }>(
   defaultSort = 'id'
 ) {
   const searchQuery = ref('')
-  const debouncedSearch = ref('')
+  const debouncedSearch = refDebounced(searchQuery, 300)
   const currentPage = ref(1)
   const pageSize = ref(20)
   const selectedIds = reactive(new Set<number>())
 
-  let searchTimer: ReturnType<typeof setTimeout> | null = null
-  watch(searchQuery, (val) => {
-    if (searchTimer) clearTimeout(searchTimer)
-    searchTimer = setTimeout(() => {
-      debouncedSearch.value = val
-      currentPage.value = 1
-    }, 300)
-  })
-
-  onBeforeUnmount(() => {
-    if (searchTimer) clearTimeout(searchTimer)
-  })
+  // Reset page when search changes
+  watch(debouncedSearch, () => { currentPage.value = 1 })
 
   const tableStore = useTableStore(pageKey, columns, defaultSort)
 
@@ -45,6 +35,7 @@ export function useEntityList<T extends { id: number }>(
   const total = computed(() => response.value?.total ?? 0)
   const totalPages = computed(() => Math.max(1, Math.ceil(total.value / pageSize.value)))
 
+  // Selection
   const selectedRows = computed(() => rows.value.filter(r => selectedIds.has(r.id)))
   const allSelected = computed(() => rows.value.length > 0 && rows.value.every(r => selectedIds.has(r.id)))
   const someSelected = computed(() => !allSelected.value && rows.value.some(r => selectedIds.has(r.id)))
@@ -59,7 +50,7 @@ export function useEntityList<T extends { id: number }>(
   function clearSelection() { selectedIds.clear() }
   function handleRefresh() { clearSelection(); refresh() }
 
-  // Bulk operations — returns { succeeded, failed } counts
+  // Bulk operations
   async function bulkPatch(body: Record<string, any>): Promise<{ succeeded: number; failed: number }> {
     if (selectedRows.value.length === 0) return { succeeded: 0, failed: 0 }
     const results = await Promise.allSettled(

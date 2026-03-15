@@ -49,25 +49,13 @@ export function useCouponList(
   defaultFilter: CouponFilter = 'all'
 ) {
   const searchQuery = ref('')
-  const debouncedSearch = ref('')
+  const debouncedSearch = refDebounced(searchQuery, 300)
   const currentPage = ref(1)
   const pageSize = ref(20)
   const activeFilter = ref<CouponFilter>(defaultFilter)
   const selectedIds = reactive(new Set<number>())
 
-  // Debounce search
-  let searchTimer: ReturnType<typeof setTimeout> | null = null
-  watch(searchQuery, (val) => {
-    if (searchTimer) clearTimeout(searchTimer)
-    searchTimer = setTimeout(() => {
-      debouncedSearch.value = val
-      currentPage.value = 1
-    }, 300)
-  })
-
-  onBeforeUnmount(() => {
-    if (searchTimer) clearTimeout(searchTimer)
-  })
+  watch(debouncedSearch, () => { currentPage.value = 1 })
 
   const tableStore = useTableStore(pageKey, columns, 'createdAt')
 
