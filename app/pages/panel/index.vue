@@ -1,11 +1,12 @@
 <template>
   <div class="space-y-6">
     <!-- Stat Cards Grid -->
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <AdminStatCard
         icon="i-lucide-trophy"
         :label="t('dashboard.winning')"
         :value="stats.won"
+        :loading="!statsData"
         icon-bg-class="bg-green-100 dark:bg-green-900/30"
         icon-class="text-green-600 dark:text-green-400"
       />
