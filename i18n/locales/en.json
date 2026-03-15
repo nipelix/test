@@ -32,6 +32,12 @@
     "balance": "Balance",
     "credit": "Credit",
     "username": "Username",
+    "id_copied": "ID copied",
+    "copy_failed": "Copy failed",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "no_data": "No data",
+    "toggle_menu": "Toggle menu",
     "password": "Password",
     "description": "Description",
     "name": "Name",
@@ -512,7 +518,9 @@
     "live_betting_duration": "Live Betting Duration (min)",
     "odd_change": "Odd Change",
     "settings": "Settings",
-    "theme_mode": "Theme Mode"
+    "theme_mode": "Theme Mode",
+    "account": "Account",
+    "accent_color": "Accent Color"
   },
   "modals": {
     "edit_title": "Edit User",

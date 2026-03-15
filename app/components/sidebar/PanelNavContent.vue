@@ -89,9 +89,9 @@ async function copyUserId() {
   if (!auth.user?.id) return
   try {
     await navigator.clipboard.writeText(String(auth.user.id))
-    toast.add({ title: 'ID copied', color: 'success' })
+    toast.add({ title: t('common.id_copied'), color: 'success' })
   } catch {
-    toast.add({ title: 'Copy failed', color: 'error' })
+    toast.add({ title: t('common.copy_failed'), color: 'error' })
   }
 }
 
@@ -124,13 +124,20 @@ async function handleLogout() {
   color: var(--ui-primary);
   font-weight: 500;
   background: color-mix(in srgb, var(--ui-primary) 8%, transparent);
+  border-left: 3px solid var(--ui-primary);
+  padding-left: 13px;
+}
+.nav-link:focus-visible {
+  outline: 2px solid var(--ui-primary);
+  outline-offset: -2px;
+  border-radius: 4px;
 }
 
 .nav-icon {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  opacity: 0.6;
+  opacity: 0.75;
 }
 .nav-link--active .nav-icon {
   opacity: 1;

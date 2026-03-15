@@ -32,6 +32,12 @@
     "balance": "Bakiye",
     "credit": "Kredi",
     "username": "Kullanıcı Adı",
+    "id_copied": "ID kopyalandı",
+    "copy_failed": "Kopyalama başarısız",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "no_data": "Veri yok",
+    "toggle_menu": "Menüyü aç/kapat",
     "password": "Şifre",
     "description": "Açıklama",
     "name": "Ad",
@@ -512,7 +518,9 @@
     "live_betting_duration": "Canlı Bahis Süresi (dk)",
     "odd_change": "Oran Değişimi",
     "settings": "Ayarlar",
-    "theme_mode": "Tema Modu"
+    "theme_mode": "Tema Modu",
+    "account": "Hesap",
+    "accent_color": "Vurgu Rengi"
   },
   "modals": {
     "edit_title": "Kullanıcıyı Düzenle",
