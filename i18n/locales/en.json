@@ -554,6 +554,14 @@
     "originals": "Sinek2 Originals",
     "spotlight": "Spotlight"
   },
+  "categories": {
+    "search_markets": "Search markets...",
+    "add_market": "Add Market",
+    "edit_market": "Edit Market",
+    "selection_templates": "Selection Templates",
+    "add_selection": "Add Selection",
+    "edit_selection": "Edit Selection"
+  },
   "logs": {
     "search_actions": "Search actions...",
     "filter_action": "Filter action",

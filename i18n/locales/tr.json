@@ -554,6 +554,14 @@
     "originals": "Sinek2 Orijinal",
     "spotlight": "Öne Çıkanlar"
   },
+  "categories": {
+    "search_markets": "Market ara...",
+    "add_market": "Market Ekle",
+    "edit_market": "Market Düzenle",
+    "selection_templates": "Seçim Şablonları",
+    "add_selection": "Seçim Ekle",
+    "edit_selection": "Seçim Düzenle"
+  },
   "logs": {
     "search_actions": "Aksiyon ara...",
     "filter_action": "Aksiyon filtrele",
