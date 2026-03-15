@@ -47,7 +47,7 @@ interface FormField {
   required?: boolean
 }
 
-const props = defineProps<{
+const { item, title, fields, endpoint } = defineProps<{
   item: Record<string, any> | null
   title: string
   fields: FormField[]
@@ -66,8 +66,8 @@ const form = reactive<Record<string, any>>({})
 watch(isOpen, (val) => {
   if (val) {
     Object.keys(form).forEach(k => delete form[k])
-    for (const field of props.fields) {
-      form[field.key] = props.item?.[field.key] ?? (field.type === 'boolean' ? false : field.type === 'number' ? 0 : '')
+    for (const field of fields) {
+      form[field.key] = item?.[field.key] ?? (field.type === 'boolean' ? false : field.type === 'number' ? 0 : '')
     }
   }
 })
@@ -75,12 +75,12 @@ watch(isOpen, (val) => {
 async function handleSubmit() {
   loading.value = true
   try {
-    if (props.item?.id) {
-      await $fetch(`${props.endpoint}/${props.item.id}`, { method: 'PATCH', body: { ...form } })
+    if (item?.id) {
+      await $fetch(`${endpoint}/${item.id}`, { method: 'PATCH', body: { ...form } })
     } else {
-      await $fetch(props.endpoint, { method: 'POST', body: { ...form } })
+      await $fetch(endpoint, { method: 'POST', body: { ...form } })
     }
-    toast.add({ title: props.item?.id ? t('modals.success_updated') : t('modals.success_created'), color: 'success' })
+    toast.add({ title: item?.id ? t('modals.success_updated') : t('modals.success_created'), color: 'success' })
     isOpen.value = false
     emit('success')
   } catch (err: any) {

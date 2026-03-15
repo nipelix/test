@@ -196,9 +196,20 @@ export const useBetslipStore = defineStore('betslip', () => {
   watch(lastActivity, resetInactivityTimer, { immediate: true })
 
   return {
-    selections, originalOddsMap, stakes, category, couponName, isLocked, rules,
+    // State (readonly — mutate only through actions)
+    selections: readonly(selections),
+    originalOddsMap: readonly(originalOddsMap),
+    stakes: readonly(stakes),
+    category: readonly(category),
+    couponName,
+    isLocked: readonly(isLocked),
+    rules: readonly(rules),
+
+    // Getters
     selectionList, selectionCount, isEmpty, totalStake, totalOdds,
     potentialPayout, hasLiveSelections, hasLineSelections, hasOddChange,
+
+    // Actions
     addSelection, removeSelection, updateSelectionOdds,
     setStake, setComboStake, setCategory, setRules, clear, lock, unlock
   }

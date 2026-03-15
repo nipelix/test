@@ -252,10 +252,10 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   return {
-    // Auth
-    user,
-    loading,
-    error,
+    // Auth (readonly state, mutable via actions only)
+    user: readonly(user),
+    loading: readonly(loading),
+    error: readonly(error),
     isAuthenticated,
     isImpersonating,
     login,
@@ -265,8 +265,8 @@ export const useAuthStore = defineStore('auth', () => {
     unImpersonate,
 
     // Preferences
-    preferences,
-    preferencesLoaded,
+    preferences: readonly(preferences),
+    preferencesLoaded: readonly(preferencesLoaded),
     currentAvatarId,
     applyPreferences,
     savePreferences,
