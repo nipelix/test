@@ -1,4 +1,4 @@
-import { eq } from 'drizzle-orm'
+import { eq, and } from 'drizzle-orm'
 import { selectionTemplates, translations } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
@@ -15,7 +15,10 @@ export default defineEventHandler(async (event) => {
   }
 
   await db.delete(translations).where(
-    eq(translations.entityType, 'SELECTION_TEMPLATE')
+    and(
+      eq(translations.entityType, 'SELECTION_TEMPLATE'),
+      eq(translations.entityId, id)
+    )
   )
 
   return { ok: true }
