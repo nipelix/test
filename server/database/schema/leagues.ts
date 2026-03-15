@@ -20,5 +20,6 @@ export const leagues = pgTable('leagues', {
 }, (table) => [
   index('leagues_sport_id_idx').on(table.sportId),
   index('leagues_country_id_idx').on(table.countryId),
-  index('leagues_active_sort_idx').on(table.active, table.sortOrder)
+  index('leagues_active_sort_idx').on(table.active, table.sortOrder),
+  index('leagues_sport_active_sort_idx').on(table.sportId, table.active, table.sortOrder)
 ])

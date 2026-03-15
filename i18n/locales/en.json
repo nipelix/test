@@ -613,6 +613,7 @@
   },
   "mappings": {
     "provider_mappings": "Provider Mappings",
+    "no_mappings": "No mappings yet",
     "select_provider": "Select Provider",
     "external_id": "External ID"
   },

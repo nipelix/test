@@ -3,6 +3,7 @@ import { marketTypes } from './market-types'
 
 export const selectionTemplates = pgTable('selection_templates', {
   id: serial('id').primaryKey(),
+  name: varchar('name', { length: 200 }).notNull().default(''),
   groupId: integer('group_id').notNull(),
   marketGroupId: integer('market_group_id').references(() => marketTypes.id),
   sortOrder: integer('sort_order').notNull().default(0),
@@ -16,5 +17,6 @@ export const selectionTemplates = pgTable('selection_templates', {
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow()
 }, (table) => [
   index('selection_templates_market_group_idx').on(table.marketGroupId),
-  index('selection_templates_group_idx').on(table.groupId)
+  index('selection_templates_group_idx').on(table.groupId),
+  index('selection_templates_market_active_sort_idx').on(table.marketGroupId, table.active, table.sortOrder)
 ])
