@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
   const db = useDb()
   const conditions = [eq(matches.status, 'LIVE' as any)]
 
-  if (sportId) conditions.push(eq(matches.sportId, sportId))
+  if (sportId) conditions.push(eq(matches.sportId, Number(sportId)))
 
   const where = and(...conditions)
 

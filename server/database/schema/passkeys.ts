@@ -1,4 +1,4 @@
-import { pgTable, serial, integer, varchar, timestamp, index } from 'drizzle-orm/pg-core'
+import { pgTable, serial, integer, varchar, boolean, timestamp, index } from 'drizzle-orm/pg-core'
 import { users } from './users'
 
 export const passkeys = pgTable('passkeys', {
@@ -7,7 +7,10 @@ export const passkeys = pgTable('passkeys', {
   credentialId: varchar('credential_id', { length: 500 }).notNull().unique(),
   publicKey: varchar('public_key', { length: 2000 }).notNull(),
   counter: integer('counter').notNull().default(0),
-  deviceName: varchar('device_name', { length: 255 }),
+  name: varchar('name', { length: 255 }),
+  deviceType: varchar('device_type', { length: 50 }),
+  backedUp: boolean('backed_up').notNull().default(false),
+  transports: varchar('transports', { length: 500 }),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   lastUsedAt: timestamp('last_used_at', { withTimezone: true })
 }, (table) => [

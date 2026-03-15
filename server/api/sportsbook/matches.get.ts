@@ -14,8 +14,8 @@ export default defineEventHandler(async (event) => {
   const db = useDb()
   const conditions = [eq(matches.status, 'PREMATCH' as any)]
 
-  if (sportId) conditions.push(eq(matches.sportId, sportId))
-  if (leagueId) conditions.push(eq(matches.leagueId, leagueId))
+  if (sportId) conditions.push(eq(matches.sportId, Number(sportId)))
+  if (leagueId) conditions.push(eq(matches.leagueId, Number(leagueId)))
 
   const where = and(...conditions)
 

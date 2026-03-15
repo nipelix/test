@@ -18,8 +18,8 @@ export default defineEventHandler(async (event) => {
   const conditions = []
 
   if (status) conditions.push(eq(matches.status, status as any))
-  if (sportId) conditions.push(eq(matches.sportId, sportId))
-  if (leagueId) conditions.push(eq(matches.leagueId, leagueId))
+  if (sportId) conditions.push(eq(matches.sportId, Number(sportId)))
+  if (leagueId) conditions.push(eq(matches.leagueId, Number(leagueId)))
   if (fromDate) conditions.push(gte(matches.startTime, new Date(fromDate)))
   if (toDate) conditions.push(lte(matches.startTime, new Date(toDate)))
 
