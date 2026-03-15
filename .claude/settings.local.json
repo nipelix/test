@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx nuxi:*)",
+      "Bash(ls:*)",
+      "Bash(xargs grep:*)",
+      "Bash(xargs cat:*)",
+      "Bash(grep:*)",
+      "Bash(python3:*)",
+      "Bash(node:*)",
+      "Bash(rm:*)",
+      "Bash(psql:*)",
+      "Bash(\"/c/Program Files/PostgreSQL/18/bin/psql.exe\":*)",
+      "Bash(npx drizzle-kit:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(sed:*)",
+      "Bash(mv:*)",
+      "Bash(wc:*)",
+      "Bash(curl:*)",
+      "Bash(find:*)",
+      "Bash(git init:*)",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git diff:*)",
+      "WebFetch(domain:www.aitmpl.com)",
+      "WebFetch(domain:skillstore.io)",
+      "WebFetch(domain:skillsmp.com)",
+      "WebSearch",
+      "Bash(git clone:*)",
+      "Read(//tmp/claude-skills/**)",
+      "Read(//tmp/**)",
+      "Bash(dd:*)"
+    ]
+  }
+}

@@ -62,24 +62,36 @@ async function getSettingsByScope(scope: string, scopeRef: string): Promise<Sett
   return result
 }
 
+function deepMerge(target: any, source: any): any {
+  const result = { ...target }
+  for (const key of Object.keys(source)) {
+    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])
+      && target[key] && typeof target[key] === 'object' && !Array.isArray(target[key])) {
+      result[key] = deepMerge(target[key], source[key])
+    } else {
+      result[key] = source[key]
+    }
+  }
+  return result
+}
+
 export async function resolveSettings(userId?: string, userRole?: string): Promise<SettingsMap> {
   const cacheKey = `settings:resolved:${userId || 'anon'}:${userRole || 'none'}`
 
   return cached(cacheKey, 60, async () => {
-    // Start with defaults
-    const merged = { ...DEFAULT_SETTINGS }
+    let merged: SettingsMap = { ...DEFAULT_SETTINGS }
 
     // Layer 1: Global overrides
     const globalSettings = await getSettingsByScope('GLOBAL', 'GLOBAL')
     for (const key of Object.keys(globalSettings)) {
-      merged[key] = { ...merged[key], ...globalSettings[key] }
+      merged[key] = deepMerge(merged[key] ?? {}, globalSettings[key])
     }
 
     // Layer 2: Role overrides
     if (userRole) {
       const roleSettings = await getSettingsByScope('ROLE', userRole)
       for (const key of Object.keys(roleSettings)) {
-        merged[key] = { ...merged[key], ...roleSettings[key] }
+        merged[key] = deepMerge(merged[key] ?? {}, roleSettings[key])
       }
     }
 
@@ -87,7 +99,7 @@ export async function resolveSettings(userId?: string, userRole?: string): Promi
     if (userId) {
       const userSettings = await getSettingsByScope('USER', userId)
       for (const key of Object.keys(userSettings)) {
-        merged[key] = { ...merged[key], ...userSettings[key] }
+        merged[key] = deepMerge(merged[key] ?? {}, userSettings[key])
       }
     }
 

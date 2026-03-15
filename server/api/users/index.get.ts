@@ -26,7 +26,10 @@ export default defineEventHandler(async (event) => {
 
   if (query.role) conditions.push(eq(users.role, query.role))
   if (query.status) conditions.push(eq(users.status, query.status))
-  if (query.search) conditions.push(ilike(users.username, `%${query.search}%`))
+  if (query.search) {
+    const escaped = query.search.replace(/[%_\\]/g, '\\$&')
+    conditions.push(ilike(users.username, `%${escaped}%`))
+  }
 
   // Scope by hierarchy
   if (session.role !== 'SUPER_ADMIN') {

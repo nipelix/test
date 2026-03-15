@@ -9,12 +9,18 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-auth-utils'
   ],
- devServer: {
+
+  devServer: {
     host: '0.0.0.0',
-    port: 3010,
+    port: 3010
   },
+
   devtools: {
     enabled: true
+  },
+
+  typescript: {
+    strict: true
   },
 
   css: ['~/assets/css/main.css'],
@@ -31,7 +37,8 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { redirect: '/sportsbook' }
+    '/': { redirect: '/sportsbook' },
+    '/panel/**': { ssr: false }
   },
 
   alias: {
@@ -44,7 +51,7 @@ export default defineNuxtConfig({
     sessionSecret: '',
     webauthnRpId: 'localhost',
     webauthnRpName: 'Sinek2',
-    webauthnOrigin: 'http://localhost:3000'
+    webauthnOrigin: process.env.WEBAUTHN_ORIGIN || 'http://localhost:3010'
   },
 
   nitro: {

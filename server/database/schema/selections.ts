@@ -14,7 +14,7 @@ export const selections = pgTable('selections', {
   marketId: integer('market_id').notNull().references(() => markets.id),
   name: varchar('name', { length: 200 }).notNull(),
   label: varchar('label', { length: 50 }).notNull(),
-  baseOdds: numeric('base_odds', { precision: 10, scale: 2 }).notNull(),
+  baseOdds: numeric('base_odds', { precision: 10, scale: 4 }).notNull(),
   status: selectionStatusEnum('status').notNull().default('ACTIVE'),
   sortOrder: integer('sort_order').notNull().default(0),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),

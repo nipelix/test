@@ -1,5 +1,8 @@
 import { pgTable, serial, integer, varchar, numeric, boolean, jsonb, timestamp, pgEnum, index } from 'drizzle-orm/pg-core'
 import { users } from './users'
+import { matches } from './matches'
+import { markets } from './markets'
+import { selections } from './selections'
 
 export const couponTypeEnum = pgEnum('coupon_type', [
   'SINGLE',
@@ -33,7 +36,7 @@ export const coupons = pgTable('coupons', {
   type: couponTypeEnum('type').notNull().default('SINGLE'),
   status: couponStatusEnum('status').notNull().default('PENDING'),
   stake: numeric('stake', { precision: 15, scale: 2 }).notNull(),
-  totalOdds: numeric('total_odds', { precision: 15, scale: 2 }).notNull(),
+  totalOdds: numeric('total_odds', { precision: 15, scale: 4 }).notNull(),
   potentialPayout: numeric('potential_payout', { precision: 15, scale: 2 }).notNull(),
   actualPayout: numeric('actual_payout', { precision: 15, scale: 2 }).default('0'),
   creditDeduction: numeric('credit_deduction', { precision: 15, scale: 2 }).default('0'),
@@ -56,15 +59,15 @@ export const coupons = pgTable('coupons', {
 export const couponSelections = pgTable('coupon_selections', {
   id: serial('id').primaryKey(),
   couponId: integer('coupon_id').notNull().references(() => coupons.id),
-  matchId: integer('match_id').notNull(),
-  marketId: integer('market_id').notNull(),
-  selectionId: integer('selection_id').notNull(),
+  matchId: integer('match_id').notNull().references(() => matches.id),
+  marketId: integer('market_id').notNull().references(() => markets.id),
+  selectionId: integer('selection_id').notNull().references(() => selections.id),
   selectionName: varchar('selection_name', { length: 200 }).notNull(),
   marketName: varchar('market_name', { length: 200 }).notNull(),
   homeTeam: varchar('home_team', { length: 200 }).notNull(),
   awayTeam: varchar('away_team', { length: 200 }).notNull(),
   leagueName: varchar('league_name', { length: 200 }),
-  snapshotOdds: numeric('snapshot_odds', { precision: 10, scale: 2 }).notNull(),
+  snapshotOdds: numeric('snapshot_odds', { precision: 10, scale: 4 }).notNull(),
   status: couponSelectionStatusEnum('status').notNull().default('PENDING'),
   isLive: boolean('is_live').notNull().default(false),
   matchScore: varchar('match_score', { length: 20 }),

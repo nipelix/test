@@ -1,12 +1,14 @@
-import { eq, and, sql, gte, lte } from 'drizzle-orm'
+import { eq, sql } from 'drizzle-orm'
 import { wallets, transactions, ledgerEntries, creditRanges } from '../database/schema'
+
+type DbTransaction = Parameters<Parameters<ReturnType<typeof useDb>['transaction']>[0]>[0]
 
 interface TransactionInput {
   type: string
   walletId: number
   direction: 'DEBIT' | 'CREDIT'
   amount: number
-  idempotencyKey?: string
+  idempotencyKey: string
   referenceType?: string
   referenceId?: number
   description?: string
@@ -17,79 +19,86 @@ interface TransactionInput {
 interface TransactionResult {
   transactionId: number
   walletId: number
-  balanceBefore: number
-  balanceAfter: number
+  balanceBefore: string
+  balanceAfter: string
 }
 
-export async function executeTransaction(input: TransactionInput): Promise<TransactionResult> {
-  const db = useDb()
+/**
+ * Core ledger operation. Accepts optional tx for multi-wallet atomicity.
+ * All arithmetic done in SQL (numeric type) — no JS floating-point.
+ */
+export async function executeTransaction(
+  input: TransactionInput,
+  tx?: DbTransaction
+): Promise<TransactionResult> {
+  const executor = tx ?? useDb()
 
-  // Use raw SQL for serializable transaction with FOR UPDATE
-  const result = await db.transaction(async (tx) => {
-    // Lock the wallet row
-    const [wallet] = await tx.select()
-      .from(wallets)
-      .where(eq(wallets.id, input.walletId))
-      .for('update')
+  // Lock wallet row
+  const [wallet] = await executor.select({ id: wallets.id, balance: wallets.balance })
+    .from(wallets)
+    .where(eq(wallets.id, input.walletId))
+    .for('update')
 
-    if (!wallet) {
-      throw createError({ statusCode: 404, statusMessage: 'Wallet not found' })
+  if (!wallet) {
+    throw createError({ statusCode: 404, statusMessage: 'Wallet not found' })
+  }
+
+  // Calculate new balance in SQL to avoid floating-point
+  const amountStr = String(input.amount)
+  let newBalanceSql: ReturnType<typeof sql>
+
+  if (input.direction === 'DEBIT') {
+    // Check sufficient balance
+    const currentBalance = Number(wallet.balance)
+    if (currentBalance < input.amount) {
+      throw createError({ statusCode: 400, statusMessage: 'Insufficient balance' })
     }
+    newBalanceSql = sql`${wallets.balance}::numeric - ${amountStr}::numeric`
+  } else {
+    newBalanceSql = sql`${wallets.balance}::numeric + ${amountStr}::numeric`
+  }
 
-    const balanceBefore = parseFloat(wallet.balance)
-    let balanceAfter: number
+  // Update wallet balance atomically in SQL
+  const [updated] = await executor.update(wallets)
+    .set({ balance: sql`(${newBalanceSql})::text` })
+    .where(eq(wallets.id, input.walletId))
+    .returning({ balance: wallets.balance })
 
-    if (input.direction === 'DEBIT') {
-      balanceAfter = balanceBefore - input.amount
-      if (balanceAfter < 0) {
-        throw createError({ statusCode: 400, statusMessage: 'Insufficient balance' })
-      }
-    } else {
-      balanceAfter = balanceBefore + input.amount
-    }
+  if (!updated) {
+    throw createError({ statusCode: 500, statusMessage: 'Failed to update wallet' })
+  }
 
-    // Create transaction record
-    const [txRecord] = await tx.insert(transactions).values({
-      type: input.type as any,
-      idempotencyKey: input.idempotencyKey || null,
-      referenceType: input.referenceType || null,
-      referenceId: input.referenceId || null,
-      description: input.description || null,
-      metadata: input.metadata || null,
-      createdBy: input.createdBy || null
-    }).returning()
+  // Create transaction record
+  const [txRecord] = await executor.insert(transactions).values({
+    type: input.type as any,
+    idempotencyKey: input.idempotencyKey,
+    referenceType: input.referenceType || null,
+    referenceId: input.referenceId || null,
+    description: input.description || null,
+    metadata: input.metadata || null,
+    createdBy: input.createdBy || null
+  }).returning()
 
-    if (!txRecord) {
-      throw createError({ statusCode: 500, statusMessage: 'Failed to create transaction' })
-    }
+  if (!txRecord) {
+    throw createError({ statusCode: 500, statusMessage: 'Failed to create transaction' })
+  }
 
-    // Create ledger entry
-    await tx.insert(ledgerEntries).values({
-      transactionId: txRecord.id,
-      walletId: input.walletId,
-      direction: input.direction as any,
-      amount: String(input.amount),
-      balanceBefore: String(balanceBefore),
-      balanceAfter: String(balanceAfter)
-    })
-
-    // Update wallet balance and version
-    await tx.update(wallets)
-      .set({
-        balance: String(balanceAfter),
-        version: sql`${wallets.version} + 1`
-      })
-      .where(eq(wallets.id, input.walletId))
-
-    return {
-      transactionId: txRecord.id,
-      walletId: input.walletId,
-      balanceBefore,
-      balanceAfter
-    }
+  // Create ledger entry
+  await executor.insert(ledgerEntries).values({
+    transactionId: txRecord.id,
+    walletId: input.walletId,
+    direction: input.direction as any,
+    amount: amountStr,
+    balanceBefore: wallet.balance,
+    balanceAfter: updated.balance
   })
 
-  return result
+  return {
+    transactionId: txRecord.id,
+    walletId: input.walletId,
+    balanceBefore: wallet.balance,
+    balanceAfter: updated.balance
+  }
 }
 
 export async function getWalletByUserId(userId: number) {
@@ -109,6 +118,9 @@ export async function createWallet(userId: number) {
   return wallet
 }
 
+/**
+ * Place bet: debit player + debit dealer credit — SINGLE atomic transaction.
+ */
 export async function placeBetTransaction(
   playerWalletId: number,
   dealerWalletId: number,
@@ -117,35 +129,36 @@ export async function placeBetTransaction(
   couponId: number,
   createdBy: number
 ): Promise<{ playerTx: TransactionResult; dealerTx: TransactionResult }> {
+  const db = useDb()
   const idempotencyKey = `bet:${couponId}`
 
-  // Debit player's wallet
-  const playerTx = await executeTransaction({
-    type: 'BET',
-    walletId: playerWalletId,
-    direction: 'DEBIT',
-    amount: stake,
-    idempotencyKey: `${idempotencyKey}:player`,
-    referenceType: 'COUPON',
-    referenceId: couponId,
-    description: `Bet placed - Coupon ${couponId}`,
-    createdBy
-  })
+  return db.transaction(async (tx) => {
+    const playerTx = await executeTransaction({
+      type: 'BET',
+      walletId: playerWalletId,
+      direction: 'DEBIT',
+      amount: stake,
+      idempotencyKey: `${idempotencyKey}:player`,
+      referenceType: 'COUPON',
+      referenceId: couponId,
+      description: `Bet placed - Coupon ${couponId}`,
+      createdBy
+    }, tx)
 
-  // Debit dealer's credit
-  const dealerTx = await executeTransaction({
-    type: 'CREDIT_DEDUCTION',
-    walletId: dealerWalletId,
-    direction: 'DEBIT',
-    amount: creditDeduction,
-    idempotencyKey: `${idempotencyKey}:dealer`,
-    referenceType: 'COUPON',
-    referenceId: couponId,
-    description: `Credit deduction for coupon ${couponId}`,
-    createdBy
-  })
+    const dealerTx = await executeTransaction({
+      type: 'CREDIT_DEDUCTION',
+      walletId: dealerWalletId,
+      direction: 'DEBIT',
+      amount: creditDeduction,
+      idempotencyKey: `${idempotencyKey}:dealer`,
+      referenceType: 'COUPON',
+      referenceId: couponId,
+      description: `Credit deduction for coupon ${couponId}`,
+      createdBy
+    }, tx)
 
-  return { playerTx, dealerTx }
+    return { playerTx, dealerTx }
+  })
 }
 
 export async function winTransaction(
@@ -154,19 +167,25 @@ export async function winTransaction(
   couponId: number,
   createdBy: number
 ): Promise<TransactionResult> {
-  return executeTransaction({
-    type: 'WIN',
-    walletId: playerWalletId,
-    direction: 'CREDIT',
-    amount,
-    idempotencyKey: `win:${couponId}`,
-    referenceType: 'COUPON',
-    referenceId: couponId,
-    description: `Win payout - Coupon ${couponId}`,
-    createdBy
+  const db = useDb()
+  return db.transaction(async (tx) => {
+    return executeTransaction({
+      type: 'WIN',
+      walletId: playerWalletId,
+      direction: 'CREDIT',
+      amount,
+      idempotencyKey: `win:${couponId}`,
+      referenceType: 'COUPON',
+      referenceId: couponId,
+      description: `Win payout - Coupon ${couponId}`,
+      createdBy
+    }, tx)
   })
 }
 
+/**
+ * Cancel bet: refund player + return dealer credit — SINGLE atomic transaction.
+ */
 export async function cancelBetTransaction(
   playerWalletId: number,
   dealerWalletId: number,
@@ -175,35 +194,36 @@ export async function cancelBetTransaction(
   couponId: number,
   createdBy: number
 ): Promise<{ playerTx: TransactionResult; dealerTx: TransactionResult }> {
+  const db = useDb()
   const idempotencyKey = `cancel:${couponId}`
 
-  // Refund player
-  const playerTx = await executeTransaction({
-    type: 'CANCEL',
-    walletId: playerWalletId,
-    direction: 'CREDIT',
-    amount: stake,
-    idempotencyKey: `${idempotencyKey}:player`,
-    referenceType: 'COUPON',
-    referenceId: couponId,
-    description: `Bet cancelled - Coupon ${couponId}`,
-    createdBy
-  })
+  return db.transaction(async (tx) => {
+    const playerTx = await executeTransaction({
+      type: 'CANCEL',
+      walletId: playerWalletId,
+      direction: 'CREDIT',
+      amount: stake,
+      idempotencyKey: `${idempotencyKey}:player`,
+      referenceType: 'COUPON',
+      referenceId: couponId,
+      description: `Bet cancelled - Coupon ${couponId}`,
+      createdBy
+    }, tx)
 
-  // Return dealer credit
-  const dealerTx = await executeTransaction({
-    type: 'CREDIT_RETURN',
-    walletId: dealerWalletId,
-    direction: 'CREDIT',
-    amount: creditDeduction,
-    idempotencyKey: `${idempotencyKey}:dealer`,
-    referenceType: 'COUPON',
-    referenceId: couponId,
-    description: `Credit return for cancelled coupon ${couponId}`,
-    createdBy
-  })
+    const dealerTx = await executeTransaction({
+      type: 'CREDIT_RETURN',
+      walletId: dealerWalletId,
+      direction: 'CREDIT',
+      amount: creditDeduction,
+      idempotencyKey: `${idempotencyKey}:dealer`,
+      referenceType: 'COUPON',
+      referenceId: couponId,
+      description: `Credit return for cancelled coupon ${couponId}`,
+      createdBy
+    }, tx)
 
-  return { playerTx, dealerTx }
+    return { playerTx, dealerTx }
+  })
 }
 
 export async function calculateCreditDeduction(stake: number): Promise<number> {
@@ -214,18 +234,17 @@ export async function calculateCreditDeduction(stake: number): Promise<number> {
     .orderBy(creditRanges.minAmount)
 
   for (const range of ranges) {
-    const min = parseFloat(range.minAmount)
-    const max = parseFloat(range.maxAmount)
+    const min = Number(range.minAmount)
+    const max = Number(range.maxAmount)
     if (stake >= min && stake <= max) {
-      return parseFloat(range.creditDeduction)
+      return Number(range.creditDeduction)
     }
   }
 
-  // If no range matches, use the last range (highest)
   if (ranges.length > 0) {
     const lastRange = ranges[ranges.length - 1]!
-    if (stake > parseFloat(lastRange.maxAmount)) {
-      return parseFloat(lastRange.creditDeduction)
+    if (stake > Number(lastRange.maxAmount)) {
+      return Number(lastRange.creditDeduction)
     }
   }
 

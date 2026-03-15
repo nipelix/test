@@ -24,7 +24,7 @@
                 <div class="font-medium text-sm">{{ user.username }}</div>
                 <div class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full" :class="user.status === 'active' ? 'bg-green-500' : 'bg-red-500'" />
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ user.status === 'active' ? t('common.active') : t('common.inactive') }}</span>
+                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ user.status === 'active' ? 'Active' : 'Inactive' }}</span>
                 </div>
               </div>
             </div>

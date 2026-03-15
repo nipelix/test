@@ -10,7 +10,6 @@ const balanceSchema = z.object({
   description: z.string().max(500).optional()
 })
 
-// Roles that require inverse parent balance adjustment
 const INVERSE_ADJUSTMENT_ROLES: Role[] = ['DEALER', 'PLAYER']
 
 export default defineEventHandler(async (event) => {
@@ -23,7 +22,6 @@ export default defineEventHandler(async (event) => {
 
   await requireTreeAccess(event, id)
 
-  // Fetch target user with parentId
   const [target] = await db.select({ role: users.role, parentId: users.parentId })
     .from(users)
     .where(and(eq(users.id, id), isNull(users.deletedAt)))
@@ -40,27 +38,24 @@ export default defineEventHandler(async (event) => {
 
   const direction = body.operation === 'add' ? 'CREDIT' as const : 'DEBIT' as const
   const txType = body.operation === 'add' ? 'DEPOSIT' as const : 'WITHDRAWAL' as const
-
-  // Determine if inverse parent adjustment is needed
-  // Agent: NO (admin has unlimited authority)
-  // Dealer: YES (if parent exists — agent/admin loses credit)
-  // SubDealer: NO (credit deducted only at coupon creation)
-  // Player: YES (always — parent subdealer balance adjusted)
   const needsInverse = INVERSE_ADJUSTMENT_ROLES.includes(target.role as Role) && target.parentId != null
 
-  const result = await db.transaction(async () => {
-    // Target wallet operation
+  // Deterministic idempotency key
+  const idempotencyKey = `manual:${session.userId}:${id}:${txType}:${body.amount}:${Date.now()}`
+
+  // Single atomic transaction for both operations
+  const result = await db.transaction(async (tx) => {
     const targetResult = await executeTransaction({
       type: txType,
       walletId: targetWallet.id,
       direction,
       amount: body.amount,
+      idempotencyKey: `${idempotencyKey}:target`,
       referenceType: 'MANUAL',
       description: body.description || `${body.operation} by ${session.role}`,
       createdBy: session.userId
-    })
+    }, tx)
 
-    // Inverse operation on parent's wallet (only for Dealer and Player)
     if (needsInverse) {
       const parentWallet = await getWalletByUserId(target.parentId!)
       if (!parentWallet) {
@@ -73,10 +68,11 @@ export default defineEventHandler(async (event) => {
         walletId: parentWallet.id,
         direction: inverseDirection,
         amount: body.amount,
+        idempotencyKey: `${idempotencyKey}:parent`,
         referenceType: 'MANUAL',
         description: `Inverse: ${body.operation} to user ${id}`,
         createdBy: session.userId
-      })
+      }, tx)
     }
 
     return targetResult

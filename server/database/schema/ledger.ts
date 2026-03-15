@@ -46,5 +46,6 @@ export const ledgerEntries = pgTable('ledger_entries', {
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow()
 }, (table) => [
   index('ledger_entries_transaction_id_idx').on(table.transactionId),
-  index('ledger_entries_wallet_id_idx').on(table.walletId)
+  index('ledger_entries_wallet_id_idx').on(table.walletId),
+  index('ledger_entries_wallet_created_idx').on(table.walletId, table.createdAt)
 ])
