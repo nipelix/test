@@ -102,6 +102,21 @@ const features = reactive({
   couponPreview: false
 })
 
+// ── Validation ──
+const validationErrors = computed(() => {
+  const e: string[] = []
+  if (limits.minStake < 0) e.push('Min stake must be >= 0')
+  if (limits.maxBetAmount <= 0) e.push('Max bet amount must be > 0')
+  if (limits.maxPotentialPayout <= 0) e.push('Max payout must be > 0')
+  if (limits.minSelections < 1) e.push('Min selections must be >= 1')
+  if (limits.maxSelections < limits.minSelections) e.push('Max selections must be >= min selections')
+  if (odds.lineMinOdds < 1) e.push('Line min odds must be >= 1.00')
+  if (odds.lineMaxOdds <= odds.lineMinOdds) e.push('Line max odds must be > min odds')
+  if (odds.liveMinOdds < 1) e.push('Live min odds must be >= 1.00')
+  if (odds.liveMaxOdds <= odds.liveMinOdds) e.push('Live max odds must be > min odds')
+  return e
+})
+
 // ── Generic field updater ──
 function updateField(section: 'limits' | 'odds' | 'features', field: string, value: any) {
   const target = section === 'limits' ? limits : section === 'odds' ? odds : features
@@ -153,6 +168,10 @@ watch(settingsData, (val) => {
 
 // ── Save ──
 async function handleSave() {
+  if (validationErrors.value.length > 0) {
+    toast.add({ title: t('common.error'), description: validationErrors.value[0], color: 'error' })
+    return
+  }
   saving.value = true
   try {
     await Promise.all([

@@ -16,6 +16,7 @@
             :label="field.label"
             :name="field.key"
             :required="field.required"
+            :error="visibleErrors[field.key]"
           >
             <UInput
               v-if="!field.type || field.type === 'text' || field.type === 'number'"
@@ -23,6 +24,7 @@
               :type="field.type || 'text'"
               :placeholder="field.label"
               class="w-full"
+              @blur="touch(field.key)"
             />
             <USwitch v-else-if="field.type === 'boolean'" v-model="form[field.key]" />
           </UFormField>
@@ -62,17 +64,39 @@ const toast = useToast()
 const loading = ref(false)
 const form = reactive<Record<string, any>>({})
 
-// Populate form on open (clear stale keys first)
+// Dynamic validation from field definitions
+const { visibleErrors, touch, reset: resetValidation, submit: validateForm } = useFormValidation(() => {
+  const errors: Record<string, string | undefined> = {}
+  for (const field of fields) {
+    const val = form[field.key]
+    if (field.required) {
+      if (field.type === 'text' || !field.type) {
+        if (!val || !String(val).trim()) errors[field.key] = t('validation.required')
+      } else if (field.type === 'number') {
+        if (val === null || val === undefined || val === '') errors[field.key] = t('validation.required')
+      }
+    }
+    if (field.type === 'number' && val !== '' && val !== null && val !== undefined && isNaN(Number(val))) {
+      errors[field.key] = t('validation.invalid_number')
+    }
+  }
+  return errors
+})
+
+// Populate form on open
 watch(isOpen, (val) => {
   if (val) {
     Object.keys(form).forEach(k => delete form[k])
     for (const field of fields) {
       form[field.key] = item?.[field.key] ?? (field.type === 'boolean' ? false : field.type === 'number' ? 0 : '')
     }
+    resetValidation()
   }
 })
 
 async function handleSubmit() {
+  if (!validateForm()) return
+
   loading.value = true
   try {
     if (item?.id) {
