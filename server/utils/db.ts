@@ -6,7 +6,8 @@ let _db: ReturnType<typeof drizzle<typeof schema>> | null = null
 
 export function useDb() {
   if (!_db) {
-    const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://postgres:1@localhost:5432/sportbooks'
+    const DATABASE_URL = process.env.DATABASE_URL
+    if (!DATABASE_URL) throw new Error('DATABASE_URL environment variable is required')
 
     const client = postgres(DATABASE_URL, {
       max: 20,
