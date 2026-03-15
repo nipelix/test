@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { readonly as vueReadonly } from 'vue'
 
 export interface BetSelection {
   id: string
@@ -197,13 +198,13 @@ export const useBetslipStore = defineStore('betslip', () => {
 
   return {
     // State (readonly — mutate only through actions)
-    selections: readonly(selections),
-    originalOddsMap: readonly(originalOddsMap),
-    stakes: readonly(stakes),
-    category: readonly(category),
+    selections: vueReadonly(selections),
+    originalOddsMap: vueReadonly(originalOddsMap),
+    stakes: vueReadonly(stakes),
+    category: vueReadonly(category),
     couponName,
-    isLocked: readonly(isLocked),
-    rules: readonly(rules),
+    isLocked: vueReadonly(isLocked),
+    rules: vueReadonly(rules),
 
     // Getters
     selectionList, selectionCount, isEmpty, totalStake, totalOdds,

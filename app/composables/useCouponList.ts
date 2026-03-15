@@ -1,26 +1,5 @@
-import { formatBalance, getCouponStatusColor } from '~~/shared/utils/formatters'
-
-export interface CouponRow {
-  id: number
-  betSlipNo: string
-  playerId: number
-  dealerId: number
-  type: string
-  status: string
-  stake: string
-  totalOdds: string
-  potentialPayout: string
-  actualPayout: string
-  creditDeduction: string
-  couponName: string | null
-  hasLiveSelections: boolean
-  ipAddress: string | null
-  createdAt: string
-  cancelledAt: string | null
-  cancelledBy: number | null
-  playerUsername?: string
-  dealerUsername?: string
-}
+import { getCouponStatusColor } from '~~/shared/utils/formatters'
+import type { CouponRow } from '~~/shared/types/entities'
 
 interface CouponListResponse {
   data: CouponRow[]

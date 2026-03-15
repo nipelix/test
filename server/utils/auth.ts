@@ -1,12 +1,10 @@
 import type { H3Event } from 'h3'
 import type { SessionData } from './session'
-import { ROLE_LEVEL, isRoleAbove, canCreateRole, isRole } from '~~/shared/types/roles'
+import { ROLE_LEVEL, isRole as checkIsRole } from '~~/shared/types/roles'
 import type { Role } from '~~/shared/types/roles'
 
-export { isRoleAbove, canCreateRole, isRole }
-
 export function getRoleLevel(role: string): number {
-  if (!isRole(role)) return 99
+  if (!checkIsRole(role)) return 99
   return ROLE_LEVEL[role]
 }
 

@@ -1,8 +1,10 @@
+import { ref, watch, readonly as vueReadonly, onBeforeUnmount } from 'vue'
+import type { Ref, DeepReadonly } from 'vue'
+
 /**
  * Creates a debounced ref that updates after a delay.
- * Replaces manual setTimeout patterns across composables.
  */
-export function refDebounced<T>(source: Ref<T>, delay: number = 300): Readonly<Ref<T>> {
+export function refDebounced<T>(source: Ref<T>, delay: number = 300): DeepReadonly<Ref<T>> {
   const debounced = ref(source.value) as Ref<T>
   let timer: ReturnType<typeof setTimeout> | null = null
 
@@ -17,5 +19,5 @@ export function refDebounced<T>(source: Ref<T>, delay: number = 300): Readonly<R
     if (timer) clearTimeout(timer)
   })
 
-  return readonly(debounced)
+  return vueReadonly(debounced) as DeepReadonly<Ref<T>>
 }

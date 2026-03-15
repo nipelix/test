@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { readonly as vueReadonly } from 'vue'
 
 interface AuthUser {
   id: number
@@ -253,9 +254,9 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     // Auth (readonly state, mutable via actions only)
-    user: readonly(user),
-    loading: readonly(loading),
-    error: readonly(error),
+    user: vueReadonly(user),
+    loading: vueReadonly(loading),
+    error: vueReadonly(error),
     isAuthenticated,
     isImpersonating,
     login,
@@ -265,8 +266,8 @@ export const useAuthStore = defineStore('auth', () => {
     unImpersonate,
 
     // Preferences
-    preferences: readonly(preferences),
-    preferencesLoaded: readonly(preferencesLoaded),
+    preferences: vueReadonly(preferences),
+    preferencesLoaded: vueReadonly(preferencesLoaded),
     currentAvatarId,
     applyPreferences,
     savePreferences,
