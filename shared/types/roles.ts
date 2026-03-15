@@ -3,7 +3,7 @@ export const ROLES = ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER', '
 export type Role = typeof ROLES[number]
 
 export function isRole(value: string): value is Role {
-  return (ROLES as readonly string[]).includes(value)
+  return (ROLES as ReadonlyArray<string>).includes(value)
 }
 
 // ── Wallet Types ──
@@ -50,7 +50,7 @@ export const PARENT_REQUIREMENTS: Record<Role, ParentRequirement> = {
 // Defines which role can give credit/balance to which roles.
 // This is intentionally narrower than the creation hierarchy:
 //   e.g. SUPER_ADMIN can create all roles but only gives credit to ADMIN
-export const CREDIT_FLOW: Record<Role, readonly Role[]> = {
+export const CREDIT_FLOW: Record<Role, ReadonlyArray<Role>> = {
   SUPER_ADMIN: ['ADMIN'],
   ADMIN: ['AGENT', 'DEALER'],
   AGENT: ['DEALER'],
