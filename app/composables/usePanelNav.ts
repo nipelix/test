@@ -52,6 +52,7 @@ export function usePanelNav() {
         { to: p('/manage-leagues'), icon: 'i-lucide-flag', label: 'dashboard.manage_leagues' },
         { to: p('/manage-categories'), icon: 'i-lucide-layers', label: 'dashboard.manage_categories' },
         { to: p('/manage-betting-groups'), icon: 'i-lucide-boxes', label: 'dashboard.manage_betting_groups' },
+        { to: p('/manage-betting-markets'), icon: 'i-lucide-grid-3x3', label: 'dashboard.manage_betting_markets' },
         { to: p('/manage-providers'), icon: 'i-lucide-database', label: 'dashboard.manage_providers' },
         { to: p('/manage-provider-mappings'), icon: 'i-lucide-link', label: 'dashboard.manage_provider_mappings' }
       ]
@@ -90,6 +91,8 @@ export function usePanelNav() {
         { to: p('/messages'), icon: 'i-lucide-message-square', label: 'dashboard.messages' },
         { to: p('/transaction-history'), icon: 'i-lucide-receipt', label: 'dashboard.transaction_history', roles: ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'] },
         { to: p('/change-password'), icon: 'i-lucide-key', label: 'dashboard.change_password' },
+        { to: p('/change-passwords'), icon: 'i-lucide-key-round', label: 'dashboard.change_passwords', roles: ['SUPER_ADMIN', 'ADMIN', 'DEALER'] },
+        { to: p('/settings'), icon: 'i-lucide-settings', label: 'settings.settings' },
         { to: p('/dealers-credits'), icon: 'i-lucide-credit-card', label: 'dashboard.add_remove_balance', roles: ['DEALER'] },
         { to: p('/dealers-balance'), icon: 'i-lucide-wallet', label: 'dashboard.dealers_balance', roles: ['DEALER'] },
         { to: p('/check-balance'), icon: 'i-lucide-search', label: 'dashboard.check_balance', roles: ['DEALER', 'SUB_DEALER'] }

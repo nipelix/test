@@ -277,6 +277,11 @@
     "last_login_ip": "Son Giriş IP",
     "created_at": "Oluşturulma Tarihi",
     "coupon_deletion": "Kupon Silme",
+    "coupon_deletion_description": "Filtrelere göre kuponları toplu olarak silin.",
+    "delete_all_matching": "Eşleşenleri Sil",
+    "admin_activity_logs": "Admin Aktivite Logları",
+    "betting_markets_suspensions": "Bahis Marketleri Askıya Alma",
+    "manage_betting_markets": "Bahis Marketlerini Yönet",
     "coupon_trash": "Kupon Çöpü",
     "select_all": "Tümünü Seç",
     "delete_selected": "Seçilenleri Sil",
@@ -500,6 +505,7 @@
     "block_coupon_cancelation_after": "Kupon İptalini Engelle (dk)",
     "combine_live_and_line_allowed": "Canlı ve Sıra Birleştirmeye İzin Ver",
     "dark_mode": "Karanlık Mod",
+    "dark_mode_description": "Karanlık tema ile göz yorgunluğunu azaltın.",
     "delete_match_after": "Maçı Sil (dk sonra)",
     "language": "Dil",
     "live_betting_allowed": "Canlı Bahse İzin Ver",
@@ -539,5 +545,71 @@
     "popular": "Popüler",
     "originals": "Sinek2 Orijinal",
     "spotlight": "Öne Çıkanlar"
+  },
+  "logs": {
+    "search_actions": "Aksiyon ara...",
+    "filter_action": "Aksiyon filtrele",
+    "action": "Aksiyon",
+    "entity_type": "Varlık Tipi",
+    "entity_id": "Varlık ID"
+  },
+  "suspensions": {
+    "markets": "Marketler",
+    "selections": "Seçimler",
+    "reset_all": "Tümünü Sıfırla",
+    "all_cleared": "Tüm askıya almalar kaldırıldı"
+  },
+  "credit": {
+    "default_settings": "Varsayılan Ayarlar",
+    "dealer_min_balance": "Bayi Minimum Bakiye",
+    "cancel_penalty": "İptal Cezası",
+    "credit_tiers": "Kredi Kademeleri",
+    "add_tier": "Kademe Ekle",
+    "edit_tier": "Kademe Düzenle",
+    "min_amount": "Minimum Tutar",
+    "max_amount": "Maksimum Tutar",
+    "credit_deduction": "Kredi Düşümü",
+    "total_credit_used": "Toplam Kredi Kullanımı",
+    "total_coupons": "Toplam Kupon",
+    "total_stake": "Toplam Bahis",
+    "avg_credit_per_coupon": "Kupon Başı Ort. Kredi",
+    "custom": "Özel Tarih",
+    "weekly": "Haftalık",
+    "monthly": "Aylık",
+    "yearly": "Yıllık",
+    "total_credit": "Toplam Kredi"
+  },
+  "messages": {
+    "new_chat": "Yeni Sohbet",
+    "search_conversations": "Sohbet ara...",
+    "no_conversations": "Henüz sohbet yok",
+    "select_conversation": "Bir sohbet seçin",
+    "type_message": "Mesaj yazın...",
+    "select_user": "Kullanıcı Seçin",
+    "start_chat": "Sohbet Başlat",
+    "chat_started": "Sohbet başlatıldı",
+    "from": "Kimden",
+    "no_messages": "Mesaj yok"
+  },
+  "markets": {
+    "betting_markets": "Bahis Marketleri",
+    "selections": "Seçimler",
+    "search": "Market ara...",
+    "add": "Market Ekle",
+    "edit": "Market Düzenle",
+    "add_selection": "Seçim Ekle",
+    "edit_selection": "Seçim Düzenle",
+    "select_market_first": "Önce bir market seçin",
+    "live_market_groups": "Canlı Market Grupları",
+    "prematch_market_groups": "Maç Öncesi Market Grupları"
+  },
+  "mappings": {
+    "provider_mappings": "Provider Eşlemeleri",
+    "select_provider": "Provider Seçin",
+    "external_id": "Harici ID"
+  },
+  "transactions": {
+    "balance_before": "Önceki Bakiye",
+    "balance_after": "Sonraki Bakiye"
   }
 }

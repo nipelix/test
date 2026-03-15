@@ -277,6 +277,11 @@
     "last_login_ip": "Last Login IP",
     "created_at": "Created At",
     "coupon_deletion": "Coupon Deletion",
+    "coupon_deletion_description": "Bulk delete coupons based on filters.",
+    "delete_all_matching": "Delete All Matching",
+    "admin_activity_logs": "Admin Activity Logs",
+    "betting_markets_suspensions": "Betting Markets Suspensions",
+    "manage_betting_markets": "Manage Betting Markets",
     "coupon_trash": "Coupon Trash",
     "select_all": "Select All",
     "delete_selected": "Delete Selected",
@@ -500,6 +505,7 @@
     "block_coupon_cancelation_after": "Block Coupon Cancelation After (min)",
     "combine_live_and_line_allowed": "Combine Live and Line Allowed",
     "dark_mode": "Dark Mode",
+    "dark_mode_description": "Reduce eye strain with dark theme.",
     "delete_match_after": "Delete Match After (min)",
     "language": "Language",
     "live_betting_allowed": "Live Betting Allowed",
@@ -539,5 +545,71 @@
     "popular": "Popular",
     "originals": "Sinek2 Originals",
     "spotlight": "Spotlight"
+  },
+  "logs": {
+    "search_actions": "Search actions...",
+    "filter_action": "Filter action",
+    "action": "Action",
+    "entity_type": "Entity Type",
+    "entity_id": "Entity ID"
+  },
+  "suspensions": {
+    "markets": "Markets",
+    "selections": "Selections",
+    "reset_all": "Reset All",
+    "all_cleared": "All suspensions cleared"
+  },
+  "credit": {
+    "default_settings": "Default Settings",
+    "dealer_min_balance": "Dealer Minimum Balance",
+    "cancel_penalty": "Cancel Penalty",
+    "credit_tiers": "Credit Tiers",
+    "add_tier": "Add Tier",
+    "edit_tier": "Edit Tier",
+    "min_amount": "Min Amount",
+    "max_amount": "Max Amount",
+    "credit_deduction": "Credit Deduction",
+    "total_credit_used": "Total Credit Used",
+    "total_coupons": "Total Coupons",
+    "total_stake": "Total Stake",
+    "avg_credit_per_coupon": "Avg Credit Per Coupon",
+    "custom": "Custom",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "total_credit": "Total Credit"
+  },
+  "messages": {
+    "new_chat": "New Chat",
+    "search_conversations": "Search conversations...",
+    "no_conversations": "No conversations yet",
+    "select_conversation": "Select a conversation",
+    "type_message": "Type a message...",
+    "select_user": "Select User",
+    "start_chat": "Start Chat",
+    "chat_started": "Chat started",
+    "from": "From",
+    "no_messages": "No messages"
+  },
+  "markets": {
+    "betting_markets": "Betting Markets",
+    "selections": "Selections",
+    "search": "Search markets...",
+    "add": "Add Market",
+    "edit": "Edit Market",
+    "add_selection": "Add Selection",
+    "edit_selection": "Edit Selection",
+    "select_market_first": "Select a market first",
+    "live_market_groups": "Live Market Groups",
+    "prematch_market_groups": "Prematch Market Groups"
+  },
+  "mappings": {
+    "provider_mappings": "Provider Mappings",
+    "select_provider": "Select Provider",
+    "external_id": "External ID"
+  },
+  "transactions": {
+    "balance_before": "Balance Before",
+    "balance_after": "Balance After"
   }
 }
