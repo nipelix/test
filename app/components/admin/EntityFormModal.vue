@@ -47,7 +47,10 @@
           <h3 class="text-sm font-semibold text-muted">{{ t('common.translations') }}</h3>
 
           <div v-for="lang in translationLangs" :key="lang" class="space-y-2">
-            <p class="text-xs font-medium text-muted uppercase">{{ lang }}</p>
+            <p class="text-xs font-medium text-muted uppercase flex items-center gap-2">
+              <UBadge variant="subtle" size="xs">{{ lang }}</UBadge>
+              {{ getLocaleName(lang) }}
+            </p>
             <UFormField
               v-for="field in translationFields"
               :key="`${lang}-${field}`"
@@ -55,7 +58,7 @@
             >
               <UInput
                 v-model="translationForm[`${lang}:${field}`]"
-                :placeholder="`${field} (${lang})`"
+                :placeholder="`${field} — ${getLocaleName(lang)}`"
                 class="w-full"
               />
             </UFormField>
@@ -95,14 +98,24 @@ const { item, title, fields, endpoint, translationEntityType, translationFields:
 const emit = defineEmits<{ success: [] }>()
 const isOpen = defineModel<boolean>('open', { default: false })
 
-const { t } = useI18n()
+const { t, locales } = useI18n()
 const toast = useToast()
 const loading = ref(false)
 const form = reactive<Record<string, any>>({})
 const translationForm = reactive<Record<string, string>>({})
 
 const translationFields = computed(() => tFields ?? ['name'])
-const translationLangs = computed(() => tLangs ?? ['tr', 'en'])
+
+// Dynamic: reads all active locales from Nuxt i18n config
+const allLocales = computed(() => locales.value as Array<{ code: string; name?: string }>)
+const translationLangs = computed(() => {
+  if (tLangs && tLangs.length > 0) return tLangs
+  return allLocales.value.map(l => l.code)
+})
+
+function getLocaleName(code: string): string {
+  return allLocales.value.find(l => l.code === code)?.name || code.toUpperCase()
+}
 
 const { visibleErrors, touch, reset: resetValidation, submit: validateForm } = useFormValidation(() => {
   const errors: Record<string, string | undefined> = {}
