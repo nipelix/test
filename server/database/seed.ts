@@ -113,7 +113,11 @@ async function seed() {
   const leagueTransRows: any[] = []
   const marketTypeTransRows: any[] = []
   const selectionTemplateTransRows: any[] = []
-  const mappingRows: any[] = []
+  const sportMappingRows: any[] = []
+  const countryMappingRows: any[] = []
+  const leagueMappingRows: any[] = []
+  const marketTypeMappingRows: any[] = []
+  const selectionTemplateMappingRows: any[] = []
 
   for (const s of sportsJson) {
     const [inserted] = await db.insert(schema.sports).values({
@@ -144,10 +148,9 @@ async function seed() {
     for (const provSlug of ['melbet', 'upgaming', 'globalbahis']) {
       if (s[provSlug]) {
         for (const extId of s[provSlug]) {
-          mappingRows.push({
+          sportMappingRows.push({
+            sportId: inserted.id,
             providerId: providerMap[provSlug],
-            entityType: 'SPORT' as const,
-            entityId: inserted.id,
             externalId: extId
           })
         }
@@ -188,10 +191,9 @@ async function seed() {
     for (const provSlug of ['melbet', 'upgaming', 'globalbahis']) {
       if (c[provSlug]) {
         for (const extId of c[provSlug]) {
-          mappingRows.push({
+          countryMappingRows.push({
+            countryId: inserted.id,
             providerId: providerMap[provSlug],
-            entityType: 'COUNTRY' as const,
-            entityId: inserted.id,
             externalId: extId
           })
         }
@@ -245,10 +247,9 @@ async function seed() {
     for (const provSlug of ['melbet', 'upgaming', 'globalbahis']) {
       if (l[provSlug]) {
         for (const extId of l[provSlug]) {
-          mappingRows.push({
+          leagueMappingRows.push({
+            leagueId: inserted.id,
             providerId: providerMap[provSlug],
-            entityType: 'LEAGUE' as const,
-            entityId: inserted.id,
             externalId: extId
           })
         }
@@ -297,10 +298,9 @@ async function seed() {
     for (const provSlug of ['melbet', 'upgaming', 'globalbahis']) {
       if (m[provSlug]) {
         for (const extId of m[provSlug]) {
-          mappingRows.push({
+          marketTypeMappingRows.push({
+            marketTypeId: inserted.id,
             providerId: providerMap[provSlug],
-            entityType: 'MARKET_TYPE' as const,
-            entityId: inserted.id,
             externalId: extId
           })
         }
@@ -345,10 +345,9 @@ async function seed() {
     for (const provSlug of ['melbet', 'upgaming', 'globalbahis']) {
       if (s[provSlug]) {
         for (const extId of s[provSlug]) {
-          mappingRows.push({
+          selectionTemplateMappingRows.push({
+            selectionTemplateId: inserted.id,
             providerId: providerMap[provSlug],
-            entityType: 'SELECTION_TEMPLATE' as const,
-            entityId: inserted.id,
             externalId: extId
           })
         }
@@ -384,11 +383,27 @@ async function seed() {
   const totalTranslations = sportTransRows.length + countryTransRows.length + leagueTransRows.length + marketTypeTransRows.length + selectionTemplateTransRows.length
 
   // ============================================================
-  // 9. BATCH INSERT: PROVIDER MAPPINGS
+  // 9. BATCH INSERT: PER-ENTITY PROVIDER MAPPINGS
   // ============================================================
-  if (mappingRows.length > 0) {
-    await batchInsert(db, schema.providerMappings, mappingRows)
-    console.log(`Created ${mappingRows.length} provider mappings`)
+  if (sportMappingRows.length > 0) {
+    await batchInsert(db, schema.sportProviderMappings, sportMappingRows)
+    console.log(`Created ${sportMappingRows.length} sport provider mappings`)
+  }
+  if (countryMappingRows.length > 0) {
+    await batchInsert(db, schema.countryProviderMappings, countryMappingRows)
+    console.log(`Created ${countryMappingRows.length} country provider mappings`)
+  }
+  if (leagueMappingRows.length > 0) {
+    await batchInsert(db, schema.leagueProviderMappings, leagueMappingRows)
+    console.log(`Created ${leagueMappingRows.length} league provider mappings`)
+  }
+  if (marketTypeMappingRows.length > 0) {
+    await batchInsert(db, schema.marketTypeProviderMappings, marketTypeMappingRows)
+    console.log(`Created ${marketTypeMappingRows.length} market type provider mappings`)
+  }
+  if (selectionTemplateMappingRows.length > 0) {
+    await batchInsert(db, schema.selectionTemplateProviderMappings, selectionTemplateMappingRows)
+    console.log(`Created ${selectionTemplateMappingRows.length} selection template provider mappings`)
   }
 
   // ============================================================
@@ -421,7 +436,7 @@ async function seed() {
   console.log(`  Market Types: ${marketsJson.length}`)
   console.log(`  Selection Templates: ${selectionsJson.length}`)
   console.log(`  Translations: ${totalTranslations}`)
-  console.log(`  Provider Mappings: ${mappingRows.length}`)
+  console.log(`  Provider Mappings: ${sportMappingRows.length + countryMappingRows.length + leagueMappingRows.length + marketTypeMappingRows.length + selectionTemplateMappingRows.length}`)
 
   await client.end()
   process.exit(0)
