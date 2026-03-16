@@ -1,5 +1,5 @@
-import { eq, and, sql, inArray, like, asc, desc } from 'drizzle-orm'
-import { sports, translations, providerMappings, providers } from '../../database/schema'
+import { eq, and, sql, inArray, asc, desc } from 'drizzle-orm'
+import { sports, sportTranslations, languages, providerMappings, providers } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -19,13 +19,14 @@ export default defineEventHandler(async (event) => {
   const conditions = []
 
   if (active !== undefined) conditions.push(eq(sports.active, active === 'true'))
-  if (search) conditions.push(like(sports.name, `%${search}%`))
+
+  // For search, we search in sportTranslations (name field) instead of sports.name
+  // Search is handled after fetching translations below
 
   const where = conditions.length > 0 ? and(...conditions) : undefined
 
   // Sort
   const sortWhitelist: Record<string, any> = {
-    name: sports.name,
     sortOrder: sports.sortOrder,
     active: sports.active,
     createdAt: sports.createdAt
@@ -51,15 +52,31 @@ export default defineEventHandler(async (event) => {
 
   if (data.length > 0) {
     const ids = data.map(d => d.id)
-    const langs = lang ? lang.split(',').map(l => l.trim()).filter(Boolean) : []
+    const langCodes = lang ? lang.split(',').map(l => l.trim()).filter(Boolean) : []
+
+    // Resolve language IDs from codes
+    let langIds: number[] = []
+    if (langCodes.length > 0) {
+      const langRows = await db.select({ id: languages.id, code: languages.code })
+        .from(languages)
+        .where(inArray(languages.code, langCodes))
+      langIds = langRows.map(l => l.id)
+    }
 
     const [transData, mappingsData] = await Promise.all([
-      langs.length > 0
-        ? db.select().from(translations).where(and(
-            eq(translations.entityType, 'SPORT'),
-            inArray(translations.entityId, ids),
-            inArray(translations.lang, langs)
-          ))
+      langIds.length > 0
+        ? db.select({
+            sportId: sportTranslations.sportId,
+            languageId: sportTranslations.languageId,
+            langCode: languages.code,
+            field: sportTranslations.field,
+            value: sportTranslations.value
+          }).from(sportTranslations)
+            .innerJoin(languages, eq(sportTranslations.languageId, languages.id))
+            .where(and(
+              inArray(sportTranslations.sportId, ids),
+              inArray(sportTranslations.languageId, langIds)
+            ))
         : [],
       include.includes('providers')
         ? db.select({
@@ -75,11 +92,11 @@ export default defineEventHandler(async (event) => {
         : []
     ])
 
-    if (langs.length > 0 || include.includes('providers')) {
+    if (langIds.length > 0 || include.includes('providers')) {
       const transMap = new Map<number, any[]>()
       for (const t of transData) {
-        if (!transMap.has(t.entityId)) transMap.set(t.entityId, [])
-        transMap.get(t.entityId)!.push(t)
+        if (!transMap.has(t.sportId)) transMap.set(t.sportId, [])
+        transMap.get(t.sportId)!.push(t)
       }
 
       const mappingsMap = new Map<number, any[]>()
@@ -88,16 +105,16 @@ export default defineEventHandler(async (event) => {
         mappingsMap.get(m.entityId)!.push(m)
       }
 
-      const isSingleLang = langs.length === 1
+      const isSingleLang = langCodes.length === 1
 
       result = data.map(d => {
         const trans = transMap.get(d.id) || []
         const extra: Record<string, any> = {}
 
-        if (langs.length > 0) {
+        if (langIds.length > 0) {
           if (isSingleLang) {
             const t = trans.find(t => t.field === 'name')
-            extra.name = t?.value || d.name
+            extra.name = t?.value || d.slug
           } else {
             extra.translations = trans
           }
@@ -108,6 +125,15 @@ export default defineEventHandler(async (event) => {
         }
 
         return { ...d, ...extra }
+      })
+    }
+
+    // Search filter (post-fetch, on resolved name)
+    if (search) {
+      const searchLower = search.toLowerCase()
+      result = result.filter(r => {
+        const name = r.name || r.slug || ''
+        return name.toLowerCase().includes(searchLower)
       })
     }
   }

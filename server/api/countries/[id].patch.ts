@@ -1,5 +1,5 @@
-import { eq } from 'drizzle-orm'
-import { countries, translations } from '../../database/schema'
+import { eq, inArray } from 'drizzle-orm'
+import { countries, countryTranslations, languages } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN'])
@@ -10,7 +10,6 @@ export default defineEventHandler(async (event) => {
   const db = useDb()
 
   const updateData: Record<string, any> = { updatedAt: new Date() }
-  if (body.name !== undefined) updateData.name = body.name
   if (body.code !== undefined) updateData.code = body.code
   if (body.slug !== undefined) updateData.slug = body.slug
   if (body.flag !== undefined) updateData.flag = body.flag
@@ -34,15 +33,23 @@ export default defineEventHandler(async (event) => {
   }
 
   if (body.translations?.length) {
+    const langCodes = [...new Set(body.translations.map(t => t.lang))]
+    const langRows = await db.select({ id: languages.id, code: languages.code })
+      .from(languages)
+      .where(inArray(languages.code, langCodes))
+    const langMap: Record<string, number> = {}
+    for (const l of langRows) langMap[l.code] = l.id
+
     for (const t of body.translations) {
-      await db.insert(translations).values({
-        entityType: 'COUNTRY',
-        entityId: id,
-        lang: t.lang,
+      const languageId = langMap[t.lang]
+      if (!languageId) continue
+      await db.insert(countryTranslations).values({
+        countryId: id,
+        languageId,
         field: t.field,
         value: t.value
       }).onConflictDoUpdate({
-        target: [translations.entityType, translations.entityId, translations.lang, translations.field],
+        target: [countryTranslations.countryId, countryTranslations.languageId, countryTranslations.field],
         set: { value: t.value, updatedAt: new Date() }
       })
     }

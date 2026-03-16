@@ -9,7 +9,6 @@ const translationItemSchema = z.object({
 
 // --- Sports ---
 export const createSportSchema = z.object({
-  name: z.string().min(1).max(100),
   slug: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/, 'Slug must be lowercase alphanumeric with hyphens'),
   icon: z.string().max(100).optional(),
   category: z.string().max(100).optional(),
@@ -20,7 +19,6 @@ export const createSportSchema = z.object({
 })
 
 export const updateSportSchema = z.object({
-  name: z.string().min(1).max(100).optional(),
   slug: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/, 'Slug must be lowercase alphanumeric with hyphens').optional(),
   icon: z.string().max(100).nullable().optional(),
   category: z.string().max(100).nullable().optional(),
@@ -32,7 +30,6 @@ export const updateSportSchema = z.object({
 
 // --- Countries ---
 export const createCountrySchema = z.object({
-  name: z.string().min(1).max(100),
   code: z.string().min(1).max(10),
   slug: z.string().max(100).optional(),
   flag: z.string().max(255).optional(),
@@ -41,7 +38,6 @@ export const createCountrySchema = z.object({
 })
 
 export const updateCountrySchema = z.object({
-  name: z.string().min(1).max(100).optional(),
   code: z.string().min(1).max(10).optional(),
   slug: z.string().max(100).nullable().optional(),
   flag: z.string().max(255).nullable().optional(),
@@ -51,7 +47,6 @@ export const updateCountrySchema = z.object({
 
 // --- Leagues ---
 export const createLeagueSchema = z.object({
-  name: z.string().min(1).max(200),
   sportId: z.number().int().positive(),
   countryId: z.number().int().positive(),
   category: z.string().max(200).optional(),
@@ -66,7 +61,6 @@ export const createLeagueSchema = z.object({
 })
 
 export const updateLeagueSchema = z.object({
-  name: z.string().min(1).max(200).optional(),
   sportId: z.number().int().positive().optional(),
   countryId: z.number().int().positive().optional(),
   category: z.string().max(200).nullable().optional(),
@@ -164,9 +158,9 @@ export const updateProviderSchema = z.object({
   active: z.boolean().optional()
 })
 
-// --- Translations (bulk upsert) ---
+// --- Translations (bulk upsert, per-entity) ---
 export const bulkTranslationSchema = z.object({
-  entityType: z.enum(['SPORT', 'COUNTRY', 'LEAGUE', 'MARKET_TYPE', 'SELECTION_TEMPLATE']),
+  entityType: z.enum(['SPORT', 'COUNTRY', 'LEAGUE', 'MARKET_TYPE', 'SELECTION_TEMPLATE', 'BETTING_GROUP']),
   entityId: z.number().int().positive(),
   translations: z.array(translationItemSchema).min(1)
 })

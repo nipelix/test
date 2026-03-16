@@ -1,5 +1,5 @@
 import { eq, and, sql, inArray } from 'drizzle-orm'
-import { selectionTemplates, marketTypes, translations } from '../../database/schema'
+import { selectionTemplates, marketTypes, selectionTemplateTranslations, languages } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
   const [data, countResult] = await Promise.all([
     db.select({
       id: selectionTemplates.id,
+      name: selectionTemplates.name,
       groupId: selectionTemplates.groupId,
       marketGroupId: selectionTemplates.marketGroupId,
       marketGroupName: marketTypes.name,
@@ -46,33 +47,47 @@ export default defineEventHandler(async (event) => {
   ])
 
   let result: any[] = data
-  const langs = lang ? lang.split(',').map(l => l.trim()).filter(Boolean) : []
+  const langCodes = lang ? lang.split(',').map(l => l.trim()).filter(Boolean) : []
 
-  if (langs.length > 0 && data.length > 0) {
+  if (langCodes.length > 0 && data.length > 0) {
     const ids = data.map(d => d.id)
-    const trans = await db.select().from(translations)
-      .where(and(
-        eq(translations.entityType, 'SELECTION_TEMPLATE'),
-        inArray(translations.entityId, ids),
-        inArray(translations.lang, langs)
-      ))
 
-    const transMap = new Map<number, typeof trans>()
-    for (const t of trans) {
-      if (!transMap.has(t.entityId)) transMap.set(t.entityId, [])
-      transMap.get(t.entityId)!.push(t)
-    }
+    const langRows = await db.select({ id: languages.id, code: languages.code })
+      .from(languages)
+      .where(inArray(languages.code, langCodes))
+    const langIds = langRows.map(l => l.id)
 
-    const isSingleLang = langs.length === 1
+    if (langIds.length > 0) {
+      const trans = await db.select({
+        selectionTemplateId: selectionTemplateTranslations.selectionTemplateId,
+        languageId: selectionTemplateTranslations.languageId,
+        langCode: languages.code,
+        field: selectionTemplateTranslations.field,
+        value: selectionTemplateTranslations.value
+      }).from(selectionTemplateTranslations)
+        .innerJoin(languages, eq(selectionTemplateTranslations.languageId, languages.id))
+        .where(and(
+          inArray(selectionTemplateTranslations.selectionTemplateId, ids),
+          inArray(selectionTemplateTranslations.languageId, langIds)
+        ))
 
-    result = data.map(d => {
-      const dTrans = transMap.get(d.id) || []
-      if (isSingleLang) {
-        const t = dTrans.find(t => t.field === 'name')
-        return { ...d, name: t?.value || d.marketGroupName }
+      const transMap = new Map<number, typeof trans>()
+      for (const t of trans) {
+        if (!transMap.has(t.selectionTemplateId)) transMap.set(t.selectionTemplateId, [])
+        transMap.get(t.selectionTemplateId)!.push(t)
       }
-      return { ...d, translations: dTrans }
-    })
+
+      const isSingleLang = langCodes.length === 1
+
+      result = data.map(d => {
+        const dTrans = transMap.get(d.id) || []
+        if (isSingleLang) {
+          const t = dTrans.find(t => t.field === 'name')
+          return { ...d, displayName: t?.value || d.name }
+        }
+        return { ...d, translations: dTrans }
+      })
+    }
   }
 
   return { data: result, total: countResult[0]?.count || 0, page, limit }

@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
       id: bettingGroups.id,
       name: bettingGroups.name,
       sportId: bettingGroups.sportId,
-      sportName: sports.name,
+      sportSlug: sports.slug,
       active: bettingGroups.active,
       sortOrder: bettingGroups.sortOrder,
       createdAt: bettingGroups.createdAt,
@@ -35,7 +35,7 @@ export default defineEventHandler(async (event) => {
       .where(where)
       .limit(limit)
       .offset(offset)
-      .orderBy(bettingGroups.sortOrder, bettingGroups.name),
+      .orderBy(bettingGroups.sortOrder),
     db.select({ count: sql<number>`count(*)::int` }).from(bettingGroups).where(where)
   ])
 

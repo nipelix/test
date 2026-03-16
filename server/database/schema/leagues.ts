@@ -4,7 +4,6 @@ import { countries } from './countries'
 
 export const leagues = pgTable('leagues', {
   id: serial('id').primaryKey(),
-  name: varchar('name', { length: 200 }).notNull(),
   sportId: integer('sport_id').notNull().references(() => sports.id),
   countryId: integer('country_id').notNull().references(() => countries.id),
   category: varchar('category', { length: 200 }),

@@ -66,7 +66,7 @@ export async function validateCouponSelections(
     matchStatus: matches.status,
     sportId: matches.sportId,
     leagueId: matches.leagueId,
-    leagueName: leagues.name,
+    leagueId: matches.leagueId,
     scoreHome: matches.scoreHome,
     scoreAway: matches.scoreAway
   })
@@ -132,7 +132,7 @@ export async function validateCouponSelections(
       marketName: row.marketName,
       homeTeam: row.homeTeam,
       awayTeam: row.awayTeam,
-      leagueName: row.leagueName,
+      leagueName: null,
       finalOdds,
       isLive,
       matchScore: isLive ? `${row.scoreHome}-${row.scoreAway}` : null,

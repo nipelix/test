@@ -2,7 +2,6 @@ import { pgTable, serial, varchar, boolean, integer, timestamp, index } from 'dr
 
 export const sports = pgTable('sports', {
   id: serial('id').primaryKey(),
-  name: varchar('name', { length: 100 }).notNull().unique(),
   slug: varchar('slug', { length: 100 }).notNull().unique(),
   icon: varchar('icon', { length: 100 }),
   category: varchar('category', { length: 100 }),

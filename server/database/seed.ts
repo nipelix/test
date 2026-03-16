@@ -32,6 +32,28 @@ async function seed() {
   console.log('Seeding database...')
 
   // ============================================================
+  // 0. LANGUAGES
+  // ============================================================
+  const languagesData = [
+    { code: 'tr', name: 'Turkish', nativeName: 'Turkce', sortOrder: 0 },
+    { code: 'en', name: 'English', nativeName: 'English', sortOrder: 1 },
+    { code: 'de', name: 'German', nativeName: 'Deutsch', sortOrder: 2 },
+    { code: 'ar', name: 'Arabic', nativeName: 'العربية', sortOrder: 3 },
+    { code: 'fr', name: 'French', nativeName: 'Francais', sortOrder: 4 },
+    { code: 'es', name: 'Spanish', nativeName: 'Espanol', sortOrder: 5 },
+    { code: 'pt', name: 'Portuguese', nativeName: 'Portugues', sortOrder: 6 },
+    { code: 'ru', name: 'Russian', nativeName: 'Русский', sortOrder: 7 },
+    { code: 'zh', name: 'Chinese', nativeName: '中文', sortOrder: 8 },
+    { code: 'ja', name: 'Japanese', nativeName: '日本語', sortOrder: 9 },
+    { code: 'ko', name: 'Korean', nativeName: '한국어', sortOrder: 10 }
+  ]
+
+  const insertedLanguages = await db.insert(schema.languages).values(languagesData).returning()
+  const langMap: Record<string, number> = {}
+  for (const l of insertedLanguages) langMap[l.code] = l.id
+  console.log(`Created ${insertedLanguages.length} languages`)
+
+  // ============================================================
   // 1. SUPER ADMIN
   // ============================================================
   const passwordHash = await argon2.hash('Admin123!', {
@@ -86,12 +108,15 @@ async function seed() {
   const sportsJson = loadJson('sports.json')
   const sportIdMap: Record<number, number> = {} // JSON id → DB id
 
-  const translationRows: any[] = []
+  const sportTransRows: any[] = []
+  const countryTransRows: any[] = []
+  const leagueTransRows: any[] = []
+  const marketTypeTransRows: any[] = []
+  const selectionTemplateTransRows: any[] = []
   const mappingRows: any[] = []
 
   for (const s of sportsJson) {
     const [inserted] = await db.insert(schema.sports).values({
-      name: s.name,
       slug: s.slug,
       icon: s.icon || null,
       category: s.category || null,
@@ -104,10 +129,11 @@ async function seed() {
     // Translations
     if (s.translations) {
       for (const t of s.translations) {
-        translationRows.push({
-          entityType: 'SPORT' as const,
-          entityId: inserted.id,
-          lang: t.lang,
+        const languageId = langMap[t.lang]
+        if (!languageId) continue
+        sportTransRows.push({
+          sportId: inserted.id,
+          languageId,
           field: t.field,
           value: t.value
         })
@@ -139,7 +165,6 @@ async function seed() {
 
   for (const c of countriesJson) {
     const [inserted] = await db.insert(schema.countries).values({
-      name: c.name,
       code: c.code,
       slug: c.slug || null,
       flag: c.flag || null
@@ -149,10 +174,11 @@ async function seed() {
 
     if (c.translations) {
       for (const t of c.translations) {
-        translationRows.push({
-          entityType: 'COUNTRY' as const,
-          entityId: inserted.id,
-          lang: t.lang,
+        const languageId = langMap[t.lang]
+        if (!languageId) continue
+        countryTransRows.push({
+          countryId: inserted.id,
+          languageId,
           field: t.field,
           value: t.value
         })
@@ -191,7 +217,6 @@ async function seed() {
     }
 
     const [inserted] = await db.insert(schema.leagues).values({
-      name: l.name,
       sportId,
       countryId,
       category: l.category || null,
@@ -206,10 +231,11 @@ async function seed() {
 
     if (l.translations) {
       for (const t of l.translations) {
-        translationRows.push({
-          entityType: 'LEAGUE' as const,
-          entityId: inserted.id,
-          lang: t.lang,
+        const languageId = langMap[t.lang]
+        if (!languageId) continue
+        leagueTransRows.push({
+          leagueId: inserted.id,
+          languageId,
           field: t.field,
           value: t.value
         })
@@ -257,10 +283,11 @@ async function seed() {
 
     if (m.translations) {
       for (const t of m.translations) {
-        translationRows.push({
-          entityType: 'MARKET_TYPE' as const,
-          entityId: inserted.id,
-          lang: t.lang,
+        const languageId = langMap[t.lang]
+        if (!languageId) continue
+        marketTypeTransRows.push({
+          marketTypeId: inserted.id,
+          languageId,
           field: t.field,
           value: t.value
         })
@@ -304,10 +331,11 @@ async function seed() {
 
     if (s.translations) {
       for (const t of s.translations) {
-        translationRows.push({
-          entityType: 'SELECTION_TEMPLATE' as const,
-          entityId: inserted.id,
-          lang: t.lang,
+        const languageId = langMap[t.lang]
+        if (!languageId) continue
+        selectionTemplateTransRows.push({
+          selectionTemplateId: inserted.id,
+          languageId,
           field: t.field,
           value: t.value
         })
@@ -331,12 +359,29 @@ async function seed() {
   console.log(`Created ${selectionsJson.length} selection templates`)
 
   // ============================================================
-  // 8. BATCH INSERT: TRANSLATIONS
+  // 8. BATCH INSERT: TRANSLATIONS (per-entity tables)
   // ============================================================
-  if (translationRows.length > 0) {
-    await batchInsert(db, schema.translations, translationRows)
-    console.log(`Created ${translationRows.length} translations`)
+  if (sportTransRows.length > 0) {
+    await batchInsert(db, schema.sportTranslations, sportTransRows)
+    console.log(`Created ${sportTransRows.length} sport translations`)
   }
+  if (countryTransRows.length > 0) {
+    await batchInsert(db, schema.countryTranslations, countryTransRows)
+    console.log(`Created ${countryTransRows.length} country translations`)
+  }
+  if (leagueTransRows.length > 0) {
+    await batchInsert(db, schema.leagueTranslations, leagueTransRows)
+    console.log(`Created ${leagueTransRows.length} league translations`)
+  }
+  if (marketTypeTransRows.length > 0) {
+    await batchInsert(db, schema.marketTypeTranslations, marketTypeTransRows)
+    console.log(`Created ${marketTypeTransRows.length} market type translations`)
+  }
+  if (selectionTemplateTransRows.length > 0) {
+    await batchInsert(db, schema.selectionTemplateTranslations, selectionTemplateTransRows)
+    console.log(`Created ${selectionTemplateTransRows.length} selection template translations`)
+  }
+  const totalTranslations = sportTransRows.length + countryTransRows.length + leagueTransRows.length + marketTypeTransRows.length + selectionTemplateTransRows.length
 
   // ============================================================
   // 9. BATCH INSERT: PROVIDER MAPPINGS
@@ -375,7 +420,7 @@ async function seed() {
   console.log(`  Leagues: ${Object.keys(leagueIdMap).length}`)
   console.log(`  Market Types: ${marketsJson.length}`)
   console.log(`  Selection Templates: ${selectionsJson.length}`)
-  console.log(`  Translations: ${translationRows.length}`)
+  console.log(`  Translations: ${totalTranslations}`)
   console.log(`  Provider Mappings: ${mappingRows.length}`)
 
   await client.end()

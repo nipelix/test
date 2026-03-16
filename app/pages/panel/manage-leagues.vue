@@ -41,9 +41,9 @@
 
           <USeparator />
           <h3 class="text-sm font-semibold text-muted">{{ t('common.translations') }}</h3>
-          <div v-for="locale in allLocales" :key="locale.code" class="space-y-2">
-            <p class="text-xs font-medium text-muted flex items-center gap-2"><UBadge variant="subtle" size="xs">{{ locale.code }}</UBadge>{{ locale.name }}</p>
-            <UFormField :label="`${t('common.name')} (${locale.code})`"><UInput v-model="tr[`${locale.code}:name`]" :placeholder="`${t('common.name')} — ${locale.name}`" class="w-full" /></UFormField>
+          <div v-for="lang in LANGS" :key="lang.code" class="space-y-2">
+            <p class="text-xs font-medium text-muted flex items-center gap-2"><UBadge variant="subtle" size="xs">{{ lang.code }}</UBadge>{{ lang.name }}</p>
+            <UFormField :label="`${t('common.name')} (${lang.code})`"><UInput v-model="tr[`${lang.code}:name`]" :placeholder="`${t('common.name')} — ${lang.name}`" class="w-full" /></UFormField>
           </div>
         </form>
       </template>
@@ -61,9 +61,9 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: 'panel', middleware: 'panel', allowedRoles: ['SUPER_ADMIN'] })
-const { t, locales } = useI18n()
+const { t } = useI18n()
 const toast = useToast()
-const allLocales = computed(() => locales.value as Array<{ code: string; name?: string }>)
+const { languages: LANGS } = useLanguages()
 
 const columns = [
   { accessorKey: 'select', header: '' }, { accessorKey: 'id', header: t('common.id') },

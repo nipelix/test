@@ -1,5 +1,5 @@
-import { eq, and } from 'drizzle-orm'
-import { selectionTemplates, translations } from '../../database/schema'
+import { eq } from 'drizzle-orm'
+import { selectionTemplates } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN'])
@@ -14,12 +14,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 404, statusMessage: 'Selection template not found' })
   }
 
-  await db.delete(translations).where(
-    and(
-      eq(translations.entityType, 'SELECTION_TEMPLATE'),
-      eq(translations.entityId, id)
-    )
-  )
+  // Translations are automatically deleted via ON DELETE CASCADE
 
   return { ok: true }
 })

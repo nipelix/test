@@ -1,5 +1,5 @@
-import { eq, and, sql, inArray, like, asc, desc } from 'drizzle-orm'
-import { leagues, sports, countries, translations, providerMappings, providers } from '../../database/schema'
+import { eq, and, sql, inArray, asc, desc } from 'drizzle-orm'
+import { leagues, sports, countries, leagueTranslations, languages, providerMappings, providers } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -23,17 +23,13 @@ export default defineEventHandler(async (event) => {
   if (active !== undefined) conditions.push(eq(leagues.active, active === 'true'))
   if (sportId) conditions.push(eq(leagues.sportId, sportId))
   if (countryId) conditions.push(eq(leagues.countryId, countryId))
-  if (search) conditions.push(like(leagues.name, `%${search}%`))
 
   const where = conditions.length > 0 ? and(...conditions) : undefined
 
   // Sort
   const sortWhitelist: Record<string, any> = {
-    name: leagues.name,
     sortOrder: leagues.sortOrder,
     active: leagues.active,
-    countryName: countries.name,
-    sportName: sports.name,
     createdAt: leagues.createdAt
   }
   const sortKeys = (sortByParam ?? 'sortOrder').split(',')
@@ -51,11 +47,10 @@ export default defineEventHandler(async (event) => {
   const [data, countResult] = await Promise.all([
     db.select({
       id: leagues.id,
-      name: leagues.name,
       sportId: leagues.sportId,
-      sportName: sports.name,
+      sportSlug: sports.slug,
       countryId: leagues.countryId,
-      countryName: countries.name,
+      countryCode: countries.code,
       category: leagues.category,
       specialIcon: leagues.specialIcon,
       popular: leagues.popular,
@@ -81,15 +76,30 @@ export default defineEventHandler(async (event) => {
 
   if (data.length > 0) {
     const ids = data.map(d => d.id)
-    const langs = lang ? lang.split(',').map(l => l.trim()).filter(Boolean) : []
+    const langCodes = lang ? lang.split(',').map(l => l.trim()).filter(Boolean) : []
+
+    let langIds: number[] = []
+    if (langCodes.length > 0) {
+      const langRows = await db.select({ id: languages.id, code: languages.code })
+        .from(languages)
+        .where(inArray(languages.code, langCodes))
+      langIds = langRows.map(l => l.id)
+    }
 
     const [transData, mappingsData] = await Promise.all([
-      langs.length > 0
-        ? db.select().from(translations).where(and(
-            eq(translations.entityType, 'LEAGUE'),
-            inArray(translations.entityId, ids),
-            inArray(translations.lang, langs)
-          ))
+      langIds.length > 0
+        ? db.select({
+            leagueId: leagueTranslations.leagueId,
+            languageId: leagueTranslations.languageId,
+            langCode: languages.code,
+            field: leagueTranslations.field,
+            value: leagueTranslations.value
+          }).from(leagueTranslations)
+            .innerJoin(languages, eq(leagueTranslations.languageId, languages.id))
+            .where(and(
+              inArray(leagueTranslations.leagueId, ids),
+              inArray(leagueTranslations.languageId, langIds)
+            ))
         : [],
       include.includes('providers')
         ? db.select({
@@ -105,11 +115,11 @@ export default defineEventHandler(async (event) => {
         : []
     ])
 
-    if (langs.length > 0 || include.includes('providers')) {
+    if (langIds.length > 0 || include.includes('providers')) {
       const transMap = new Map<number, any[]>()
       for (const t of transData) {
-        if (!transMap.has(t.entityId)) transMap.set(t.entityId, [])
-        transMap.get(t.entityId)!.push(t)
+        if (!transMap.has(t.leagueId)) transMap.set(t.leagueId, [])
+        transMap.get(t.leagueId)!.push(t)
       }
 
       const mappingsMap = new Map<number, any[]>()
@@ -118,16 +128,16 @@ export default defineEventHandler(async (event) => {
         mappingsMap.get(m.entityId)!.push(m)
       }
 
-      const isSingleLang = langs.length === 1
+      const isSingleLang = langCodes.length === 1
 
       result = data.map(d => {
         const trans = transMap.get(d.id) || []
         const extra: Record<string, any> = {}
 
-        if (langs.length > 0) {
+        if (langIds.length > 0) {
           if (isSingleLang) {
             const t = trans.find(t => t.field === 'name')
-            extra.name = t?.value || d.name
+            extra.name = t?.value || `league-${d.id}`
           } else {
             extra.translations = trans
           }
@@ -138,6 +148,15 @@ export default defineEventHandler(async (event) => {
         }
 
         return { ...d, ...extra }
+      })
+    }
+
+    // Search filter (post-fetch)
+    if (search) {
+      const searchLower = search.toLowerCase()
+      result = result.filter(r => {
+        const name = r.name || ''
+        return name.toLowerCase().includes(searchLower)
       })
     }
   }

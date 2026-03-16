@@ -1,5 +1,5 @@
-import { eq, and } from 'drizzle-orm'
-import { selectionTemplates, translations } from '../../database/schema'
+import { eq, inArray } from 'drizzle-orm'
+import { selectionTemplates, selectionTemplateTranslations, languages } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN'])
@@ -38,15 +38,23 @@ export default defineEventHandler(async (event) => {
   }
 
   if (body.translations?.length) {
+    const langCodes = [...new Set(body.translations.map(t => t.lang))]
+    const langRows = await db.select({ id: languages.id, code: languages.code })
+      .from(languages)
+      .where(inArray(languages.code, langCodes))
+    const langMap: Record<string, number> = {}
+    for (const l of langRows) langMap[l.code] = l.id
+
     for (const t of body.translations) {
-      await db.insert(translations).values({
-        entityType: 'SELECTION_TEMPLATE',
-        entityId: id,
-        lang: t.lang,
+      const languageId = langMap[t.lang]
+      if (!languageId) continue
+      await db.insert(selectionTemplateTranslations).values({
+        selectionTemplateId: id,
+        languageId,
         field: t.field,
         value: t.value
       }).onConflictDoUpdate({
-        target: [translations.entityType, translations.entityId, translations.lang, translations.field],
+        target: [selectionTemplateTranslations.selectionTemplateId, selectionTemplateTranslations.languageId, selectionTemplateTranslations.field],
         set: { value: t.value, updatedAt: new Date() }
       })
     }

@@ -2,7 +2,6 @@ import { pgTable, serial, varchar, boolean, timestamp, index } from 'drizzle-orm
 
 export const countries = pgTable('countries', {
   id: serial('id').primaryKey(),
-  name: varchar('name', { length: 100 }).notNull().unique(),
   code: varchar('code', { length: 10 }).notNull().unique(),
   slug: varchar('slug', { length: 100 }),
   flag: varchar('flag', { length: 255 }),
