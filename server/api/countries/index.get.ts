@@ -1,5 +1,5 @@
 import { eq, and, sql, inArray, asc, desc } from 'drizzle-orm'
-import { countries, countryTranslations, languages, providerMappings, providers } from '../../database/schema'
+import { countries, countryTranslations, languages, countryProviderMappings, providers } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -76,15 +76,15 @@ export default defineEventHandler(async (event) => {
         : [],
       include.includes('providers')
         ? db.select({
-            id: providerMappings.id,
-            providerId: providerMappings.providerId,
+            id: countryProviderMappings.id,
+            providerId: countryProviderMappings.providerId,
             providerName: providers.name,
             providerSlug: providers.slug,
-            entityId: providerMappings.entityId,
-            externalId: providerMappings.externalId
-          }).from(providerMappings)
-            .leftJoin(providers, eq(providerMappings.providerId, providers.id))
-            .where(and(eq(providerMappings.entityType, 'COUNTRY'), inArray(providerMappings.entityId, ids)))
+            entityId: countryProviderMappings.countryId,
+            externalId: countryProviderMappings.externalId
+          }).from(countryProviderMappings)
+            .leftJoin(providers, eq(countryProviderMappings.providerId, providers.id))
+            .where(and(inArray(countryProviderMappings.countryId, ids)))
         : []
     ])
 
@@ -97,8 +97,8 @@ export default defineEventHandler(async (event) => {
 
       const mappingsMap = new Map<number, any[]>()
       for (const m of mappingsData) {
-        if (!mappingsMap.has(m.entityId)) mappingsMap.set(m.entityId, [])
-        mappingsMap.get(m.entityId)!.push(m)
+        if (!mappingsMap.has(m.countryId)) mappingsMap.set(m.countryId, [])
+        mappingsMap.get(m.countryId)!.push(m)
       }
 
       const isSingleLang = langCodes.length === 1
@@ -117,7 +117,7 @@ export default defineEventHandler(async (event) => {
         }
 
         if (include.includes('providers')) {
-          extra.providerMappings = mappingsMap.get(d.id) || []
+          extra.countryProviderMappings = mappingsMap.get(d.id) || []
         }
 
         return { ...d, ...extra }

@@ -1,5 +1,5 @@
 import { eq, and, sql, inArray, asc, desc } from 'drizzle-orm'
-import { sports, sportTranslations, languages, providerMappings, providers } from '../../database/schema'
+import { sports, sportTranslations, languages, sportProviderMappings, providers } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -80,15 +80,15 @@ export default defineEventHandler(async (event) => {
         : [],
       include.includes('providers')
         ? db.select({
-            id: providerMappings.id,
-            providerId: providerMappings.providerId,
+            id: sportProviderMappings.id,
+            providerId: sportProviderMappings.providerId,
             providerName: providers.name,
             providerSlug: providers.slug,
-            entityId: providerMappings.entityId,
-            externalId: providerMappings.externalId
-          }).from(providerMappings)
-            .leftJoin(providers, eq(providerMappings.providerId, providers.id))
-            .where(and(eq(providerMappings.entityType, 'SPORT'), inArray(providerMappings.entityId, ids)))
+            sportId: sportProviderMappings.sportId,
+            externalId: sportProviderMappings.externalId
+          }).from(sportProviderMappings)
+            .leftJoin(providers, eq(sportProviderMappings.providerId, providers.id))
+            .where(inArray(sportProviderMappings.sportId, ids))
         : []
     ])
 
@@ -101,8 +101,8 @@ export default defineEventHandler(async (event) => {
 
       const mappingsMap = new Map<number, any[]>()
       for (const m of mappingsData) {
-        if (!mappingsMap.has(m.entityId)) mappingsMap.set(m.entityId, [])
-        mappingsMap.get(m.entityId)!.push(m)
+        if (!mappingsMap.has(m.sportId)) mappingsMap.set(m.sportId, [])
+        mappingsMap.get(m.sportId)!.push(m)
       }
 
       const isSingleLang = langCodes.length === 1

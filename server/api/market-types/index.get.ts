@@ -1,5 +1,5 @@
 import { eq, and, sql, inArray, like, asc, desc } from 'drizzle-orm'
-import { marketTypes, sports, bettingGroups, marketTypeTranslations, languages, providerMappings, providers } from '../../database/schema'
+import { marketTypes, sports, bettingGroups, marketTypeTranslations, languages, marketTypeProviderMappings, providers } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -106,15 +106,15 @@ export default defineEventHandler(async (event) => {
         : [],
       include.includes('providers')
         ? db.select({
-            id: providerMappings.id,
-            providerId: providerMappings.providerId,
+            id: marketTypeProviderMappings.id,
+            providerId: marketTypeProviderMappings.providerId,
             providerName: providers.name,
             providerSlug: providers.slug,
-            entityId: providerMappings.entityId,
-            externalId: providerMappings.externalId
-          }).from(providerMappings)
-            .leftJoin(providers, eq(providerMappings.providerId, providers.id))
-            .where(and(eq(providerMappings.entityType, 'MARKET_TYPE'), inArray(providerMappings.entityId, ids)))
+            entityId: marketTypeProviderMappings.marketTypeId,
+            externalId: marketTypeProviderMappings.externalId
+          }).from(marketTypeProviderMappings)
+            .leftJoin(providers, eq(marketTypeProviderMappings.providerId, providers.id))
+            .where(and(inArray(marketTypeProviderMappings.marketTypeId, ids)))
         : []
     ])
 
@@ -127,8 +127,8 @@ export default defineEventHandler(async (event) => {
 
       const mappingsMap = new Map<number, any[]>()
       for (const m of mappingsData) {
-        if (!mappingsMap.has(m.entityId)) mappingsMap.set(m.entityId, [])
-        mappingsMap.get(m.entityId)!.push(m)
+        if (!mappingsMap.has(m.marketTypeId)) mappingsMap.set(m.marketTypeId, [])
+        mappingsMap.get(m.marketTypeId)!.push(m)
       }
 
       const isSingleLang = langCodes.length === 1
@@ -147,7 +147,7 @@ export default defineEventHandler(async (event) => {
         }
 
         if (include.includes('providers')) {
-          extra.providerMappings = mappingsMap.get(d.id) || []
+          extra.marketTypeProviderMappings = mappingsMap.get(d.id) || []
         }
 
         return { ...d, ...extra }

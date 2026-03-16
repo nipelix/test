@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { eq } from 'drizzle-orm'
-import { providerMappings } from '../../database/schema'
+import { selectionTemplateProviderMappings } from '../../../database/schema'
 
 const schema = z.object({
   externalId: z.number().int().optional(),
@@ -15,11 +15,7 @@ export default defineEventHandler(async (event) => {
   const body = await readValidatedBody(event, schema.parse)
   const db = useDb()
 
-  const [updated] = await db.update(providerMappings)
-    .set(body)
-    .where(eq(providerMappings.id, id))
-    .returning()
-
+  const [updated] = await db.update(selectionTemplateProviderMappings).set(body).where(eq(selectionTemplateProviderMappings.id, id)).returning()
   if (!updated) throw createError({ statusCode: 404, statusMessage: 'Mapping not found' })
   return updated
 })

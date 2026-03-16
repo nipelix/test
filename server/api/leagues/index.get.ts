@@ -1,5 +1,5 @@
 import { eq, and, sql, inArray, asc, desc } from 'drizzle-orm'
-import { leagues, sports, countries, leagueTranslations, languages, providerMappings, providers } from '../../database/schema'
+import { leagues, sports, countries, leagueTranslations, languages, leagueProviderMappings, providers } from '../../database/schema'
 
 export default defineEventHandler(async (event) => {
   requireRole(event, ['SUPER_ADMIN', 'ADMIN', 'AGENT', 'DEALER', 'SUB_DEALER'])
@@ -103,15 +103,15 @@ export default defineEventHandler(async (event) => {
         : [],
       include.includes('providers')
         ? db.select({
-            id: providerMappings.id,
-            providerId: providerMappings.providerId,
+            id: leagueProviderMappings.id,
+            providerId: leagueProviderMappings.providerId,
             providerName: providers.name,
             providerSlug: providers.slug,
-            entityId: providerMappings.entityId,
-            externalId: providerMappings.externalId
-          }).from(providerMappings)
-            .leftJoin(providers, eq(providerMappings.providerId, providers.id))
-            .where(and(eq(providerMappings.entityType, 'LEAGUE'), inArray(providerMappings.entityId, ids)))
+            entityId: leagueProviderMappings.leagueId,
+            externalId: leagueProviderMappings.externalId
+          }).from(leagueProviderMappings)
+            .leftJoin(providers, eq(leagueProviderMappings.providerId, providers.id))
+            .where(and(inArray(leagueProviderMappings.leagueId, ids)))
         : []
     ])
 
@@ -124,8 +124,8 @@ export default defineEventHandler(async (event) => {
 
       const mappingsMap = new Map<number, any[]>()
       for (const m of mappingsData) {
-        if (!mappingsMap.has(m.entityId)) mappingsMap.set(m.entityId, [])
-        mappingsMap.get(m.entityId)!.push(m)
+        if (!mappingsMap.has(m.leagueId)) mappingsMap.set(m.leagueId, [])
+        mappingsMap.get(m.leagueId)!.push(m)
       }
 
       const isSingleLang = langCodes.length === 1
@@ -144,7 +144,7 @@ export default defineEventHandler(async (event) => {
         }
 
         if (include.includes('providers')) {
-          extra.providerMappings = mappingsMap.get(d.id) || []
+          extra.leagueProviderMappings = mappingsMap.get(d.id) || []
         }
 
         return { ...d, ...extra }

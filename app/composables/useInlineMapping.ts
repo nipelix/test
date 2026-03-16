@@ -1,8 +1,18 @@
 import { readonly as vueReadonly } from 'vue'
 
+// Maps entity types to their API base paths
+const ENTITY_MAPPING_ENDPOINTS: Record<string, string> = {
+  SPORT: '/api/sports/mappings',
+  COUNTRY: '/api/countries/mappings',
+  LEAGUE: '/api/leagues/mappings',
+  MARKET_TYPE: '/api/market-types/mappings',
+  SELECTION_TEMPLATE: '/api/selection-templates/mappings',
+  BETTING_GROUP: '/api/betting-groups/mappings'
+}
+
 /**
- * Composable for inline provider mapping CRUD (add, edit, delete).
- * Auto-fetches when entityId changes.
+ * Composable for per-entity provider mapping CRUD.
+ * Uses entity-specific endpoints (not polymorphic).
  */
 export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>) {
   const toast = useToast()
@@ -14,11 +24,8 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
   const deletingId = ref<number | null>(null)
   const editingId = ref<number | null>(null)
 
-  // New mapping form
   const newProviderId = ref<number | null>(null)
   const newExternalId = ref('')
-
-  // Edit form
   const editExternalId = ref('')
 
   const { data: providers } = useAsyncData('providers-global', () =>
@@ -29,12 +36,14 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
     (providers.value?.data ?? []).map((p: any) => ({ label: p.name, value: p.id }))
   )
 
+  const baseUrl = computed(() => ENTITY_MAPPING_ENDPOINTS[entityType.value] || '/api/sports/mappings')
+
   async function fetchMappings() {
     if (!entityId.value) { mappings.value = []; return }
     loading.value = true
     try {
-      const res = await $fetch<{ data: any[] }>('/api/provider-mappings', {
-        query: { entityType: entityType.value, entityId: entityId.value }
+      const res = await $fetch<{ data: any[] }>(baseUrl.value, {
+        query: { entityId: entityId.value }
       })
       mappings.value = res.data ?? []
     } catch { mappings.value = [] }
@@ -47,9 +56,9 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
     if (!entityId.value || !newProviderId.value || !newExternalId.value) return
     saving.value = true
     try {
-      await $fetch('/api/provider-mappings', {
+      await $fetch(baseUrl.value, {
         method: 'POST',
-        body: { entityType: entityType.value, entityId: entityId.value, providerId: newProviderId.value, externalId: Number(newExternalId.value) }
+        body: { entityId: entityId.value, providerId: newProviderId.value, externalId: Number(newExternalId.value) }
       })
       newExternalId.value = ''
       await fetchMappings()
@@ -72,7 +81,7 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
     if (!editExternalId.value) return
     saving.value = true
     try {
-      await $fetch(`/api/provider-mappings/${id}`, {
+      await $fetch(`${baseUrl.value}/${id}`, {
         method: 'PATCH',
         body: { externalId: Number(editExternalId.value) }
       })
@@ -86,7 +95,7 @@ export function useInlineMapping(entityType: Ref<string>, entityId: Ref<number>)
   async function handleDelete(id: number) {
     deletingId.value = id
     try {
-      await $fetch(`/api/provider-mappings/${id}`, { method: 'DELETE' })
+      await $fetch(`${baseUrl.value}/${id}`, { method: 'DELETE' })
       mappings.value = mappings.value.filter(m => m.id !== id)
     } catch { toast.add({ title: t('common.error'), color: 'error' }) }
     finally { deletingId.value = null }
